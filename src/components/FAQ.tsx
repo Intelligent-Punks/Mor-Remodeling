@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { getAssetUrl } from '@/utils/asset'
 
 interface FaqItem {
   id: string
@@ -47,7 +48,7 @@ export default function FAQ({ title, subtitle, items }: FAQProps) {
                     {item.question}
                   </span>
                   <img
-                    src="/icons/arrow-down.svg"
+                    src={getAssetUrl('/icons/arrow-down.svg')}
                     alt=""
                     className={`w-6 h-6 flex-shrink-0 transition-transform duration-300 ${
                       isOpen ? 'rotate-180' : ''

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import AnimatedText from '@/components/AnimatedText'
+import { getAssetUrl } from '@/utils/asset'
 
 interface ContactFormProps {
   title: string
@@ -106,7 +107,7 @@ export default function ContactForm({ title, subtitle, backgroundImage }: Contac
         }}
       >
         <img
-          src={backgroundImage}
+          src={getAssetUrl(backgroundImage)}
           alt=""
           className="w-full h-full object-cover"
         />
@@ -198,7 +199,7 @@ export default function ContactForm({ title, subtitle, backgroundImage }: Contac
                   <option value="other">Other</option>
                 </select>
                 <img
-                  src="/icons/arrow-down.svg"
+                  src={getAssetUrl('/icons/arrow-down.svg')}
                   alt=""
                   className="absolute right-0 top-0 w-6 h-6 pointer-events-none"
                 />

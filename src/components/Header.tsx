@@ -3,6 +3,7 @@ import { Link, NavLink, useLocation } from 'react-router-dom'
 import common from '@/content/common'
 import contacts from '@/content/contacts'
 import AnimatedText from '@/components/AnimatedText'
+import { getAssetUrl } from '@/utils/asset'
 
 function PhoneButton({ isPastHero }: { isPastHero: boolean }) {
   const [isHovered, setIsHovered] = useState(false)
@@ -20,9 +21,9 @@ function PhoneButton({ isPastHero }: { isPastHero: boolean }) {
       <span className={`text-base font-medium leading-[1.4] pl-5 ${isPastHero ? 'text-[#2A2A2A]' : 'text-[#2A2A2A]'}`}>
         <AnimatedText text={contacts.phone} externalHover={isHovered} />
       </span>
-      <span className="ml-auto mr-1 inline-grid place-items-center w-[46px] h-[46px] rounded-full bg-[#2A2A2A]">
-        <img src="/icons/call.svg" alt="Call" className="w-5 h-5" />
-      </span>
+            <span className="ml-auto mr-1 inline-grid place-items-center w-[46px] h-[46px] rounded-full bg-[#2A2A2A]">
+              <img src={getAssetUrl('/icons/call.svg')} alt="Call" className="w-5 h-5" />
+            </span>
     </a>
   )
 }
@@ -63,7 +64,7 @@ export default function Header() {
       <div className="h-full container-custom flex items-center justify-between">
         <Link to="/" className="flex items-center">
           <img
-            src={isPastHero ? '/icons/Mor-remodeling-logo.png' : '/icons/Mor-remodeling-white-logo.png'}
+            src={getAssetUrl(isPastHero ? '/icons/Mor-remodeling-logo.png' : '/icons/Mor-remodeling-white-logo.png')}
             alt="Mor Remodeling"
             className="w-[110px] h-12 object-contain select-none"
           />

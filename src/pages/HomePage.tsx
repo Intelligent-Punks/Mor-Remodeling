@@ -11,6 +11,7 @@ import Services from '@/components/Services'
 import Stats from '@/components/Stats'
 import FAQ from '@/components/FAQ'
 import ContactForm from '@/components/ContactForm'
+import { getAssetUrl } from '@/utils/asset'
 
 export default function HomePage() {
   return (
@@ -20,7 +21,7 @@ export default function HomePage() {
       <section className="relative min-h-[750px]">
         <img
           aria-hidden
-          src={home.hero.backgroundImage}
+          src={getAssetUrl(home.hero.backgroundImage)}
           alt=""
           className="absolute inset-0 w-full h-full object-cover"
         />

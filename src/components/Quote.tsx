@@ -1,4 +1,5 @@
 import AnimatedParagraph from '@/components/AnimatedParagraph'
+import { getAssetUrl } from '@/utils/asset'
 
 interface QuoteProps {
   quoteSymbol?: string
@@ -13,7 +14,7 @@ export default function Quote({ quoteSymbol = '"', text, author }: QuoteProps) {
         <div className="grid grid-cols-[320px_1fr] gap-[40px] items-start">
           <div>
             <img
-              src="/icons/quote.svg"
+              src={getAssetUrl('/icons/quote.svg')}
               alt="Quote"
               className="w-16 h-16"
             />

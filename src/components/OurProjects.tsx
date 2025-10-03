@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import AnimatedText from '@/components/AnimatedText'
 
+import { getAssetUrl } from '@/utils/asset'
+
 interface Project {
   id: string
   image: string
@@ -48,7 +50,7 @@ export default function OurProjects({
                 <AnimatedText text="See all projects" externalHover={isHovered} />
                 <span className="inline-grid place-items-center w-8 h-8 rounded-full bg-white border border-[#2A2A2A] transition-colors">
                   <img
-                    src="/icons/arrow-right.svg"
+                    src={getAssetUrl('/icons/arrow-right.svg')}
                     alt=""
                     className="w-5 h-5 transition-all"
                   />
@@ -76,13 +78,13 @@ export default function OurProjects({
                 }`}
               >
                 <img
-                  src={project.image}
+                  src={getAssetUrl(project.image)}
                   alt={project.alt || ''}
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                 />
                 <div className="absolute bottom-4 right-4 w-12 h-12 rounded-full bg-white scale-0 group-hover:scale-100 transition-transform duration-300 flex items-center justify-center overflow-hidden">
                   <img
-                    src="/icons/arrow-right.svg"
+                    src={getAssetUrl('/icons/arrow-right.svg')}
                     alt=""
                     className="w-5 h-5 -translate-x-full group-hover:translate-x-0 transition-transform duration-300"
                   />

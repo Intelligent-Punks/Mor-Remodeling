@@ -1,3 +1,5 @@
+import { getAssetUrl } from '@/utils/asset'
+
 interface Service {
   id: string
   title: string
@@ -29,13 +31,13 @@ export default function Services({ title, services }: ServicesProps) {
             >
               <div className="relative rounded-[14px] overflow-hidden bg-[#2A2A2A] w-full h-[290px]">
                 <img
-                  src={service.image}
+                  src={getAssetUrl(service.image)}
                   alt={service.title}
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                 />
                 <div className="absolute bottom-4 right-4 w-12 h-12 rounded-full bg-white scale-0 group-hover:scale-100 transition-transform duration-300 flex items-center justify-center overflow-hidden">
                   <img
-                    src="/icons/arrow-right.svg"
+                    src={getAssetUrl('/icons/arrow-right.svg')}
                     alt=""
                     className="w-5 h-5 -translate-x-full group-hover:translate-x-0 transition-transform duration-300"
                   />

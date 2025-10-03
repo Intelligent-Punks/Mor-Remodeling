@@ -10,7 +10,9 @@
         var redirect = sessionStorage.getItem("redirect");
         if (redirect) {
           sessionStorage.removeItem("redirect");
-          history.replaceState(null, null, redirect);
+          if (redirect !== "/") {
+            history.replaceState(null, null, redirect);
+          }
         }
       })();
     </script>

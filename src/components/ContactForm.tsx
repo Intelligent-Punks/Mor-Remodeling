@@ -100,7 +100,7 @@ export default function ContactForm({ title, subtitle, backgroundImage }: Contac
   return (
     <section ref={sectionRef} className="relative min-h-[800px] overflow-hidden">
       <div
-        className="absolute -top-[10%] left-0 right-0 w-full h-[140%]"
+        className="absolute -top-[10%] left-0 right-0 w-full h-[160%]"
         style={{
           transform: `translateY(${offset}px)`,
           willChange: 'transform',

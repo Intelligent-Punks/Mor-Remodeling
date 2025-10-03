@@ -1,3 +1,6 @@
+import { useState } from 'react'
+import AnimatedText from '@/components/AnimatedText'
+
 interface Project {
   id: string
   image: string
@@ -17,11 +20,12 @@ export default function OurProjects({
   projects,
   showButton = true,
 }: OurProjectsProps) {
+  const [isHovered, setIsHovered] = useState(false)
   return (
     <section className="py-20">
       <div className="container-custom">
-        <div className="flex items-start justify-between gap-8">
-          <div className="flex items-start gap-10">
+        <div className="flex items-center justify-between gap-8">
+          <div className="flex items-center gap-10">
             <div className="w-[290px]">
               <h2 className="text-[32px] md:text-[48px] font-semibold leading-[1.4] text-[#2A2A2A]">
                 {title}
@@ -38,13 +42,15 @@ export default function OurProjects({
               <a
                 href="/projects"
                 className="inline-flex items-center gap-2 text-base font-medium text-[#2A2A2A] group"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
               >
-                <span>See all projects</span>
-                <span className="inline-grid place-items-center w-8 h-8 rounded-full bg-white border border-[#2A2A2A] group-hover:bg-[#2A2A2A] transition-colors">
+                <AnimatedText text="See all projects" externalHover={isHovered} />
+                <span className="inline-grid place-items-center w-8 h-8 rounded-full bg-white border border-[#2A2A2A] transition-colors">
                   <img
                     src="/icons/arrow-right.svg"
                     alt=""
-                    className="w-5 h-5 group-hover:invert transition-all"
+                    className="w-5 h-5 transition-all"
                   />
                 </span>
               </a>

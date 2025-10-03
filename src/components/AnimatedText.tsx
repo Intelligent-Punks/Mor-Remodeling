@@ -4,15 +4,17 @@ interface AnimatedTextProps {
   text: string
   className?: string
   externalHover?: boolean
+  staggered?: boolean
 }
 
-export default function AnimatedText({ text, className = '', externalHover }: AnimatedTextProps) {
+export default function AnimatedText({ text, className = '', externalHover, staggered = true }: AnimatedTextProps) {
   const [internalHover, setInternalHover] = useState(false)
   const isHovered = externalHover !== undefined ? externalHover : internalHover
 
   return (
     <span
-      className={`inline-flex h-[20px] ${className}`}
+      className={`inline-flex overflow-hidden ${className}`}
+      style={{ maxHeight: '1em', lineHeight: '1' }}
       onMouseEnter={() => setInternalHover(true)}
       onMouseLeave={() => setInternalHover(false)}
     >
@@ -25,7 +27,9 @@ export default function AnimatedText({ text, className = '', externalHover }: An
           <span
             className="inline-flex flex-col transition-all duration-500 ease-out"
             style={{
-              transitionDelay: isHovered ? `${index * 50}ms` : `${(text.length - index - 1) * 50}ms`,
+              transitionDelay: staggered 
+                ? (isHovered ? `${index * 50}ms` : `${(text.length - index - 1) * 50}ms`)
+                : '0ms',
               transform: isHovered ? 'translateY(-50%)' : 'translateY(0)',
             }}
           >

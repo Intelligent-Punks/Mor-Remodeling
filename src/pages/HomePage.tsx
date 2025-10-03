@@ -4,11 +4,13 @@ import quote from '@/content/quote'
 import services from '@/content/services'
 import stats from '@/content/stats'
 import faq from '@/content/faq'
+import contactForm from '@/content/contactForm'
 import OurProjects from '@/components/OurProjects'
 import Quote from '@/components/Quote'
 import Services from '@/components/Services'
 import Stats from '@/components/Stats'
 import FAQ from '@/components/FAQ'
+import ContactForm from '@/components/ContactForm'
 
 export default function HomePage() {
   return (
@@ -57,6 +59,12 @@ export default function HomePage() {
       />
 
       <FAQ title={faq.title} subtitle={faq.subtitle} items={faq.items} />
+
+      <ContactForm
+        title={contactForm.title}
+        subtitle={contactForm.subtitle}
+        backgroundImage={contactForm.backgroundImage}
+      />
     </div>
   )
 }

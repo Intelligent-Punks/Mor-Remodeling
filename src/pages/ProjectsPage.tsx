@@ -1,17 +1,14 @@
 import projects from '@/content/projects'
-import { AnimatedSection } from '@/components/AnimatedSection'
+import OurProjects from '@/components/OurProjects'
 
 export default function ProjectsPage() {
   return (
-    <div>
-      <h1>{projects.title}</h1>
-      {projects.items.map((p) => (
-        <AnimatedSection key={p.id}>
-          <h2>{p.title}</h2>
-          <p>{p.text}</p>
-        </AnimatedSection>
-      ))}
-    </div>
+    <OurProjects
+      title={projects.title}
+      description={projects.description}
+      projects={projects.items}
+      showButton={false}
+    />
   )
 }
 

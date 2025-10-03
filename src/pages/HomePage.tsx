@@ -20,7 +20,7 @@ export default function HomePage() {
       <section className="relative min-h-[750px]">
         <img
           aria-hidden
-          src="/images/hero/Hero-home.png"
+          src={home.hero.backgroundImage}
           alt=""
           className="absolute inset-0 w-full h-full object-cover"
         />

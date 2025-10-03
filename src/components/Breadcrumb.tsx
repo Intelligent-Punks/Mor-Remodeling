@@ -8,6 +8,7 @@ const routeNames: Record<string, string> = {
   about: 'About Us',
   faq: 'FAQ',
   'contact-us': 'Contact Us',
+  'kitchen-remodel': 'Kitchen Remodel',
 }
 
 export default function Breadcrumb() {

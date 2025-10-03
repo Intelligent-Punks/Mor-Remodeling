@@ -9,7 +9,7 @@ const projects = {
   description:
     "We've grouped our cabinetmaking, joinery and fittings activities into four Espaces. These unique creations reflect our teams' passion for their craft.",
   items: [
-    { id: 'p1', image: '/images/our-projects/Frame-3.png', alt: 'Project 1' },
+    { id: 'kitchen-remodel', image: '/images/our-projects/Frame-3.png', alt: 'Modern Kitchen Renovation' },
     { id: 'p2', image: '/images/our-projects/Frame-4.png', alt: 'Project 2' },
     { id: 'p3', image: '/images/our-projects/Frame-5.png', alt: 'Project 3' },
     { id: 'p6', image: '/images/our-projects/Frame-8.png', alt: 'Project 6' },

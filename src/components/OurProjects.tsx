@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import AnimatedText from '@/components/AnimatedText'
 
 import { getAssetUrl } from '@/utils/asset'
@@ -76,9 +77,9 @@ export default function OurProjects({
               (rowIndex % 2 === 1 && colIndex === 0) // row 1,3,5... → wide at position 0
 
             return (
-              <a
+              <Link
                 key={project.id}
-                href={`/projects/${project.id}`}
+                to={`/projects/${project.id}`}
                 className={`group relative rounded-[14px] overflow-hidden bg-[#2A2A2A] h-[360px] ${
                   isWide ? 'col-span-2' : 'col-span-1'
                 }`}
@@ -95,7 +96,7 @@ export default function OurProjects({
                     className="w-5 h-5 -translate-x-full group-hover:translate-x-0 transition-transform duration-300"
                   />
                 </div>
-              </a>
+              </Link>
             )
           })}
         </div>

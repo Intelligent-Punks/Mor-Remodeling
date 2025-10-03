@@ -10,8 +10,8 @@ interface Project {
 }
 
 interface OurProjectsProps {
-  title: string
-  description: string
+  title?: string
+  description?: string
   projects: Project[]
   showButton?: boolean
 }
@@ -26,41 +26,47 @@ export default function OurProjects({
   return (
     <section className="py-20">
       <div className="container-custom">
-        <div className="flex items-center justify-between gap-8">
-          <div className="flex items-center gap-10">
-            <div className="w-[290px]">
-              <h2 className="text-[32px] md:text-[48px] font-semibold leading-[1.4] text-[#2A2A2A]">
-                {title}
-              </h2>
+        {(title || description || showButton) && (
+          <div className="flex items-center justify-between gap-8">
+            <div className="flex items-center gap-10">
+              {title && (
+                <div className="w-[290px]">
+                  <h2 className="text-[32px] md:text-[48px] font-semibold leading-[1.4] text-[#2A2A2A]">
+                    {title}
+                  </h2>
+                </div>
+              )}
+              {description && (
+                <div className="flex-1">
+                  <p className="max-w-[620px] text-base leading-[1.5] text-[#2A2A2A]">
+                    {description}
+                  </p>
+                </div>
+              )}
             </div>
-            <div className="flex-1">
-              <p className="max-w-[620px] text-base leading-[1.5] text-[#2A2A2A]">
-                {description}
-              </p>
-            </div>
+            {showButton && (
+              <div className="flex-shrink-0">
+                <a
+                  href="/projects"
+                  className="inline-flex items-center gap-2 text-base font-medium text-[#2A2A2A] group"
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
+                >
+                  <AnimatedText text="See all projects" externalHover={isHovered} />
+                  <span className="inline-grid place-items-center w-8 h-8 rounded-full bg-white border border-[#2A2A2A] transition-colors">
+                    <img
+                      src={getAssetUrl('/icons/arrow-right.svg')}
+                      alt=""
+                      className="w-5 h-5 transition-all"
+                    />
+                  </span>
+                </a>
+              </div>
+            )}
           </div>
-          {showButton && (
-            <div className="flex-shrink-0">
-              <a
-                href="/projects"
-                className="inline-flex items-center gap-2 text-base font-medium text-[#2A2A2A] group"
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
-              >
-                <AnimatedText text="See all projects" externalHover={isHovered} />
-                <span className="inline-grid place-items-center w-8 h-8 rounded-full bg-white border border-[#2A2A2A] transition-colors">
-                  <img
-                    src={getAssetUrl('/icons/arrow-right.svg')}
-                    alt=""
-                    className="w-5 h-5 transition-all"
-                  />
-                </span>
-              </a>
-            </div>
-          )}
-        </div>
+        )}
 
-        <div className="mt-[115px] grid grid-cols-4 gap-10">
+        <div className={`${title || description || showButton ? 'mt-[115px]' : ''} grid grid-cols-4 gap-10`}>
           {projects.map((project, idx) => {
             // Pattern: row1 (1col, 1col, 2col), row2 (2col, 1col, 1col), row3 (1col, 1col, 2col)
             const rowIndex = Math.floor(idx / 3)

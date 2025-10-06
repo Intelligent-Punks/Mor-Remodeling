@@ -24,6 +24,7 @@ export default function OurProjects({
   showButton = true,
 }: OurProjectsProps) {
   const [isHovered, setIsHovered] = useState(false)
+  
   return (
     <section className="py-20">
       <div className="container-custom">
@@ -31,7 +32,7 @@ export default function OurProjects({
           <div className="flex items-center justify-between gap-8">
             <div className="flex items-center gap-10">
               {title && (
-                <div className="w-[290px]">
+                <div className={`${description ? 'w-[290px]' : 'w-full'}`}>
                   <h2 className="text-[32px] md:text-[48px] font-semibold leading-[1.4] text-[#2A2A2A]">
                     {title}
                   </h2>

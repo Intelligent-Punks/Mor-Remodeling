@@ -38,11 +38,11 @@ export default function FAQ({ title, subtitle, items }: FAQProps) {
             return (
               <div
                 key={item.id}
-                className="bg-white rounded-[14px] overflow-hidden transition-all duration-300 hover:shadow-lg cursor-pointer"
+                className="bg-white rounded-[14px] overflow-hidden transition-shadow duration-300 hover:shadow-lg"
               >
                 <button
                   onClick={() => toggle(item.id)}
-                  className="w-full flex items-start justify-between px-5 py-[26px] text-left"
+                  className="w-full flex items-start justify-between px-5 py-[26px] text-left cursor-pointer"
                 >
                   <span className="text-[20px] font-semibold leading-[1.4] text-[#2A2A2A] pr-4">
                     {item.question}
@@ -50,19 +50,22 @@ export default function FAQ({ title, subtitle, items }: FAQProps) {
                   <img
                     src={getAssetUrl('/icons/arrow-down.svg')}
                     alt=""
-                    className={`w-6 h-6 flex-shrink-0 transition-transform duration-300 ${
+                    className={`w-6 h-6 flex-shrink-0 transition-transform duration-500 ease-in-out ${
                       isOpen ? 'rotate-180' : ''
                     }`}
                   />
                 </button>
                 <div
-                  className={`overflow-hidden transition-all duration-300 ${
-                    isOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
-                  }`}
+                  className="grid transition-[grid-template-rows] duration-500 ease-in-out"
+                  style={{
+                    gridTemplateRows: isOpen ? '1fr' : '0fr',
+                  }}
                 >
-                  <p className="px-5 pb-[26px] text-base leading-[1.4] text-[#2A2A2A]">
-                    {item.answer}
-                  </p>
+                  <div className="overflow-hidden">
+                    <p className="px-5 pb-[26px] text-base leading-[1.4] text-[#2A2A2A]">
+                      {item.answer}
+                    </p>
+                  </div>
                 </div>
               </div>
             )

@@ -66,7 +66,7 @@ export default function Header() {
           <img
             src={getAssetUrl(isPastHero ? '/icons/Mor-remodeling-logo.png' : '/icons/Mor-remodeling-white-logo.png')}
             alt="Mor Remodeling"
-            className="w-[110px] h-12 object-contain select-none"
+            className="w-[115px] h-[50px] object-contain select-none"
           />
         </Link>
         <nav className="flex gap-10 items-center">

@@ -6,7 +6,7 @@ import AboutPage from '@/pages/AboutPage'
 import ServicesPage from '@/pages/ServicesPage'
 import ProjectsPage from '@/pages/ProjectsPage'
 import ProjectDetailPage from '@/pages/ProjectDetailPage'
-import ContactsPage from '@/pages/ContactsPage'
+import ContactPage from '@/pages/ContactPage'
 import TemplatePage from '@/pages/TemplatePage'
 import FAQPage from '@/pages/FAQPage'
 
@@ -21,7 +21,7 @@ export default function App() {
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/projects/:slug" element={<ProjectDetailPage />} />
         <Route path="/faq" element={<FAQPage />} />
-        <Route path="/contact-us" element={<ContactsPage />} />
+        <Route path="/contact-us" element={<ContactPage />} />
         <Route path="/contact" element={<Navigate to="/contact-us" replace />} />
         <Route path="/contacts" element={<Navigate to="/contact-us" replace />} />
         <Route path="/template" element={<TemplatePage />} />

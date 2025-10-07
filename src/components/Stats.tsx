@@ -33,11 +33,11 @@ export default function Stats({ title, description, stats }: StatsProps) {
           {stats.map((stat) => (
             <div
               key={stat.id}
-              className="w-[290px] h-[290px] bg-[#F2F1EF] rounded-[14px] p-[30px] flex flex-col justify-between"
+              className="w-[290px] h-[290px] bg-[#F2F1EF] rounded-[14px] p-[24px] flex flex-col justify-between"
             >
               <AnimatedParagraph
                 text={stat.value}
-                className="text-[36px] font-medium leading-[1.4] text-[#2A2A2A]"
+                className="text-[34px] font-medium leading-[1.4] text-[#2A2A2A]"
                 lineDelay={60}
                 charDelay={8}
               />

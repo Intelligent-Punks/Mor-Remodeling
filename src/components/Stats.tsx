@@ -37,11 +37,11 @@ export default function Stats({ title, description, stats }: StatsProps) {
             >
               <AnimatedParagraph
                 text={stat.value}
-                className="text-[32px] md:text-[34px] font-medium leading-[1.4] text-[#2A2A2A]"
+                className="text-[20px] md:text-[34px] font-medium leading-[1.4] text-[#2A2A2A]"
                 lineDelay={60}
                 charDelay={8}
               />
-              <p className="text-sm md:text-[20px] font-normal leading-[1.5] text-[#2A2A2A]">
+              <p className="text-xs md:text-[20px] font-normal leading-[1.5] text-[#2A2A2A]">
                 {stat.label}
               </p>
             </div>

@@ -13,6 +13,7 @@ export default function TimelineCarousel({ items, onIndexChange, showButtons = t
   const [internalActiveIndex, setInternalActiveIndex] = useState(0)
   const [offset, setOffset] = useState(0)
   const [visibleItems, setVisibleItems] = useState(4) // Default: assume 4 items visible
+  const [isMobile, setIsMobile] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
   const total = items.length
 
@@ -22,11 +23,15 @@ export default function TimelineCarousel({ items, onIndexChange, showButtons = t
   // Calculate how many items are visible based on container width
   useEffect(() => {
     const calculateVisibleItems = () => {
+      const mobile = window.innerWidth < 768
+      setIsMobile(mobile)
+      
       if (containerRef.current) {
         const containerWidth = containerRef.current.offsetWidth
-        // Each item is 330px wide, calculate how many fit
-        const itemsCount = Math.floor(containerWidth / 330)
-        setVisibleItems(Math.max(3, itemsCount)) // Minimum 3 items
+        // Mobile: 197px per item, Desktop: 330px per item
+        const itemWidth = mobile ? 197 : 330
+        const itemsCount = Math.floor(containerWidth / itemWidth)
+        setVisibleItems(Math.max(mobile ? 2 : 3, itemsCount)) // Minimum 2 on mobile, 3 on desktop
       }
     }
 
@@ -37,30 +42,36 @@ export default function TimelineCarousel({ items, onIndexChange, showButtons = t
 
   // Sync offset with activeIndex changes
   useEffect(() => {
-    // Timeline scrolling logic:
-    // - First 3 items (0,1,2) stay static (offset = 0)
-    // - From 4th item onwards, scroll to reveal next items
-    // - Stop scrolling when last item becomes visible
-    // - visibleItems is calculated dynamically based on container width
+    // Scrolling logic:
+    // - Mobile: index 0 static, from index 1 onwards scroll (but cap at maxScroll)
+    // - Desktop: index 0,1,2 static, from index 3 onwards scroll (but cap at maxScroll)
     
-    if (total <= 3) {
-      // If 3 or fewer items, no scrolling needed
-      setOffset(0)
-    } else if (activeIndex <= 2) {
-      // First 3 items: no scroll
-      setOffset(0)
+    const itemWidth = isMobile ? 197 : 330
+    
+    if (isMobile) {
+      // Mobile: scroll starts from index 1
+      if (activeIndex === 0) {
+        setOffset(0)
+      } else {
+        const currentOffset = activeIndex * itemWidth
+        // Stop scrolling when last item is visible (when we've scrolled enough)
+        const maxScroll = Math.max(0, (total - visibleItems) * itemWidth)
+        setOffset(Math.min(currentOffset, maxScroll))
+      }
     } else {
-      // Scroll to reveal items, but stop when last item becomes visible
-      const currentOffset = (activeIndex - 2) * 330
-      // Stop scrolling when last item appears in visible area
-      // Adjust based on how many items are visible:
-      // - If 4 visible: stop earlier (total - visibleItems - 1)
-      // - If 5+ visible: allow more scroll (total - visibleItems)
-      const adjustment = visibleItems >= 5 ? 0 : 1
-      const maxScroll = Math.max(0, (total - visibleItems - adjustment) * 330)
-      setOffset(Math.min(currentOffset, maxScroll))
+      // Desktop: scroll starts from index 3
+      if (activeIndex <= 2) {
+        setOffset(0)
+      } else {
+        const scrollAmount = activeIndex - 2
+        const currentOffset = scrollAmount * itemWidth
+        // Stop when last item is visible
+        const adjustment = visibleItems >= 5 ? 0 : 1
+        const maxScroll = Math.max(0, (total - visibleItems - adjustment) * itemWidth)
+        setOffset(Math.min(currentOffset, maxScroll))
+      }
     }
-  }, [activeIndex, total, visibleItems])
+  }, [activeIndex, total, visibleItems, isMobile])
 
   const next = () => {
     if (activeIndex < total - 1) {
@@ -89,13 +100,18 @@ export default function TimelineCarousel({ items, onIndexChange, showButtons = t
     onIndexChange(idx)
   }
 
+  const itemWidth = isMobile ? 197 : 330
+
   return (
     <div ref={containerRef} className="relative timeline-container overflow-hidden">
       {/* Timeline Line - Moves with dots */}
-      <div className="absolute top-[73px] h-px bg-[#C99E63] timeline-line" 
-           style={{ 
-             width: `${(total - 1) * 330}px` // Line spans from first to last dot
-           }} />
+      <div 
+        className="absolute h-px bg-[#C99E63] timeline-line"
+        style={{ 
+          top: isMobile ? '43px' : '73px',
+          width: `${(total - 1) * itemWidth}px` // Line spans from first to last dot
+        }} 
+      />
 
       {/* Timeline Items Container with scroll */}
       <div className="overflow-hidden">
@@ -103,7 +119,6 @@ export default function TimelineCarousel({ items, onIndexChange, showButtons = t
           className="flex transition-transform duration-500 ease-out"
           style={{
             transform: `translateX(-${offset}px)`,
-            // width: 'fit-content',
           }}
         >
           {items.map((item, idx) => (
@@ -113,12 +128,12 @@ export default function TimelineCarousel({ items, onIndexChange, showButtons = t
               className="relative flex flex-col items-start cursor-pointer group"
               style={{
                 width: idx === items.length - 1 ? 'auto' : '50%',
-                minWidth: idx === items.length - 1 ? 'auto' : '330px',
+                minWidth: idx === items.length - 1 ? 'auto' : `${itemWidth}px`,
               }}
             >
               {/* Year - Above line, aligned to dot */}
               <p
-                className={`text-[32px] font-medium leading-[1.5] mb-[20px] transition-colors duration-300 ${
+                className={`text-[20px] md:text-[32px] font-medium leading-[1.5] mb-3 md:mb-[20px] transition-colors duration-300 ${
                   activeIndex === idx ? 'text-[#2A2A2A]' : 'text-[#C99E63]'
                 }`}
               >
@@ -127,7 +142,7 @@ export default function TimelineCarousel({ items, onIndexChange, showButtons = t
 
               {/* Dot - On line */}
               <div
-                className={`w-4 h-4 rounded-full transition-colors duration-300 relative z-10 -mt-2 ${
+                className={`w-4 h-4 rounded-full transition-colors duration-300 relative z-10 ${
                   activeIndex === idx ? 'bg-[#2A2A2A]' : 'bg-[#C99E63]'
                 }`}
                 style={{ marginTop: '-2px' }}
@@ -135,7 +150,7 @@ export default function TimelineCarousel({ items, onIndexChange, showButtons = t
 
               {/* Title - Below line, aligned to dot */}
               <p
-                className={`text-base leading-[1.4] mt-[20px] transition-colors duration-300 ${
+                className={`text-xs md:text-base leading-[1.4] mt-3 md:mt-[20px] transition-colors duration-300 ${
                   activeIndex === idx ? 'text-[#2A2A2A]' : 'text-[#C99E63]'
                 }`}
               >
@@ -148,11 +163,11 @@ export default function TimelineCarousel({ items, onIndexChange, showButtons = t
 
       {/* Navigation Buttons - Only show if showButtons is true */}
       {showButtons && (
-        <div className="absolute bottom-0 flex gap-[20px] timeline-buttons-right">
+        <div className="absolute bottom-0 flex gap-3 md:gap-[20px] timeline-buttons-right">
           <button
             onClick={prev}
             disabled={activeIndex === 0}
-            className={`w-[58px] h-[58px] rounded-full bg-[#FFE2BA] flex items-center justify-center transition-opacity ${
+            className={`w-12 h-12 md:w-[58px] md:h-[58px] rounded-full bg-[#FFE2BA] flex items-center justify-center transition-opacity ${
               activeIndex === 0
                 ? 'opacity-40 cursor-not-allowed'
                 : 'hover:opacity-80 cursor-pointer'
@@ -162,13 +177,13 @@ export default function TimelineCarousel({ items, onIndexChange, showButtons = t
             <img
               src={getAssetUrl('/icons/arrow-right.svg')}
               alt=""
-              className="w-8 h-8 rotate-180"
+              className="w-6 h-6 md:w-8 md:h-8 rotate-180"
             />
           </button>
           <button
             onClick={next}
             disabled={activeIndex === total - 1}
-            className={`w-[58px] h-[58px] rounded-full bg-[#FFE2BA] flex items-center justify-center transition-opacity ${
+            className={`w-12 h-12 md:w-[58px] md:h-[58px] rounded-full bg-[#FFE2BA] flex items-center justify-center transition-opacity ${
               activeIndex === total - 1
                 ? 'opacity-40 cursor-not-allowed'
                 : 'hover:opacity-80 cursor-pointer'
@@ -178,7 +193,7 @@ export default function TimelineCarousel({ items, onIndexChange, showButtons = t
             <img
               src={getAssetUrl('/icons/arrow-right.svg')}
               alt=""
-              className="w-8 h-8"
+              className="w-6 h-6 md:w-8 md:h-8"
             />
           </button>
         </div>

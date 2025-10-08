@@ -70,11 +70,10 @@ export default function ServicesPage() {
   const scrollToService = (serviceId: string) => {
     const element = document.getElementById(serviceId)
     if (element) {
-      // Header = 80px
-      // Nav sticky = ~80px (10px + content + 10px when sticky)
-      // Extra buffer = 60px for better visibility
-      // Total offset = 220px
-      const offset = 220
+      // Mobile: Header 72px + Nav ~80px + buffer 20px = 172px
+      // Desktop: Header 80px + Nav ~80px + buffer 60px = 220px
+      const isMobile = window.innerWidth < 768
+      const offset = isMobile ? 170 : 220
       const elementPosition = element.getBoundingClientRect().top
       const offsetPosition = elementPosition + window.pageYOffset - offset
 
@@ -89,10 +88,10 @@ export default function ServicesPage() {
     <div className="bg-[#F2F1EF]">
       {/* Hero Section */}
       <section className="container-custom pt-[54px]">
-        <div className="mt-[100px] mb-10">
+        <div className="mt-10 md:mt-[100px] mb-10">
           <Breadcrumb />
         </div>
-        <h1 className="text-5xl font-semibold text-[#2A2A2A]">
+        <h1 className="text-[32px] md:text-5xl font-semibold text-[#2A2A2A]">
           {servicesPage.title}
         </h1>
       </section>
@@ -103,7 +102,7 @@ export default function ServicesPage() {
       {/* Sticky Navigation */}
       <div
         ref={navRef}
-        className="sticky top-[79px] z-40 transition-all duration-300"
+        className="sticky top-[71px] md:top-[79px] z-40 transition-all duration-300"
         style={{
           background: isNavSticky ? 'rgba(242, 241, 239, 0.8)' : '#F2F1EF',
           backdropFilter: isNavSticky ? 'blur(10px)' : 'none',
@@ -117,7 +116,27 @@ export default function ServicesPage() {
             paddingBottom: isNavSticky ? '10px' : '40px',
           }}
         >
-          <div className="flex flex-wrap gap-[20px] items-center">
+          {/* Mobile: Horizontal scroll */}
+          <div className="md:hidden overflow-x-auto -mx-5 px-5 scrollbar-hide">
+            <div className="flex gap-3 items-center min-w-max">
+              {servicesPage.services.map((service) => (
+                <button
+                  key={service.id}
+                  onClick={() => scrollToService(service.id)}
+                  className={`px-[14px] h-[48px] rounded-full text-xs font-medium leading-[1.4] transition-all cursor-pointer whitespace-nowrap ${
+                    activeSection === service.id
+                      ? 'bg-[#F4C077] text-[#2A2A2A]'
+                      : 'bg-transparent text-[#2A2A2A] border border-[#868686]'
+                  }`}
+                >
+                  {service.title}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop: Wrap */}
+          <div className="hidden md:flex flex-wrap gap-[20px] items-center">
             {servicesPage.services.map((service) => (
               <button
                 key={service.id}
@@ -174,17 +193,21 @@ interface ServiceSectionProps {
 
 function ServiceSection({ service, isLast }: ServiceSectionProps) {
   return (
-    <section id={service.id} className="py-[80px]">
+    <section id={service.id} className="py-3 md:py-[80px]">
       <div className="container-custom">
-        <div className="grid grid-cols-[400px_1fr] gap-[80px]">
-          {/* Left: Title */}
-          <div>
-            <h2 className="text-[36px] font-semibold leading-[1.4] text-[#2A2A2A]">
-              {service.title}
-            </h2>
-          </div>
+        {/* Title */}
+        <h2 className="text-[20px] md:text-[36px] font-semibold leading-[1.4] text-[#2A2A2A] mb-5 md:mb-0">
+          {service.title}
+        </h2>
 
-          {/* Right: Short Description */}
+        {/* Short Description - Mobile only */}
+        <p className="md:hidden text-xs leading-[1.5] text-[#868686] mb-5">
+          {service.shortDescription}
+        </p>
+
+        {/* Desktop Layout */}
+        <div className="hidden md:grid md:grid-cols-[400px_1fr] md:gap-[80px]">
+          <div />
           <div>
             <p className="text-[20px] leading-[1.4] text-[#868686]">
               {service.shortDescription}
@@ -193,11 +216,13 @@ function ServiceSection({ service, isLast }: ServiceSectionProps) {
         </div>
 
         {/* Images Grid */}
-        <div className="mt-[140px] grid grid-cols-3 gap-[40px]">
+        <div className="mt-5 md:mt-[140px] grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-[40px]">
           {service.images.map((image, idx) => (
             <div
               key={idx}
-              className="rounded-[14px] overflow-hidden bg-white h-[320px]"
+              className={`rounded-[8px] md:rounded-[14px] overflow-hidden bg-white h-[177px] md:h-[320px] ${
+                idx >= 2 ? 'hidden md:block' : ''
+              }`}
             >
               <img
                 src={getAssetUrl(image)}
@@ -209,19 +234,27 @@ function ServiceSection({ service, isLast }: ServiceSectionProps) {
         </div>
 
         {/* Full Description */}
-        <div className="mt-[40px] grid grid-cols-[400px_1fr] gap-[80px]">
-          <div />
-          <div>
-            <p className="text-[20px] leading-[1.4] text-[#868686]">
-              {service.fullDescription}
-            </p>
+        <div className="mt-5 md:mt-[40px]">
+          {/* Mobile */}
+          <p className="md:hidden text-xs leading-[1.5] text-[#868686]">
+            {service.fullDescription}
+          </p>
+
+          {/* Desktop */}
+          <div className="hidden md:grid md:grid-cols-[400px_1fr] md:gap-[80px]">
+            <div />
+            <div>
+              <p className="text-[20px] leading-[1.4] text-[#868686]">
+                {service.fullDescription}
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Divider */}
       {!isLast && (
-        <div className="mt-[80px] w-full h-[2px] bg-white" />
+        <div className="mt-6 md:mt-[80px] w-full h-px bg-white" />
       )}
     </section>
   )

@@ -26,33 +26,33 @@ export default function ProjectDetailPage() {
       <div id="hero-sentinel" className="absolute top-[5vh] pointer-events-none" />
 
       {/* Hero Section */}
-      <section id="hero" className="relative h-[750px] overflow-hidden">
+      <section id="hero" className="relative h-[714px] md:h-[750px] overflow-hidden">
         <img
           src={projectImagePath(project.hero.image)}
           alt={project.hero.title}
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0" />
+        <div className="absolute inset-0 bg-black/40 md:bg-transparent" />
 
         {/* Content on Hero */}
         <div className="container-custom relative h-full flex flex-col py-[54px]">
           {/* Breadcrumb */}
-          <div className="[&_*]:text-white [&_*]:!text-white mt-15">
+          <div className="[&_*]:text-white [&_*]:!text-white mt-10 md:mt-15">
             <Breadcrumb />
           </div>
 
           {/* Content Grid */}
-          <div className="grid grid-cols-2 gap-[40px] flex-1">
-            {/* Title - Left (centered vertically) */}
-            <div className="flex items-center">
-              <h1 className="text-[40px] pb-25 font-medium leading-[1.4] text-[#F2F1EF] whitespace-pre-line">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-[40px] flex-1">
+            {/* Title - Left (centered vertically on desktop, bottom on mobile) */}
+            <div className="flex items-end md:items-center">
+              <h1 className="text-[32px] md:text-[40px] pb-0 md:pb-25 font-medium leading-[1.4] text-[#F2F1EF] whitespace-pre-line">
                 {project.hero.title}
               </h1>
             </div>
 
             {/* Subtitle - Right (bottom aligned) */}
             <div className="flex items-end">
-              <p className="text-xl leading-[1.4] text-[#F2F1EF]">
+              <p className="text-sm md:text-xl leading-[1.4] text-[#F2F1EF]">
                 {project.hero.subtitle}
               </p>
             </div>
@@ -61,9 +61,33 @@ export default function ProjectDetailPage() {
       </section>
 
       {/* Details Section */}
-      <section className="container-custom py-[80px]">
+      <section className="container-custom py-12 md:py-[80px]">
+        {/* Quote/Title on mobile */}
+        <h2 className="md:hidden text-[20px] font-medium leading-[1.4] text-[#2A2A2A] mb-8">
+          {project.details.title}
+        </h2>
 
-        <div className="grid grid-cols-[290px_1fr] gap-[40px]">
+        {/* Description on mobile */}
+        <div className="md:hidden space-y-4 text-sm leading-[1.5] text-[#868686] mb-10">
+          {project.details.description.map((paragraph, idx) => (
+            <p key={idx}>{paragraph}</p>
+          ))}
+        </div>
+
+        {/* Project Info Grid on mobile (2x2) */}
+        {project.stats && (
+          <div className="md:hidden grid grid-cols-2 gap-x-5 gap-y-8 mb-10">
+            {project.stats.map((stat, idx) => (
+              <div key={idx} className="border-t border-[#868686] pt-5">
+                <p className="text-sm font-medium text-[#2A2A2A] mb-1">{stat.label}</p>
+                <p className="text-sm font-normal text-[#868686]">{stat.value}</p>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* Desktop Layout */}
+        <div className="hidden md:grid md:grid-cols-[290px_1fr] md:gap-[40px]">
           {/* Left: Stats/Info */}
           {project.stats && (
             <div>
@@ -91,8 +115,30 @@ export default function ProjectDetailPage() {
       </section>
 
       {/* Gallery Section */}
-      <section className="container-custom pb-[120px]">
-        <div className="grid grid-cols-1 gap-[40px]">
+      <section className="container-custom pb-12 md:pb-[120px]">
+        {/* Mobile Gallery: 2 small, 1 large pattern */}
+        <div className="md:hidden grid grid-cols-2 gap-5">
+          {project.gallery.map((image, idx) => {
+            const isFullWidth = idx % 3 === 2
+            return (
+              <div
+                key={idx}
+                className={`${
+                  isFullWidth ? 'col-span-2 h-[190px]' : 'col-span-1 h-[190px]'
+                } rounded-[8px] overflow-hidden bg-white`}
+              >
+                <img
+                  src={projectImagePath(image)}
+                  alt=""
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            )
+          })}
+        </div>
+
+        {/* Desktop Gallery */}
+        <div className="hidden md:grid md:grid-cols-1 md:gap-[40px]">
           {/* First row: full width */}
           <div className="w-full h-[500px] rounded-[14px] overflow-hidden bg-white">
             <img
@@ -133,9 +179,9 @@ export default function ProjectDetailPage() {
       </section>
 
       {/* Discover Other Projects */}
-      <section className="pb-[120px]">
+      <section className="pb-12 md:pb-[120px]">
         <div className="container-custom">
-          <h2 className="text-5xl font-semibold text-[#2A2A2A] mb-[115px]">
+          <h2 className="text-[32px] md:text-5xl font-semibold text-[#2A2A2A] mb-10 md:mb-[115px]">
             Discover other projects
           </h2>
         </div>

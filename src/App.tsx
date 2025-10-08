@@ -8,7 +8,6 @@ import ProjectsPage from '@/pages/ProjectsPage'
 import ProjectDetailPage from '@/pages/ProjectDetailPage'
 import ContactPage from '@/pages/ContactPage'
 import TemplatePage from '@/pages/TemplatePage'
-import FAQPage from '@/pages/FAQPage'
 
 export default function App() {
   return (
@@ -20,7 +19,6 @@ export default function App() {
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/projects/:slug" element={<ProjectDetailPage />} />
-        <Route path="/faq" element={<FAQPage />} />
         <Route path="/contact-us" element={<ContactPage />} />
         <Route path="/contact" element={<Navigate to="/contact-us" replace />} />
         <Route path="/contacts" element={<Navigate to="/contact-us" replace />} />

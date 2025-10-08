@@ -39,7 +39,7 @@ export default function Footer() {
     { id: '01', label: 'PROJECTS', path: '/projects' },
     { id: '02', label: 'SERVICES', path: '/services' },
     { id: '03', label: 'ABOUT US', path: '/about' },
-    { id: '04', label: 'FAQ', path: '/faq' },
+    { id: '04', label: 'CONTACT US', path: '/contact-us' },
   ]
 
   const socialLinks = [

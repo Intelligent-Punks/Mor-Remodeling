@@ -27,15 +27,15 @@ const contactPageData = {
         phone: '(747) 279-8262',
       },
       {
+        id: 'careers',
+        label: 'careers',
+        email: 'morremodhr@gmail.com',
+      },
+      {
         id: 'collaborations',
         label: 'collaborations',
         email: 'morremodwrk@gmail.com',
         phone: '(747) 279-8262',
-      },
-      {
-        id: 'careers',
-        label: 'careers',
-        email: 'morremodhr@gmail.com',
       },
       {
         id: 'address',

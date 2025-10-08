@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { TimelineItem } from '@/content/aboutPage'
 import { getAssetUrl } from '@/utils/asset'
 
@@ -12,24 +12,55 @@ interface TimelineCarouselProps {
 export default function TimelineCarousel({ items, onIndexChange, showButtons = true, activeIndex: externalActiveIndex }: TimelineCarouselProps) {
   const [internalActiveIndex, setInternalActiveIndex] = useState(0)
   const [offset, setOffset] = useState(0)
+  const [visibleItems, setVisibleItems] = useState(4) // Default: assume 4 items visible
+  const containerRef = useRef<HTMLDivElement>(null)
   const total = items.length
 
   // Use external activeIndex if provided, otherwise use internal
   const activeIndex = externalActiveIndex !== undefined ? externalActiveIndex : internalActiveIndex
 
+  // Calculate how many items are visible based on container width
+  useEffect(() => {
+    const calculateVisibleItems = () => {
+      if (containerRef.current) {
+        const containerWidth = containerRef.current.offsetWidth
+        // Each item is 330px wide, calculate how many fit
+        const itemsCount = Math.floor(containerWidth / 330)
+        setVisibleItems(Math.max(3, itemsCount)) // Minimum 3 items
+      }
+    }
+
+    calculateVisibleItems()
+    window.addEventListener('resize', calculateVisibleItems)
+    return () => window.removeEventListener('resize', calculateVisibleItems)
+  }, [])
+
   // Sync offset with activeIndex changes
   useEffect(() => {
-    // Calculate offset based on visible items (3 items visible)
-    // Gradually scroll one item at a time, but stop when last item is visible
-    if (activeIndex > 2) {
-      // Start scrolling when activeIndex > 2, but stop when reaching the last visible position
-      const maxOffset = (total - 3) * 330
-      const currentOffset = (activeIndex - 2) * 330
-      setOffset(Math.min(currentOffset, maxOffset))
-    } else {
+    // Timeline scrolling logic:
+    // - First 3 items (0,1,2) stay static (offset = 0)
+    // - From 4th item onwards, scroll to reveal next items
+    // - Stop scrolling when last item becomes visible
+    // - visibleItems is calculated dynamically based on container width
+    
+    if (total <= 3) {
+      // If 3 or fewer items, no scrolling needed
       setOffset(0)
+    } else if (activeIndex <= 2) {
+      // First 3 items: no scroll
+      setOffset(0)
+    } else {
+      // Scroll to reveal items, but stop when last item becomes visible
+      const currentOffset = (activeIndex - 2) * 330
+      // Stop scrolling when last item appears in visible area
+      // Adjust based on how many items are visible:
+      // - If 4 visible: stop earlier (total - visibleItems - 1)
+      // - If 5+ visible: allow more scroll (total - visibleItems)
+      const adjustment = visibleItems >= 5 ? 0 : 1
+      const maxScroll = Math.max(0, (total - visibleItems - adjustment) * 330)
+      setOffset(Math.min(currentOffset, maxScroll))
     }
-  }, [activeIndex, total])
+  }, [activeIndex, total, visibleItems])
 
   const next = () => {
     if (activeIndex < total - 1) {
@@ -38,14 +69,6 @@ export default function TimelineCarousel({ items, onIndexChange, showButtons = t
         setInternalActiveIndex(newIndex)
       }
       onIndexChange(newIndex)
-      // Scroll timeline gradually, one item at a time, but stop when last item is visible
-      if (newIndex > 2) {
-        const maxOffset = (total - 3) * 330
-        const currentOffset = (newIndex - 2) * 330
-        setOffset(Math.min(currentOffset, maxOffset))
-      } else {
-        setOffset(0)
-      }
     }
   }
 
@@ -56,12 +79,6 @@ export default function TimelineCarousel({ items, onIndexChange, showButtons = t
         setInternalActiveIndex(newIndex)
       }
       onIndexChange(newIndex)
-      // Scroll back if needed
-      if (newIndex <= 2) {
-        setOffset(0)
-      } else {
-        setOffset((newIndex - 2) * 330)
-      }
     }
   }
 
@@ -70,22 +87,14 @@ export default function TimelineCarousel({ items, onIndexChange, showButtons = t
       setInternalActiveIndex(idx)
     }
     onIndexChange(idx)
-    // Adjust scroll to keep selected item visible, but stop when last item is visible
-    if (idx > 2) {
-      const maxOffset = (total - 3) * 330
-      const currentOffset = (idx - 2) * 330
-      setOffset(Math.min(currentOffset, maxOffset))
-    } else {
-      setOffset(0)
-    }
   }
 
   return (
-    <div className="relative timeline-container overflow-hidden">
+    <div ref={containerRef} className="relative timeline-container overflow-hidden">
       {/* Timeline Line - Moves with dots */}
       <div className="absolute top-[73px] h-px bg-[#C99E63] timeline-line" 
            style={{ 
-             width: 'calc(100% - calc((100vw - 1280px) / 2 + 16px))' // Full width minus left offset
+             width: `${(total - 1) * 330}px` // Line spans from first to last dot
            }} />
 
       {/* Timeline Items Container with scroll */}

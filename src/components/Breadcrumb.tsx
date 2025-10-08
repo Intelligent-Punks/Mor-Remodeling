@@ -6,7 +6,6 @@ const routeNames: Record<string, string> = {
   projects: 'Our Projects',
   services: 'Services',
   about: 'About Us',
-  faq: 'FAQ',
   'contact-us': 'Contact Us',
   'kitchen-remodel': 'Kitchen Remodel',
 }

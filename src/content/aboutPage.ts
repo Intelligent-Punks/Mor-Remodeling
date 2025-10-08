@@ -111,9 +111,9 @@ everything we do.`,
       {
         id: '2016',
         year: '2016',
-        title: 'Foundations',
+        title: 'First Milestones',
         description:
-          'MOR Remodeling was founded as a small team of craftsmen, focusing on essential home repairs and siding replacements.',
+          'We completed our first major residential projects and began building lasting relationships with homeowners who valued quality and attention to detail.',
       },
       {
         id: '2017',

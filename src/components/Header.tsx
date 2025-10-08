@@ -12,9 +12,7 @@ function PhoneButton({ isPastHero }: { isPastHero: boolean }) {
     <a
       href={`tel:${contacts.phone}`}
       aria-label={`Call ${contacts.phone}`}
-      className={`inline-flex items-center rounded-full w-[193px] h-[54px] ${
-        isPastHero ? 'bg-white shadow-sm' : 'bg-white'
-      }`}
+      className="inline-flex items-center rounded-full w-[193px] h-[54px] bg-white"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

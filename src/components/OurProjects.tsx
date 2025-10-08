@@ -55,7 +55,7 @@ export default function OurProjects({
                   onMouseLeave={() => setIsHovered(false)}
                 >
                   <AnimatedText text="See all projects" externalHover={isHovered} />
-                  <span className="inline-grid place-items-center w-8 h-8 rounded-full bg-white border border-[#2A2A2A] transition-colors">
+                  <span className="inline-grid place-items-center w-9 h-9 rounded-full bg-white transition-colors">
                     <img
                       src={getAssetUrl('/icons/arrow-right.svg')}
                       alt=""

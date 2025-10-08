@@ -103,8 +103,10 @@ export default function ServicesPage() {
       {/* Sticky Navigation */}
       <div
         ref={navRef}
-        className="sticky top-[79px] z-40 bg-[#F2F1EF] transition-all duration-300"
+        className="sticky top-[79px] z-40 transition-all duration-300"
         style={{
+          background: isNavSticky ? 'rgba(242, 241, 239, 0.8)' : '#F2F1EF',
+          backdropFilter: isNavSticky ? 'blur(10px)' : 'none',
           boxShadow: isNavSticky ? '0 4px 20px rgba(42, 42, 42, 0.05)' : 'none',
         }}
       >
@@ -131,7 +133,7 @@ export default function ServicesPage() {
             ))}
           </div>
         </div>
-        <div className="w-full h-[2px] bg-white" />
+        {!isNavSticky && <div className="w-full h-[2px] bg-white" />}
       </div>
 
       {/* Services Sections */}

@@ -76,12 +76,12 @@ export default function Header() {
                 `${
                   isPastHero
                     ? isActive
-                      ? 'text-[var(--link-active)] underline underline-offset-4'
-                      : 'text-[#2A2A2A]'
+                      ? 'text-[var(--link-active)] font-medium underline underline-offset-4'
+                      : 'text-[#2A2A2A] font-normal'
                     : isActive
-                      ? 'text-[#F2F1EF] underline underline-offset-4'
-                      : 'text-[#F2F1EF]/90'
-                } transition-colors duration-0 text-base font-normal leading-[1.4] px-5`
+                      ? 'text-[#F2F1EF] font-medium underline underline-offset-4'
+                      : 'text-[#F2F1EF]/90 font-normal'
+                } transition-colors duration-0 text-base leading-[1.4] px-5`
               }
             >
               <AnimatedText text={item.label} />

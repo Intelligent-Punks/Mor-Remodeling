@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import contactPage from '@/content/contactPage'
 import faq from '@/content/faq'
 import contactForm from '@/content/contactForm'
@@ -5,9 +6,12 @@ import FAQ from '@/components/FAQ'
 import ContactForm from '@/components/ContactForm'
 import Breadcrumb from '@/components/Breadcrumb'
 import ReviewsCarousel from '@/components/ReviewsCarousel'
+import AnimatedText from '@/components/AnimatedText'
 import { getAssetUrl } from '@/utils/asset'
 
 export default function ContactPage() {
+  const [hoveredLink, setHoveredLink] = useState<string | null>(null)
+
   return (
     <div className="bg-[#F2F1EF]">
       {/* Hero Section */}
@@ -32,9 +36,11 @@ export default function ContactPage() {
                 <a
                   key={link.name}
                   href={link.url}
-                  className="text-[20px] font-medium text-[#2A2A2A] hover:underline"
+                  className="text-[20px] font-medium text-[#2A2A2A]"
+                  onMouseEnter={() => setHoveredLink(link.name)}
+                  onMouseLeave={() => setHoveredLink(null)}
                 >
-                  {link.name}
+                  <AnimatedText text={link.name} externalHover={hoveredLink === link.name} />
                 </a>
               ))}
             </div>

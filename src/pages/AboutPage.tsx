@@ -9,6 +9,7 @@ import Stats from '@/components/Stats'
 import Quote from '@/components/Quote'
 import ImageCarousel from '@/components/ImageCarousel'
 import TimelineCarousel from '@/components/TimelineCarousel'
+import AnimatedParagraph from '@/components/AnimatedParagraph'
 import { getAssetUrl } from '@/utils/asset'
 
 export default function AboutPage() {
@@ -126,11 +127,16 @@ export default function AboutPage() {
             <h2 className="text-[48px] font-semibold leading-[1.4] text-[#2A2A2A]">
               {aboutPage.history.title}
             </h2>
-            <div className="max-w-[620px] ml-auto">
+            <div className="max-w-[620px] ml-auto mt-[67px]">
               {/* Timeline Description - positioned top right */}
-              <p className="text-[20px] leading-[1.5] text-[#2A2A2A] transition-opacity duration-300 mb-[40px]">
-                {aboutPage.history.timeline[activeTimelineIndex].description}
-              </p>
+              <div key={activeTimelineIndex} className="mb-[40px]">
+                <AnimatedParagraph
+                  text={aboutPage.history.timeline[activeTimelineIndex].description}
+                  className="text-[20px] leading-[1.5] text-[#2A2A2A]"
+                  lineDelay={50}
+                  charDelay={5}
+                />
+              </div>
               {/* Navigation Buttons - Under text */}
               <div className="flex justify-end gap-[20px]">
                 <button

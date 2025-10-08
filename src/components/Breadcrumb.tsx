@@ -7,6 +7,7 @@ const routeNames: Record<string, string> = {
   services: 'Services',
   about: 'About Us',
   'contact-us': 'Contact Us',
+  'thank-you': 'Thank You',
   'kitchen-remodel': 'Kitchen Remodel',
 }
 

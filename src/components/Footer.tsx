@@ -50,26 +50,43 @@ export default function Footer() {
   ]
 
   return (
-    <footer className="bg-[#F2F1EF] py-20">
+    <footer className="bg-[#F2F1EF] py-12 md:py-20">
       <div className="container-custom">
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_620px] gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_620px] gap-10 md:gap-10">
           <div>
-            <img
-              src={getAssetUrl('/icons/Mor-remodeling-logo.png')}
-              alt="Mor Remodeling"
-              className="w-[120px] h-[52px] object-contain mb-[92px]"
-            />
+            {/* Mobile: Logo and Social Links in one row */}
+            <div className="flex items-center justify-between mb-10 md:mb-0">
+              <img
+                src={getAssetUrl('/icons/Mor-remodeling-logo.png')}
+                alt="Mor Remodeling"
+                className="w-[74px] h-[32px] md:w-[120px] md:h-[52px] object-contain"
+              />
+              
+              {/* Mobile Social Links */}
+              <div className="flex md:hidden items-center gap-7">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.url}
+                    className="w-5 h-5 flex items-center justify-center hover:opacity-70 transition-opacity"
+                    aria-label={social.name}
+                  >
+                    <img src={getAssetUrl(social.icon)} alt={social.name} className="w-full h-full" />
+                  </a>
+                ))}
+              </div>
+            </div>
 
-            <div className="mb-[40px]">
-              <h3 className="text-[20px] font-medium leading-[1.4] uppercase text-[#2A2A2A]">
-                Keep with us.
+            <div className="mb-8 md:mb-[40px] mt-10 md:mt-[92px]">
+              <h3 className="text-base md:text-[20px] font-medium leading-[1.4] uppercase text-[#2A2A2A]">
+                Keep with us
               </h3>
-              <p className="mt-[13px] text-base leading-[1.4] text-[#2A2A2A]">
+              <p className="mt-2 md:mt-[13px] text-sm md:text-base leading-[1.4] text-[#2A2A2A]">
                 Get news, coupons, events, and business updates
               </p>
 
-              <div className="mt-[40px] relative mb-4">
-                <form onSubmit={handleSubscribe} className="flex items-center gap-[10px] bg-white rounded-full h-[70px] pl-[30px] max-w-[480px]">
+              <div className="mt-6 md:mt-[40px] relative mb-4">
+                <form onSubmit={handleSubscribe} className="flex items-center gap-2 md:gap-[10px] bg-white rounded-full h-[70px] pl-6 md:pl-[30px] max-w-full md:max-w-[480px]">
                   <input
                     type="email"
                     placeholder="Email"
@@ -78,12 +95,12 @@ export default function Footer() {
                       setEmail(e.target.value)
                       if (emailError) setEmailError('')
                     }}
-                    className="flex-1 bg-transparent text-base text-[#2A2A2A] placeholder:text-[#2A2A2A] focus:outline-none"
+                    className="flex-1 bg-transparent text-sm md:text-base text-[#2A2A2A] placeholder:text-[#2A2A2A] focus:outline-none"
                   />
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`px-[30px] py-[23px] rounded-full text-base font-medium transition-all cursor-pointer overflow-hidden ${
+                    className={`px-6 md:px-[30px] py-5 md:py-[23px] rounded-full text-sm md:text-base font-medium transition-all cursor-pointer overflow-hidden ${
                       isSubmitting 
                         ? 'bg-[#2A2A2A] text-white' 
                         : 'bg-[#F4C077] text-[#2A2A2A] active:bg-[#2A2A2A] active:text-white'
@@ -103,7 +120,8 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="mb-[90px] flex items-center gap-[14px]">
+            {/* Desktop Social Links */}
+            <div className="hidden md:flex mb-[90px] items-center gap-[14px]">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
@@ -116,7 +134,7 @@ export default function Footer() {
               ))}
             </div>
 
-            <div>
+            <div className="hidden md:block">
               <Link
                 to="/contact-us"
                 className="inline-flex items-center gap-2 text-base font-medium text-[#2A2A2A] group"
@@ -133,16 +151,16 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="space-y-[30px]">
+          <div className="space-y-6 md:space-y-[30px]">
             {navLinks.map((link) => (
-              <div key={link.id} className="border-b border-black/40 pb-[30px]">
-                <div className="flex items-center gap-[20px]">
-                  <span className="text-[20px] leading-[1.4] uppercase text-[#2A2A2A]">
+              <div key={link.id} className="border-b border-black/40 pb-6 md:pb-[30px]">
+                <div className="flex items-center gap-4 md:gap-[20px]">
+                  <span className="text-sm md:text-[20px] leading-[1.4] uppercase text-[#2A2A2A]">
                     {link.id}
                   </span>
                   <Link
                     to={link.path}
-                    className="text-[48px] md:text-[64px] font-normal leading-[1.4] uppercase text-[#2A2A2A] hover:opacity-70 transition-opacity"
+                    className="text-[32px] md:text-[64px] font-normal leading-[1.4] uppercase text-[#2A2A2A] hover:opacity-70 transition-opacity"
                   >
                     <AnimatedText text={link.label} staggered={false} />
                   </Link>

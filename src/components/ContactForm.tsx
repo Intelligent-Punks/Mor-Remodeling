@@ -129,18 +129,18 @@ export default function ContactForm({ title, subtitle, backgroundImage }: Contac
         </div>
       )}
 
-      <div className="relative z-10 py-20">
-        <div className="container-custom flex justify-end">
-          <div className="w-full max-w-[620px] bg-[#F2F1EF] rounded-[14px] p-10">
-            <h2 className="text-[24px] md:text-[32px] font-semibold leading-[1.4] text-[#2A2A2A]">
+      <div className="relative z-10 py-12 md:py-20">
+        <div className="container-custom flex justify-center md:justify-end">
+          <div className="w-full max-w-[620px] bg-[#F2F1EF] rounded-[14px] p-8 md:p-10">
+            <h2 className="text-[20px] md:text-[32px] font-semibold leading-[1.4] text-[#2A2A2A]">
               {title}
             </h2>
-            <p className="mt-[40px] text-[20px] font-normal leading-[1.4] text-[#2A2A2A]">
+            <p className="mt-6 md:mt-[40px] text-sm md:text-[20px] font-normal leading-[1.4] text-[#2A2A2A]">
               {subtitle}
             </p>
 
-            <form onSubmit={handleSubmit} className="mt-[60px] space-y-[40px]">
-              <div className="grid grid-cols-2 gap-[20px]">
+            <form onSubmit={handleSubmit} className="mt-10 md:mt-[60px] space-y-8 md:space-y-[40px]">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-[20px]">
                 <div className="relative">
                   <input
                     type="text"
@@ -148,7 +148,7 @@ export default function ContactForm({ title, subtitle, backgroundImage }: Contac
                     placeholder="Name"
                     value={formData.name}
                     onChange={handleChange}
-                    className={`w-full bg-transparent border-b pb-2 text-base text-[#2A2A2A] placeholder:text-[#2A2A2A]/40 focus:outline-none focus:border-[#2A2A2A] ${
+                    className={`w-full bg-transparent border-b pb-2 text-sm md:text-base text-[#2A2A2A] placeholder:text-[#2A2A2A]/40 focus:outline-none focus:border-[#2A2A2A] ${
                       errors.name ? 'border-red-500' : 'border-[#2A2A2A]/40'
                     }`}
                   />
@@ -161,7 +161,7 @@ export default function ContactForm({ title, subtitle, backgroundImage }: Contac
                     placeholder="Phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className={`w-full bg-transparent border-b pb-2 text-base text-[#2A2A2A] placeholder:text-[#2A2A2A]/40 focus:outline-none focus:border-[#2A2A2A] ${
+                    className={`w-full bg-transparent border-b pb-2 text-sm md:text-base text-[#2A2A2A] placeholder:text-[#2A2A2A]/40 focus:outline-none focus:border-[#2A2A2A] ${
                       errors.phone ? 'border-red-500' : 'border-[#2A2A2A]/40'
                     }`}
                   />
@@ -176,7 +176,7 @@ export default function ContactForm({ title, subtitle, backgroundImage }: Contac
                   placeholder="Email"
                   value={formData.email}
                   onChange={handleChange}
-                  className={`w-full bg-transparent border-b pb-2 text-base text-[#2A2A2A] placeholder:text-[#2A2A2A]/40 focus:outline-none focus:border-[#2A2A2A] ${
+                  className={`w-full bg-transparent border-b pb-2 text-sm md:text-base text-[#2A2A2A] placeholder:text-[#2A2A2A]/40 focus:outline-none focus:border-[#2A2A2A] ${
                     errors.email ? 'border-red-500' : 'border-[#2A2A2A]/40'
                   }`}
                 />
@@ -188,7 +188,7 @@ export default function ContactForm({ title, subtitle, backgroundImage }: Contac
                   name="projectType"
                   value={formData.projectType}
                   onChange={handleChange}
-                  className={`w-full bg-transparent border-b pb-2 text-base focus:outline-none focus:border-[#2A2A2A] appearance-none cursor-pointer ${
+                  className={`w-full bg-transparent border-b pb-2 text-sm md:text-base focus:outline-none focus:border-[#2A2A2A] appearance-none cursor-pointer ${
                     formData.projectType ? 'text-[#2A2A2A]' : 'text-[#2A2A2A]/40'
                   } ${errors.projectType ? 'border-red-500' : 'border-[#2A2A2A]/40'}`}
                 >
@@ -201,7 +201,7 @@ export default function ContactForm({ title, subtitle, backgroundImage }: Contac
                 <img
                   src={getAssetUrl('/icons/arrow-down.svg')}
                   alt=""
-                  className="absolute right-0 top-0 w-6 h-6 pointer-events-none"
+                  className="absolute right-0 top-0 w-5 h-5 md:w-6 md:h-6 pointer-events-none"
                 />
                 {errors.projectType && <span className="absolute -bottom-5 left-0 text-xs text-red-500">{errors.projectType}</span>}
               </div>
@@ -213,7 +213,7 @@ export default function ContactForm({ title, subtitle, backgroundImage }: Contac
                   value={formData.message}
                   onChange={handleChange}
                   rows={1}
-                  className={`w-full bg-transparent border-b pb-2 text-base text-[#2A2A2A] placeholder:text-[#2A2A2A]/40 focus:outline-none focus:border-[#2A2A2A] resize-none ${
+                  className={`w-full bg-transparent border-b pb-2 text-sm md:text-base text-[#2A2A2A] placeholder:text-[#2A2A2A]/40 focus:outline-none focus:border-[#2A2A2A] resize-none ${
                     errors.message ? 'border-red-500' : 'border-[#2A2A2A]/40'
                   }`}
                 />
@@ -222,7 +222,7 @@ export default function ContactForm({ title, subtitle, backgroundImage }: Contac
 
               <button
                 type="submit"
-                className="inline-flex items-center justify-center px-[30px] py-[23px] bg-[#F4C077] rounded-full text-base font-medium text-[#2A2A2A] transition-all overflow-hidden cursor-pointer hover:opacity-90 active:bg-[#2A2A2A] active:text-white"
+                className="w-full md:w-auto inline-flex items-center justify-center px-8 md:px-[30px] py-5 md:py-[23px] bg-[#F4C077] rounded-full text-sm md:text-base font-medium text-[#2A2A2A] transition-all overflow-hidden cursor-pointer hover:opacity-90 active:bg-[#2A2A2A] active:text-white"
               >
                 <AnimatedText text="Send request" staggered={false} />
               </button>

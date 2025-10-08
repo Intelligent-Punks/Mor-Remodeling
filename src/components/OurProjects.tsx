@@ -28,62 +28,49 @@ export default function OurProjects({
   return (
     <section className="py-20">
       <div className="container-custom">
-        {(title || description || showButton) && (
-          <div className="flex items-center justify-between gap-8">
-            <div className="flex items-center gap-10">
+        {(title || description) && (
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-8">
+            <div className="flex flex-col md:flex-row md:items-center md:gap-10">
               {title && (
-                <div className={`${description ? 'w-[290px]' : 'w-full'}`}>
+                <div className={`${description ? 'md:w-[290px]' : 'w-full'}`}>
                   <h2 className="text-[32px] md:text-[48px] font-semibold leading-[1.4] text-[#2A2A2A]">
                     {title}
                   </h2>
                 </div>
               )}
               {description && (
-                <div className="flex-1">
-                  <p className="max-w-[620px] text-base leading-[1.5] text-[#2A2A2A]">
+                <div className="md:flex-1">
+                  <p className="max-w-[620px] text-sm md:text-base leading-[1.5] text-[#2A2A2A]">
                     {description}
                   </p>
                 </div>
               )}
             </div>
-            {showButton && (
-              <div className="flex-shrink-0">
-                <a
-                  href="/projects"
-                  className="inline-flex items-center gap-2 text-base font-medium text-[#2A2A2A] group"
-                  onMouseEnter={() => setIsHovered(true)}
-                  onMouseLeave={() => setIsHovered(false)}
-                >
-                  <AnimatedText text="See all projects" externalHover={isHovered} />
-                  <span className="inline-grid place-items-center w-9 h-9 rounded-full bg-white transition-colors">
-                    <img
-                      src={getAssetUrl('/icons/arrow-right.svg')}
-                      alt=""
-                      className="w-5 h-5 transition-all"
-                    />
-                  </span>
-                </a>
-              </div>
-            )}
           </div>
         )}
 
-        <div className={`${title || description || showButton ? 'mt-[115px]' : ''} grid grid-cols-4 gap-10`}>
+        <div className={`${title || description ? 'mt-10 md:mt-[115px]' : ''} grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-10`}>
           {projects.map((project, idx) => {
-            // Pattern: row1 (1col, 1col, 2col), row2 (2col, 1col, 1col), row3 (1col, 1col, 2col)
+            // Desktop: row1 (1col, 1col, 2col), row2 (2col, 1col, 1col), row3 (1col, 1col, 2col)
             const rowIndex = Math.floor(idx / 3)
             const colIndex = idx % 3
-            const isWide =
+            const isWideDesktop =
               (rowIndex % 2 === 0 && colIndex === 2) || // row 0,2,4... → wide at position 2
               (rowIndex % 2 === 1 && colIndex === 0) // row 1,3,5... → wide at position 0
+
+            // Mobile: pattern repeats every 3 items
+            // 0,1 = small (col-span-1), 2 = big (col-span-2)
+            // 3,4 = small (col-span-1), 5 = big (col-span-2)
+            const positionInGroup = idx % 3
+            const isFullWidthMobile = positionInGroup === 2
 
             return (
               <Link
                 key={project.id}
                 to={`/projects/${project.id}`}
-                className={`group relative rounded-[14px] overflow-hidden bg-[#2A2A2A] h-[360px] ${
-                  isWide ? 'col-span-2' : 'col-span-1'
-                }`}
+                className={`group relative rounded-[8px] md:rounded-[14px] overflow-hidden bg-[#2A2A2A] h-[190px] md:h-[360px] ${
+                  isFullWidthMobile ? 'col-span-2' : 'col-span-1'
+                } ${isWideDesktop ? 'md:col-span-2' : 'md:col-span-1'}`}
               >
                 <img
                   src={getAssetUrl(project.image)}
@@ -101,6 +88,27 @@ export default function OurProjects({
             )
           })}
         </div>
+        
+        {/* Mobile "See all projects" button - shown below grid */}
+        {showButton && (
+          <div className="mt-10 md:hidden flex justify-end">
+            <a
+              href="/projects"
+              className="inline-flex items-center gap-2 text-base font-medium text-[#2A2A2A] group"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            >
+              <AnimatedText text="See all projects" externalHover={isHovered} />
+              <span className="inline-grid place-items-center w-9 h-9 rounded-full bg-white transition-colors">
+                <img
+                  src={getAssetUrl('/icons/arrow-right.svg')}
+                  alt=""
+                  className="w-5 h-5 transition-all"
+                />
+              </span>
+            </a>
+          </div>
+        )}
       </div>
     </section>
   )

@@ -18,16 +18,16 @@ export default function AboutPage() {
     <div className="bg-[#F2F1EF]">
       {/* Hero Section */}
       <section className="container-custom pt-[54px]">
-        <div className="mt-[100px] mb-10">
+        <div className="mt-20 md:mt-[100px] mb-10">
           <Breadcrumb />
         </div>
 
-        <div className="grid grid-cols-[290px_1fr] gap-[80px] items-start mb-[80px]">
-          <h1 className="text-[48px] font-semibold leading-[1.4] text-[#2A2A2A]">
+        <div className="grid grid-cols-1 md:grid-cols-[290px_1fr] gap-6 md:gap-[80px] items-start mb-10 md:mb-[80px]">
+          <h1 className="text-[32px] md:text-[48px] font-semibold leading-[1.4] text-[#2A2A2A]">
             {aboutPage.hero.title}
           </h1>
-          <div className="max-w-[620px] ml-auto">
-            <p className="text-[20px] font-medium leading-[1.4] text-[#2A2A2A]">
+          <div className="md:max-w-[620px] md:ml-auto">
+            <p className="text-xs md:text-[20px] font-medium leading-[1.5] text-[#2A2A2A]">
               {aboutPage.hero.description}
             </p>
           </div>
@@ -35,8 +35,8 @@ export default function AboutPage() {
       </section>
 
       {/* Hero Image - Full width */}
-      <section className="mb-20">
-        <div className="h-[500px] bg-[#762D2D]">
+      <section className="mb-12 md:mb-20">
+        <div className="h-[320px] md:h-[500px] bg-[#762D2D]">
           <img
             src={getAssetUrl(aboutPage.hero.image)}
             alt="About MOR Remodelling"
@@ -46,14 +46,14 @@ export default function AboutPage() {
       </section>
 
       {/* Who We Are Section */}
-      <section className="py-20">
+      <section className="py-12 md:py-20">
         <div className="container-custom">
-          <div className="grid grid-cols-[290px_1fr] gap-[80px]">
-            <h2 className="text-[48px] font-semibold leading-[1.4] text-[#2A2A2A]">
+          <div className="grid grid-cols-1 md:grid-cols-[290px_1fr] gap-6 md:gap-[80px]">
+            <h2 className="text-[32px] md:text-[48px] font-semibold leading-[1.4] text-[#2A2A2A]">
               {aboutPage.whoWeAre.title}
             </h2>
-            <div className="max-w-[620px] ml-auto">
-              <p className="text-[20px] font-medium leading-[1.4] text-[#2A2A2A] whitespace-pre-line">
+            <div className="md:max-w-[620px] md:ml-auto">
+              <p className="text-xs md:text-[20px] font-medium leading-[1.5] text-[#2A2A2A] whitespace-pre-line">
                 {aboutPage.whoWeAre.text}
               </p>
             </div>
@@ -61,7 +61,7 @@ export default function AboutPage() {
         </div>
 
         {/* Gallery Carousel - Full width, overflow to right */}
-        <div className="mt-[80px]">
+        <div className="mt-10 md:mt-[80px]">
           <ImageCarousel images={aboutPage.whoWeAre.gallery} />
         </div>
       </section>
@@ -81,24 +81,24 @@ export default function AboutPage() {
       />
 
       {/* Certifications Section */}
-      <section className="py-20">
+      <section className="py-12 md:py-20">
         <div className="container-custom">
-          <div className="grid grid-cols-2 gap-[40px] mb-[79px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-[40px]">
             <div>
-              <h2 className="text-[48px] font-semibold leading-[1.4] text-[#2A2A2A] whitespace-pre-line mb-18">
+              <h2 className="text-[32px] md:text-[48px] font-semibold leading-[1.4] text-[#2A2A2A] whitespace-pre-line mb-8 md:mb-18">
                 {aboutPage.certifications.title}
               </h2>
-              {/* Certification Logos Grid - 2 rows x 3 columns */}
-              <div className="grid grid-cols-3 gap-x-[20px] gap-y-[20px] max-w-[475px]">
+              {/* Certification Logos Grid - 3x2 on mobile, 2x3 on desktop */}
+              <div className="grid grid-cols-3 gap-3 md:gap-x-[20px] md:gap-y-[20px] md:max-w-[475px]">
                 {aboutPage.certifications.logos.map((logo, idx) => (
                   <div
                     key={idx}
-                    className="w-[138px] h-[138px] rounded-[14px] border-2 border-[#DCDCDA] bg-white flex items-center justify-center"
+                    className="w-full aspect-square md:w-[138px] md:h-[138px] rounded-[12px] md:rounded-[14px] border border-[#DCDCDA] md:border-2 bg-white flex items-center justify-center"
                   >
                     <img
                       src={getAssetUrl(logo)}
                       alt={`Certification ${idx + 1}`}
-                      className="max-w-[88px] max-h-[88px] object-contain"
+                      className="max-w-[60%] md:max-w-[88px] max-h-[60%] md:max-h-[88px] object-contain"
                     />
                   </div>
                 ))}
@@ -106,13 +106,13 @@ export default function AboutPage() {
             </div>
 
             {/* Certifications List */}
-            <div className="space-y-[60px]">
+            <div className="space-y-8 md:space-y-[60px]">
               {aboutPage.certifications.items.map((item) => (
                 <div key={item.id}>
-                  <h3 className="text-[22px] font-medium leading-[1.4] text-[#2A2A2A] mb-[10px]">
+                  <h3 className="text-base md:text-[22px] font-medium leading-[1.4] text-[#2A2A2A] mb-2 md:mb-[10px]">
                     {item.title}
                   </h3>
-                  <p className="text-base leading-[1.5] text-[#868686]">{item.description}</p>
+                  <p className="text-xs md:text-base leading-[1.5] text-[#868686]">{item.description}</p>
                 </div>
               ))}
             </div>
@@ -121,18 +121,18 @@ export default function AboutPage() {
       </section>
 
       {/* Our History Section - Yellow background */}
-      <section className="py-20 bg-[#F4C077]">
+      <section className="py-12 md:py-20 bg-[#F4C077]">
         <div className="container-custom">
-          <div className="grid grid-cols-[290px_1fr] gap-[80px] items-start mb-[80px]">
-            <h2 className="text-[48px] font-semibold leading-[1.4] text-[#2A2A2A]">
+          <div className="grid grid-cols-1 md:grid-cols-[290px_1fr] gap-6 md:gap-[80px] items-start mb-10 md:mb-[80px]">
+            <h2 className="text-[32px] md:text-[48px] font-semibold leading-[1.4] text-[#2A2A2A]">
               {aboutPage.history.title}
             </h2>
-            <div className="max-w-[620px] ml-auto mt-[67px]">
-              {/* Timeline Description - positioned top right */}
-              <div key={activeTimelineIndex} className="mb-[40px]">
+            <div className="md:max-w-[620px] md:ml-auto md:mt-[67px]">
+              {/* Timeline Description */}
+              <div key={activeTimelineIndex} className="mb-6 md:mb-[40px]">
                 <AnimatedParagraph
                   text={aboutPage.history.timeline[activeTimelineIndex].description}
-                  className="text-[20px] leading-[1.5] text-[#2A2A2A]"
+                  className="text-sm md:text-[20px] leading-[1.5] text-[#2A2A2A]"
                   lineDelay={50}
                   charDelay={5}
                 />

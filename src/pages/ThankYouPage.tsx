@@ -9,27 +9,27 @@ export default function ThankYouPage() {
       <div id="hero-sentinel" className="absolute top-0 h-px w-px" />
       
       {/* Hero Section with Background */}
-      <section className="relative min-h-[750px] flex items-center justify-center">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0">
-          <img
-            src={getAssetUrl(thankYouPage.hero.backgroundImage)}
-            alt=""
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/40" />
-        </div>
+      <section className="relative h-[714px] md:min-h-[750px] flex items-center justify-center">
+        {/* Background Image */}
+        <img
+          src={getAssetUrl(thankYouPage.hero.backgroundImage)}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/40 z-[1]" />
 
         {/* Content */}
         <div className="relative z-10 container-custom py-[80px]">
           {/* Main Content - Centered */}
-          <div className="flex flex-col items-center text-center">
+          <div className="flex flex-col items-center text-center px-0 md:px-0">
             {/* Home Page Button */}
             <Link
               to="/"
-              className="inline-flex items-center gap-[10px] mb-[72px] text-[16px] font-semibold text-white"
+              className="inline-flex items-center gap-[10px] mb-[40px] md:mb-[72px] text-sm md:text-[16px] font-normal md:font-semibold text-white"
             >
-              <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center">
+              <div className="w-[46px] h-[46px] md:w-8 md:h-8 rounded-full bg-white flex items-center justify-center">
                 <img
                   src={getAssetUrl('/icons/arrow-right.svg')}
                   alt=""
@@ -40,12 +40,12 @@ export default function ThankYouPage() {
             </Link>
 
             {/* Title */}
-            <h1 className="text-[64px] font-medium leading-[1.4] text-[#F2F1EF] mb-[40px] max-w-[911px]">
+            <h1 className="text-[32px] md:text-[64px] font-medium leading-[1.4] text-[#F2F1EF] mb-[30px] md:mb-[40px] max-w-[300px] md:max-w-[911px]">
               {thankYouPage.hero.title}
             </h1>
 
             {/* Subtitle */}
-            <p className="text-[20px] leading-[1.4] text-[#F2F1EF] max-w-[620px]">
+            <p className="text-sm md:text-[20px] leading-[1.4] text-[#F2F1EF] w-full md:max-w-[620px]">
               {thankYouPage.hero.subtitle}
             </p>
           </div>

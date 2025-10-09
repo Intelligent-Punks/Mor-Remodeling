@@ -9,16 +9,16 @@ export default function PrivacyPolicyPage() {
       <div id="hero-sentinel" className="absolute top-0 h-px w-px" />
 
       {/* Hero Section */}
-      <section className="relative min-h-[750px] flex items-center justify-center">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0">
-          <img
-            src={getAssetUrl(privacyPolicyPage.hero.backgroundImage)}
-            alt=""
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/40" />
-        </div>
+      <section className="relative h-[714px] md:min-h-[750px] flex items-center justify-center">
+        {/* Background Image */}
+        <img
+          src={getAssetUrl(privacyPolicyPage.hero.backgroundImage)}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/40 z-[1]" />
 
         {/* Content */}
         <div className="relative z-10 container-custom py-[80px]">
@@ -26,9 +26,9 @@ export default function PrivacyPolicyPage() {
             {/* Home Page Button */}
             <Link
               to="/"
-              className="inline-flex items-center gap-[10px] mb-[72px] text-[16px] font-semibold text-white"
+              className="inline-flex items-center gap-[10px] mb-[40px] md:mb-[72px] text-sm md:text-[16px] font-normal md:font-semibold text-white"
             >
-              <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center">
+              <div className="w-[46px] h-[46px] md:w-8 md:h-8 rounded-full bg-white flex items-center justify-center">
                 <img
                   src={getAssetUrl('/icons/arrow-right.svg')}
                   alt=""
@@ -39,12 +39,12 @@ export default function PrivacyPolicyPage() {
             </Link>
 
             {/* Title */}
-            <h1 className="text-[64px] font-medium leading-[1.4] text-[#F2F1EF] mb-[40px]">
+            <h1 className="text-[32px] md:text-[64px] font-medium leading-[1.4] text-[#F2F1EF] mb-[30px] md:mb-[40px] w-full md:max-w-none">
               {privacyPolicyPage.hero.title}
             </h1>
 
             {/* Subtitle */}
-            <p className="text-[20px] font-normal leading-[1.4] text-[#F2F1EF] max-w-[620px]">
+            <p className="text-sm md:text-[20px] font-normal leading-[1.4] text-[#F2F1EF] w-full md:max-w-[620px]">
               {privacyPolicyPage.hero.subtitle}
             </p>
           </div>
@@ -52,11 +52,25 @@ export default function PrivacyPolicyPage() {
       </section>
 
       {/* Privacy Policy Content */}
-      <section className="container-custom py-[80px]">
-        <div className="flex flex-col gap-[40px]">
+      <section className="container-custom py-12 md:py-[80px]">
+        <div className="flex flex-col gap-0 md:gap-[40px]">
           {privacyPolicyPage.sections.map((section, index) => (
             <div key={section.id}>
-              <div className="flex gap-[40px]">
+              {/* Mobile Layout */}
+              <div className="flex flex-col md:hidden">
+                <h2 className="text-[20px] font-medium leading-[1.4] text-[#2A2A2A]">
+                  {section.id}. {section.title}
+                </h2>
+                <p className="text-xs font-normal leading-[1.5] text-[#868686] whitespace-pre-line mt-[20px]">
+                  {section.content}
+                </p>
+                {index < privacyPolicyPage.sections.length - 1 && (
+                  <div className="w-full h-[2px] bg-white mt-[30px] mb-[30px]" />
+                )}
+              </div>
+
+              {/* Desktop Layout */}
+              <div className="hidden md:flex gap-[40px]">
                 {/* Title Column */}
                 <div className="w-[400px]">
                   <h2 className="text-[36px] font-semibold leading-[1.4] text-[#2A2A2A] whitespace-pre-line">
@@ -72,9 +86,9 @@ export default function PrivacyPolicyPage() {
                 </div>
               </div>
 
-              {/* Divider Line */}
+              {/* Desktop Divider Line */}
               {index < privacyPolicyPage.sections.length - 1 && (
-                <div className="w-full h-[2px] bg-white mt-[40px]" />
+                <div className="hidden md:block w-full h-[2px] bg-white mt-[40px]" />
               )}
             </div>
           ))}

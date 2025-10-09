@@ -8,6 +8,7 @@ import ProjectsPage from '@/pages/ProjectsPage'
 import ProjectDetailPage from '@/pages/ProjectDetailPage'
 import ContactPage from '@/pages/ContactPage'
 import ThankYouPage from '@/pages/ThankYouPage'
+import PrivacyPolicyPage from '@/pages/PrivacyPolicyPage'
 import TemplatePage from '@/pages/TemplatePage'
 
 export default function App() {
@@ -22,6 +23,7 @@ export default function App() {
         <Route path="/projects/:slug" element={<ProjectDetailPage />} />
         <Route path="/contact-us" element={<ContactPage />} />
         <Route path="/thank-you" element={<ThankYouPage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="/contact" element={<Navigate to="/contact-us" replace />} />
         <Route path="/contacts" element={<Navigate to="/contact-us" replace />} />
         <Route path="/template" element={<TemplatePage />} />

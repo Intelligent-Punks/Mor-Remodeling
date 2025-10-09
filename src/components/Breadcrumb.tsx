@@ -8,6 +8,7 @@ const routeNames: Record<string, string> = {
   about: 'About Us',
   'contact-us': 'Contact Us',
   'thank-you': 'Thank You',
+  'privacy-policy': 'Privacy Policy',
   'kitchen-remodel': 'Kitchen Remodel',
 }
 

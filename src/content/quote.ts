@@ -4,6 +4,7 @@ const quote = {
 
 Whether it's a single room or a full-scale renovation, we treat each project as if it were our own home. Quality, trust, and lasting craftsmanship are at the heart of everything we do.`,
   author: 'John M. Ortega, CEO of MOR Remodelling',
+  backgroundImage: '/images/quote/bg-img.png',
 }
 
 export default quote

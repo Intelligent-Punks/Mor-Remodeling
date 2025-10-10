@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import AnimatedText from '@/components/AnimatedText'
+import { getProjectBySlug } from '@/content/projectDetails'
 
 import { getAssetUrl } from '@/utils/asset'
 
@@ -46,6 +47,27 @@ export default function OurProjects({
                 </div>
               )}
             </div>
+            
+            {/* Desktop "See all projects" button - shown next to title */}
+            {showButton && (
+              <div className="hidden md:block">
+                <Link
+                  to="/projects"
+                  className="inline-flex items-center gap-2 text-base font-medium text-[#2A2A2A] group"
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
+                >
+                  <AnimatedText text="See all projects" externalHover={isHovered} />
+                  <span className="inline-grid place-items-center w-8 h-8 rounded-full bg-white transition-colors">
+                    <img
+                      src={getAssetUrl('/icons/arrow-right.svg')}
+                      alt=""
+                      className="w-5 h-5 transition-all"
+                    />
+                  </span>
+                </Link>
+              </div>
+            )}
           </div>
         )}
 
@@ -63,6 +85,8 @@ export default function OurProjects({
             // 3,4 = small (col-span-1), 5 = big (col-span-2)
             const positionInGroup = idx % 3
             const isFullWidthMobile = positionInGroup === 2
+            
+            const projectDetail = getProjectBySlug(project.id)
 
             return (
               <Link
@@ -77,7 +101,27 @@ export default function OurProjects({
                   alt={project.alt || ''}
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                 />
-                <div className="absolute bottom-4 right-4 w-12 h-12 rounded-full bg-white scale-0 group-hover:scale-100 transition-transform duration-300 flex items-center justify-center overflow-hidden">
+                
+                {/* Hover info block with project details */}
+                {projectDetail && (
+                  <div className="absolute left-[30px] top-[30px] w-[197px] bg-white rounded-[10px] p-[20px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 className="text-[14px] font-medium leading-[1.4] text-[#2A2A2A] mb-[10px]">
+                      {projectDetail.hero.title.replace(/\n/g, ' ')}
+                    </h3>
+                    {projectDetail.stats && projectDetail.stats[1] && (
+                      <p className="text-[14px] leading-[1.4] text-[#868686]">
+                        {projectDetail.stats[1].value}
+                      </p>
+                    )}
+                    {projectDetail.stats && projectDetail.stats[2] && (
+                      <p className="text-[14px] leading-[1.4] text-[#868686]">
+                        {projectDetail.stats[2].value}
+                      </p>
+                    )}
+                  </div>
+                )}
+                
+                <div className="absolute bottom-4 right-4 w-12 h-12 rounded-full bg-white scale-0 group-hover:scale-100 transition-transform duration-300 flex items-center justify-center overflow-hidden z-10">
                   <img
                     src={getAssetUrl('/icons/arrow-right.svg')}
                     alt=""

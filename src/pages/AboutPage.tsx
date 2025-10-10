@@ -73,10 +73,11 @@ export default function AboutPage() {
       <Stats
         title="Stats"
         description="At MOR Remodelling, numbers tell our story. With years of hands-on experience, we've built a reputation for quality, trust, and precision."
-        stats={aboutPage.values.map((value) => ({
+        stats={aboutPage.values.map((value, idx) => ({
           id: value.id,
           value: value.title,
           label: value.description,
+          bgImage: `/images/stats/img-${idx + 1}.png`,
         }))}
       />
 

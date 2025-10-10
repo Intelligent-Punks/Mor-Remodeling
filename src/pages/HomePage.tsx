@@ -15,6 +15,7 @@ import RemodelingROI from '@/components/RemodelingROI'
 import ReviewsCarousel from '@/components/ReviewsCarousel'
 import FAQ from '@/components/FAQ'
 import ContactForm from '@/components/ContactForm'
+import LazySection from '@/components/LazySection'
 import { getAssetUrl } from '@/utils/asset'
 
 export default function HomePage() {
@@ -46,61 +47,77 @@ export default function HomePage() {
         </div>
       </section>
 
-      <OurProjects
-        title={projects.title}
-        description={projects.description}
-        projects={projects.items}
-        showButton={true}
-      />
+      <LazySection rootMargin="200px">
+        <OurProjects
+          title={projects.title}
+          description={projects.description}
+          projects={projects.items}
+          showButton={true}
+        />
+      </LazySection>
 
-      <RemodelingROI
-        title={remodelingROI.title}
-        backgroundVideo={remodelingROI.backgroundVideo}
-        videoPoster={remodelingROI.videoPoster}
-        items={remodelingROI.items}
-      />
+      <LazySection rootMargin="200px">
+        <RemodelingROI
+          title={remodelingROI.title}
+          backgroundVideo={remodelingROI.backgroundVideo}
+          videoPoster={remodelingROI.videoPoster}
+          items={remodelingROI.items}
+        />
+      </LazySection>
 
-      <Quote
-        quoteSymbol={quote.quoteSymbol}
-        text={quote.text}
-        author={quote.author}
-        backgroundImage={quote.backgroundImage}
-      />
+      <LazySection rootMargin="200px">
+        <Quote
+          quoteSymbol={quote.quoteSymbol}
+          text={quote.text}
+          author={quote.author}
+          backgroundImage={quote.backgroundImage}
+        />
+      </LazySection>
 
-      <Services title={services.title} services={services.list} />
+      <LazySection rootMargin="200px">
+        <Services title={services.title} services={services.list} />
+      </LazySection>
 
-      <Stats
-        title={stats.title}
-        description={stats.description}
-        stats={stats.items}
-      />
+      <LazySection rootMargin="200px">
+        <Stats
+          title={stats.title}
+          description={stats.description}
+          stats={stats.items}
+        />
+      </LazySection>
 
-      <section className="pt-20 pb-[120px] bg-[#F2F1EF]">
-        <div className="container-custom mb-[80px]">
-          <h2 className="text-[48px] font-semibold leading-[1.4] text-[#2A2A2A] mb-[20px]">
-            {contactPage.reviews.title}
-          </h2>
-          <p className="text-[20px] leading-[1.4] text-[#868686]">
-            {contactPage.reviews.subtitle}
-          </p>
-        </div>
+      <LazySection rootMargin="200px">
+        <section className="pt-20 pb-[120px] bg-[#F2F1EF]">
+          <div className="container-custom mb-[80px]">
+            <h2 className="text-[48px] font-semibold leading-[1.4] text-[#2A2A2A] mb-[20px]">
+              {contactPage.reviews.title}
+            </h2>
+            <p className="text-[20px] leading-[1.4] text-[#868686]">
+              {contactPage.reviews.subtitle}
+            </p>
+          </div>
 
-        <ReviewsCarousel reviews={contactPage.reviews.items} />
-      </section>
+          <ReviewsCarousel reviews={contactPage.reviews.items} />
+        </section>
+      </LazySection>
 
-      <FAQ 
-        title={faq.title} 
-        subtitle={faq.subtitle} 
-        backgroundVideo={faq.backgroundVideo}
-        videoPoster={faq.videoPoster}
-        items={faq.items} 
-      />
+      <LazySection rootMargin="200px">
+        <FAQ 
+          title={faq.title} 
+          subtitle={faq.subtitle} 
+          backgroundVideo={faq.backgroundVideo}
+          videoPoster={faq.videoPoster}
+          items={faq.items} 
+        />
+      </LazySection>
 
-      <ContactForm
-        title={contactForm.title}
-        subtitle={contactForm.subtitle}
-        backgroundImage={contactForm.backgroundImage}
-      />
+      <LazySection rootMargin="200px">
+        <ContactForm
+          title={contactForm.title}
+          subtitle={contactForm.subtitle}
+          backgroundImage={contactForm.backgroundImage}
+        />
+      </LazySection>
     </div>
   )
 }

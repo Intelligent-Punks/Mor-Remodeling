@@ -53,7 +53,12 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Account for fixed header */
+}
+
+/* Disable default scroll behavior to use custom JS */
+html, body {
+  overscroll-behavior: none;
 }
 
 body {

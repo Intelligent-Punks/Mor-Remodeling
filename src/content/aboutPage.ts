@@ -25,15 +25,15 @@ Our mission is simple: to create homes that feel personal, timeless, and built t
       '/images/about/who-we-are/image-2.png',
       '/images/about/who-we-are/image-3.png',
       '/images/about/who-we-are/image-4.png',
+      '/images/about/who-we-are/image-5.png',
+      '/images/about/who-we-are/image-6.png',
     ],
   },
 
   quote: {
-    text: `At MOR Remodelling, we believe every home has the potential to be extraordinary. Our approach is simple: 
-listen carefully, design thoughtfully, and build with precision. 
+    text: `At MOR Remodelling, we believe every home has the potential to be extraordinary. Our approach is simple: listen carefully, design thoughtfully, and build with precision. 
 
-Whether it's a single room or a full-scale renovation, we treat each project as if it were our own home. Quality, trust, and lasting craftsmanship are at the heart of 
-everything we do.`,
+Whether it's a single room or a full-scale renovation, we treat each project as if it were our own home. Quality, trust, and lasting craftsmanship are at the heart of everything we do.`,
     author: 'John M. Ortega, CEO of MOR Remodelling',
   },
 
@@ -43,24 +43,28 @@ everything we do.`,
       title: 'Integrity',
       description:
         'We build trust through honesty, transparency, and accountability in every project.',
+      bgImage: '/images/stats/about/img-1.png',
     },
     {
       id: 'quality',
       title: 'Quality',
       description:
         'Every detail matters — we deliver craftsmanship that lasts for years to come.',
+      bgImage: '/images/stats/about/img-2.png',
     },
     {
       id: 'innovation',
       title: 'Innovation',
       description:
         'We combine modern design solutions with smart functionality to create better living spaces.',
+      bgImage: '/images/stats/about/img-3.png',
     },
     {
       id: 'collaboration',
       title: 'Collaboration',
       description:
         'Working closely with our clients, we turn their vision into a home that feels truly personal.',
+      bgImage: '/images/stats/about/img-4.png',
     },
   ],
 

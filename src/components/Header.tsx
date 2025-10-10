@@ -35,7 +35,7 @@ export default function Header() {
   const [isPastHero, setIsPastHero] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isServicesMenuOpen, setIsServicesMenuOpen] = useState(false)
-  const servicesMenuTimeout = useRef<NodeJS.Timeout | null>(null)
+  const servicesMenuTimeout = useRef<number | null>(null)
   const location = useLocation()
 
   useEffect(() => {
@@ -134,9 +134,12 @@ export default function Header() {
                   </NavLink>
 
                   {/* Services Submenu */}
-                  {isServicesMenuOpen && (
-                    <div className="absolute left-0 top-full pt-6.5">
-                        <div className="bg-[#F2F1EF]/60 backdrop-blur-[20px] w-[750px] shadow-lg">
+                  <div className={`absolute left-0 top-full pt-6.5 transition-all duration-300 ease-out ${
+                    isServicesMenuOpen 
+                      ? 'opacity-100 visible translate-y-0' 
+                      : 'opacity-0 invisible -translate-y-2 pointer-events-none'
+                  }`}>
+                    <div className="bg-[#F2F1EF]/60 backdrop-blur-[20px] w-[750px] shadow-lg">
                         <div className="relative p-[30px]">
                           {/* 3x3 Grid with proper structure */}
                           <div className="grid grid-cols-3 gap-0">
@@ -209,7 +212,6 @@ export default function Header() {
                         </div>
                       </div>
                     </div>
-                  )}
                 </div>
               )
             }

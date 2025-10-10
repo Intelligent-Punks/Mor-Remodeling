@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import aboutPage from '@/content/aboutPage'
 import faq from '@/content/faq'
 import contactForm from '@/content/contactForm'
@@ -14,6 +14,17 @@ import { getAssetUrl } from '@/utils/asset'
 
 export default function AboutPage() {
   const [activeTimelineIndex, setActiveTimelineIndex] = useState(0)
+  const [contentHeight, setContentHeight] = useState(0)
+  const contentRef = useRef<HTMLDivElement>(null)
+
+  // Update content height when timeline index changes
+  useEffect(() => {
+    if (contentRef.current) {
+      const newHeight = contentRef.current.scrollHeight
+      setContentHeight(newHeight)
+    }
+  }, [activeTimelineIndex])
+
   return (
     <div className="bg-[#F2F1EF]">
       {/* Hero Section */}
@@ -73,11 +84,11 @@ export default function AboutPage() {
       <Stats
         title="Stats"
         description="At MOR Remodelling, numbers tell our story. With years of hands-on experience, we've built a reputation for quality, trust, and precision."
-        stats={aboutPage.values.map((value, idx) => ({
+        stats={aboutPage.values.map((value) => ({
           id: value.id,
           value: value.title,
           label: value.description,
-          bgImage: `/images/stats/img-${idx + 1}.png`,
+          bgImage: value.bgImage,
         }))}
       />
 
@@ -130,13 +141,18 @@ export default function AboutPage() {
             </h2>
             <div className="md:max-w-[620px] md:ml-auto md:mt-[67px]">
               {/* Timeline Description */}
-              <div key={activeTimelineIndex} className="mb-6 md:mb-[40px]">
-                <AnimatedParagraph
-                  text={aboutPage.history.timeline[activeTimelineIndex].description}
-                  className="text-sm md:text-[20px] leading-[1.5] text-[#2A2A2A]"
-                  lineDelay={50}
-                  charDelay={5}
-                />
+              <div 
+                className="mb-6 md:mb-[40px] transition-all duration-500 ease-out overflow-hidden"
+                style={{ height: contentHeight > 0 ? `${contentHeight}px` : 'auto' }}
+              >
+                <div ref={contentRef} key={activeTimelineIndex}>
+                  <AnimatedParagraph
+                    text={aboutPage.history.timeline[activeTimelineIndex].description}
+                    className="text-sm md:text-[20px] leading-[1.5] text-[#2A2A2A]"
+                    lineDelay={50}
+                    charDelay={5}
+                  />
+                </div>
               </div>
               {/* Navigation Buttons - Under text */}
               <div className="flex justify-end gap-[20px]">

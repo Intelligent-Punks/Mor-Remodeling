@@ -14,33 +14,33 @@ const contactPageData = {
     subtitle: 'Get in touch with us for any enquiries and questions',
   },
   socialLinks: [
-    { name: 'Instagram', url: '#' },
-    { name: 'Twitter', url: '#' },
-    { name: 'Linkedin', url: '#' },
-    { name: 'Telegram', url: '#' },
+    { name: 'Instagram', url: '#', icon: '/icons/instagram.svg' },
+    { name: 'Twitter', url: '#', icon: '/icons/x.svg' },
+    { name: 'Linkedin', url: '#', icon: '/icons/linkedin.svg' },
+    { name: 'Telegram', url: '#', icon: '/icons/telegram.svg' },
   ],
   contactInfo: {
     details: [
       {
         id: 'general-inquiries',
-        label: 'general inquiries',
+        label: 'General inquiries',
         email: 'morremodinfo@gmail.com',
         phone: '(747) 279 8262',
       },
       {
         id: 'careers',
-        label: 'careers',
+        label: 'Careers',
         email: 'morremodhr@gmail.com',
       },
       {
         id: 'collaborations',
-        label: 'collaborations',
+        label: 'Collaborations',
         email: 'morremodwrk@gmail.com',
         phone: '(747) 279 8262',
       },
       {
         id: 'address',
-        label: 'address',
+        label: 'Address',
         value: '1254 Evergreen Avenue, Suite 200.\nDallas, TX 75201',
       },
     ],

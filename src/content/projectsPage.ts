@@ -1,5 +1,6 @@
 export default {
   title: 'Our Projects',
+  backgroundImage: '/images/projects/bg-hero.png',
   infoBlocks: [
     {
       id: 'craftsmanship',

@@ -1,9 +1,11 @@
 import AnimatedParagraph from '@/components/AnimatedParagraph'
+import { getAssetUrl } from '@/utils/asset'
 
 interface Stat {
   id: string
   value: string
   label: string
+  bgImage: string
 }
 
 interface StatsProps {
@@ -33,15 +35,24 @@ export default function Stats({ title, description, stats }: StatsProps) {
           {stats.map((stat) => (
             <div
               key={stat.id}
-              className="w-full md:w-[290px] h-[177px] md:h-[290px] bg-[#F2F1EF] rounded-[14px] p-5 md:p-[24px] flex flex-col justify-between"
+              className="group relative w-full md:w-[290px] h-[177px] md:h-[290px] p-5 md:p-[20px] flex flex-col justify-between overflow-hidden bg-[#F2F1EF]"
             >
-              <AnimatedParagraph
-                text={stat.value}
-                className="text-[20px] md:text-[34px] font-medium leading-[1.4] text-[#2A2A2A]"
-                lineDelay={60}
-                charDelay={8}
+              <img
+                src={getAssetUrl(stat.bgImage)}
+                alt=""
+                className="absolute inset-0 w-full h-full object-cover"
               />
-              <p className="text-xs md:text-[20px] font-normal leading-[1.5] text-[#2A2A2A]">
+              <div className="absolute inset-0 bg-black/30" />
+              
+              <div className="relative z-10">
+                <AnimatedParagraph
+                  text={stat.value}
+                  className="text-[20px] md:text-[36px] font-medium leading-[1.4] text-white"
+                  lineDelay={60}
+                  charDelay={8}
+                />
+              </div>
+              <p className="relative z-10 text-xs md:text-[20px] font-normal leading-[1.5] text-white">
                 {stat.label}
               </p>
             </div>

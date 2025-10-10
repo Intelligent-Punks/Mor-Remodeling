@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import common from '@/content/common'
+import contactPage from '@/content/contactPage'
 import AnimatedText from '@/components/AnimatedText'
 import { getAssetUrl } from '@/utils/asset'
 
@@ -134,20 +135,29 @@ export default function Footer() {
               ))}
             </div>
 
-            <div className="hidden md:block">
-              <Link
-                to="/contact-us"
-                className="inline-flex items-center gap-2 text-base font-medium text-[#2A2A2A] group"
-              >
-                <AnimatedText text="Contact Us" staggered={true} />
-                <span className="inline-grid place-items-center w-8 h-8 rounded-full transition-all group-active:bg-[#2A2A2A]">
-                  <img
-                    src={getAssetUrl('/icons/arrow-right.svg')}
-                    alt=""
-                    className="w-5 h-5 group-active:invert"
-                  />
-                </span>
-              </Link>
+            <div className="hidden md:grid grid-cols-2 gap-[40px]">
+              {/* General Inquiries */}
+              <div>
+                <p className="text-base font-normal leading-[1.4] text-[#868686] capitalize mb-[20px]">
+                  {contactPage.contactInfo.details[0].label}
+                </p>
+                <p className="text-base font-medium leading-[1.4] text-[#2A2A2A]">
+                  {contactPage.contactInfo.details[0].email}
+                </p>
+                <p className="text-base font-medium leading-[1.4] text-[#2A2A2A]">
+                  {contactPage.contactInfo.details[0].phone}
+                </p>
+              </div>
+
+              {/* Address */}
+              <div>
+                <p className="text-base font-normal leading-[1.4] text-[#868686] capitalize mb-[20px]">
+                  {contactPage.contactInfo.details[3].label}
+                </p>
+                <p className="text-base font-medium leading-[1.4] text-[#2A2A2A] whitespace-pre-line">
+                  {contactPage.contactInfo.details[3].value}
+                </p>
+              </div>
             </div>
           </div>
 

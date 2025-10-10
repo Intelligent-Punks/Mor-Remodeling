@@ -10,10 +10,12 @@ interface FaqItem {
 interface FAQProps {
   title: string
   subtitle: string
+  backgroundVideo?: string
+  videoPoster?: string
   items: FaqItem[]
 }
 
-export default function FAQ({ title, subtitle, items }: FAQProps) {
+export default function FAQ({ title, subtitle, backgroundVideo, videoPoster, items }: FAQProps) {
   const [openId, setOpenId] = useState<string | null>(items[0]?.id || null)
 
   const toggle = (id: string) => {
@@ -21,8 +23,26 @@ export default function FAQ({ title, subtitle, items }: FAQProps) {
   }
 
   return (
-    <section className="py-12 md:py-20">
-      <div className="container-custom">
+    <section className="relative py-12 md:py-20 overflow-hidden">
+      {backgroundVideo ? (
+        <>
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster={videoPoster ? getAssetUrl(videoPoster) : undefined}
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src={getAssetUrl(backgroundVideo)} type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-[#F2F1EF]/30" />
+        </>
+      ) : (
+        <div className="absolute inset-0 bg-[#F2F1EF]" />
+      )}
+
+      <div className="relative z-10 container-custom">
         <div className="text-left md:text-center mb-10 md:mb-[93px]">
           <h2 className="text-[32px] md:text-[48px] font-semibold leading-[1.4] text-[#2A2A2A]">
             {title}

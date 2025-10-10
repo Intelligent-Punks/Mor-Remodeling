@@ -36,10 +36,11 @@ export default function ContactPage() {
                 <a
                   key={link.name}
                   href={link.url}
-                  className="text-[20px] font-medium text-[#2A2A2A]"
+                  className="flex items-center gap-[10px] text-[20px] font-medium text-[#2A2A2A]"
                   onMouseEnter={() => setHoveredLink(link.name)}
                   onMouseLeave={() => setHoveredLink(null)}
                 >
+                  <img src={link.icon} alt={link.name} className="w-6 h-6" />
                   <AnimatedText text={link.name} externalHover={hoveredLink === link.name} />
                 </a>
               ))}

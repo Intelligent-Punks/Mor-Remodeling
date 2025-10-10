@@ -1,6 +1,7 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
 import Layout from '@/components/Layout'
 import ScrollToTop from '@/components/ScrollToTop'
+import { useSmoothScroll } from '@/hooks/useSmoothScroll'
 import HomePage from '@/pages/HomePage'
 import AboutPage from '@/pages/AboutPage'
 import ServicesPage from '@/pages/ServicesPage'
@@ -12,6 +13,8 @@ import PrivacyPolicyPage from '@/pages/PrivacyPolicyPage'
 import TemplatePage from '@/pages/TemplatePage'
 
 export default function App() {
+  useSmoothScroll()
+  
   return (
     <Layout>
       <ScrollToTop />

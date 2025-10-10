@@ -108,11 +108,19 @@ export default function ReviewsCarousel({ reviews }: ReviewsCarouselProps) {
             >
               {/* Avatar and Name - same line */}
               <div className="flex items-center gap-[12px] mb-[20px]">
-                <div className="w-[40px] h-[40px] bg-[#2A2A2A] rounded-full flex items-center justify-center">
-                  <span className="text-white font-semibold text-sm">
-                    {review.name.split(' ').map(n => n[0]).join('')}
-                  </span>
-                </div>
+                {review.avatar ? (
+                  <img
+                    src={getAssetUrl(review.avatar)}
+                    alt={review.name}
+                    className="w-[40px] h-[40px] rounded-full object-cover"
+                  />
+                ) : (
+                  <div className="w-[40px] h-[40px] bg-[#2A2A2A] rounded-full flex items-center justify-center">
+                    <span className="text-white font-semibold text-sm">
+                      {review.name.split(' ').map(n => n[0]).join('')}
+                    </span>
+                  </div>
+                )}
                 <p className="text-[18px] font-semibold text-[#2A2A2A]">{review.name}</p>
               </div>
 

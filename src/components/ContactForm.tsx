@@ -98,9 +98,9 @@ export default function ContactForm({ title, subtitle, backgroundImage }: Contac
   }, [])
 
   return (
-    <section ref={sectionRef} className="relative min-h-[800px] overflow-hidden">
+    <section ref={sectionRef} className="relative h-[700px] overflow-hidden">
       <div
-        className="absolute -top-[10%] left-0 right-0 w-full h-[160%]"
+        className="absolute -top-[-5%] left-0 right-0 w-full h-[160%]"
         style={{
           transform: `translateY(${offset}px)`,
           willChange: 'transform',
@@ -129,7 +129,7 @@ export default function ContactForm({ title, subtitle, backgroundImage }: Contac
         </div>
       )}
 
-      <div className="relative z-10 py-12 md:py-20">
+      <div className="relative z-10 flex items-center h-full">
         <div className="container-custom flex justify-center md:justify-end">
           <div className="w-full max-w-[620px] bg-[#F2F1EF] rounded-[14px] p-8 md:p-10">
             <h2 className="text-[20px] md:text-[32px] font-semibold leading-[1.4] text-[#2A2A2A]">
@@ -169,41 +169,43 @@ export default function ContactForm({ title, subtitle, backgroundImage }: Contac
                 </div>
               </div>
 
-              <div className="relative">
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className={`w-full bg-transparent border-b pb-2 text-sm md:text-base text-[#2A2A2A] placeholder:text-[#2A2A2A]/40 focus:outline-none focus:border-[#2A2A2A] ${
-                    errors.email ? 'border-red-500' : 'border-[#2A2A2A]/40'
-                  }`}
-                />
-                {errors.email && <span className="absolute -bottom-5 left-0 text-xs text-red-500">{errors.email}</span>}
-              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-[20px]">
+                <div className="relative">
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className={`w-full bg-transparent border-b pb-2 text-sm md:text-base text-[#2A2A2A] placeholder:text-[#2A2A2A]/40 focus:outline-none focus:border-[#2A2A2A] ${
+                      errors.email ? 'border-red-500' : 'border-[#2A2A2A]/40'
+                    }`}
+                  />
+                  {errors.email && <span className="absolute -bottom-5 left-0 text-xs text-red-500">{errors.email}</span>}
+                </div>
 
-              <div className="relative">
-                <select
-                  name="projectType"
-                  value={formData.projectType}
-                  onChange={handleChange}
-                  className={`w-full bg-transparent border-b pb-2 text-sm md:text-base focus:outline-none focus:border-[#2A2A2A] appearance-none cursor-pointer ${
-                    formData.projectType ? 'text-[#2A2A2A]' : 'text-[#2A2A2A]/40'
-                  } ${errors.projectType ? 'border-red-500' : 'border-[#2A2A2A]/40'}`}
-                >
-                  <option value="">Project Type</option>
-                  <option value="renovation">Full Home Renovation</option>
-                  <option value="kitchen">Kitchen Remodeling</option>
-                  <option value="bathroom">Bathroom Remodeling</option>
-                  <option value="other">Other</option>
-                </select>
-                <img
-                  src={getAssetUrl('/icons/arrow-down.svg')}
-                  alt=""
-                  className="absolute right-0 top-0 w-5 h-5 md:w-6 md:h-6 pointer-events-none"
-                />
-                {errors.projectType && <span className="absolute -bottom-5 left-0 text-xs text-red-500">{errors.projectType}</span>}
+                <div className="relative">
+                  <select
+                    name="projectType"
+                    value={formData.projectType}
+                    onChange={handleChange}
+                    className={`w-full bg-transparent border-b pb-2 text-sm md:text-base focus:outline-none focus:border-[#2A2A2A] appearance-none cursor-pointer ${
+                      formData.projectType ? 'text-[#2A2A2A]' : 'text-[#2A2A2A]/40'
+                    } ${errors.projectType ? 'border-red-500' : 'border-[#2A2A2A]/40'}`}
+                  >
+                    <option value="">Project Type</option>
+                    <option value="renovation">Full Home Renovation</option>
+                    <option value="kitchen">Kitchen Remodeling</option>
+                    <option value="bathroom">Bathroom Remodeling</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <img
+                    src={getAssetUrl('/icons/arrow-down.svg')}
+                    alt=""
+                    className="absolute right-0 top-0 w-5 h-5 md:w-6 md:h-6 pointer-events-none"
+                  />
+                  {errors.projectType && <span className="absolute -bottom-5 left-0 text-xs text-red-500">{errors.projectType}</span>}
+                </div>
               </div>
 
               <div className="relative">

@@ -206,7 +206,7 @@ function ServiceSection({ service, isLast }: ServiceSectionProps) {
             {hasDetailPage ? (
               <Link 
                 to={`/services/${service.slug}`} 
-                className="inline-block transition-all duration-300 hover:translate-x-1"
+                className="inline-block border-b-2 border-transparent transition-colors duration-300 hover:border-[#2A2A2A]"
               >
                 {service.title}
               </Link>

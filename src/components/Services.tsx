@@ -1,9 +1,11 @@
+import { Link } from 'react-router-dom'
 import { getAssetUrl } from '@/utils/asset'
 
 interface Service {
   id: string
   title: string
   image: string
+  slug?: string
 }
 
 interface ServicesProps {
@@ -26,13 +28,10 @@ export default function Services({ title, services }: ServicesProps) {
             {services.map((service, idx) => {
               // Last item on mobile (if odd number) should span full width
               const isLastOdd = idx === services.length - 1 && services.length % 2 === 1
+              const hasDetailPage = !!service.slug
               
-              return (
-                <a
-                  key={service.id}
-                  href={`/services/${service.id}`}
-                  className={`group block ${isLastOdd ? 'col-span-2 md:col-span-1' : ''}`}
-                >
+              const content = (
+                <>
                   <div className="relative rounded-[8px] md:rounded-[14px] overflow-hidden w-full h-[190px] md:h-[290px]">
                     <img
                       src={getAssetUrl(service.image)}
@@ -50,7 +49,24 @@ export default function Services({ title, services }: ServicesProps) {
                   <h3 className="mt-3 md:mt-5 text-sm md:text-[20px] font-medium leading-[1.4] text-[#2A2A2A]">
                     {service.title}
                   </h3>
-                </a>
+                </>
+              )
+              
+              return hasDetailPage ? (
+                <Link
+                  key={service.id}
+                  to={`/services/${service.slug}`}
+                  className={`group block ${isLastOdd ? 'col-span-2 md:col-span-1' : ''}`}
+                >
+                  {content}
+                </Link>
+              ) : (
+                <div
+                  key={service.id}
+                  className={`group ${isLastOdd ? 'col-span-2 md:col-span-1' : ''}`}
+                >
+                  {content}
+                </div>
               )
             })}
           </div>

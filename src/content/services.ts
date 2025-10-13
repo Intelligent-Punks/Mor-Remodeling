@@ -2,13 +2,14 @@ export interface ServiceItem {
   id: string
   title: string
   image: string
+  slug?: string // Optional slug for linking to detail page
 }
 
 const services = {
   title: 'Services',
   list: [
     { id: 's1', title: 'Full Home Renovation', image: '/images/services/Frame-12-1.png' },
-    { id: 's2', title: 'Kitchen Remodeling', image: '/images/services/Frame-12-2.png' },
+    { id: 's2', title: 'Kitchen Remodeling', image: '/images/services/Frame-12-2.png', slug: 'kitchen-remodeling' },
     { id: 's3', title: 'Bathroom Remodeling', image: '/images/services/Frame-12-3.png' },
     { id: 's4', title: 'Decks, Patios & Outdoor Covers', image: '/images/services/Frame-12-4.png' },
     { id: 's5', title: 'Room & Home Additions (including ADUs)', image: '/images/services/Frame-12-5.png' },

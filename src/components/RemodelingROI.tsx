@@ -23,7 +23,7 @@ export default function RemodelingROI({
   items,
 }: RemodelingROIProps) {
   return (
-    <section className="relative py-20 overflow-hidden">
+    <section className="relative py-0 md:py-20 overflow-hidden mb-10 md:mb-0">
       <video
         autoPlay
         loop
@@ -36,12 +36,67 @@ export default function RemodelingROI({
       </video>
       <div className="absolute inset-0 bg-[#E5E3DF]/50" />
 
-      <div className="relative z-10 container-custom">
-        <h2 className="text-[48px] font-semibold leading-[1.4] text-[#2A2A2A] mb-[200px]">
+      <div className="relative z-10">
+        <h2 className="text-[32px] md:text-[48px] font-semibold leading-[1.4] text-[#2A2A2A] mb-[150px] md:mb-[200px] container-custom">
           {title}
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        {/* Mobile: Horizontal scroll carousel */}
+        <div className="md:hidden overflow-x-auto scrollbar-hide">
+          <div className="flex gap-[10px] pl-4">
+            {items.map((item) => {
+              // Parse value like "$27,500 --> $53,900 (+96%)"
+              const match = item.value.match(/(.+?)\s*-->\s*(.+?)\s*\((.+?)\)/)
+              const fromValue = match ? match[1].trim() : ''
+              const toValue = match ? match[2].trim() : ''
+              const percentage = match ? match[3].trim() : ''
+
+              return (
+                <div
+                  key={item.id}
+                  className="flex-shrink-0 w-[177px] h-[177px] p-5 flex flex-col justify-between bg-white"
+                >
+                  <div>
+                    <h3 className="text-[20px] font-medium leading-[1.4] text-[#2A2A2A]">
+                      {item.title}
+                    </h3>
+                  </div>
+
+                  <div>
+                    <div className="flex items-center gap-[5px] mb-[7px]">
+                      <span className="text-[14px] font-medium leading-[1.5] text-[#2A2A2A]">
+                        {fromValue}
+                      </span>
+                      <svg width="18" height="18" viewBox="0 0 32 32" fill="none">
+                        <path
+                          d="M4.67 15.91L27.33 15.91M27.33 15.91L19.24 7.82M27.33 15.91L19.24 24"
+                          stroke="#2A2A2A"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                      <span className="text-[14px] font-medium leading-[1.5] text-[#2A2A2A]">
+                        {toValue}
+                      </span>
+                    </div>
+
+                    <div className="inline-flex items-center justify-center px-2 py-[8px] rounded-full bg-[#F2F1EF]">
+                      <span className="text-[16px] font-medium leading-[1.5] text-[#2A2A2A]">
+                        {percentage}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+            {/* Spacer for right padding */}
+            <div className="flex-shrink-0 w-4" />
+          </div>
+        </div>
+
+        {/* Desktop: Grid layout */}
+        <div className="hidden md:grid md:grid-cols-3 gap-10 container-custom">
           {items.map((item) => {
             // Parse value like "$27,500 --> $53,900 (+96%)"
             const match = item.value.match(/(.+?)\s*-->\s*(.+?)\s*\((.+?)\)/)

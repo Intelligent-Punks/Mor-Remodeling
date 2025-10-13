@@ -13,9 +13,9 @@ export function useSmoothScroll() {
     const animate = () => {
       const diff = targetScroll - currentScroll
       
-      // Smooth interpolation with easing
+      // Smooth interpolation with easing - lighter scroll
       if (Math.abs(diff) > 0.5) {
-        currentScroll += diff * 0.1 // Smooth lerp factor
+        currentScroll += diff * 0.15 // Increased from 0.1 for lighter feel
         window.scrollTo(0, currentScroll)
         animationFrame = requestAnimationFrame(animate)
       } else {
@@ -29,7 +29,7 @@ export function useSmoothScroll() {
       e.preventDefault()
       
       const delta = e.deltaY
-      const scrollAmount = delta * 0.5 // Balanced sensitivity
+      const scrollAmount = delta * 1.0 // Increased from 0.5 - 50% lighter
       
       targetScroll += scrollAmount
       

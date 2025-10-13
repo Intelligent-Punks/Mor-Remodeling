@@ -23,7 +23,7 @@ const contactPageData = {
     details: [
       {
         id: 'general-inquiries',
-        label: 'General inquiries',
+        label: 'General Inquiries',
         email: 'morremodinfo@gmail.com',
         phone: '(747) 279 8262',
       },

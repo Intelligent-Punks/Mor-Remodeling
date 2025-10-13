@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import servicesPage, { ServiceItem } from '@/content/servicesPage'
+import { serviceDetails } from '@/content/serviceDetails'
 import projects from '@/content/projects'
 import faq from '@/content/faq'
 import contactForm from '@/content/contactForm'
@@ -192,13 +194,25 @@ interface ServiceSectionProps {
 }
 
 function ServiceSection({ service, isLast }: ServiceSectionProps) {
+  // Check if service has detail page by looking up in serviceDetails
+  const hasDetailPage = serviceDetails.some(detail => detail.slug === service.slug)
+  
   return (
     <section id={service.id} className="py-3 md:py-[80px]">
       <div className="container-custom">
         {/* Title & Short Description */}
         <div className="grid grid-cols-1 md:grid-cols-[440px_1fr] gap-5 md:gap-[80px]">
           <h2 className="text-[20px] md:text-[36px] font-semibold leading-[1.4] text-[#2A2A2A]">
-            {service.title}
+            {hasDetailPage ? (
+              <Link 
+                to={`/services/${service.slug}`} 
+                className="inline-block transition-all duration-300 hover:translate-x-1"
+              >
+                {service.title}
+              </Link>
+            ) : (
+              service.title
+            )}
           </h2>
           <p className="text-xs md:text-[20px] leading-[1.5] md:leading-[1.4] text-[#868686]">
             {service.shortDescription}

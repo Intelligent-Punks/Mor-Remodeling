@@ -195,24 +195,14 @@ function ServiceSection({ service, isLast }: ServiceSectionProps) {
   return (
     <section id={service.id} className="py-3 md:py-[80px]">
       <div className="container-custom">
-        {/* Title */}
-        <h2 className="text-[20px] md:text-[36px] font-semibold leading-[1.4] text-[#2A2A2A] mb-5 md:mb-0">
-          {service.title}
-        </h2>
-
-        {/* Short Description - Mobile only */}
-        <p className="md:hidden text-xs leading-[1.5] text-[#868686] mb-5">
-          {service.shortDescription}
-        </p>
-
-        {/* Desktop Layout */}
-        <div className="hidden md:grid md:grid-cols-[400px_1fr] md:gap-[80px]">
-          <div />
-          <div>
-            <p className="text-[20px] leading-[1.4] text-[#868686]">
-              {service.shortDescription}
-            </p>
-          </div>
+        {/* Title & Short Description */}
+        <div className="grid grid-cols-1 md:grid-cols-[440px_1fr] gap-5 md:gap-[80px]">
+          <h2 className="text-[20px] md:text-[36px] font-semibold leading-[1.4] text-[#2A2A2A]">
+            {service.title}
+          </h2>
+          <p className="text-xs md:text-[20px] leading-[1.5] md:leading-[1.4] text-[#868686]">
+            {service.shortDescription}
+          </p>
         </div>
 
         {/* Images Grid */}
@@ -234,21 +224,11 @@ function ServiceSection({ service, isLast }: ServiceSectionProps) {
         </div>
 
         {/* Full Description */}
-        <div className="mt-5 md:mt-[40px]">
-          {/* Mobile */}
-          <p className="md:hidden text-xs leading-[1.5] text-[#868686]">
+        <div className="mt-5 md:mt-[40px] grid grid-cols-1 md:grid-cols-[440px_1fr] gap-5 md:gap-[80px]">
+          <div />
+          <p className="text-xs md:text-[20px] leading-[1.5] md:leading-[1.4] text-[#868686]">
             {service.fullDescription}
           </p>
-
-          {/* Desktop */}
-          <div className="hidden md:grid md:grid-cols-[400px_1fr] md:gap-[80px]">
-            <div />
-            <div>
-              <p className="text-[20px] leading-[1.4] text-[#868686]">
-                {service.fullDescription}
-              </p>
-            </div>
-          </div>
         </div>
       </div>
 

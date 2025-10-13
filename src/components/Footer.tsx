@@ -161,22 +161,54 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="space-y-6 md:space-y-[30px]">
-            {navLinks.map((link) => (
-              <div key={link.id} className="border-b border-black/40 pb-6 md:pb-[30px]">
-                <div className="flex items-center gap-4 md:gap-[20px]">
-                  <span className="text-sm md:text-[20px] leading-[1.4] uppercase text-[#2A2A2A]">
-                    {link.id}
-                  </span>
-                  <Link
-                    to={link.path}
-                    className="text-[32px] md:text-[64px] font-normal leading-[1.4] uppercase text-[#2A2A2A] hover:opacity-70 transition-opacity"
-                  >
-                    <AnimatedText text={link.label} staggered={false} />
-                  </Link>
+          <div>
+            <div className="space-y-6 md:space-y-[30px]">
+              {navLinks.map((link) => (
+                <div key={link.id} className="border-b border-black/40 pb-6 md:pb-[30px]">
+                  <div className="flex items-center gap-4 md:gap-[20px]">
+                    <span className="text-sm md:text-[20px] leading-[1.4] uppercase text-[#2A2A2A]">
+                      {link.id}
+                    </span>
+                    <Link
+                      to={link.path}
+                      className="text-[32px] md:text-[64px] font-normal leading-[1.4] uppercase text-[#2A2A2A] hover:opacity-70 transition-opacity"
+                    >
+                      <AnimatedText text={link.label} staggered={false} />
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Mobile Contact Info */}
+            <div className="md:hidden mt-[60px] space-y-[10px]">
+              {/* General Inquiries */}
+              <div className="flex gap-5">
+                <p className="text-sm font-normal leading-[1.4] text-[#868686] capitalize w-[111px]">
+                  {contactPage.contactInfo.details[0].label}
+                </p>
+                <div className="flex-1">
+                  <p className="text-sm font-medium leading-[1.4] text-[#2A2A2A]">
+                    {contactPage.contactInfo.details[0].email}
+                  </p>
+                  <p className="text-sm font-medium leading-[1.4] text-[#2A2A2A]">
+                    {contactPage.contactInfo.details[0].phone}
+                  </p>
                 </div>
               </div>
-            ))}
+
+              {/* Address */}
+              <div className="flex gap-5">
+                <p className="text-sm font-normal leading-[1.4] text-[#868686] capitalize w-[111px]">
+                  {contactPage.contactInfo.details[3].label}
+                </p>
+                <div className="flex-1">
+                  <p className="text-sm font-medium leading-[1.4] text-[#2A2A2A]">
+                    {contactPage.contactInfo.details[3].value}
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

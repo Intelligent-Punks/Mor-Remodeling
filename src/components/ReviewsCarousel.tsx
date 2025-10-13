@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { ReviewItem } from '@/content/contactPage'
 import { getAssetUrl } from '@/utils/asset'
 
@@ -8,6 +8,7 @@ interface ReviewsCarouselProps {
 
 export default function ReviewsCarousel({ reviews }: ReviewsCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const scrollContainerRef = useRef<HTMLDivElement>(null)
   const total = reviews.length
 
   const next = () => {
@@ -22,7 +23,82 @@ export default function ReviewsCarousel({ reviews }: ReviewsCarouselProps) {
     }
   }
 
-  const currentReview = reviews[currentIndex]
+  // Sync scroll position with currentIndex
+  useEffect(() => {
+    if (scrollContainerRef.current) {
+      const container = scrollContainerRef.current
+      const isMobile = window.innerWidth < 768
+      
+      if (isMobile) {
+        // Mobile: card width + gap
+        const cardWidth = window.innerWidth - 80 // calc(100vw-80px)
+        const gap = 20
+        const scrollPosition = currentIndex * (cardWidth + gap)
+        
+        container.scrollTo({
+          left: scrollPosition,
+          behavior: 'smooth'
+        })
+      } else {
+        // Desktop: scroll to show current card fully with proper spacing
+        const cardWidth = 620
+        const gap = 40
+        const scrollPosition = currentIndex * (cardWidth + gap)
+        
+        container.scrollTo({
+          left: scrollPosition,
+          behavior: 'smooth'
+        })
+      }
+    }
+  }, [currentIndex])
+
+  // Add mouse drag to scroll for desktop
+  useEffect(() => {
+    const container = scrollContainerRef.current
+    if (!container) return
+
+    let isDown = false
+    let startX: number
+    let scrollLeft: number
+
+    const handleMouseDown = (e: MouseEvent) => {
+      isDown = true
+      container.classList.add('cursor-grabbing')
+      startX = e.pageX - container.offsetLeft
+      scrollLeft = container.scrollLeft
+    }
+
+    const handleMouseLeave = () => {
+      isDown = false
+      container.classList.remove('cursor-grabbing')
+    }
+
+    const handleMouseUp = () => {
+      isDown = false
+      container.classList.remove('cursor-grabbing')
+    }
+
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!isDown) return
+      e.preventDefault()
+      const x = e.pageX - container.offsetLeft
+      const walk = (x - startX) * 2 // Scroll speed multiplier
+      container.scrollLeft = scrollLeft - walk
+    }
+
+    container.addEventListener('mousedown', handleMouseDown)
+    container.addEventListener('mouseleave', handleMouseLeave)
+    container.addEventListener('mouseup', handleMouseUp)
+    container.addEventListener('mousemove', handleMouseMove)
+
+    return () => {
+      container.removeEventListener('mousedown', handleMouseDown)
+      container.removeEventListener('mouseleave', handleMouseLeave)
+      container.removeEventListener('mouseup', handleMouseUp)
+      container.removeEventListener('mousemove', handleMouseMove)
+    }
+  }, [])
 
   // Render stars with half-star support
   const renderStars = (rating: number) => {
@@ -93,18 +169,16 @@ export default function ReviewsCarousel({ reviews }: ReviewsCarouselProps) {
 
   return (
     <div className="relative">
-      {/* Reviews Container - starts from content line, extends to screen edge */}
-      <div className="reviews-container overflow-hidden">
-        <div
-          className="flex transition-transform duration-500 ease-out"
-          style={{
-            transform: `translateX(-${currentIndex * 440}px)`,
-          }}
-        >
-          {reviews.map((review, idx) => (
+      {/* Reviews Container with swipe support */}
+      <div 
+        ref={scrollContainerRef}
+        className="overflow-x-auto scrollbar-hide cursor-grab select-none"
+      >
+        <div className="flex gap-5 md:gap-[40px] pl-4 md:pl-[calc((100vw-1200px)/2)]">
+          {reviews.map((review) => (
             <div
               key={review.id}
-              className="flex-shrink-0 w-[620px] bg-white rounded-[14px] p-[40px] mr-[40px]"
+              className="flex-shrink-0 w-[calc(100vw-80px)] md:w-[620px] bg-white rounded-[14px] p-[30px] md:p-[40px]"
             >
               {/* Avatar and Name - same line */}
               <div className="flex items-center gap-[12px] mb-[20px]">
@@ -125,7 +199,7 @@ export default function ReviewsCarousel({ reviews }: ReviewsCarouselProps) {
               </div>
 
               {/* Review Text */}
-              <p className="text-[18px] leading-[1.5] text-[#2A2A2A] mb-[20px]">
+              <p className="text-[16px] md:text-[18px] leading-[1.5] text-[#2A2A2A] mb-[20px]">
                 "{review.text}"
               </p>
 
@@ -138,6 +212,8 @@ export default function ReviewsCarousel({ reviews }: ReviewsCarouselProps) {
               </div>
             </div>
           ))}
+          {/* Spacer for right padding */}
+          <div className="flex-shrink-0 w-4 md:w-[20px)]" />
         </div>
       </div>
 

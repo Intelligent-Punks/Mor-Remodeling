@@ -1,14 +1,15 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import AnimatedText from '@/components/AnimatedText'
-import { getProjectBySlug } from '@/content/projectDetails'
-
 import { getAssetUrl } from '@/utils/asset'
 
 interface Project {
   id: string
   image: string
   alt?: string
+  title: string
+  date: string
+  location: string
 }
 
 interface OurProjectsProps {
@@ -33,7 +34,7 @@ export default function OurProjects({
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-8">
             <div className="flex flex-col md:flex-row md:items-center md:gap-10">
               {title && (
-                <div className={`${description ? 'md:w-[290px]' : 'w-full'}`}>
+                <div className={`${description ? 'md:w-[295px]' : 'w-full'}`}>
                   <h2 className="text-[32px] md:text-[48px] font-semibold leading-[1.4] text-[#2A2A2A]">
                     {title}
                   </h2>
@@ -85,8 +86,6 @@ export default function OurProjects({
             // 3,4 = small (col-span-1), 5 = big (col-span-2)
             const positionInGroup = idx % 3
             const isFullWidthMobile = positionInGroup === 2
-            
-            const projectDetail = getProjectBySlug(project.id)
 
             return (
               <Link
@@ -103,23 +102,17 @@ export default function OurProjects({
                 />
                 
                 {/* Hover info block with project details */}
-                {projectDetail && (
-                  <div className="absolute left-[30px] top-[30px] w-[197px] bg-white rounded-[10px] p-[20px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <h3 className="text-[14px] font-medium leading-[1.4] text-[#2A2A2A] mb-[10px]">
-                      {projectDetail.hero.title.replace(/\n/g, ' ')}
-                    </h3>
-                    {projectDetail.stats && projectDetail.stats[1] && (
-                      <p className="text-[14px] leading-[1.4] text-[#868686]">
-                        {projectDetail.stats[1].value}
-                      </p>
-                    )}
-                    {projectDetail.stats && projectDetail.stats[2] && (
-                      <p className="text-[14px] leading-[1.4] text-[#868686]">
-                        {projectDetail.stats[2].value}
-                      </p>
-                    )}
-                  </div>
-                )}
+                <div className="absolute left-[30px] top-[30px] w-[197px] bg-white rounded-[10px] p-[20px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <h3 className="text-[14px] font-medium leading-[1.4] text-[#2A2A2A] mb-[10px]">
+                    {project.title}
+                  </h3>
+                  <p className="text-[14px] leading-[1.4] text-[#868686]">
+                    {project.date}
+                  </p>
+                  <p className="text-[14px] leading-[1.4] text-[#868686]">
+                    {project.location}
+                  </p>
+                </div>
                 
                 <div className="absolute bottom-4 right-4 w-12 h-12 rounded-full bg-white scale-0 group-hover:scale-100 transition-transform duration-300 flex items-center justify-center overflow-hidden z-10">
                   <img

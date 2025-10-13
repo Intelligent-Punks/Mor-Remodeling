@@ -33,7 +33,7 @@ export default function Services({ title, services }: ServicesProps) {
                   href={`/services/${service.id}`}
                   className={`group block ${isLastOdd ? 'col-span-2 md:col-span-1' : ''}`}
                 >
-                  <div className="relative rounded-[8px] md:rounded-[14px] overflow-hidden bg-[#2A2A2A] w-full h-[190px] md:h-[290px]">
+                  <div className="relative rounded-[8px] md:rounded-[14px] overflow-hidden w-full h-[190px] md:h-[290px]">
                     <img
                       src={getAssetUrl(service.image)}
                       alt={service.title}

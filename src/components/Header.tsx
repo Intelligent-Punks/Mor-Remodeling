@@ -152,7 +152,7 @@ export default function Header() {
                                 {services.list[0].title}
                               </Link>
                               <Link
-                                to="/services"
+                                to="/services/kitchen-remodeling"
                                 className="block w-[206px] h-[73px] mx-4 py-3 text-base font-normal leading-[1.4] text-[#2A2A2A] hover:bg-black/5 transition-colors border-b border-[#626261]"
                               >
                                 {services.list[1].title}

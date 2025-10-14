@@ -189,7 +189,13 @@ export default function ProjectDetailPage() {
       </section>
 
       {/* FAQ */}
-      <FAQ title={faq.title} subtitle={faq.subtitle} items={faq.items} />
+      <FAQ 
+          title={faq.title} 
+          subtitle={faq.subtitle} 
+          backgroundVideo={faq.backgroundVideo}
+          videoPoster={faq.videoPoster}
+          items={faq.items} 
+        />
 
       {/* Contact Form */}
       <ContactForm

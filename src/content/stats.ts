@@ -12,26 +12,26 @@ const stats = {
   items: [
     { 
       id: 'st1', 
-      value: '15+ Years', 
-      label: 'of remodeling expertise',
+      value: '15+ years', 
+      label: 'delivering remodeling excellence',
       bgImage: '/images/stats/img-1.png'
     },
     { 
       id: 'st2', 
-      value: '500+ Projects', 
-      label: 'successfully completed',
+      value: '500+ projects', 
+      label: 'completed with \n precision',
       bgImage: '/images/stats/img-2.png'
     },
     { 
       id: 'st3', 
-      value: '98%', 
-      label: 'client satisfaction rate',
+      value: '98% rating', 
+      label: 'from happy \n homeowners',
       bgImage: '/images/stats/img-3.png'
     },
     { 
       id: 'st4', 
-      value: '50+', 
-      label: 'skilled professionals and partners',
+      value: '50+ experts', 
+      label: 'dedicated \n to quality',
       bgImage: '/images/stats/img-4.png'
     },
   ] as StatItem[],

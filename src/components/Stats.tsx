@@ -52,7 +52,7 @@ export default function Stats({ title, description, stats }: StatsProps) {
                   charDelay={8}
                 />
               </div>
-              <p className="relative z-10 text-xs md:text-[20px] font-normal leading-[1.5] text-white">
+              <p className="relative z-10 text-xs md:text-[20px] font-normal leading-[1.5] text-white whitespace-pre-line">
                 {stat.label}
               </p>
             </div>

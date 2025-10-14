@@ -18,7 +18,7 @@ export const serviceDetails: ServiceDetail[] = [
   {
     slug: 'kitchen-remodeling',
     hero: {
-      title: 'Kitchen Remodelling',
+      title: 'Kitchen Remodeling',
       subtitle: 'Where functionality meets timeless design.',
       image: 'hero.png',
     },

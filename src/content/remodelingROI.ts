@@ -1,9 +1,7 @@
 export interface ROIItem {
   id: string
   title: string
-  subtitle?: string
   value: string
-  bgColor?: 'white' | 'yellow'
 }
 
 const remodelingROI = {
@@ -19,12 +17,11 @@ const remodelingROI = {
     {
       id: 'roi2',
       title: 'Bathroom Remodel',
-      value: '$25,250 -->$43,850 (+74%)',
+      value: '$25,250 --> $43,850 (+74%)',
     },
     {
       id: 'roi3',
       title: 'ADU Addition',
-      subtitle: 'Varies by size',
       value: '$150,000 --> $300,000 (+100%)',
     },
   ] as ROIItem[],

@@ -88,7 +88,7 @@ export default function ServicesPage() {
     <div className="bg-[#F2F1EF]">
       {/* Hero Section */}
       <section className="container-custom pt-[54px]">
-        <div className="mt-10 md:mt-[100px] mb-10">
+        <div className="mt-10 md:mt-[80px] mb-10 md:mb-18">
           <Breadcrumb />
         </div>
         <h1 className="text-[32px] md:text-5xl font-semibold text-[#2A2A2A]">
@@ -112,7 +112,7 @@ export default function ServicesPage() {
         <div
           className="container-custom transition-all duration-300"
           style={{
-            paddingTop: isNavSticky ? '10px' : '16px',
+            paddingTop: isNavSticky ? '10px' : '30px',
             paddingBottom: isNavSticky ? '10px' : '40px',
           }}
         >
@@ -173,8 +173,8 @@ export default function ServicesPage() {
         showButton={false}
       />
       {/* Reviews Carousel */}
-      <section className="pt-20 pb-[120px] bg-[#F2F1EF]">
-        <div className="container-custom mb-[80px]">
+      <section className="pt-20 pb-[80px] bg-[#F2F1EF]">
+        <div className="container-custom mb-[64px]">
           <h2 className="md:text-[48px] text-[32px] font-semibold leading-[1.4] text-[#2A2A2A] mb-[20px]">
             {contactPage.reviews.title}
           </h2>
@@ -213,7 +213,7 @@ function ServiceSection({ service, isLast }: ServiceSectionProps) {
   const hasDetailPage = serviceDetails.some((detail) => detail.slug === service.slug)
 
   return (
-    <section id={service.id} className="py-3 md:py-[80px]">
+    <section id={service.id} className="py-3 md:pt-[70px] md:pb-0">
       <div className="container-custom">
         {/* Title & Short Description */}
         <div className="grid grid-cols-1 md:grid-cols-[440px_1fr] gap-5 md:gap-[80px]">
@@ -235,7 +235,7 @@ function ServiceSection({ service, isLast }: ServiceSectionProps) {
         </div>
 
         {/* Images Grid */}
-        <div className="mt-5 md:mt-[140px] grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-[40px]">
+        <div className="mt-5 md:mt-[72px] grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-[40px]">
           {service.images.map((image, idx) => (
             <div
               key={idx}
@@ -262,7 +262,7 @@ function ServiceSection({ service, isLast }: ServiceSectionProps) {
       </div>
 
       {/* Divider */}
-      {!isLast && <div className="mt-6 md:mt-[80px] w-full h-px bg-white" />}
+      {!isLast && <div className="mt-6 md:mt-[78px] w-full h-px bg-white" />}
     </section>
   )
 }

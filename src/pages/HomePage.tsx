@@ -36,13 +36,13 @@ export default function HomePage() {
         </video>
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/30 to-transparent" />
 
-        <div className="relative z-10 container-custom pb-16 pt-8 grid grid-cols-1 md:grid-cols-2 items-end gap-8 min-h-[750px] text-white">
+        <div className="relative z-10 container-custom pb-16 pt-8 flex flex-col justify-end md:grid md:grid-cols-2 items-end gap-8 min-h-[750px] text-white">
           <h1 className="sr-only">{home.title}</h1>
           <div>
             <h2 className="max-w-[600px] font-medium leading-[1.4] text-[32px] md:text-[40px] text-[#F2F1EF]">{home.hero.heading}</h2>
           </div>
           <div>
-            <p className="max-w-[620px] mt-2 text-[16px] md:text-[20px] leading-[1.4] text-[#F2F1EF]/95">{home.hero.subheading}</p>
+            <p className="max-w-[620px] md:mt-2 text-[16px] md:text-[20px] leading-[1.4] text-[#F2F1EF]/95">{home.hero.subheading}</p>
           </div>
         </div>
       </section>
@@ -87,8 +87,8 @@ export default function HomePage() {
       </LazySection>
 
       <LazySection rootMargin="200px">
-        <section className="pt-20 pb-[120px] bg-[#F2F1EF]">
-          <div className="container-custom mb-[80px]">
+        <section className="pt-20 pb-[80px] bg-[#F2F1EF]">
+          <div className="container-custom mb-[64px]">
             <h2 className="md:text-[48px] text-[32px] font-semibold leading-[1.4] text-[#2A2A2A] mb-[20px]">
               {contactPage.reviews.title}
             </h2>

@@ -28,7 +28,7 @@ export default function OurProjects({
   const [isHovered, setIsHovered] = useState(false)
   
   return (
-    <section className="py-20">
+    <section className="py-13 md:py-20">
       <div className="container-custom">
         {(title || description) && (
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-8">
@@ -72,7 +72,7 @@ export default function OurProjects({
           </div>
         )}
 
-        <div className={`${title || description ? 'mt-10 md:mt-[115px]' : ''} grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-10`}>
+        <div className={`${title || description ? 'mt-10 md:mt-[64px]' : ''} grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-10`}>
           {projects.map((project, idx) => {
             // Desktop: row1 (1col, 1col, 2col), row2 (2col, 1col, 1col), row3 (1col, 1col, 2col)
             const rowIndex = Math.floor(idx / 3)

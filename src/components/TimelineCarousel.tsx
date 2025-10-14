@@ -12,7 +12,8 @@ interface TimelineCarouselProps {
 export default function TimelineCarousel({ items, onIndexChange, showButtons = true, activeIndex: externalActiveIndex }: TimelineCarouselProps) {
   const [internalActiveIndex, setInternalActiveIndex] = useState(0)
   const [offset, setOffset] = useState(0)
-  const [visibleItems, setVisibleItems] = useState(4) // Default: assume 4 items visible
+  const [itemWidth, setItemWidth] = useState(330) // Dynamic item width
+  const [visibleItems, setVisibleItems] = useState(4.3) // Show 4 full + partial 5th item
   const [isMobile, setIsMobile] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
   const total = items.length
@@ -20,33 +21,42 @@ export default function TimelineCarousel({ items, onIndexChange, showButtons = t
   // Use external activeIndex if provided, otherwise use internal
   const activeIndex = externalActiveIndex !== undefined ? externalActiveIndex : internalActiveIndex
 
-  // Calculate how many items are visible based on container width
+  // Calculate dynamic item width based on container width
   useEffect(() => {
-    const calculateVisibleItems = () => {
+    const calculateItemWidth = () => {
       const mobile = window.innerWidth < 768
       setIsMobile(mobile)
       
       if (containerRef.current) {
         const containerWidth = containerRef.current.offsetWidth
-        // Mobile: 197px per item, Desktop: 330px per item
-        const itemWidth = mobile ? 197 : 330
-        const itemsCount = Math.floor(containerWidth / itemWidth)
-        setVisibleItems(Math.max(mobile ? 2 : 3, itemsCount)) // Minimum 2 on mobile, 3 on desktop
+        
+        // Get padding-left from computed styles
+        const computedStyle = window.getComputedStyle(containerRef.current)
+        const paddingLeft = parseFloat(computedStyle.paddingLeft) || 0
+        
+        // Available width for items
+        const availableWidth = containerWidth - paddingLeft
+        
+        // Desired visible items: 2.3 on mobile, 4.3 on desktop
+        const desiredVisibleItems = mobile ? 2.3 : 4.3
+        setVisibleItems(desiredVisibleItems)
+        
+        // Calculate dynamic item width
+        const calculatedItemWidth = availableWidth / desiredVisibleItems
+        setItemWidth(Math.floor(calculatedItemWidth))
       }
     }
 
-    calculateVisibleItems()
-    window.addEventListener('resize', calculateVisibleItems)
-    return () => window.removeEventListener('resize', calculateVisibleItems)
+    calculateItemWidth()
+    window.addEventListener('resize', calculateItemWidth)
+    return () => window.removeEventListener('resize', calculateItemWidth)
   }, [])
 
   // Sync offset with activeIndex changes
   useEffect(() => {
     // Scrolling logic:
     // - Mobile: index 0 static, from index 1 onwards scroll (but cap at maxScroll)
-    // - Desktop: index 0,1,2 static, from index 3 onwards scroll (but cap at maxScroll)
-    
-    const itemWidth = isMobile ? 197 : 330
+    // - Desktop: index 0,1,2,3 static, from index 4 onwards scroll (but cap at maxScroll)
     
     if (isMobile) {
       // Mobile: scroll starts from index 1
@@ -54,24 +64,23 @@ export default function TimelineCarousel({ items, onIndexChange, showButtons = t
         setOffset(0)
       } else {
         const currentOffset = activeIndex * itemWidth
-        // Stop scrolling when last item is visible (when we've scrolled enough)
+        // Stop scrolling when last item is visible
         const maxScroll = Math.max(0, (total - visibleItems) * itemWidth)
         setOffset(Math.min(currentOffset, maxScroll))
       }
     } else {
-      // Desktop: scroll starts from index 3
-      if (activeIndex <= 2) {
+      // Desktop: scroll starts from index 4 (keep first 4 visible)
+      if (activeIndex <= 3) {
         setOffset(0)
       } else {
-        const scrollAmount = activeIndex - 2
+        const scrollAmount = activeIndex - 3
         const currentOffset = scrollAmount * itemWidth
         // Stop when last item is visible
-        const adjustment = visibleItems >= 5 ? 0 : 1
-        const maxScroll = Math.max(0, (total - visibleItems - adjustment) * itemWidth)
+        const maxScroll = Math.max(0, (total - visibleItems) * itemWidth)
         setOffset(Math.min(currentOffset, maxScroll))
       }
     }
-  }, [activeIndex, total, visibleItems, isMobile])
+  }, [activeIndex, total, visibleItems, isMobile, itemWidth])
 
   const next = () => {
     if (activeIndex < total - 1) {
@@ -100,15 +109,13 @@ export default function TimelineCarousel({ items, onIndexChange, showButtons = t
     onIndexChange(idx)
   }
 
-  const itemWidth = isMobile ? 197 : 330
-
   return (
     <div ref={containerRef} className="relative timeline-container overflow-hidden">
       {/* Timeline Line - Moves with dots */}
       <div 
         className="absolute h-px bg-[#C99E63] timeline-line"
         style={{ 
-          top: isMobile ? '43px' : '73px',
+          top: isMobile ? '47px' : '73px',
           width: `${(total - 1) * itemWidth}px` // Line spans from first to last dot
         }} 
       />
@@ -125,10 +132,9 @@ export default function TimelineCarousel({ items, onIndexChange, showButtons = t
             <button
               key={item.id}
               onClick={() => selectItem(idx)}
-              className="relative flex flex-col items-start cursor-pointer group"
+              className="relative flex flex-col items-start cursor-pointer group flex-shrink-0"
               style={{
-                width: idx === items.length - 1 ? 'auto' : '50%',
-                minWidth: idx === items.length - 1 ? 'auto' : `${itemWidth}px`,
+                width: idx === items.length - 1 ? 'auto' : `${itemWidth}px`,
               }}
             >
               {/* Year - Above line, aligned to dot */}

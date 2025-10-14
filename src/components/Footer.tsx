@@ -51,12 +51,12 @@ export default function Footer() {
   ]
 
   return (
-    <footer className="bg-[#F2F1EF] py-12 md:py-20">
+    <footer className="bg-[#F2F1EF] py-12 md:py-16">
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-[1fr_620px] gap-10 md:gap-10">
           <div>
             {/* Mobile: Logo and Social Links in one row */}
-            <div className="flex items-center justify-between mb-10 md:mb-0">
+            <div className="flex items-center justify-between md:mt-4 mb-10 md:mb-0">
               <img
                 src={getAssetUrl('/icons/Mor-remodeling-logo.png')}
                 alt="Mor Remodeling"
@@ -78,7 +78,7 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="mb-8 md:mb-[40px] mt-10 md:mt-[92px]">
+            <div className="mb-8 md:mb-[20px] mt-10 md:mt-[30px]">
               <h3 className="text-base md:text-[20px] font-medium leading-[1.4] uppercase text-[#2A2A2A]">
                 Keep with us
               </h3>
@@ -86,7 +86,7 @@ export default function Footer() {
                 Get news, coupons, events, and business updates
               </p>
 
-              <div className="mt-6 md:mt-[40px] relative mb-4">
+              <div className="mt-6 md:mt-[30px] relative mb-2">
                 <form onSubmit={handleSubscribe} className="flex items-center gap-2 md:gap-[10px] bg-white rounded-full h-[70px] pl-6 md:pl-[30px] max-w-full md:max-w-[480px]">
                   <input
                     type="email"
@@ -101,7 +101,7 @@ export default function Footer() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`px-6 md:px-[30px] py-5 md:py-[23px] rounded-full text-sm md:text-base font-medium transition-all cursor-pointer overflow-hidden ${
+                    className={`px-6 md:px-[30px] py-5 md:py-[13px] mr-2 rounded-full text-sm md:text-base font-medium transition-all cursor-pointer overflow-hidden ${
                       isSubmitting 
                         ? 'bg-[#2A2A2A] text-white' 
                         : 'bg-[#F4C077] text-[#2A2A2A] active:bg-[#2A2A2A] active:text-white'
@@ -162,16 +162,16 @@ export default function Footer() {
           </div>
 
           <div>
-            <div className="space-y-6 md:space-y-[30px]">
+            <div className="space-y-6 md:space-y-[24px]">
               {navLinks.map((link) => (
-                <div key={link.id} className="border-b border-black/40 pb-6 md:pb-[30px]">
+                <div key={link.id} className="border-b border-black/40 pb-6 md:pb-[24px]">
                   <div className="flex items-center gap-4 md:gap-[20px]">
                     <span className="text-sm md:text-[20px] leading-[1.4] uppercase text-[#2A2A2A]">
                       {link.id}
                     </span>
                     <Link
                       to={link.path}
-                      className="text-[32px] md:text-[64px] font-normal leading-[1.4] uppercase text-[#2A2A2A] hover:opacity-70 transition-opacity"
+                      className="text-[32px] md:text-[64px] font-normal leading-[1.2] uppercase text-[#2A2A2A] hover:opacity-70 transition-opacity"
                     >
                       <AnimatedText text={link.label} staggered={false} />
                     </Link>

@@ -135,12 +135,12 @@ export default function ContactForm({ title, subtitle, backgroundImage }: Contac
             <h2 className="text-[20px] md:text-[32px] font-semibold leading-[1.4] text-[#2A2A2A]">
               {title}
             </h2>
-            <p className="mt-6 md:mt-[40px] text-sm md:text-[20px] font-normal leading-[1.4] text-[#2A2A2A]">
+            <p className="mt-6 md:mt-[20px] text-sm md:text-[20px] font-normal leading-[1.4] text-[#2A2A2A]">
               {subtitle}
             </p>
 
-            <form onSubmit={handleSubmit} className="mt-10 md:mt-[60px] space-y-8 md:space-y-[40px]">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-[20px]">
+            <form onSubmit={handleSubmit} className="mt-10 md:mt-[40px] space-y-8 md:space-y-[40px]">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-[16px]">
                 <div className="relative">
                   <input
                     type="text"

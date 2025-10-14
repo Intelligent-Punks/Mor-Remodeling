@@ -16,7 +16,7 @@ interface StatsProps {
 
 export default function Stats({ title, description, stats }: StatsProps) {
   return (
-    <section className="py-12 md:py-20 bg-white">
+    <section className="py-12 md:py-16 bg-white">
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-[290px_1fr] gap-6 md:gap-10 items-start md:items-center">
           <div>
@@ -31,7 +31,7 @@ export default function Stats({ title, description, stats }: StatsProps) {
           </div>
         </div>
 
-        <div className="mt-10 md:mt-[115px] grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-10">
+        <div className="mt-10 md:mt-[75px] grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-10">
           {stats.map((stat) => (
             <div
               key={stat.id}

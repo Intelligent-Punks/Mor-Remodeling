@@ -41,7 +41,7 @@ const contactPageData = {
       {
         id: 'address',
         label: 'Address',
-        value: '1254 Evergreen Avenue, Suite 200.\nDallas, TX 75201',
+        value: '1254 Evergreen Avenue, Suite 200. Dallas, TX 75201',
       },
     ],
   },
@@ -54,7 +54,7 @@ const contactPageData = {
   reviews: {
     title: 'What Our Clients Say',
     subtitle:
-      'Don\'t just take our word for it — hear directly from homeowners who trusted MOR Remodelling to transform their spaces. From concept to completion, we\'re committed to delivering results that exceed expectations.',
+      'Real stories from homeowners who trusted MOR Remodeling to transform their spaces with quality, care, and precision.',
     items: [
       {
         id: 'review-1',

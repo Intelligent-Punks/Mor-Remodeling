@@ -35,6 +35,7 @@ export default function Header() {
   const [isPastHero, setIsPastHero] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isServicesMenuOpen, setIsServicesMenuOpen] = useState(false)
+  const [showMobileServicesSubmenu, setShowMobileServicesSubmenu] = useState(false)
   const servicesMenuTimeout = useRef<number | null>(null)
   const location = useLocation()
 
@@ -60,6 +61,7 @@ export default function Header() {
   // Close mobile menu on route change
   useEffect(() => {
     setIsMobileMenuOpen(false)
+    setShowMobileServicesSubmenu(false)
   }, [location.pathname])
 
   // Prevent body scroll when menu is open
@@ -143,70 +145,49 @@ export default function Header() {
                         <div className="relative p-[30px]">
                           {/* 3x3 Grid with proper structure */}
                           <div className="grid grid-cols-3 gap-0">
-                            {/* Column 1 */}
+                            {/* Column 1: services 0,1,2 */}
                             <div className="flex flex-col">
-                              <Link
-                                to="/services"
-                                className="block w-[206px] h-[73px] mx-4 py-3 text-base font-normal leading-[1.4] text-[#2A2A2A] hover:bg-black/5 transition-colors border-b border-[#626261]"
-                              >
-                                {services.list[0].title}
-                              </Link>
-                              <Link
-                                to="/services/kitchen-remodeling"
-                                className="block w-[206px] h-[73px] mx-4 py-3 text-base font-normal leading-[1.4] text-[#2A2A2A] hover:bg-black/5 transition-colors border-b border-[#626261]"
-                              >
-                                {services.list[1].title}
-                              </Link>
-                              <Link
-                                to="/services"
-                                className="block w-[206px] h-[73px] mx-4 py-3 text-base font-normal leading-[1.4] text-[#2A2A2A] hover:bg-black/5 transition-colors"
-                              >
-                                {services.list[2].title}
-                              </Link>
+                              {services.list.slice(0, 3).map((service, idx) => (
+                                <Link
+                                  key={service.id}
+                                  to={service.slug ? `/services/${service.slug}` : '/services'}
+                                  className={`block w-[206px] h-[73px] mx-4 py-3 text-base font-normal leading-[1.4] text-[#2A2A2A] hover:bg-black/5 transition-colors ${
+                                    idx < 2 ? 'border-b border-[#626261]' : ''
+                                  }`}
+                                >
+                                  {service.title}
+                                </Link>
+                              ))}
                             </div>
 
-                            {/* Column 2 */}
+                            {/* Column 2: services 6,7,8 */}
                             <div className="flex flex-col border-l border-r border-[#626261]">
-                              <Link
-                                to="/services"
-                                className="block w-[206px] h-[73px] mx-3 py-3 text-base font-normal leading-[1.4] text-[#2A2A2A] hover:bg-black/5 transition-colors border-b border-[#626261] whitespace-pre-line"
-                              >
-                                {services.list[6].title}
-                              </Link>
-                              <Link
-                                to="/services"
-                                className="block w-[206px] h-[73px] mx-3 py-3 text-base font-normal leading-[1.4] text-[#2A2A2A] hover:bg-black/5 transition-colors border-b border-[#626261] whitespace-pre-line"
-                              >
-                                {services.list[7].title}
-                              </Link>
-                              <Link
-                                to="/services"
-                                className="block w-[206px] h-[73px] mx-3 py-3 text-base font-normal leading-[1.4] text-[#2A2A2A] hover:bg-black/5 transition-colors whitespace-pre-line"
-                              >
-                                {services.list[8].title}
-                              </Link>
+                              {services.list.slice(6, 9).map((service, idx) => (
+                                <Link
+                                  key={service.id}
+                                  to={service.slug ? `/services/${service.slug}` : '/services'}
+                                  className={`block w-[206px] h-[73px] mx-3 py-3 text-base font-normal leading-[1.4] text-[#2A2A2A] hover:bg-black/5 transition-colors whitespace-pre-line ${
+                                    idx < 2 ? 'border-b border-[#626261]' : ''
+                                  }`}
+                                >
+                                  {service.title}
+                                </Link>
+                              ))}
                             </div>
 
-                            {/* Column 3 */}
+                            {/* Column 3: services 3,4,5 */}
                             <div className="flex flex-col">
-                              <Link
-                                to="/services"
-                                className="block w-[206px] h-[73px] mx-3 py-3 text-base font-normal leading-[1.4] text-[#2A2A2A] hover:bg-black/5 transition-colors border-b border-[#626261] whitespace-pre-line"
-                              >
-                                {services.list[3].title}
-                              </Link>
-                              <Link
-                                to="/services"
-                                className="block w-[206px] h-[73px] mx-3 py-3 text-base font-normal leading-[1.4] text-[#2A2A2A] hover:bg-black/5 transition-colors border-b border-[#626261]"
-                              >
-                                {services.list[4].title}
-                              </Link>
-                              <Link
-                                to="/services"
-                                className="block w-[206px] h-[73px] mx-3 py-3 text-base font-normal leading-[1.4] text-[#2A2A2A] hover:bg-black/5 transition-colors whitespace-pre-line"
-                              >
-                                {services.list[5].title}
-                              </Link>
+                              {services.list.slice(3, 6).map((service, idx) => (
+                                <Link
+                                  key={service.id}
+                                  to={service.slug ? `/services/${service.slug}` : '/services'}
+                                  className={`block w-[206px] h-[73px] mx-3 py-3 text-base font-normal leading-[1.4] text-[#2A2A2A] hover:bg-black/5 transition-colors whitespace-pre-line ${
+                                    idx < 2 ? 'border-b border-[#626261]' : ''
+                                  }`}
+                                >
+                                  {service.title}
+                                </Link>
+                              ))}
                             </div>
                           </div>
                         </div>
@@ -240,10 +221,15 @@ export default function Header() {
         
         {/* Mobile Menu Button */}
         <button 
-          className={`md:hidden text-sm font-medium ${isPastHero ? 'text-[#2A2A2A]' : 'text-[#F2F1EF]'}`}
-          onClick={() => setIsMobileMenuOpen(true)}
+          className="md:hidden"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
         >
-          Menu
+          <img 
+            src={getAssetUrl(isMobileMenuOpen ? '/icons/close-square.svg' : '/icons/burger-menu.svg')} 
+            alt="" 
+            className={`w-8 h-8 ${isPastHero ? '' : 'invert'}`}
+          />
         </button>
         
         {/* Desktop Phone Button */}
@@ -255,42 +241,123 @@ export default function Header() {
 
     {/* Mobile Menu Overlay */}
     {isMobileMenuOpen && (
-      <div className="fixed inset-0 z-[100] bg-[#F2F1EF] md:hidden">
-        <div className="h-full flex flex-col">
-          {/* Close Button */}
-          <div className="flex justify-end p-5">
-            <button
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="w-12 h-12 flex items-center justify-center"
-              aria-label="Close menu"
-            >
-              <svg className="w-9 h-9 text-[#2A2A2A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
+      <div className="fixed top-[78px] left-0 right-0 bottom-0 z-[100] bg-[#F2F1EF] md:hidden">
+        <div className="h-full flex flex-col px-5 pt-5">
+          {!showMobileServicesSubmenu ? (
+            <>
+              {/* Main Navigation Links */}
+              <nav className="flex flex-col space-y-0">
+                {/* Home Page Link (mobile only) */}
+                <div className="relative">
+                  <NavLink
+                    to="/"
+                    className="flex items-center py-3 border-b border-black/40"
+                  >
+                    <span className="text-sm font-normal leading-[1.4] text-[#2A2A2A] uppercase w-[17px]">
+                      01
+                    </span>
+                    <span className="ml-6 text-[48px] font-normal leading-[1.4] text-[#2A2A2A] uppercase">
+                      home page
+                    </span>
+                  </NavLink>
+                </div>
 
-          {/* Navigation Links */}
-          <nav className="flex flex-col px-8 pt-20 space-y-8">
-            {common.nav.map((item) => (
-              <NavLink
-                key={item.path}
-                to={item.path}
-                className={({ isActive }) =>
-                  `text-[32px] font-medium leading-[1.4] uppercase ${
-                    isActive ? 'text-[#2A2A2A] underline underline-offset-4' : 'text-[#2A2A2A]'
-                  }`
-                }
+                {common.nav.map((item, idx) => {
+                  const isServices = item.path === '/services'
+                  
+                  if (isServices) {
+                    return (
+                      <div key={item.path} className="relative">
+                        <button
+                          onClick={() => setShowMobileServicesSubmenu(true)}
+                          className="w-full flex items-center py-3 border-b border-black/40 text-left"
+                        >
+                          <span className="text-sm font-normal leading-[1.4] text-[#2A2A2A] uppercase w-[17px]">
+                            {String(idx + 2).padStart(2, '0')}
+                          </span>
+                          <span className="ml-6 text-[48px] font-normal leading-[1.4] text-[#2A2A2A] uppercase">
+                            {item.label}
+                          </span>
+                        </button>
+                      </div>
+                    )
+                  }
+                  
+                  return (
+                    <div key={item.path} className="relative">
+                      <NavLink
+                        to={item.path}
+                        className="flex items-center py-3 border-b border-black/40"
+                      >
+                        <span className="text-sm font-normal leading-[1.4] text-[#2A2A2A] uppercase w-[17px]">
+                          {String(idx + 2).padStart(2, '0')}
+                        </span>
+                        <span className="ml-6 text-[48px] font-normal leading-[1.4] text-[#2A2A2A] uppercase">
+                          {item.label}
+                        </span>
+                      </NavLink>
+                    </div>
+                  )
+                })}
+              </nav>
+
+              {/* Social Icons at Bottom */}
+              <div className="mt-auto pb-10 flex gap-[50px]">
+                <a href={contacts.instagram} aria-label="Instagram">
+                  <img src={getAssetUrl('/icons/instagram.svg')} alt="" className="w-[34px] h-[30px]" />
+                </a>
+                <a href={contacts.twitter} aria-label="Twitter">
+                  <img src={getAssetUrl('/icons/x.svg')} alt="" className="w-8 h-8" />
+                </a>
+                <a href={contacts.linkedin} aria-label="LinkedIn">
+                  <img src={getAssetUrl('/icons/linkedin.svg')} alt="" className="w-[34px] h-[34px]" />
+                </a>
+                <a href={contacts.telegram} aria-label="Telegram">
+                  <img src={getAssetUrl('/icons/telegram.svg')} alt="" className="w-8 h-8" />
+                </a>
+              </div>
+            </>
+          ) : (
+            <>
+              {/* Back Button */}
+              <button
+                onClick={() => setShowMobileServicesSubmenu(false)}
+                className="flex items-center gap-3 mb-[10px]"
               >
-                {item.label}
-              </NavLink>
-            ))}
-          </nav>
+                <div className="w-[46px] h-[46px] rounded-full bg-white flex items-center justify-center">
+                  <img 
+                    src={getAssetUrl('/icons/arrow-right.svg')} 
+                    alt="" 
+                    className="w-5 h-5 rotate-180"
+                  />
+                </div>
+                <span className="text-sm font-semibold leading-[1.4] text-[#2A2A2A] uppercase">
+                  Back
+                </span>
+              </button>
 
-          {/* Phone Button at Bottom */}
-          <div className="mt-auto p-8">
-            <PhoneButton isPastHero={true} isMobile={true} />
-          </div>
+              {/* Services Submenu */}
+              <nav className="flex flex-col">
+                {services.list.map((service, idx) => (
+                  <div key={service.id}>
+                    <Link
+                      to={service.slug ? `/services/${service.slug}` : '/services'}
+                      className="flex items-center justify-between py-4.5 border-b border-black/40"
+                    >
+                      <div className="flex items-center gap-3">
+                        <span className="text-sm font-normal leading-[1.4] text-[#2A2A2A] uppercase">
+                          {String(idx + 1).padStart(2, '0')}
+                        </span>
+                        <span className="text-[20px] font-normal leading-[1.4] text-[#2A2A2A] w-[349px]">
+                          {service.title}
+                        </span>
+                      </div>
+                    </Link>
+                  </div>
+                ))}
+              </nav>
+            </>
+          )}
         </div>
       </div>
     )}

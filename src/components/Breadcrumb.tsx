@@ -12,7 +12,11 @@ const routeNames: Record<string, string> = {
   'kitchen-remodel': 'Kitchen Remodel',
 }
 
-export default function Breadcrumb() {
+interface BreadcrumbProps {
+  customLabel?: string
+}
+
+export default function Breadcrumb({ customLabel }: BreadcrumbProps = {}) {
   const location = useLocation()
   const pathnames = location.pathname.split('/').filter((x) => x)
 
@@ -32,7 +36,7 @@ export default function Breadcrumb() {
         {pathnames.map((name, index) => {
           const routeTo = `/${pathnames.slice(0, index + 1).join('/')}`
           const isLast = index === pathnames.length - 1
-          const displayName = routeNames[name] || name
+          const displayName = isLast && customLabel ? customLabel : (routeNames[name] || name)
 
           return (
             <span key={routeTo}>

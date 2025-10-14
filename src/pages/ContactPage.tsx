@@ -91,7 +91,7 @@ export default function ContactPage() {
           {contactPage.map.title}
         </h2>
       </section>
-      <div className="w-full h-[620px] overflow-hidden pb-[120px]">
+      <div className="w-full h-[620px] overflow-hidden pb-[80px]">
         <iframe
           src={contactPage.map.embedUrl}
           width="100%"
@@ -105,7 +105,7 @@ export default function ContactPage() {
       </div>
 
       {/* Reviews Section */}
-      <section className="pb-[120px]">
+      <section className="pb-[60px]">
         <div className="container-custom mb-[80px]">
           <h2 className="text-[48px] font-semibold leading-[1.4] text-[#2A2A2A] mb-[20px]">
             {contactPage.reviews.title}

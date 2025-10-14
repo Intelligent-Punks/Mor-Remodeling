@@ -43,11 +43,11 @@ export default function FAQ({ title, subtitle, backgroundVideo, videoPoster, ite
       )}
 
       <div className="relative z-10 container-custom">
-        <div className="text-left md:text-center mb-10 md:mb-[93px]">
+        <div className="text-left md:text-center mb-10 md:mb-[64px]">
           <h2 className="text-[32px] md:text-[48px] font-semibold leading-[1.4] text-[#2A2A2A]">
             {title}
           </h2>
-          <p className="mt-4 md:mt-[40px] text-sm md:text-[20px] font-medium leading-[1.4] text-[#2A2A2A]">
+          <p className="mt-4 md:mt-[20px] text-sm md:text-[20px] font-medium leading-[1.4] text-[#2A2A2A]">
             {subtitle}
           </p>
         </div>

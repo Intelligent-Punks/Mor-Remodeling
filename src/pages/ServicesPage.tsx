@@ -202,7 +202,7 @@ function ServiceSection({ service, isLast }: ServiceSectionProps) {
       <div className="container-custom">
         {/* Title & Short Description */}
         <div className="grid grid-cols-1 md:grid-cols-[440px_1fr] gap-5 md:gap-[80px]">
-          <h2 className="text-[20px] md:text-[36px] font-semibold leading-[1.4] text-[#2A2A2A]">
+          <h2 className="text-[20px] md:text-[36px] md:mt-[-5px] font-semibold leading-[1.4] text-[#2A2A2A]">
             {hasDetailPage ? (
               <Link 
                 to={`/services/${service.slug}`} 

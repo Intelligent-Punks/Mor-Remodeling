@@ -4,9 +4,7 @@ import { getAssetUrl } from '@/utils/asset'
 interface ROIItem {
   id: string
   title: string
-  subtitle?: string
   value: string
-  bgColor?: 'white' | 'yellow'
 }
 
 interface RemodelingROIProps {
@@ -44,17 +42,20 @@ export default function RemodelingROI({
         {/* Mobile: Horizontal scroll carousel */}
         <div className="md:hidden overflow-x-auto scrollbar-hide">
           <div className="flex gap-[10px] pl-4">
-            {items.map((item) => {
+            {items.map((item, index) => {
               // Parse value like "$27,500 --> $53,900 (+96%)"
               const match = item.value.match(/(.+?)\s*-->\s*(.+?)\s*\((.+?)\)/)
               const fromValue = match ? match[1].trim() : ''
               const toValue = match ? match[2].trim() : ''
               const percentage = match ? match[3].trim() : ''
+              const isThird = index === 2
 
               return (
                 <div
                   key={item.id}
-                  className="flex-shrink-0 w-[177px] h-[177px] p-5 flex flex-col justify-between bg-white"
+                  className={`flex-shrink-0 w-[177px] h-[177px] p-3 flex flex-col justify-between rounded-[14px] border border-white/20 backdrop-blur-[10px] ${
+                    isThird ? 'bg-[#F4C077]/10' : 'bg-white/10'
+                  }`}
                 >
                   <div>
                     <h3 className="text-[20px] font-medium leading-[1.4] text-[#2A2A2A]">
@@ -63,11 +64,17 @@ export default function RemodelingROI({
                   </div>
 
                   <div>
-                    <div className="flex items-center gap-[5px] mb-[7px]">
-                      <span className="text-[14px] font-medium leading-[1.5] text-[#2A2A2A]">
-                        {fromValue}
-                      </span>
-                      <svg width="18" height="18" viewBox="0 0 32 32" fill="none">
+                    {/* Price labels */}
+                    <div className="flex items-end justify-between gap-[5px] mb-[10px]">
+                      <div className="flex flex-col gap-[8px]">
+                        <span className="text-[10px] font-medium leading-[1.5] text-[#2A2A2A]">
+                          price before
+                        </span>
+                        <span className="text-[14px] font-medium leading-[1.5] text-[#2A2A2A]">
+                          {fromValue}
+                        </span>
+                      </div>
+                      <svg width="18" height="18" viewBox="0 0 32 32" fill="none" className="mb-[2px]">
                         <path
                           d="M4.67 15.91L27.33 15.91M27.33 15.91L19.24 7.82M27.33 15.91L19.24 24"
                           stroke="#2A2A2A"
@@ -76,13 +83,27 @@ export default function RemodelingROI({
                           strokeLinejoin="round"
                         />
                       </svg>
-                      <span className="text-[14px] font-medium leading-[1.5] text-[#2A2A2A]">
-                        {toValue}
-                      </span>
+                      <div className="flex flex-col gap-[8px]">
+                        <span className="text-[10px] font-medium leading-[1.5] text-[#2A2A2A]">
+                          price after
+                        </span>
+                        <span className="text-[14px] font-medium leading-[1.5] text-[#2A2A2A]">
+                          {toValue}
+                        </span>
+                      </div>
                     </div>
 
-                    <div className="inline-flex items-center justify-center px-2 py-[8px] rounded-full bg-[#F2F1EF]">
-                      <span className="text-[16px] font-medium leading-[1.5] text-[#2A2A2A]">
+                    <div className={`inline-flex items-center gap-1 px-2 py-2 rounded-full ${
+                      isThird ? 'bg-[#FCCA84]' : 'bg-[#F2F1EF]'
+                    }`}>
+                      <img
+                        src={getAssetUrl('/icons/price-up.svg')}
+                        alt=""
+                        className={`w-3 h-3.5 ${!isThird ? 'invert' : ''}`}
+                      />
+                      <span className={`text-base font-medium leading-[1.5] ${
+                        isThird ? 'text-white' : 'text-[#2A2A2A]'
+                      }`}>
                         {percentage}
                       </span>
                     </div>
@@ -107,28 +128,29 @@ export default function RemodelingROI({
             return (
               <div
                 key={item.id}
-                className="group min-h-[320px] p-[28px] flex flex-col justify-between transition-colors duration-300 bg-white hover:bg-[#F4C077]"
+                className="group w-[400px] h-[248px] p-[30px] flex flex-col justify-between rounded-[20px] transition-colors duration-300 bg-white/20 hover:bg-[#F4C077]/20 backdrop-blur-[5px]"
               >
                 <div>
                   <AnimatedParagraph
                     text={item.title}
-                    className="text-[36px] font-medium leading-[1.4] text-[#2A2A2A]"
+                    className="text-[28px] font-medium leading-[1.4] text-[#2A2A2A]"
                     lineDelay={60}
                     charDelay={8}
                   />
-                  {item.subtitle && (
-                    <p className="mt-[20px] text-[20px] font-medium leading-[1.5] text-[#2A2A2A]">
-                      {item.subtitle}
-                    </p>
-                  )}
                 </div>
 
                 <div>
-                  <div className="flex items-center gap-[10px]">
-                    <span className="text-[32px] font-medium leading-[1.5] text-[#2A2A2A]">
-                      {fromValue}
-                    </span>
-                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                  {/* Price labels */}
+                  <div className="flex items-start gap-[9px] mb-[10px]">
+                    <div className="flex flex-col gap-[2px]">
+                      <span className="text-base font-medium leading-[1.5] text-[#2A2A2A]">
+                        price before
+                      </span>
+                      <span className="text-[28px] font-medium leading-[1.5] text-[#2A2A2A]">
+                        {fromValue}
+                      </span>
+                    </div>
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className="mt-[31px]">
                       <path
                         d="M4.67 15.91L27.33 15.91M27.33 15.91L19.24 7.82M27.33 15.91L19.24 24"
                         stroke="#2A2A2A"
@@ -137,13 +159,23 @@ export default function RemodelingROI({
                         strokeLinejoin="round"
                       />
                     </svg>
-                    <span className="text-[32px] font-medium leading-[1.5] text-[#2A2A2A]">
-                      {toValue}
-                    </span>
+                    <div className="flex flex-col gap-[2px]">
+                      <span className="text-base font-medium leading-[1.5] text-[#2A2A2A]">
+                        price after
+                      </span>
+                      <span className="text-[28px] font-medium leading-[1.5] text-[#2A2A2A]">
+                        {toValue}
+                      </span>
+                    </div>
                   </div>
 
-                  <div className="inline-flex items-center justify-center px-[18px] rounded-full self-start transition-colors duration-300 bg-[#F2F1EF] group-hover:bg-[#FCCA84] mt-[12px]">
-                    <span className="text-[40px] font-medium leading-[1.5] text-[#2A2A2A] group-hover:text-white transition-colors duration-300">
+                  <div className="inline-flex items-center gap-[10px] px-[21px] py-2 rounded-full transition-colors duration-300 bg-[#2A2A2A] group-hover:bg-[#FCCA84]">
+                    <img
+                      src={getAssetUrl('/icons/price-up.svg')}
+                      alt=""
+                      className="w-[18px] h-5"
+                    />
+                    <span className="text-xl font-medium leading-[1.5] text-white group-hover:text-white transition-colors duration-300">
                       {percentage}
                     </span>
                   </div>

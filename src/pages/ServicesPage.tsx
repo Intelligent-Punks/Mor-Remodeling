@@ -10,11 +10,11 @@ import FAQ from '@/components/FAQ'
 import ContactForm from '@/components/ContactForm'
 import Breadcrumb from '@/components/Breadcrumb'
 import { getAssetUrl } from '@/utils/asset'
+import contactPage from '@/content/contactPage'
+import ReviewsCarousel from '@/components/ReviewsCarousel'
 
 export default function ServicesPage() {
-  const [activeSection, setActiveSection] = useState<string>(
-    servicesPage.services[0].id
-  )
+  const [activeSection, setActiveSection] = useState<string>(servicesPage.services[0].id)
   const [isNavSticky, setIsNavSticky] = useState(false)
   const navRef = useRef<HTMLDivElement>(null)
   const navPlaceholderRef = useRef<HTMLDivElement>(null)
@@ -22,9 +22,7 @@ export default function ServicesPage() {
   // Track active section based on scroll position
   useEffect(() => {
     const handleScroll = () => {
-      const sections = servicesPage.services.map((service) =>
-        document.getElementById(service.id)
-      )
+      const sections = servicesPage.services.map((service) => document.getElementById(service.id))
 
       // Header = 80px
       // Nav when sticky = ~80px
@@ -62,7 +60,7 @@ export default function ServicesPage() {
       ([entry]) => {
         setIsNavSticky(!entry.isIntersecting)
       },
-      { root: null, threshold: 0 }
+      { root: null, threshold: 0 },
     )
 
     observer.observe(navPlaceholderRef.current)
@@ -111,7 +109,7 @@ export default function ServicesPage() {
           boxShadow: isNavSticky ? '0 4px 20px rgba(42, 42, 42, 0.05)' : 'none',
         }}
       >
-        <div 
+        <div
           className="container-custom transition-all duration-300"
           style={{
             paddingTop: isNavSticky ? '10px' : '16px',
@@ -174,9 +172,26 @@ export default function ServicesPage() {
         projects={projects.items.slice(0, 9)}
         showButton={false}
       />
+      {/* Reviews Carousel */}
+      <section className="pt-20 pb-[120px] bg-[#F2F1EF]">
+        <div className="container-custom mb-[80px]">
+          <h2 className="md:text-[48px] text-[32px] font-semibold leading-[1.4] text-[#2A2A2A] mb-[20px]">
+            {contactPage.reviews.title}
+          </h2>
+          <p className="text-[20px] leading-[1.4] text-[#868686]">{contactPage.reviews.subtitle}</p>
+        </div>
+
+        <ReviewsCarousel reviews={contactPage.reviews.items} />
+      </section>
 
       {/* FAQ */}
-      <FAQ title={faq.title} subtitle={faq.subtitle} items={faq.items} />
+      <FAQ
+        title={faq.title}
+        subtitle={faq.subtitle}
+        backgroundVideo={faq.backgroundVideo}
+        videoPoster={faq.videoPoster}
+        items={faq.items}
+      />
 
       {/* Contact Form */}
       <ContactForm
@@ -195,8 +210,8 @@ interface ServiceSectionProps {
 
 function ServiceSection({ service, isLast }: ServiceSectionProps) {
   // Check if service has detail page by looking up in serviceDetails
-  const hasDetailPage = serviceDetails.some(detail => detail.slug === service.slug)
-  
+  const hasDetailPage = serviceDetails.some((detail) => detail.slug === service.slug)
+
   return (
     <section id={service.id} className="py-3 md:py-[80px]">
       <div className="container-custom">
@@ -204,8 +219,8 @@ function ServiceSection({ service, isLast }: ServiceSectionProps) {
         <div className="grid grid-cols-1 md:grid-cols-[440px_1fr] gap-5 md:gap-[80px]">
           <h2 className="text-[20px] md:text-[36px] md:mt-[-5px] font-semibold leading-[1.4] text-[#2A2A2A]">
             {hasDetailPage ? (
-              <Link 
-                to={`/services/${service.slug}`} 
+              <Link
+                to={`/services/${service.slug}`}
                 className="inline-block border-b-2 border-transparent transition-colors duration-300 hover:border-[#2A2A2A]"
               >
                 {service.title}
@@ -247,9 +262,7 @@ function ServiceSection({ service, isLast }: ServiceSectionProps) {
       </div>
 
       {/* Divider */}
-      {!isLast && (
-        <div className="mt-6 md:mt-[80px] w-full h-px bg-white" />
-      )}
+      {!isLast && <div className="mt-6 md:mt-[80px] w-full h-px bg-white" />}
     </section>
   )
 }

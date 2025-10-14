@@ -1,5 +1,5 @@
 export default {
-  title: 'Our Projects',
+  title: 'Transformations That Inspire',
   backgroundImage: '/images/projects/bg-hero.png',
   infoBlocks: [
     {

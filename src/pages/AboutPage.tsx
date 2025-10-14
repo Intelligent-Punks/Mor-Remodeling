@@ -124,7 +124,9 @@ export default function AboutPage() {
                   <h3 className="text-base md:text-[22px] font-medium leading-[1.4] text-[#2A2A2A] mb-2 md:mb-[10px]">
                     {item.title}
                   </h3>
-                  <p className="text-xs md:text-base leading-[1.5] text-[#868686]">{item.description}</p>
+                  <p className="text-xs md:text-base leading-[1.5] text-[#868686]">
+                    {item.description}
+                  </p>
                 </div>
               ))}
             </div>
@@ -141,7 +143,7 @@ export default function AboutPage() {
             </h2>
             <div className="md:max-w-[620px] md:ml-auto md:mt-[67px]">
               {/* Timeline Description */}
-              <div 
+              <div
                 className="mb-6 md:mb-[40px] transition-all duration-500 ease-out overflow-hidden"
                 style={{ height: contentHeight > 0 ? `${contentHeight}px` : 'auto' }}
               >
@@ -209,7 +211,13 @@ export default function AboutPage() {
       </section>
 
       {/* FAQ */}
-      <FAQ title={faq.title} subtitle={faq.subtitle} items={faq.items} />
+      <FAQ
+        title={faq.title}
+        subtitle={faq.subtitle}
+        backgroundVideo={faq.backgroundVideo}
+        videoPoster={faq.videoPoster}
+        items={faq.items}
+      />
 
       {/* Contact Form */}
       <ContactForm

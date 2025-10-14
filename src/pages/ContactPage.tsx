@@ -19,7 +19,7 @@ export default function ContactPage() {
         <div className="mt-[100px] mb-10">
           <Breadcrumb />
         </div>
-        
+
         <div className="grid grid-cols-2 gap-[80px]">
           {/* Left Column */}
           <div className="flex flex-col">
@@ -29,7 +29,7 @@ export default function ContactPage() {
             <p className="text-[20px] leading-[1.4] text-[#2A2A2A] mb-[60px]">
               {contactPage.hero.subtitle}
             </p>
-            
+
             {/* Social Links */}
             <div className="flex gap-[20px] mt-auto">
               {contactPage.socialLinks.map((link) => (
@@ -55,13 +55,19 @@ export default function ContactPage() {
                 <div key={detail.id}>
                   <p className="text-[20px] font-normal text-[#2A2A2A] mb-[10px]">{detail.label}</p>
                   {detail.email && (
-                    <p className="text-[20px] font-medium text-[#2A2A2A] mb-[5px]">{detail.email}</p>
+                    <p className="text-[20px] font-medium text-[#2A2A2A] mb-[5px]">
+                      {detail.email}
+                    </p>
                   )}
                   {detail.phone && (
-                    <p className="text-[20px] font-medium text-[#2A2A2A] mb-[5px]">{detail.phone}</p>
+                    <p className="text-[20px] font-medium text-[#2A2A2A] mb-[5px]">
+                      {detail.phone}
+                    </p>
                   )}
                   {detail.value && (
-                    <p className="text-[20px] font-medium text-[#2A2A2A] whitespace-pre-line">{detail.value}</p>
+                    <p className="text-[20px] font-medium text-[#2A2A2A] whitespace-pre-line">
+                      {detail.value}
+                    </p>
                   )}
                 </div>
               ))}
@@ -86,17 +92,17 @@ export default function ContactPage() {
         </h2>
       </section>
       <div className="w-full h-[620px] overflow-hidden pb-[120px]">
-          <iframe
-            src={contactPage.map.embedUrl}
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen={false}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="MOR Remodelling Office Location"
-          />
-        </div>
+        <iframe
+          src={contactPage.map.embedUrl}
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen={false}
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title="MOR Remodelling Office Location"
+        />
+      </div>
 
       {/* Reviews Section */}
       <section className="pb-[120px]">
@@ -104,16 +110,20 @@ export default function ContactPage() {
           <h2 className="text-[48px] font-semibold leading-[1.4] text-[#2A2A2A] mb-[20px]">
             {contactPage.reviews.title}
           </h2>
-          <p className="text-[20px] leading-[1.4] text-[#868686]">
-            {contactPage.reviews.subtitle}
-          </p>
+          <p className="text-[20px] leading-[1.4] text-[#868686]">{contactPage.reviews.subtitle}</p>
         </div>
 
         <ReviewsCarousel reviews={contactPage.reviews.items} />
       </section>
 
       {/* FAQ */}
-      <FAQ title={faq.title} subtitle={faq.subtitle} items={faq.items} />
+      <FAQ
+        title={faq.title}
+        subtitle={faq.subtitle}
+        backgroundVideo={faq.backgroundVideo}
+        videoPoster={faq.videoPoster}
+        items={faq.items}
+      />
 
       {/* Contact Form */}
       <ContactForm
@@ -124,4 +134,3 @@ export default function ContactPage() {
     </div>
   )
 }
-

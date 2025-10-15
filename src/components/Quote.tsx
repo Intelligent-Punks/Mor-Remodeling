@@ -19,13 +19,13 @@ export default function Quote({ quoteSymbol = '"', text, author, backgroundImage
         />
       )}
 
-      <div className="relative z-10 container-custom py-12 md:py-24">
+      <div className="relative z-10 container-custom py-12 md:py-18">
         <div className="grid grid-cols-1 md:grid-cols-[320px_1fr] gap-6 md:gap-[40px] items-start">
           <div>
             <img
               src={getAssetUrl('/icons/quote.svg')}
               alt="Quote"
-              className={`w-12 h-12 md:w-14 md:h-14 ${backgroundImage ? 'brightness-0 invert' : ''}`}
+              className={`w-10 h-10 ${backgroundImage ? 'brightness-0 invert' : ''}`}
             />
           </div>
           <div>

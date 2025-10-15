@@ -59,8 +59,8 @@ export default function ProjectsPage() {
 
       {/* Reviews Carousel */}
       <LazySection rootMargin="200px">
-        <section className="pt-20 pb-[120px] bg-[#F2F1EF]">
-          <div className="container-custom mb-[80px]">
+        <section className="pt-20 pb-[80px] bg-[#F2F1EF]">
+          <div className="container-custom mb-[64px]">
             <h2 className="md:text-[48px] text-[32px] font-semibold leading-[1.4] text-[#2A2A2A] mb-[20px]">
               {contactPage.reviews.title}
             </h2>

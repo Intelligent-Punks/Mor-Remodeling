@@ -38,7 +38,7 @@ export default function ServiceDetailPage() {
         <div className="container-custom relative h-full flex flex-col py-[54px]">
           {/* Breadcrumb */}
           <div className="[&_*]:!text-white mt-10 md:mt-15">
-            <Breadcrumb />
+            <Breadcrumb customLabel={service.hero.title} />
           </div>
 
           {/* Content Grid */}
@@ -149,8 +149,8 @@ export default function ServiceDetailPage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="pb-[120px] pt-20">
-        <div className="container-custom mb-[80px]">
+      <section className="pb-[80px] pt-20">
+        <div className="container-custom mb-[64px]">
           <h2 className="text-[32px] md:text-[48px] font-semibold leading-[1.4] text-[#2A2A2A] mb-[20px]">
             {contactPage.reviews.title}
           </h2>

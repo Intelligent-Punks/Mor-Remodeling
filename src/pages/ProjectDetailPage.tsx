@@ -8,6 +8,8 @@ import ContactForm from '@/components/ContactForm'
 import projects from '@/content/projects'
 import faq from '@/content/faq'
 import contactForm from '@/content/contactForm'
+import contactPage from '@/content/contactPage'
+import ReviewsCarousel from '@/components/ReviewsCarousel'
 
 export default function ProjectDetailPage() {
   const { slug } = useParams<{ slug: string }>()
@@ -37,8 +39,8 @@ export default function ProjectDetailPage() {
         {/* Content on Hero */}
         <div className="container-custom relative h-full flex flex-col py-[54px]">
           {/* Breadcrumb */}
-          <div className="[&_*]:text-white [&_*]:!text-white mt-10 md:mt-15">
-            <Breadcrumb />
+          <div className="[&_*]:!text-white mt-10 md:mt-20">
+            <Breadcrumb customLabel={project.hero.title} />
           </div>
 
           {/* Content Grid */}
@@ -61,7 +63,7 @@ export default function ProjectDetailPage() {
       </section>
 
       {/* Details Section */}
-      <section className="container-custom py-12 md:py-[80px]">
+      <section className="container-custom py-12 md:py-[60px]">
         {/* Quote/Title on mobile */}
         <h2 className="md:hidden text-[20px] font-medium leading-[1.4] text-[#2A2A2A] mb-8">
           {project.details.title}
@@ -87,13 +89,18 @@ export default function ProjectDetailPage() {
         )}
 
         {/* Desktop Layout */}
-        <div className="hidden md:grid md:grid-cols-[290px_1fr] md:gap-[40px]">
+        <div className="hidden md:grid md:grid-cols-[290px_1fr] md:gap-[40px] md:pb-[20px]">
           {/* Left: Stats/Info */}
           {project.stats && (
-            <div>
-              {project.stats.map((stat, idx) => (
-                <div key={idx} className="py-5 border-t border-[#868686]">
-                  <p className="text-base font-medium text-[#2A2A2A] mb-[6px]">{stat.label}</p>
+            <div className="md:mt-[18px]">
+              {project.stats.map((stat, idx, arr) => (
+                <div
+                  key={idx}
+                  className={`py-3 border-t border-[#868686] ${
+                    idx === arr.length - 1 ? 'border-b' : ''
+                  }`}
+                >
+                  <p className="text-base font-medium text-[#2A2A2A]">{stat.label}</p>
                   <p className="text-base font-normal text-[#868686]">{stat.value}</p>
                 </div>
               ))}
@@ -115,7 +122,7 @@ export default function ProjectDetailPage() {
       </section>
 
       {/* Gallery Section */}
-      <section className="container-custom pb-12 md:pb-[120px]">
+      <section className="container-custom pb-12 md:pb-[150px]">
         {/* Mobile Gallery: 2 small, 1 large pattern */}
         <div className="md:hidden grid grid-cols-2 gap-5">
           {project.gallery.map((image, idx) => {
@@ -127,11 +134,7 @@ export default function ProjectDetailPage() {
                   isFullWidth ? 'col-span-2 h-[190px]' : 'col-span-1 h-[190px]'
                 } rounded-[8px] overflow-hidden bg-white`}
               >
-                <img
-                  src={projectImagePath(image)}
-                  alt=""
-                  className="w-full h-full object-cover"
-                />
+                <img src={projectImagePath(image)} alt="" className="w-full h-full object-cover" />
               </div>
             )
           })}
@@ -152,11 +155,7 @@ export default function ProjectDetailPage() {
           <div className="grid grid-cols-3 gap-[40px]">
             {project.gallery.slice(1, 4).map((image, idx) => (
               <div key={idx} className="h-[320px] rounded-[14px] overflow-hidden bg-white">
-                <img
-                  src={projectImagePath(image)}
-                  alt=""
-                  className="w-full h-full object-cover"
-                />
+                <img src={projectImagePath(image)} alt="" className="w-full h-full object-cover" />
               </div>
             ))}
           </div>
@@ -179,23 +178,34 @@ export default function ProjectDetailPage() {
       </section>
 
       {/* Discover Other Projects */}
-      <section className="pb-12 md:pb-[120px]">
+      <section>
         <div className="container-custom">
-          <h2 className="text-[32px] md:text-5xl font-semibold text-[#2A2A2A] mb-10 md:mb-[115px]">
+          <h2 className="text-[32px] md:text-5xl font-semibold text-[#2A2A2A] mb-10 md:mb-0">
             Discover other projects
           </h2>
         </div>
         <OurProjects projects={projects.items} showButton={false} />
       </section>
 
+      <section className="pt-20 pb-[160px] bg-[#F2F1EF]">
+        <div className="container-custom mb-[64px]">
+          <h2 className="md:text-[48px] text-[32px] font-semibold leading-[1.4] text-[#2A2A2A] mb-[20px]">
+            {contactPage.reviews.title}
+          </h2>
+          <p className="text-[20px] leading-[1.4] text-[#868686]">{contactPage.reviews.subtitle}</p>
+        </div>
+
+        <ReviewsCarousel reviews={contactPage.reviews.items} />
+      </section>
+
       {/* FAQ */}
-      <FAQ 
-          title={faq.title} 
-          subtitle={faq.subtitle} 
-          backgroundVideo={faq.backgroundVideo}
-          videoPoster={faq.videoPoster}
-          items={faq.items} 
-        />
+      <FAQ
+        title={faq.title}
+        subtitle={faq.subtitle}
+        backgroundVideo={faq.backgroundVideo}
+        videoPoster={faq.videoPoster}
+        items={faq.items}
+      />
 
       {/* Contact Form */}
       <ContactForm
@@ -206,4 +216,3 @@ export default function ProjectDetailPage() {
     </div>
   )
 }
-

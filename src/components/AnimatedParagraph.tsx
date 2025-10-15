@@ -5,6 +5,7 @@ interface AnimatedParagraphProps {
   className?: string
   lineDelay?: number
   charDelay?: number
+  style?: React.CSSProperties
 }
 
 export default function AnimatedParagraph({
@@ -12,6 +13,7 @@ export default function AnimatedParagraph({
   className = '',
   lineDelay = 100,
   charDelay = 20,
+  style,
 }: AnimatedParagraphProps) {
   const [isVisible, setIsVisible] = useState(false)
   const ref = useRef<HTMLParagraphElement>(null)
@@ -37,7 +39,7 @@ export default function AnimatedParagraph({
   const lines = text.split('\n').filter((line) => line.trim())
 
   return (
-    <p ref={ref} className={className}>
+    <p ref={ref} className={className} style={style}>
       {lines.map((line, lineIndex) => {
         // Calculate cumulative delay: sum of all previous lines' characters
         const previousCharsCount = lines

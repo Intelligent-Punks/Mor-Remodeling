@@ -29,12 +29,12 @@ export default function AboutPage() {
     <div className="bg-[#F2F1EF]">
       {/* Hero Section */}
       <section className="container-custom pt-[54px]">
-        <div className="mt-20 md:mt-[100px] mb-10">
+        <div className="mt-20 md:mt-[80px] mb-10 md:mb-16">
           <Breadcrumb />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-[290px_1fr] gap-6 md:gap-[80px] items-start mb-10 md:mb-[80px]">
-          <h1 className="text-[32px] md:text-[48px] font-semibold leading-[1.4] text-[#2A2A2A]">
+        <div className="grid grid-cols-1 md:grid-cols-[290px_1fr] gap-6 md:gap-[64px] items-start mb-10 md:mb-[64px]">
+          <h1 className="text-[32px] md:text-[48px] font-semibold leading-[1.2] text-[#2A2A2A]">
             {aboutPage.hero.title}
           </h1>
           <div className="md:max-w-[620px] md:ml-auto">
@@ -46,7 +46,7 @@ export default function AboutPage() {
       </section>
 
       {/* Hero Image - Full width */}
-      <section className="mb-12 md:mb-20">
+      <section className="mb-12 md:mb-18">
         <div className="h-[320px] md:h-[500px] bg-[#762D2D]">
           <img
             src={getAssetUrl(aboutPage.hero.image)}
@@ -57,10 +57,10 @@ export default function AboutPage() {
       </section>
 
       {/* Who We Are Section */}
-      <section className="py-12 md:py-20">
+      <section className="pb-12 md:pb-20">
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-[290px_1fr] gap-6 md:gap-[80px]">
-            <h2 className="text-[32px] md:text-[48px] font-semibold leading-[1.4] text-[#2A2A2A]">
+            <h2 className="text-[32px] md:text-[48px] font-semibold leading-[1.2] text-[#2A2A2A]">
               {aboutPage.whoWeAre.title}
             </h2>
             <div className="md:max-w-[620px] md:ml-auto">
@@ -72,7 +72,7 @@ export default function AboutPage() {
         </div>
 
         {/* Gallery Carousel - Full width, overflow to right */}
-        <div className="mt-10 md:mt-[80px]">
+        <div className="mt-10 md:mt-[40px]">
           <ImageCarousel images={aboutPage.whoWeAre.gallery} />
         </div>
       </section>
@@ -135,16 +135,16 @@ export default function AboutPage() {
       </section>
 
       {/* Our History Section - Yellow background */}
-      <section className="py-12 md:py-20 bg-[#F4C077]">
+      <section className="py-12 md:py-18 bg-[#F4C077]">
         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-[290px_1fr] gap-6 md:gap-[80px] items-start mb-10 md:mb-[80px]">
+          <div className="grid grid-cols-1 md:grid-cols-[290px_1fr] gap-6 md:gap-[64px] items-start mb-10 md:mb-[64px]">
             <h2 className="text-[32px] md:text-[48px] font-semibold leading-[1.4] text-[#2A2A2A]">
               {aboutPage.history.title}
             </h2>
-            <div className="md:max-w-[620px] md:ml-auto md:mt-[67px]">
+            <div className="md:max-w-[620px] md:ml-auto md:mt-[120px]">
               {/* Timeline Description */}
               <div
-                className="mb-6 md:mb-[40px] transition-all duration-500 ease-out overflow-hidden"
+                className="mb-6 md:mb-[70px] transition-all duration-500 ease-out overflow-hidden"
                 style={{ height: contentHeight > 0 ? `${contentHeight}px` : 'auto' }}
               >
                 <div ref={contentRef} key={activeTimelineIndex}>

@@ -42,12 +42,10 @@ export default function ServiceDetailPage() {
           </div>
 
           {/* Content Grid */}
-          <div className="pt-25 pb-10 md:pb-25 font-medium leading-[1.4] text-[#F2F1EF]">
+          <div className="pt-46 md:pt-25 pb-10 md:pb-25 font-medium leading-[1.4] text-[#F2F1EF]">
             {/* Title - Left (centered vertically on desktop, bottom on mobile) */}
-            <h1 className="text-[32px] md:text-[40px]">
-              {service.hero.title}
-            </h1>
-            <p className="text-sm md:text-xl font-normal leading-[1.4] text-[#F2F1EF] pt-6">
+            <h1 className="text-[32px] md:text-[40px]">{service.hero.title}</h1>
+            <p className="text-sm md:text-xl font-normal leading-[1.4] text-[#F2F1EF] pt-3 md:pt-6">
               {service.hero.subtitle}
             </p>
           </div>
@@ -55,23 +53,23 @@ export default function ServiceDetailPage() {
       </section>
 
       {/* Features & Description Section */}
-      <section className="py-12 md:py-[80px] container-custom">
-        <div className="px-4 md:px-0 md:container-custom grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-[40px]">
+      <section className="py-10 md:py-[74px] container-custom">
+        <div className="md:container-custom grid grid-cols-1 md:grid-cols-2 gap-18 md:gap-[40px]">
           {/* Features */}
-          <div className="grid grid-cols-2 gap-5 md:gap-[30px]">
+          <div className="grid grid-cols-2 gap-x-6 gap-y-4 md:gap-[30px]">
             {service.features.map((feature, idx) => (
               <div key={idx} className="relative">
                 {/* Icon */}
-                <div className="w-[60px] h-[60px] md:w-[99px] md:h-[99px] mb-[30px] md:mb-0 absolute left-[-30px] md:left-[-45px] top-[-18px] md:top-0 flex items-center justify-center">
-                  <img 
-                    src={feature.icon} 
-                    alt="" 
-                    className="w-[60px] h-[60px] md:w-[99px] md:h-[99px] object-contain" 
+                <div className="w-[60px] h-[60px] md:w-[99px] md:h-[99px] mb-[30px] md:mb-0 absolute left-[-30px] md:left-[-45px] top-[-18px] flex items-center justify-center">
+                  <img
+                    src={feature.icon}
+                    alt=""
+                    className="w-[60px] h-[60px] md:w-[99px] md:h-[99px] object-contain"
                   />
                 </div>
 
                 {/* Content */}
-                <div className="md:pt-[15px] relative">
+                <div className="relative">
                   <h3 className="text-[20px] md:text-[24px] font-medium md:font-semibold leading-[1.4] text-[#2A2A2A] mb-[20px] md:mb-[30px] md:max-w-[210px]">
                     {feature.title}
                   </h3>
@@ -93,11 +91,12 @@ export default function ServiceDetailPage() {
       </section>
 
       {/* Gallery Section */}
-      <section className="container-custom pb-12 md:pb-[120px]">
+      <section className="container-custom">
         {/* Mobile Gallery: 2 small, 1 large pattern */}
         <div className="md:hidden grid grid-cols-2 gap-5">
           {service.gallery.map((image, idx) => {
-            const isFullWidth = idx % 3 === 2
+            const positionInGroup = idx % 3
+            const isFullWidth = positionInGroup === 0
             return (
               <div
                 key={idx}
@@ -150,7 +149,7 @@ export default function ServiceDetailPage() {
 
       {/* Testimonials Section */}
       <section className="pb-[80px] pt-20">
-        <div className="container-custom mb-[64px]">
+        <div className="container-custom mb-4 md:mb-[64px]">
           <h2 className="text-[32px] md:text-[48px] font-semibold leading-[1.4] text-[#2A2A2A] mb-[20px]">
             {contactPage.reviews.title}
           </h2>

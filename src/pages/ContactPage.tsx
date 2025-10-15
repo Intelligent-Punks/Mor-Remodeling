@@ -110,7 +110,7 @@ export default function ContactPage() {
           <h2 className="text-[48px] font-semibold leading-[1.4] text-[#2A2A2A] mb-[20px]">
             {contactPage.reviews.title}
           </h2>
-          <p className="text-[20px] leading-[1.4] text-[#868686]">{contactPage.reviews.subtitle}</p>
+          <p className="text-sm md:text-[20px] leading-[1.4] text-[#868686]">{contactPage.reviews.subtitle}</p>
         </div>
 
         <ReviewsCarousel reviews={contactPage.reviews.items} />

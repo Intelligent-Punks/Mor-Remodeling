@@ -22,7 +22,7 @@ export default function Breadcrumb({ customLabel }: BreadcrumbProps = {}) {
 
   return (
     <div className="flex items-center gap-[10px]">
-      <div className="w-[32px] h-[32px] bg-white rounded-full flex items-center justify-center">
+      <div className="min-w-[32px] min-h-[32px] w-[32px] h-[32px] bg-white rounded-full flex items-center justify-center">
         <img
           src={getAssetUrl('/icons/arrow-right.svg')}
           alt=""

@@ -151,6 +151,7 @@ export default function Header() {
                                 <Link
                                   key={service.id}
                                   to={service.slug ? `/services/${service.slug}` : '/services'}
+                                  onClick={() => setIsServicesMenuOpen(false)}
                                   className={`block w-[206px] h-[73px] mx-4 py-3 text-base font-normal leading-[1.4] text-[#2A2A2A] hover:bg-black/5 transition-colors ${
                                     idx < 2 ? 'border-b border-[#626261]' : ''
                                   }`}
@@ -166,6 +167,7 @@ export default function Header() {
                                 <Link
                                   key={service.id}
                                   to={service.slug ? `/services/${service.slug}` : '/services'}
+                                  onClick={() => setIsServicesMenuOpen(false)}
                                   className={`block w-[206px] h-[73px] mx-3 py-3 text-base font-normal leading-[1.4] text-[#2A2A2A] hover:bg-black/5 transition-colors whitespace-pre-line ${
                                     idx < 2 ? 'border-b border-[#626261]' : ''
                                   }`}
@@ -181,6 +183,7 @@ export default function Header() {
                                 <Link
                                   key={service.id}
                                   to={service.slug ? `/services/${service.slug}` : '/services'}
+                                  onClick={() => setIsServicesMenuOpen(false)}
                                   className={`block w-[206px] h-[73px] mx-3 py-3 text-base font-normal leading-[1.4] text-[#2A2A2A] hover:bg-black/5 transition-colors whitespace-pre-line ${
                                     idx < 2 ? 'border-b border-[#626261]' : ''
                                   }`}

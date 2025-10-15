@@ -11,6 +11,8 @@ import ImageCarousel from '@/components/ImageCarousel'
 import TimelineCarousel from '@/components/TimelineCarousel'
 import AnimatedParagraph from '@/components/AnimatedParagraph'
 import { getAssetUrl } from '@/utils/asset'
+import contactPage from '@/content/contactPage'
+import ReviewsCarousel from '@/components/ReviewsCarousel'
 
 export default function AboutPage() {
   const [activeTimelineIndex, setActiveTimelineIndex] = useState(0)
@@ -29,11 +31,11 @@ export default function AboutPage() {
     <div className="bg-[#F2F1EF]">
       {/* Hero Section */}
       <section className="container-custom pt-[54px]">
-        <div className="mt-20 md:mt-[80px] mb-10 md:mb-16">
+        <div className="mt-9 md:mt-[80px] mb-12 md:mb-16">
           <Breadcrumb />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-[290px_1fr] gap-6 md:gap-[64px] items-start mb-10 md:mb-[64px]">
+        <div className="grid grid-cols-1 md:grid-cols-[290px_1fr] gap-5 md:gap-[64px] items-start mb-6 md:mb-[64px]">
           <h1 className="text-[32px] md:text-[48px] font-semibold leading-[1.2] text-[#2A2A2A]">
             {aboutPage.hero.title}
           </h1>
@@ -46,12 +48,17 @@ export default function AboutPage() {
       </section>
 
       {/* Hero Image - Full width */}
-      <section className="mb-12 md:mb-18">
+      <section className="mb-11 md:mb-18">
         <div className="h-[320px] md:h-[500px] bg-[#762D2D]">
+          <img
+            src={getAssetUrl(aboutPage.hero.imageMobile)}
+            alt="About MOR Remodelling"
+            className="md:hidden w-full h-full object-cover"
+          />
           <img
             src={getAssetUrl(aboutPage.hero.image)}
             alt="About MOR Remodelling"
-            className="w-full h-full object-cover"
+            className="hidden md:block w-full h-full object-cover"
           />
         </div>
       </section>
@@ -59,7 +66,7 @@ export default function AboutPage() {
       {/* Who We Are Section */}
       <section className="pb-12 md:pb-20">
         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-[290px_1fr] gap-6 md:gap-[80px]">
+          <div className="grid grid-cols-1 md:grid-cols-[290px_1fr] gap-3 md:gap-[80px]">
             <h2 className="text-[32px] md:text-[48px] font-semibold leading-[1.2] text-[#2A2A2A]">
               {aboutPage.whoWeAre.title}
             </h2>
@@ -95,7 +102,7 @@ export default function AboutPage() {
       {/* Certifications Section */}
       <section className="py-12 md:py-20">
         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-[40px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-11 md:gap-[40px]">
             <div>
               <h2 className="text-[32px] md:text-[48px] font-semibold leading-[1.4] text-[#2A2A2A] whitespace-pre-line mb-8 md:mb-18">
                 {aboutPage.certifications.title}
@@ -118,10 +125,10 @@ export default function AboutPage() {
             </div>
 
             {/* Certifications List */}
-            <div className="space-y-8 md:space-y-[60px]">
+            <div className="space-y-5 md:space-y-[60px]">
               {aboutPage.certifications.items.map((item) => (
                 <div key={item.id}>
-                  <h3 className="text-base md:text-[22px] font-medium leading-[1.4] text-[#2A2A2A] mb-2 md:mb-[10px]">
+                  <h3 className="text-[20px] md:text-[22px] font-medium leading-[1.4] text-[#2A2A2A] mb-2 md:mb-[10px]">
                     {item.title}
                   </h3>
                   <p className="text-xs md:text-base leading-[1.5] text-[#868686]">
@@ -209,6 +216,19 @@ export default function AboutPage() {
           />
         </div>
       </section>
+
+      <section className="pt-11 pb-[80px] bg-[#F2F1EF]">
+          <div className="container-custom mb-4 md:mb-[64px]">
+            <h2 className="md:text-[48px] text-[32px] font-semibold leading-[1.4] text-[#2A2A2A] mb-[20px]">
+              {contactPage.reviews.title}
+            </h2>
+            <p className="text-sm md:text-[20px] leading-[1.4] text-[#868686]">
+              {contactPage.reviews.subtitle}
+            </p>
+          </div>
+
+          <ReviewsCarousel reviews={contactPage.reviews.items} />
+        </section>
 
       {/* FAQ */}
       <FAQ

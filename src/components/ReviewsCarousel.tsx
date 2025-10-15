@@ -10,9 +10,21 @@ export default function ReviewsCarousel({ reviews }: ReviewsCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const total = reviews.length
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  const visibleCount = isMobile ? 1 : 2
 
   const next = () => {
-    if (currentIndex < total - 1) {
+    if (currentIndex < total - visibleCount) {
       setCurrentIndex(currentIndex + 1)
     }
   }
@@ -174,7 +186,7 @@ export default function ReviewsCarousel({ reviews }: ReviewsCarouselProps) {
         ref={scrollContainerRef}
         className="overflow-x-auto scrollbar-hide cursor-grab select-none"
       >
-        <div className="flex gap-5 md:gap-[40px] pl-4 md:pl-[calc((100vw-1200px)/2)]">
+        <div className="flex gap-5 md:gap-[40px] pl-4 carousel-reviews-container">
           {reviews.map((review) => (
             <div
               key={review.id}
@@ -235,9 +247,9 @@ export default function ReviewsCarousel({ reviews }: ReviewsCarouselProps) {
         </button>
         <button
           onClick={next}
-          disabled={currentIndex >= total - 1}
+          disabled={currentIndex >= total - visibleCount}
           className={`w-[58px] h-[58px] rounded-full bg-white flex items-center justify-center transition-opacity ${
-            currentIndex >= total - 1
+            currentIndex >= total - visibleCount
               ? 'opacity-40 cursor-not-allowed'
               : 'hover:opacity-80 cursor-pointer'
           }`}

@@ -36,7 +36,7 @@ export default function Stats({ title, description, stats, valueFontSize }: Stat
           {stats.map((stat) => (
             <div
               key={stat.id}
-              className="group relative w-full md:w-[290px] h-[177px] md:h-[290px] p-5 md:p-[20px] flex flex-col justify-between overflow-hidden bg-[#F2F1EF]"
+              className="group relative w-full md:w-[290px] h-[177px] md:h-[290px] p-4.5 md:p-[20px] flex flex-col justify-between overflow-hidden bg-[#F2F1EF]"
             >
               <img
                 src={getAssetUrl(stat.bgImage)}

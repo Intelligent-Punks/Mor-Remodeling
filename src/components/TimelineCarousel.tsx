@@ -115,7 +115,7 @@ export default function TimelineCarousel({ items, onIndexChange, showButtons = t
       <div 
         className="absolute h-px bg-[#C99E63] timeline-line"
         style={{ 
-          top: isMobile ? '47px' : '73px',
+          top: isMobile ? '59px' : '73px',
           width: `${(total - 1) * itemWidth}px` // Line spans from first to last dot
         }} 
       />
@@ -139,7 +139,7 @@ export default function TimelineCarousel({ items, onIndexChange, showButtons = t
             >
               {/* Year - Above line, aligned to dot */}
               <p
-                className={`text-[20px] md:text-[32px] font-medium leading-[1.5] mb-3 md:mb-[20px] transition-colors duration-300 ${
+                className={`text-[28px] md:text-[32px] font-medium leading-[1.5] mb-3 md:mb-[20px] transition-colors duration-300 ${
                   activeIndex === idx ? 'text-[#2A2A2A]' : 'text-[#C99E63]'
                 }`}
               >

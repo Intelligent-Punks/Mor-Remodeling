@@ -44,7 +44,7 @@ export default function ProjectDetailPage() {
           </div>
 
           {/* Content Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-[40px] flex-1">
+          <div className="flex flex-col justify-end md:grid md:grid-cols-2 gap-6 md:gap-[40px] flex-1">
             {/* Title - Left (centered vertically on desktop, bottom on mobile) */}
             <div className="flex items-end md:items-center">
               <h1 className="text-[32px] md:text-[40px] pb-0 md:pb-25 font-medium leading-[1.4] text-[#F2F1EF] whitespace-pre-line">
@@ -65,22 +65,24 @@ export default function ProjectDetailPage() {
       {/* Details Section */}
       <section className="container-custom py-12 md:py-[60px]">
         {/* Quote/Title on mobile */}
-        <h2 className="md:hidden text-[20px] font-medium leading-[1.4] text-[#2A2A2A] mb-8">
+        <h2 className="md:hidden text-[20px] font-medium leading-[1.4] text-[#2A2A2A] mb-3">
           {project.details.title}
         </h2>
 
         {/* Description on mobile */}
-        <div className="md:hidden space-y-4 text-sm leading-[1.5] text-[#868686] mb-10">
+        <div className="md:hidden text-sm leading-[1.5] text-[#868686] mb-10">
           {project.details.description.map((paragraph, idx) => (
-            <p key={idx}>{paragraph}</p>
+            <p key={idx} className={idx < project.details.description.length - 1 ? '' : 'mt-7'}>
+              {paragraph}
+            </p>
           ))}
         </div>
 
         {/* Project Info Grid on mobile (2x2) */}
         {project.stats && (
-          <div className="md:hidden grid grid-cols-2 gap-x-5 gap-y-8 mb-10">
+          <div className="md:hidden grid grid-cols-2 gap-x-5">
             {project.stats.map((stat, idx) => (
-              <div key={idx} className="border-t border-[#868686] pt-5">
+              <div key={idx} className={`border-t border-[#868686] pt-5 pb-5 ${idx === 2 || idx === 3 ? 'border-b pb-5' : ''}`}>
                 <p className="text-sm font-medium text-[#2A2A2A] mb-1">{stat.label}</p>
                 <p className="text-sm font-normal text-[#868686]">{stat.value}</p>
               </div>
@@ -122,7 +124,7 @@ export default function ProjectDetailPage() {
       </section>
 
       {/* Gallery Section */}
-      <section className="container-custom pb-12 md:pb-[150px]">
+      <section className="container-custom pb-20 md:pb-[150px]">
         {/* Mobile Gallery: 2 small, 1 large pattern */}
         <div className="md:hidden grid grid-cols-2 gap-5">
           {project.gallery.map((image, idx) => {
@@ -180,7 +182,7 @@ export default function ProjectDetailPage() {
       {/* Discover Other Projects */}
       <section>
         <div className="container-custom">
-          <h2 className="text-[32px] md:text-5xl font-semibold text-[#2A2A2A] mb-10 md:mb-0">
+          <h2 className="text-[32px] md:text-5xl font-semibold text-[#2A2A2A]">
             Discover other projects
           </h2>
         </div>
@@ -188,11 +190,11 @@ export default function ProjectDetailPage() {
       </section>
 
       <section className="pt-20 pb-[160px] bg-[#F2F1EF]">
-        <div className="container-custom mb-[64px]">
+        <div className="container-custom mb-4 md:mb-[64px]">
           <h2 className="md:text-[48px] text-[32px] font-semibold leading-[1.4] text-[#2A2A2A] mb-[20px]">
             {contactPage.reviews.title}
           </h2>
-          <p className="text-[20px] leading-[1.4] text-[#868686]">{contactPage.reviews.subtitle}</p>
+          <p className="text-sm md:text-[20px] leading-[1.4] text-[#868686]">{contactPage.reviews.subtitle}</p>
         </div>
 
         <ReviewsCarousel reviews={contactPage.reviews.items} />

@@ -28,7 +28,7 @@ export default function OurProjects({
   const [isHovered, setIsHovered] = useState(false)
   
   return (
-    <section className="py-13 md:py-20">
+    <section className="pt-20 md:py-18">
       <div className="container-custom">
         {(title || description) && (
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-8">

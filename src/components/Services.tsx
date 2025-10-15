@@ -19,12 +19,12 @@ export default function Services({ title, services }: ServicesProps) {
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-[290px_1fr] gap-6 md:gap-10">
           <div>
-            <h2 className="text-[32px] md:text-[48px] font-semibold leading-[1.4] text-[#2A2A2A]">
+            <h2 className="text-[32px] md:text-[48px] font-semibold text-[#2A2A2A] md:mt-[-15px]">
               {title}
             </h2>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-10">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-6">
             {services.map((service, idx) => {
               // Last item on mobile (if odd number) should span full width
               const isLastOdd = idx === services.length - 1 && services.length % 2 === 1
@@ -46,7 +46,7 @@ export default function Services({ title, services }: ServicesProps) {
                       />
                     </div>
                   </div>
-                  <h3 className="mt-3 md:mt-5 text-sm md:text-[20px] font-medium leading-[1.4] text-[#2A2A2A]">
+                  <h3 className="mt-3 md:mt-4 text-sm md:text-[20px] font-medium leading-[1.4] text-[#2A2A2A]">
                     {service.title}
                   </h3>
                 </>

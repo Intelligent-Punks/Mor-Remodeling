@@ -19,20 +19,20 @@ export default function Quote({ quoteSymbol = '"', text, author, backgroundImage
         />
       )}
 
-      <div className="relative z-10 container-custom py-12 md:py-18">
-        <div className="grid grid-cols-1 md:grid-cols-[320px_1fr] gap-6 md:gap-[40px] items-start">
+      <div className="relative z-10 container-custom py-11 md:py-18">
+        <div className="grid grid-cols-1 md:grid-cols-[320px_1fr] gap-18 md:gap-[40px] items-start">
           <div>
             <img
               src={getAssetUrl('/icons/quote.svg')}
               alt="Quote"
-              className={`w-10 h-10 ${backgroundImage ? 'brightness-0 invert' : ''}`}
+              className={`w-8 h-8 md:w-10 md:h-10 ${backgroundImage ? 'brightness-0 invert' : ''}`}
             />
           </div>
           <div>
             <blockquote className="max-w-[960px]">
               <AnimatedParagraph
                 text={text}
-                className={`text-base md:text-[32px] font-medium leading-[1.4] ${backgroundImage ? 'text-white' : 'text-[#2A2A2A]'}`}
+                className={`text-[20px] md:text-[32px] font-medium leading-[1.4] ${backgroundImage ? 'text-white' : 'text-[#2A2A2A]'}`}
                 lineDelay={80}
                 charDelay={10}
               />

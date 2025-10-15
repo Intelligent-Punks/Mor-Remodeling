@@ -109,47 +109,57 @@ export default function ServicesPage() {
           boxShadow: isNavSticky ? '0 4px 20px rgba(42, 42, 42, 0.05)' : 'none',
         }}
       >
-        <div
-          className="container-custom transition-all duration-300"
-          style={{
-            paddingTop: isNavSticky ? '10px' : '30px',
-            paddingBottom: isNavSticky ? '10px' : '40px',
-          }}
-        >
-          {/* Mobile: Horizontal scroll */}
-          <div className="md:hidden overflow-x-auto -mx-5 px-5 scrollbar-hide">
-            <div className="flex gap-3 items-center min-w-max">
+        <div className="container-custom transition-all duration-300">
+          <div
+            className="md:hidden"
+            style={{
+              paddingTop: isNavSticky ? '10px' : '10px',
+              paddingBottom: isNavSticky ? '10px' : '10px',
+            }}
+          >
+            {/* Mobile: Horizontal scroll */}
+            <div className="overflow-x-auto -mx-5 px-5 scrollbar-hide">
+              <div className="flex gap-3 items-center min-w-max">
+                {servicesPage.services.map((service) => (
+                  <button
+                    key={service.id}
+                    onClick={() => scrollToService(service.id)}
+                    className={`px-[14px] h-[48px] rounded-full text-xs font-medium leading-[1.4] transition-all cursor-pointer whitespace-nowrap ${
+                      activeSection === service.id
+                        ? 'bg-[#F4C077] text-[#2A2A2A]'
+                        : 'bg-transparent text-[#2A2A2A] border border-[#868686]'
+                    }`}
+                  >
+                    {service.title}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div
+            className="hidden md:block"
+            style={{
+              paddingTop: isNavSticky ? '10px' : '30px',
+              paddingBottom: isNavSticky ? '10px' : '40px',
+            }}
+          >
+            {/* Desktop: Wrap */}
+            <div className="flex flex-wrap gap-[20px] items-center">
               {servicesPage.services.map((service) => (
                 <button
                   key={service.id}
                   onClick={() => scrollToService(service.id)}
-                  className={`px-[14px] h-[48px] rounded-full text-xs font-medium leading-[1.4] transition-all cursor-pointer whitespace-nowrap ${
+                  className={`px-[18px] h-[48px] rounded-full text-sm font-medium leading-[1.4] transition-all cursor-pointer ${
                     activeSection === service.id
                       ? 'bg-[#F4C077] text-[#2A2A2A]'
-                      : 'bg-transparent text-[#2A2A2A] border border-[#868686]'
+                      : 'bg-transparent text-[#2A2A2A] border border-[#868686] hover:bg-[#F4C077] hover:border-[#F4C077] hover:shadow-md'
                   }`}
                 >
                   {service.title}
                 </button>
               ))}
             </div>
-          </div>
-
-          {/* Desktop: Wrap */}
-          <div className="hidden md:flex flex-wrap gap-[20px] items-center">
-            {servicesPage.services.map((service) => (
-              <button
-                key={service.id}
-                onClick={() => scrollToService(service.id)}
-                className={`px-[18px] h-[48px] rounded-full text-sm font-medium leading-[1.4] transition-all cursor-pointer ${
-                  activeSection === service.id
-                    ? 'bg-[#F4C077] text-[#2A2A2A]'
-                    : 'bg-transparent text-[#2A2A2A] border border-[#868686] hover:bg-[#F4C077] hover:border-[#F4C077] hover:shadow-md'
-                }`}
-              >
-                {service.title}
-              </button>
-            ))}
           </div>
         </div>
         {!isNavSticky && <div className="w-full h-[2px] bg-white" />}
@@ -173,12 +183,12 @@ export default function ServicesPage() {
         showButton={false}
       />
       {/* Reviews Carousel */}
-      <section className="pt-20 pb-[80px] bg-[#F2F1EF]">
-        <div className="container-custom mb-[64px]">
-          <h2 className="md:text-[48px] text-[32px] font-semibold leading-[1.4] text-[#2A2A2A] mb-[20px]">
+      <section className="pt-20 pb-12 md:pb-[80px] bg-[#F2F1EF]">
+        <div className="container-custom mb-6 md:mb-[64px]">
+          <h2 className="md:text-[48px] text-[32px] font-semibold leading-[1.4] text-[#2A2A2A] mb-2 md:mb-[20px]">
             {contactPage.reviews.title}
           </h2>
-          <p className="text-[20px] leading-[1.4] text-[#868686]">{contactPage.reviews.subtitle}</p>
+          <p className="text-sm md:text-[20px] leading-[1.4] text-[#868686]">{contactPage.reviews.subtitle}</p>
         </div>
 
         <ReviewsCarousel reviews={contactPage.reviews.items} />
@@ -213,7 +223,7 @@ function ServiceSection({ service, isLast }: ServiceSectionProps) {
   const hasDetailPage = serviceDetails.some((detail) => detail.slug === service.slug)
 
   return (
-    <section id={service.id} className="py-3 md:pt-[70px] md:pb-0">
+    <section id={service.id} className="pt-4 md:pt-[70px]">
       <div className="container-custom">
         {/* Title & Short Description */}
         <div className="grid grid-cols-1 md:grid-cols-[440px_1fr] gap-5 md:gap-[80px]">
@@ -235,13 +245,30 @@ function ServiceSection({ service, isLast }: ServiceSectionProps) {
         </div>
 
         {/* Images Grid */}
-        <div className="mt-5 md:mt-[72px] grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-[40px]">
+        {/* Mobile: horizontal scroll */}
+        <div className="mt-1 md:hidden overflow-x-auto -mx-5 px-5 scrollbar-hide">
+          <div className="flex gap-5" style={{ width: 'max-content' }}>
+            {service.images.map((image, idx) => (
+              <div
+                key={idx}
+                className="rounded-[8px] overflow-hidden bg-white h-[177px] w-[177px] flex-shrink-0"
+              >
+                <img
+                  src={getAssetUrl(image)}
+                  alt={`${service.title} ${idx + 1}`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        {/* Desktop: grid */}
+        <div className="hidden md:grid md:grid-cols-3 md:gap-[40px] md:mt-[72px]">
           {service.images.map((image, idx) => (
             <div
               key={idx}
-              className={`rounded-[8px] md:rounded-[14px] overflow-hidden bg-white h-[177px] md:h-[320px] ${
-                idx >= 2 ? 'hidden md:block' : ''
-              }`}
+              className="rounded-[14px] overflow-hidden bg-white h-[320px]"
             >
               <img
                 src={getAssetUrl(image)}
@@ -253,7 +280,7 @@ function ServiceSection({ service, isLast }: ServiceSectionProps) {
         </div>
 
         {/* Full Description */}
-        <div className="mt-5 md:mt-[40px] grid grid-cols-1 md:grid-cols-[440px_1fr] gap-5 md:gap-[80px]">
+        <div className="md:mt-[40px] grid grid-cols-1 md:grid-cols-[440px_1fr] gap-5 md:gap-[80px]">
           <div />
           <p className="text-xs md:text-[20px] leading-[1.5] md:leading-[1.4] text-[#868686]">
             {service.fullDescription}
@@ -262,7 +289,7 @@ function ServiceSection({ service, isLast }: ServiceSectionProps) {
       </div>
 
       {/* Divider */}
-      {!isLast && <div className="mt-6 md:mt-[78px] w-full h-px bg-white" />}
+      {!isLast && <div className="mt-3 md:mt-[78px] w-full h-px bg-white" />}
     </section>
   )
 }

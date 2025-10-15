@@ -18,7 +18,7 @@ export default function ProjectsPage() {
       <div id="hero-sentinel" className="absolute top-0 left-0 w-full h-px pointer-events-none" />
       
       {/* Hero Section */}
-      <section className="relative min-h-[750px] pt-[54px] pb-2 md:pb-[80px]">
+      <section className="relative min-h-[750px] pt-[54px] pb-10 md:pb-[80px]">
         {/* Background Image */}
         {projectsPage.backgroundImage && (
           <>
@@ -33,12 +33,12 @@ export default function ProjectsPage() {
 
         <div className="relative z-10 container-custom">
           {/* Breadcrumb */}
-          <div className="mt-10 md:mt-20 mb-10 md:mb-16 [&_*]:text-white [&_*]:!text-whitee">
+          <div className="mt-16 md:mt-20 mb-20 md:mb-16 [&_*]:text-white [&_*]:!text-whitee">
             <Breadcrumb />
           </div>
 
           {/* Page Title */}
-          <h1 className="text-[32px] md:text-5xl font-semibold text-white mb-10 md:mb-[66px] md:max-w-[460px] leading-[1.4]">{projectsPage.title}</h1>
+          <h1 className="text-[32px] md:text-5xl font-semibold text-white mb-16 md:mb-[66px] md:max-w-[460px] leading-[1.4]">{projectsPage.title}</h1>
 
           {/* Info Blocks */}
           <div className="max-w-full md:max-w-[950px] md:ml-auto space-y-8 md:space-y-[40px]">
@@ -59,12 +59,12 @@ export default function ProjectsPage() {
 
       {/* Reviews Carousel */}
       <LazySection rootMargin="200px">
-        <section className="pt-20 pb-[80px] bg-[#F2F1EF]">
-          <div className="container-custom mb-[64px]">
+        <section className="pt-16 md:pt-20 pb-[96px] md:pb-[80px] bg-[#F2F1EF]">
+          <div className="container-custom mb-4 md:mb-[64px]">
             <h2 className="md:text-[48px] text-[32px] font-semibold leading-[1.4] text-[#2A2A2A] mb-[20px]">
               {contactPage.reviews.title}
             </h2>
-            <p className="text-[20px] leading-[1.4] text-[#868686]">
+            <p className="text-sm md:text-[20px] leading-[1.4] text-[#868686]">
               {contactPage.reviews.subtitle}
             </p>
           </div>

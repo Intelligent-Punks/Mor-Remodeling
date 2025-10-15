@@ -11,6 +11,7 @@ export const aboutPageData = {
     description:
       'At MOR Remodelling, we believe every home has the potential to be something truly special. With years of experience, our team transforms spaces with precision, creativity, and care — always focusing on quality craftsmanship and a customer-first approach.',
     image: '/images/about/hero/hero.png',
+    imageMobile: '/images/about/hero/hero-mobile.png',
   },
 
   whoWeAre: {

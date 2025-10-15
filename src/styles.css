@@ -121,6 +121,21 @@ body {
   }
 }
 
+/* Carousel reviews container aligned with content left edge, overflow right */
+.carousel-reviews-container {
+  padding-left: calc((100vw - 1280px) / 2);
+}
+@media (min-width: 1600px) {
+  .carousel-reviews-container {
+    padding-left: calc((100vw - 1440px) / 2 - 8px);
+  }
+}
+@media (max-width: 1312px) {
+  .carousel-reviews-container {
+    padding-left: 16px;
+  }
+}
+
   /* Buttons aligned with content right edge */
   .carousel-buttons-right {
     right: calc((100vw - 1280px) / 2 + 16px);

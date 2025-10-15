@@ -51,16 +51,16 @@ export default function Footer() {
   ]
 
   return (
-    <footer className="bg-[#F2F1EF] py-12 md:py-16">
+    <footer className="bg-[#F2F1EF] py-12 md:py-18">
       <div className="container-custom">
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_620px] gap-10 md:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_620px] gap-4 md:gap-34">
           <div>
             {/* Mobile: Logo and Social Links in one row */}
-            <div className="flex items-center justify-between md:mt-4 mb-10 md:mb-0">
+            <div className="flex items-center justify-between md:mt-3 mb-10 md:mb-0">
               <img
                 src={getAssetUrl('/icons/Mor-remodeling-logo.png')}
                 alt="Mor Remodeling"
-                className="w-[74px] h-[32px] md:w-[120px] md:h-[52px] object-contain"
+                className="w-[120px] h-[52px] object-contain"
               />
               
               {/* Mobile Social Links */}
@@ -78,15 +78,15 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="mb-8 md:mb-[20px] mt-10 md:mt-[30px]">
-              <h3 className="text-base md:text-[20px] font-medium leading-[1.4] uppercase text-[#2A2A2A]">
+            <div className="mb-3 md:mb-[20px] mt-15 md:mt-[30px]">
+              <h3 className="text-[20px] font-medium leading-[1.4] uppercase text-[#2A2A2A]">
                 Keep with us
               </h3>
               <p className="mt-2 md:mt-[13px] text-sm md:text-base leading-[1.4] text-[#2A2A2A]">
                 Get news, coupons, events, and business updates
               </p>
 
-              <div className="mt-6 md:mt-[30px] relative mb-2">
+              <div className="mt-3 md:mt-[30px] relative mb-2">
                 <form onSubmit={handleSubscribe} className="flex items-center gap-2 md:gap-[10px] bg-white rounded-full h-[70px] pl-6 md:pl-[30px] max-w-full md:max-w-[480px]">
                   <input
                     type="email"
@@ -122,7 +122,7 @@ export default function Footer() {
             </div>
 
             {/* Desktop Social Links */}
-            <div className="hidden md:flex mb-[90px] items-center gap-[14px]">
+            <div className="hidden md:flex mb-[40px] items-center gap-[14px]">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
@@ -138,7 +138,7 @@ export default function Footer() {
             <div className="hidden md:grid grid-cols-2 gap-[40px]">
               {/* General Inquiries */}
               <div>
-                <p className="text-base font-normal leading-[1.4] text-[#868686] capitalize mb-[20px]">
+                <p className="text-base font-normal leading-[1.4] text-[#868686] capitalize mb-[8px]">
                   {contactPage.contactInfo.details[0].label}
                 </p>
                 <p className="text-base font-medium leading-[1.4] text-[#2A2A2A]">
@@ -151,7 +151,7 @@ export default function Footer() {
 
               {/* Address */}
               <div>
-                <p className="text-base font-normal leading-[1.4] text-[#868686] capitalize mb-[20px]">
+                <p className="text-base font-normal leading-[1.4] text-[#868686] capitalize mb-[8px]">
                   {contactPage.contactInfo.details[3].label}
                 </p>
                 <p className="text-base font-medium leading-[1.4] text-[#2A2A2A] whitespace-pre-line">
@@ -162,16 +162,16 @@ export default function Footer() {
           </div>
 
           <div>
-            <div className="space-y-6 md:space-y-[24px]">
+            <div className="space-y-2 md:space-y-[24px]">
               {navLinks.map((link) => (
-                <div key={link.id} className="border-b border-black/40 pb-6 md:pb-[24px]">
-                  <div className="flex items-center gap-4 md:gap-[20px]">
+                <div key={link.id} className="border-b border-black/40 pb-2 md:pb-[20px]">
+                  <div className="flex items-center gap-7 md:gap-[20px]">
                     <span className="text-sm md:text-[20px] leading-[1.4] uppercase text-[#2A2A2A]">
                       {link.id}
                     </span>
                     <Link
                       to={link.path}
-                      className="text-[32px] md:text-[64px] font-normal leading-[1.2] uppercase text-[#2A2A2A] hover:opacity-70 transition-opacity"
+                      className="text-[46px] md:text-[64px] font-normal leading-[1.2] md:leading-[1] uppercase text-[#2A2A2A] hover:opacity-70 transition-opacity"
                     >
                       <AnimatedText text={link.label} staggered={false} />
                     </Link>
@@ -181,7 +181,7 @@ export default function Footer() {
             </div>
 
             {/* Mobile Contact Info */}
-            <div className="md:hidden mt-[60px] space-y-[10px]">
+            <div className="md:hidden mt-[14px] space-y-[10px]">
               {/* General Inquiries */}
               <div className="flex gap-5">
                 <p className="text-sm font-normal leading-[1.4] text-[#868686] capitalize w-[111px]">

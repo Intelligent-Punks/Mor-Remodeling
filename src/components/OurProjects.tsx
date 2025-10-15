@@ -88,40 +88,49 @@ export default function OurProjects({
             const isFullWidthMobile = positionInGroup === 2
 
             return (
-              <Link
+              <div
                 key={project.id}
-                to={`/projects/${project.id}`}
-                className={`group relative rounded-[8px] md:rounded-[14px] overflow-hidden bg-[#2A2A2A] h-[190px] md:h-[360px] ${
+                className={`${
                   isFullWidthMobile ? 'col-span-2' : 'col-span-1'
                 } ${isWideDesktop ? 'md:col-span-2' : 'md:col-span-1'}`}
               >
-                <img
-                  src={getAssetUrl(project.image)}
-                  alt={project.alt || ''}
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                />
-                
-                {/* Hover info block with project details */}
-                <div className="absolute left-[30px] top-[30px] w-[197px] bg-white rounded-[10px] p-[20px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <h3 className="text-[14px] font-medium leading-[1.4] text-[#2A2A2A] mb-[10px]">
-                    {project.title}
-                  </h3>
-                  <p className="text-[14px] leading-[1.4] text-[#868686]">
-                    {project.date}
-                  </p>
-                  <p className="text-[14px] leading-[1.4] text-[#868686]">
-                    {project.location}
-                  </p>
-                </div>
-                
-                <div className="absolute bottom-4 right-4 w-12 h-12 rounded-full bg-white scale-0 group-hover:scale-100 transition-transform duration-300 flex items-center justify-center overflow-hidden z-10">
+                <Link
+                  to={`/projects/${project.id}`}
+                  className="group relative block rounded-[8px] md:rounded-[14px] overflow-hidden bg-[#2A2A2A] h-[190px] md:h-[360px]"
+                >
                   <img
-                    src={getAssetUrl('/icons/arrow-right.svg')}
-                    alt=""
-                    className="w-5 h-5 -translate-x-full group-hover:translate-x-0 transition-transform duration-300"
+                    src={getAssetUrl(project.image)}
+                    alt={project.alt || ''}
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                   />
-                </div>
-              </Link>
+                  
+                  {/* Hover info block with project details - desktop only */}
+                  <div className="hidden md:block absolute left-[30px] top-[30px] w-[197px] bg-white rounded-[10px] p-[20px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 className="text-[14px] font-medium leading-[1.4] text-[#2A2A2A] mb-[10px]">
+                      {project.title}
+                    </h3>
+                    <p className="text-[14px] leading-[1.4] text-[#868686]">
+                      {project.date}
+                    </p>
+                    <p className="text-[14px] leading-[1.4] text-[#868686]">
+                      {project.location}
+                    </p>
+                  </div>
+                  
+                  <div className="absolute bottom-4 right-4 w-12 h-12 rounded-full bg-white scale-0 group-hover:scale-100 transition-transform duration-300 flex items-center justify-center overflow-hidden z-10">
+                    <img
+                      src={getAssetUrl('/icons/arrow-right.svg')}
+                      alt=""
+                      className="w-5 h-5 -translate-x-full group-hover:translate-x-0 transition-transform duration-300"
+                    />
+                  </div>
+                </Link>
+                
+                {/* Mobile: project title below image */}
+                <p className="md:hidden mt-[10px] text-[14px] font-medium leading-[1.4] text-[#2A2A2A]">
+                  {project.title}
+                </p>
+              </div>
             )
           })}
         </div>

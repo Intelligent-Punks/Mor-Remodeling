@@ -12,13 +12,14 @@ interface StatsProps {
   title: string
   description: string
   stats: Stat[]
+  valueFontSize?: number
 }
 
-export default function Stats({ title, description, stats }: StatsProps) {
+export default function Stats({ title, description, stats, valueFontSize }: StatsProps) {
   return (
-    <section className="py-12 md:py-16 bg-white">
+    <section className="py-11 md:py-16 bg-white">
       <div className="container-custom">
-        <div className="grid grid-cols-1 md:grid-cols-[290px_1fr] gap-6 md:gap-10 items-start md:items-center">
+        <div className="grid grid-cols-1 md:grid-cols-[290px_1fr] gap-2 md:gap-10 items-start md:items-center">
           <div>
             <h2 className="text-[32px] md:text-[48px] font-semibold leading-[1.4] text-[#2A2A2A]">
               {title}
@@ -31,7 +32,7 @@ export default function Stats({ title, description, stats }: StatsProps) {
           </div>
         </div>
 
-        <div className="mt-10 md:mt-[75px] grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-10">
+        <div className="mt-8 md:mt-[75px] grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-10">
           {stats.map((stat) => (
             <div
               key={stat.id}
@@ -47,7 +48,8 @@ export default function Stats({ title, description, stats }: StatsProps) {
               <div className="relative z-10">
                 <AnimatedParagraph
                   text={stat.value}
-                  className="text-[20px] md:text-[36px] font-medium leading-[1.4] text-white"
+                  className="font-medium leading-[1.4] text-white text-[20px] md:text-[36px]"
+                  style={valueFontSize ? { fontSize: `${valueFontSize}px` } : undefined}
                   lineDelay={60}
                   charDelay={8}
                 />

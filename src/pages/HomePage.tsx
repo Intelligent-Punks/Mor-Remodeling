@@ -83,6 +83,7 @@ export default function HomePage() {
           title={stats.title}
           description={stats.description}
           stats={stats.items}
+          valueFontSize={32}
         />
       </LazySection>
 

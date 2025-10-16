@@ -17,7 +17,7 @@ interface StatsProps {
 
 export default function Stats({ title, description, stats, valueFontSize }: StatsProps) {
   return (
-    <section className="py-11 md:py-16 bg-white">
+    <section className="py-11 md:pt-16 pb-20 bg-white">
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-[290px_1fr] gap-2 md:gap-10 items-start md:items-center">
           <div>

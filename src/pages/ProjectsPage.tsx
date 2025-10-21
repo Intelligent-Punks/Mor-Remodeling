@@ -8,12 +8,14 @@ import FAQ from '@/components/FAQ'
 import ContactForm from '@/components/ContactForm'
 import Breadcrumb from '@/components/Breadcrumb'
 import ReviewsCarousel from '@/components/ReviewsCarousel'
+import SEOHead from '@/components/SEOHead'
 import { getAssetUrl } from '@/utils/asset'
 import LazySection from '@/components/LazySection'
 
 export default function ProjectsPage() {
   return (
     <div className="bg-[#F2F1EF]">
+      <SEOHead seo={projectsPage.seo} />
       {/* Hero Sentinel for Header Transparency */}
       <div id="hero-sentinel" className="absolute top-0 left-0 w-full h-px pointer-events-none" />
       

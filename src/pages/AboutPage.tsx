@@ -10,6 +10,7 @@ import Quote from '@/components/Quote'
 import ImageCarousel from '@/components/ImageCarousel'
 import TimelineCarousel from '@/components/TimelineCarousel'
 import AnimatedParagraph from '@/components/AnimatedParagraph'
+import SEOHead from '@/components/SEOHead'
 import { getAssetUrl } from '@/utils/asset'
 import contactPage from '@/content/contactPage'
 import ReviewsCarousel from '@/components/ReviewsCarousel'
@@ -29,6 +30,7 @@ export default function AboutPage() {
 
   return (
     <div className="bg-[#F2F1EF]">
+      <SEOHead seo={aboutPage.seo} />
       {/* Hero Section */}
       <section className="container-custom pt-[54px]">
         <div className="mt-9 md:mt-[80px] mb-12 md:mb-16">

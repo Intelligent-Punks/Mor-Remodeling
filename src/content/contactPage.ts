@@ -9,6 +9,42 @@ export interface ReviewItem {
 }
 
 const contactPageData = {
+  seo: {
+    title: 'Contact Us - Mor Remodeling',
+    description:
+      'Get in touch with MOR Remodeling for any enquiries and questions. Contact us for general inquiries, career opportunities, or collaboration proposals. We\'re here to help transform your home.',
+    keywords: [
+      'contact MOR remodeling',
+      'remodeling consultation',
+      'get a quote',
+      'remodeling inquiry',
+      'Bay Area remodeling contact',
+      'home renovation consultation',
+    ],
+    ogImage: '/images/contact/og-contact.png',
+    ogType: 'website',
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'ContactPage',
+      name: 'Contact MOR Remodeling',
+      description:
+        'Contact MOR Remodeling for professional home remodeling services. Reach out for consultations, quotes, or any questions about your next project.',
+      mainEntity: {
+        '@type': 'Organization',
+        name: 'Mor Remodeling',
+        telephone: '(747) 279 8262',
+        email: 'morremodinfo@gmail.com',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: '1254 Evergreen Avenue, Suite 200',
+          addressLocality: 'Dallas',
+          addressRegion: 'TX',
+          postalCode: '75201',
+          addressCountry: 'US',
+        },
+      },
+    },
+  },
   hero: {
     title: 'Contact Us',
     subtitle: 'Get in touch with us for any enquiries and questions',

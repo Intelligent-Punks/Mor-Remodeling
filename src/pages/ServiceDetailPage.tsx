@@ -1,10 +1,11 @@
 import { useParams, Navigate } from 'react-router-dom'
-import { getServiceBySlug } from '@/content/serviceDetails'
+import { getServiceBySlug, generateServiceSEO } from '@/content/serviceDetails'
 import { getAssetUrl } from '@/utils/asset'
 import Breadcrumb from '@/components/Breadcrumb'
 import FAQ from '@/components/FAQ'
 import ContactForm from '@/components/ContactForm'
 import ReviewsCarousel from '@/components/ReviewsCarousel'
+import SEOHead from '@/components/SEOHead'
 import faq from '@/content/faq'
 import contactForm from '@/content/contactForm'
 import contactPage from '@/content/contactPage'
@@ -19,9 +20,12 @@ export default function ServiceDetailPage() {
 
   const serviceImagePath = (fileName: string) =>
     getAssetUrl(`/images/services/${service.slug}/page/${fileName}`)
+  
+  const seo = generateServiceSEO(service)
 
   return (
     <div className="bg-[#F2F1EF]">
+      <SEOHead seo={seo} />
       {/* Hero Sentinel for header tracking */}
       <div id="hero-sentinel" className="absolute top-[5vh] pointer-events-none" />
 

@@ -6,6 +6,41 @@ export interface TimelineItem {
 }
 
 export const aboutPageData = {
+  seo: {
+    title: 'About Us - Mor Remodeling',
+    description:
+      'At MOR Remodelling, we believe every home has the potential to be something truly special. With years of experience, our team transforms spaces with precision, creativity, and care — always focusing on quality craftsmanship and a customer-first approach.',
+    keywords: [
+      'about MOR remodeling',
+      'remodeling company',
+      'Bay Area contractors',
+      'home renovation experts',
+      'certified remodeling',
+      'quality craftsmanship',
+      'sustainable building',
+    ],
+    ogImage: '/images/about/hero/hero.png',
+    ogType: 'website',
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'AboutPage',
+      name: 'About MOR Remodeling',
+      description:
+        'Learn about MOR Remodeling - a team of designers, builders, and craftsmen united by a passion for creating exceptional living spaces. With roots in architectural design and years of hands-on construction experience.',
+      mainEntity: {
+        '@type': 'Organization',
+        name: 'Mor Remodeling',
+        foundingDate: '2015',
+        description:
+          'MOR Remodelling is more than just a remodeling company — we are a team of designers, builders, and craftsmen united by a passion for creating exceptional living spaces.',
+        award: [
+          'Certified Remodeling Professional (CRP)',
+          'Green Building & Sustainability Certificate (GBSC)',
+          'Quality Craftsmanship Accreditation (QCA)',
+        ],
+      },
+    },
+  },
   hero: {
     title: 'About Us',
     description:

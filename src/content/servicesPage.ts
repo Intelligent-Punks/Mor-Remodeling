@@ -138,6 +138,50 @@ export const servicesPageData: ServiceItem[] = [
 
 export default {
   title: 'Services',
+  seo: {
+    title: 'Our Services - Mor Remodeling',
+    description:
+      'Comprehensive remodeling services including full home renovations, kitchen and bathroom remodels, room additions, roofing, siding, interior design, and more. Expert craftsmanship for every project.',
+    keywords: [
+      'remodeling services',
+      'home renovation services',
+      'kitchen remodeling',
+      'bathroom remodeling',
+      'room additions',
+      'roofing services',
+      'siding installation',
+      'interior design',
+      'flooring installation',
+      'exterior remodeling',
+    ],
+    ogImage: '/images/services/og-services.png',
+    ogType: 'website',
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: 'Home Remodeling Services',
+      provider: {
+        '@type': 'Organization',
+        name: 'Mor Remodeling',
+      },
+      description:
+        'Professional home remodeling services including full renovations, kitchen and bathroom remodels, room additions, roofing, siding, and custom finishes.',
+      areaServed: {
+        '@type': 'Place',
+        name: 'Bay Area, California',
+      },
+      serviceType: [
+        'Full Home Renovation',
+        'Kitchen Remodeling',
+        'Bathroom Remodeling',
+        'Room & Home Additions',
+        'Roofing & Siding',
+        'Interior Design',
+        'Flooring Installation',
+        'Exterior Remodeling',
+      ],
+    },
+  },
   services: servicesPageData,
 }
 

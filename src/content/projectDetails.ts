@@ -16,6 +16,48 @@ export interface ProjectDetail {
   gallery: string[] // names of files in /images/projects/{slug}/
 }
 
+export interface ProjectSEO {
+  title: string
+  description: string
+  keywords: string[]
+  ogImage: string
+  schema: Record<string, any>
+}
+
+export function generateProjectSEO(project: ProjectDetail): ProjectSEO {
+  const projectTitle = project.hero.title.replace(/\n/g, ' ')
+  const location = project.stats?.find(s => s.label === 'Location')?.value || 'Bay Area'
+  const date = project.stats?.find(s => s.label === 'Project date')?.value || ''
+  
+  return {
+    title: `${projectTitle} | Mor Remodeling`,
+    description: project.hero.subtitle,
+    keywords: [
+      'home remodeling project',
+      'renovation case study',
+      projectTitle.toLowerCase(),
+      location.toLowerCase() + ' renovation',
+      'completed remodeling project',
+    ],
+    ogImage: `/images/projects/${project.slug}/${project.hero.image}`,
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'Project',
+      name: projectTitle,
+      description: project.hero.subtitle,
+      creator: {
+        '@type': 'Organization',
+        name: 'Mor Remodeling',
+      },
+      ...(date && { dateCompleted: date }),
+      location: {
+        '@type': 'Place',
+        name: location,
+      },
+    },
+  }
+}
+
 export const projectDetails: ProjectDetail[] = [
   {
     slug: 'kitchen-remodel',

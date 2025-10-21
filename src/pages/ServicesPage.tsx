@@ -9,6 +9,7 @@ import OurProjects from '@/components/OurProjects'
 import FAQ from '@/components/FAQ'
 import ContactForm from '@/components/ContactForm'
 import Breadcrumb from '@/components/Breadcrumb'
+import SEOHead from '@/components/SEOHead'
 import { getAssetUrl } from '@/utils/asset'
 import contactPage from '@/content/contactPage'
 import ReviewsCarousel from '@/components/ReviewsCarousel'
@@ -86,6 +87,7 @@ export default function ServicesPage() {
 
   return (
     <div className="bg-[#F2F1EF]">
+      <SEOHead seo={servicesPage.seo} />
       {/* Hero Section */}
       <section className="container-custom pt-[54px]">
         <div className="mt-10 md:mt-[80px] mb-10 md:mb-18">

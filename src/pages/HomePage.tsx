@@ -16,11 +16,13 @@ import ReviewsCarousel from '@/components/ReviewsCarousel'
 import FAQ from '@/components/FAQ'
 import ContactForm from '@/components/ContactForm'
 import LazySection from '@/components/LazySection'
+import SEOHead from '@/components/SEOHead'
 import { getAssetUrl } from '@/utils/asset'
 
 export default function HomePage() {
   return (
     <div>
+      <SEOHead seo={home.seo} />
       {/* Sentinel is used by Header to switch style when hero leaves viewport */}
       <div id="hero-sentinel" className="absolute top-0 h-px w-px" />
       <section className="relative min-h-[750px]">

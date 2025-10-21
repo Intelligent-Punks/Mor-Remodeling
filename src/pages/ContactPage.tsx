@@ -7,6 +7,7 @@ import ContactForm from '@/components/ContactForm'
 import Breadcrumb from '@/components/Breadcrumb'
 import ReviewsCarousel from '@/components/ReviewsCarousel'
 import AnimatedText from '@/components/AnimatedText'
+import SEOHead from '@/components/SEOHead'
 import { getAssetUrl } from '@/utils/asset'
 
 export default function ContactPage() {
@@ -14,6 +15,7 @@ export default function ContactPage() {
 
   return (
     <div className="bg-[#F2F1EF]">
+      <SEOHead seo={contactPage.seo} />
       {/* Breadcrumb */}
       <div className="container-custom pt-[20px] md:pt-[54px]">
         <div className="mt-[88px] md:mt-[100px] mb-[46px] md:mb-10">

@@ -1,10 +1,11 @@
 import { useParams, Navigate } from 'react-router-dom'
-import { getProjectBySlug } from '@/content/projectDetails'
+import { getProjectBySlug, generateProjectSEO } from '@/content/projectDetails'
 import { getAssetUrl } from '@/utils/asset'
 import Breadcrumb from '@/components/Breadcrumb'
 import OurProjects from '@/components/OurProjects'
 import FAQ from '@/components/FAQ'
 import ContactForm from '@/components/ContactForm'
+import SEOHead from '@/components/SEOHead'
 import projects from '@/content/projects'
 import faq from '@/content/faq'
 import contactForm from '@/content/contactForm'
@@ -21,9 +22,12 @@ export default function ProjectDetailPage() {
 
   const projectImagePath = (fileName: string) =>
     getAssetUrl(`/images/projects/${project.slug}/${fileName}`)
+  
+  const seo = generateProjectSEO(project)
 
   return (
     <div className="bg-[#F2F1EF]">
+      <SEOHead seo={seo} />
       {/* Hero Sentinel for header tracking */}
       <div id="hero-sentinel" className="absolute top-[5vh] pointer-events-none" />
 

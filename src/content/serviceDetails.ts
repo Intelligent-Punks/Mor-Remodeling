@@ -14,6 +14,47 @@ export interface ServiceDetail {
   gallery: string[] // names of files in /images/services/{slug}/page/
 }
 
+export interface ServiceSEO {
+  title: string
+  description: string
+  keywords: string[]
+  ogImage: string
+  schema: Record<string, any>
+}
+
+export function generateServiceSEO(service: ServiceDetail): ServiceSEO {
+  return {
+    title: `${service.hero.title} | Mor Remodeling`,
+    description: service.hero.subtitle + ' ' + service.description[0].substring(0, 100) + '...',
+    keywords: [
+      service.hero.title.toLowerCase(),
+      'professional ' + service.hero.title.toLowerCase(),
+      'Bay Area ' + service.hero.title.toLowerCase(),
+      'home remodeling',
+      'renovation services',
+    ],
+    ogImage: `/images/services/${service.slug}/page/${service.hero.image}`,
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: service.hero.title,
+      description: service.hero.subtitle,
+      provider: {
+        '@type': 'Organization',
+        name: 'Mor Remodeling',
+      },
+      areaServed: {
+        '@type': 'Place',
+        name: 'Bay Area, California',
+      },
+      offers: {
+        '@type': 'Offer',
+        availability: 'https://schema.org/InStock',
+      },
+    },
+  }
+}
+
 export const serviceDetails: ServiceDetail[] = [
   {
     slug: 'kitchen-remodeling',

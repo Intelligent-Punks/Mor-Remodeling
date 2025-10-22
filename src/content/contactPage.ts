@@ -64,9 +64,9 @@ const contactPageData = {
         phone: '(747) 279 8262',
       },
       {
-        id: 'careers',
-        label: 'Careers',
-        email: 'morremodhr@gmail.com',
+        id: 'working-hours',
+        label: 'Working Hours',
+        value: 'Monday - Friday: 9 AM - 5 PM\nSaturday: Day off\nSunday: 9 AM - 5 PM',
       },
       {
         id: 'collaborations',
@@ -78,6 +78,11 @@ const contactPageData = {
         id: 'address',
         label: 'Address',
         value: '1254 Evergreen Avenue, Suite 200. Dallas, TX 75201',
+      },
+      {
+        id: 'careers',
+        label: 'Careers',
+        email: 'morremodhr@gmail.com',
       },
     ],
   },

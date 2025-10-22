@@ -2,8 +2,9 @@ import { useState, useRef, useEffect } from 'react'
 import aboutPage from '@/content/aboutPage'
 import faq from '@/content/faq'
 import contactForm from '@/content/contactForm'
+import services from '@/content/services'
 import FAQ from '@/components/FAQ'
-import ContactForm from '@/components/ContactForm'
+import ContactFormSection from '@/components/ContactFormSection'
 import Breadcrumb from '@/components/Breadcrumb'
 import Stats from '@/components/Stats'
 import Quote from '@/components/Quote'
@@ -242,11 +243,7 @@ export default function AboutPage() {
       />
 
       {/* Contact Form */}
-      <ContactForm
-        title={contactForm.title}
-        subtitle={contactForm.subtitle}
-        backgroundImage={contactForm.backgroundImage}
-      />
+        <ContactFormSection />
     </div>
   )
 }

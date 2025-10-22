@@ -5,7 +5,7 @@ import contactForm from '@/content/contactForm'
 import contactPage from '@/content/contactPage'
 import OurProjects from '@/components/OurProjects'
 import FAQ from '@/components/FAQ'
-import ContactForm from '@/components/ContactForm'
+import ContactFormSection from '@/components/ContactFormSection'
 import Breadcrumb from '@/components/Breadcrumb'
 import ReviewsCarousel from '@/components/ReviewsCarousel'
 import SEOHead from '@/components/SEOHead'
@@ -88,11 +88,7 @@ export default function ProjectsPage() {
 
       {/* Contact Form */}
       <LazySection rootMargin="200px">
-        <ContactForm
-          title={contactForm.title}
-          subtitle={contactForm.subtitle}
-          backgroundImage={contactForm.backgroundImage}
-        />
+        <ContactFormSection />
       </LazySection>
     </div>
   )

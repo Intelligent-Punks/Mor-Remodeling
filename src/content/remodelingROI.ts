@@ -6,6 +6,7 @@ export interface ROIItem {
 
 const remodelingROI = {
   title: 'Remodeling That Pays Off',
+  subtitle: 'Strategic renovations enhance your living experience while significantly increasing your property\'s market value. These improvements deliver measurable returns that make your home more valuable.',
   backgroundVideo: '/images/media/bg-remodeling.mp4',
   videoPoster: '/images/3d-rendering-wood-classic-living-room-with-marble-tile-bookshelf-sofa.png',
   items: [

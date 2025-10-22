@@ -5,6 +5,8 @@ export interface ProjectItem {
   title: string
   date: string
   location: string
+  serviceTag: string
+  slug?: string
 }
 
 const projects = {
@@ -18,7 +20,9 @@ const projects = {
       alt: 'The Maple Residence',
       title: 'The Maple Residence',
       date: 'March 2024',
-      location: 'Brooklyn, New York'
+      location: 'Brooklyn, New York',
+      serviceTag: 'Kitchen Remodeling',
+      slug: 'kitchen-remodel'
     },
     { 
       id: 'p2', 
@@ -26,7 +30,9 @@ const projects = {
       alt: 'Cedarwood Retreat',
       title: 'Cedarwood Retreat',
       date: 'February 2024',
-      location: 'Manhattan, New York'
+      location: 'Manhattan, New York',
+      serviceTag: 'Bathroom Remodeling',
+      slug: 'p2'
     },
     { 
       id: 'p3', 
@@ -34,7 +40,9 @@ const projects = {
       alt: 'Urban Harmony Loft',
       title: 'Urban Harmony Loft',
       date: 'January 2024',
-      location: 'Queens, New York'
+      location: 'Queens, New York',
+      serviceTag: 'Full Home Renovation',
+      slug: 'p3'
     },
     { 
       id: 'p6', 
@@ -42,7 +50,9 @@ const projects = {
       alt: 'The Horizon House',
       title: 'The Horizon House',
       date: 'December 2023',
-      location: 'Staten Island, New York'
+      location: 'Staten Island, New York',
+      serviceTag: 'Outdoor Kitchen',
+      slug: 'p6'
     },
     { 
       id: 'p5', 
@@ -50,7 +60,9 @@ const projects = {
       alt: 'Oakridge Remodel',
       title: 'Oakridge Remodel',
       date: 'November 2023',
-      location: 'Bronx, New York'
+      location: 'Bronx, New York',
+      serviceTag: 'Room & Home Additions',
+      slug: 'p5'
     },
     { 
       id: 'p4', 
@@ -58,7 +70,9 @@ const projects = {
       alt: 'Sunset Haven',
       title: 'Sunset Haven',
       date: 'October 2023',
-      location: 'Long Island, New York'
+      location: 'Long Island, New York',
+      serviceTag: 'Landscaping',
+      slug: 'p4'
     },
     { 
       id: 'p7', 
@@ -66,7 +80,9 @@ const projects = {
       alt: 'The Willow Extension',
       title: 'The Willow Extension',
       date: 'September 2023',
-      location: 'Yonkers, New York'
+      location: 'Yonkers, New York',
+      serviceTag: 'Decks, Patios & Outdoor Covers',
+      slug: 'p7'
     },
     { 
       id: 'p8', 
@@ -74,7 +90,9 @@ const projects = {
       alt: 'Riverside Contemporary',
       title: 'Riverside Contemporary',
       date: 'August 2023',
-      location: 'White Plains, New York'
+      location: 'White Plains, New York',
+      serviceTag: 'Exterior Remodeling & Siding',
+      slug: 'p8'
     },
     { 
       id: 'p9', 
@@ -82,7 +100,9 @@ const projects = {
       alt: 'The Belmont Transformation',
       title: 'The Belmont Transformation',
       date: 'July 2023',
-      location: 'New Rochelle, New York'
+      location: 'New Rochelle, New York',
+      serviceTag: 'Roofing, Siding & Foundations',
+      slug: 'p9'
     },
   ] as ProjectItem[],
 }

@@ -7,7 +7,7 @@ import faq from '@/content/faq'
 import contactForm from '@/content/contactForm'
 import OurProjects from '@/components/OurProjects'
 import FAQ from '@/components/FAQ'
-import ContactForm from '@/components/ContactForm'
+import ContactFormSection from '@/components/ContactFormSection'
 import Breadcrumb from '@/components/Breadcrumb'
 import SEOHead from '@/components/SEOHead'
 import { getAssetUrl } from '@/utils/asset'
@@ -206,11 +206,7 @@ export default function ServicesPage() {
       />
 
       {/* Contact Form */}
-      <ContactForm
-        title={contactForm.title}
-        subtitle={contactForm.subtitle}
-        backgroundImage={contactForm.backgroundImage}
-      />
+        <ContactFormSection />
     </div>
   )
 }

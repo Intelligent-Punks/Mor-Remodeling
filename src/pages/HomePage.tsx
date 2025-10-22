@@ -14,7 +14,7 @@ import Stats from '@/components/Stats'
 import RemodelingROI from '@/components/RemodelingROI'
 import ReviewsCarousel from '@/components/ReviewsCarousel'
 import FAQ from '@/components/FAQ'
-import ContactForm from '@/components/ContactForm'
+import ContactFormSection from '@/components/ContactFormSection'
 import LazySection from '@/components/LazySection'
 import SEOHead from '@/components/SEOHead'
 import { getAssetUrl } from '@/utils/asset'
@@ -61,6 +61,7 @@ export default function HomePage() {
       <LazySection rootMargin="200px">
         <RemodelingROI
           title={remodelingROI.title}
+          subtitle={remodelingROI.subtitle}
           backgroundVideo={remodelingROI.backgroundVideo}
           videoPoster={remodelingROI.videoPoster}
           items={remodelingROI.items}
@@ -115,11 +116,7 @@ export default function HomePage() {
       </LazySection>
 
       <LazySection rootMargin="200px">
-        <ContactForm
-          title={contactForm.title}
-          subtitle={contactForm.subtitle}
-          backgroundImage={contactForm.backgroundImage}
-        />
+        <ContactFormSection />
       </LazySection>
     </div>
   )

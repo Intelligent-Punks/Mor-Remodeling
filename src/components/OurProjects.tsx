@@ -10,6 +10,8 @@ interface Project {
   title: string
   date: string
   location: string
+  serviceTag: string
+  slug?: string
 }
 
 interface OurProjectsProps {
@@ -95,7 +97,7 @@ export default function OurProjects({
                 } ${isWideDesktop ? 'md:col-span-2' : 'md:col-span-1'}`}
               >
                 <Link
-                  to={`/projects/${project.id}`}
+                  to={`/projects/${project.slug || project.id}`}
                   className="group relative block rounded-[8px] md:rounded-[14px] overflow-hidden bg-[#2A2A2A] h-[190px] md:h-[360px]"
                 >
                   <img
@@ -104,8 +106,15 @@ export default function OurProjects({
                     className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                   />
                   
+                  {/* Service tag - always visible */}
+                  <div className="absolute md:left-[30px] md:top-[30px] left-[5px] top-[15px] right-[5px] md:right-auto">
+                    <span className="text-white text-[12px] md:text-[14px] font-medium bg-black/20 backdrop-blur-sm px-2 md:px-3 py-1 rounded-full whitespace-nowrap overflow-hidden text-ellipsis inline-block w-full md:w-auto">
+                      {project.serviceTag}
+                    </span>
+                  </div>
+                  
                   {/* Hover info block with project details - desktop only */}
-                  <div className="hidden md:block absolute left-[30px] top-[30px] w-[197px] bg-white rounded-[10px] p-[20px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="hidden md:block absolute left-[30px] top-[70px] w-[197px] bg-white rounded-[10px] p-[20px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <h3 className="text-[14px] font-medium leading-[1.4] text-[#2A2A2A] mb-[10px]">
                       {project.title}
                     </h3>

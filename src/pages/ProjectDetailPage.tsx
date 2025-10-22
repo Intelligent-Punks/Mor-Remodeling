@@ -4,7 +4,7 @@ import { getAssetUrl } from '@/utils/asset'
 import Breadcrumb from '@/components/Breadcrumb'
 import OurProjects from '@/components/OurProjects'
 import FAQ from '@/components/FAQ'
-import ContactForm from '@/components/ContactForm'
+import ContactFormSection from '@/components/ContactFormSection'
 import SEOHead from '@/components/SEOHead'
 import projects from '@/content/projects'
 import faq from '@/content/faq'
@@ -214,11 +214,7 @@ export default function ProjectDetailPage() {
       />
 
       {/* Contact Form */}
-      <ContactForm
-        title={contactForm.title}
-        subtitle={contactForm.subtitle}
-        backgroundImage={contactForm.backgroundImage}
-      />
+        <ContactFormSection />
     </div>
   )
 }

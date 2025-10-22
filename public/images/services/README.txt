@@ -12,7 +12,7 @@ Folders:
 - decks-patios-outdoor-covers
 - room-home-additions
 - roofing-siding-foundations
-- interior-design-custom-finishes
-- flooring-installation-refinishing
+- outdoor-kitchen
+- landscaping
 - exterior-remodeling-siding
 

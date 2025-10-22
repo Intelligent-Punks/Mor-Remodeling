@@ -22,17 +22,19 @@ export default function Breadcrumb({ customLabel }: BreadcrumbProps = {}) {
 
   return (
     <div className="flex items-center gap-[10px]">
-      <div className="min-w-[32px] min-h-[32px] w-[32px] h-[32px] bg-white rounded-full flex items-center justify-center">
-        <img
-          src={getAssetUrl('/icons/arrow-right.svg')}
-          alt=""
-          className="w-[20px] h-[20px] rotate-180"
-        />
-      </div>
-      <div className="text-base text-[#000000]">
-        <Link to="/" className="font-semibold hover:underline">
+      <Link to="/" className="flex items-center gap-[10px] hover:opacity-80 transition-opacity">
+        <div className="min-w-[32px] min-h-[32px] w-[32px] h-[32px] bg-white rounded-full flex items-center justify-center">
+          <img
+            src={getAssetUrl('/icons/arrow-right.svg')}
+            alt=""
+            className="w-[20px] h-[20px] rotate-180"
+          />
+        </div>
+        <span className="text-base text-[#000000] font-semibold">
           {routeNames.home}
-        </Link>
+        </span>
+      </Link>
+      <div className="text-base text-[#000000]">
         {pathnames.map((name, index) => {
           const routeTo = `/${pathnames.slice(0, index + 1).join('/')}`
           const isLast = index === pathnames.length - 1

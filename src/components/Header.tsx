@@ -256,11 +256,11 @@ export default function Header() {
                     to="/"
                     className="flex items-center py-3 border-b border-black/40"
                   >
-                    <span className="text-sm font-normal leading-[1.4] text-[#2A2A2A] uppercase w-[17px]">
+                    <span className="text-sm font-normal leading-[1.4] text-[#2A2A2A] w-[17px]">
                       01
                     </span>
-                    <span className="ml-6 text-[48px] font-normal leading-[1.4] text-[#2A2A2A] uppercase">
-                      home page
+                    <span className="ml-6 text-[28px] font-normal leading-[1.4] text-[#2A2A2A]">
+                      Home page
                     </span>
                   </NavLink>
                 </div>
@@ -275,10 +275,10 @@ export default function Header() {
                           onClick={() => setShowMobileServicesSubmenu(true)}
                           className="w-full flex items-center py-3 border-b border-black/40 text-left"
                         >
-                          <span className="text-sm font-normal leading-[1.4] text-[#2A2A2A] uppercase w-[17px]">
+                          <span className="text-sm font-normal leading-[1.4] text-[#2A2A2A] w-[17px]">
                             {String(idx + 2).padStart(2, '0')}
                           </span>
-                          <span className="ml-6 text-[48px] font-normal leading-[1.4] text-[#2A2A2A] uppercase">
+                          <span className="ml-6 text-[28px] font-normal leading-[1.4] text-[#2A2A2A]">
                             {item.label}
                           </span>
                         </button>
@@ -292,10 +292,10 @@ export default function Header() {
                         to={item.path}
                         className="flex items-center py-3 border-b border-black/40"
                       >
-                        <span className="text-sm font-normal leading-[1.4] text-[#2A2A2A] uppercase w-[17px]">
+                        <span className="text-sm font-normal leading-[1.4] text-[#2A2A2A] w-[17px]">
                           {String(idx + 2).padStart(2, '0')}
                         </span>
-                        <span className="ml-6 text-[48px] font-normal leading-[1.4] text-[#2A2A2A] uppercase">
+                        <span className="ml-6 text-[28px] font-normal leading-[1.4] text-[#2A2A2A]">
                           {item.label}
                         </span>
                       </NavLink>
@@ -307,16 +307,16 @@ export default function Header() {
               {/* Social Icons at Bottom */}
               <div className="mt-auto pb-10 flex gap-[50px]">
                 <a href={contacts.instagram} aria-label="Instagram">
-                  <img src={getAssetUrl('/icons/instagram.svg')} alt="" className="w-[34px] h-[30px]" />
+                  <img src={getAssetUrl('/icons/instagram.svg')} alt="" className="w-6 h-6" />
                 </a>
                 <a href={contacts.twitter} aria-label="Twitter">
-                  <img src={getAssetUrl('/icons/x.svg')} alt="" className="w-8 h-8" />
+                  <img src={getAssetUrl('/icons/x.svg')} alt="" className="w-6 h-6" />
                 </a>
                 <a href={contacts.linkedin} aria-label="LinkedIn">
-                  <img src={getAssetUrl('/icons/linkedin.svg')} alt="" className="w-[34px] h-[34px]" />
+                  <img src={getAssetUrl('/icons/linkedin.svg')} alt="" className="w-6 h-6" />
                 </a>
                 <a href={contacts.telegram} aria-label="Telegram">
-                  <img src={getAssetUrl('/icons/telegram.svg')} alt="" className="w-8 h-8" />
+                  <img src={getAssetUrl('/icons/telegram.svg')} alt="" className="w-6 h-6" />
                 </a>
               </div>
             </>
@@ -334,7 +334,7 @@ export default function Header() {
                     className="w-5 h-5 rotate-180"
                   />
                 </div>
-                <span className="text-sm font-semibold leading-[1.4] text-[#2A2A2A] uppercase">
+                <span className="text-sm font-semibold leading-[1.4] text-[#2A2A2A]">
                   Back
                 </span>
               </button>
@@ -348,7 +348,7 @@ export default function Header() {
                       className="flex items-center justify-between py-4.5 border-b border-black/40"
                     >
                       <div className="flex items-center gap-3">
-                        <span className="text-sm font-normal leading-[1.4] text-[#2A2A2A] uppercase">
+                        <span className="text-sm font-normal leading-[1.4] text-[#2A2A2A]">
                           {String(idx + 1).padStart(2, '0')}
                         </span>
                         <span className="text-[20px] font-normal leading-[1.4] text-[#2A2A2A] w-[349px]">

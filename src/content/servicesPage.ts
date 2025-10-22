@@ -93,31 +93,31 @@ export const servicesPageData: ServiceItem[] = [
     ],
   },
   {
-    id: 'interior-design-custom-finishes',
-    slug: 'interior-design-custom-finishes',
-    title: 'Interior Design & Custom Finishes',
+    id: 'outdoor-kitchen',
+    slug: 'outdoor-kitchen',
+    title: 'Outdoor Kitchen',
     shortDescription:
-      'Every detail matters when it comes to creating a home you love. Our interior design and custom finishes bring personality, elegance, and comfort to your space, tailored to reflect your unique style.',
+      'Transform your backyard into the ultimate entertaining space with a custom outdoor kitchen. Perfect for grilling, dining, and hosting memorable gatherings with family and friends.',
     fullDescription:
-      'Interior design and custom finishes are what truly make a house feel like home. At MOR Remodelling, we specialize in creating interiors that are both functional and inspiring, with every element carefully chosen to match your taste and lifestyle. From color palettes and lighting concepts to custom millwork, cabinetry, and decorative details, we bring harmony and character to every room. Our designers work closely with you to balance aesthetics with practicality, ensuring that your space not only looks stunning but also feels comfortable and efficient.',
+      'An outdoor kitchen extends your living space beyond the walls of your home, creating the perfect setting for entertaining and enjoying the great outdoors. At MOR Remodelling, we design and build custom outdoor kitchens that combine functionality with style, featuring premium grills, refrigerators, sinks, and storage solutions. Whether you envision a simple grilling station or a fully-equipped outdoor cooking area with seating and dining space, we create durable, weather-resistant installations that enhance your outdoor lifestyle.',
     images: [
-      '/images/services/interior-design-custom-finishes/image-1.png',
-      '/images/services/interior-design-custom-finishes/image-2.png',
-      '/images/services/interior-design-custom-finishes/image-3.png',
+      '/images/services/outdoor-kitchen/image-1.png',
+      '/images/services/outdoor-kitchen/image-2.png',
+      '/images/services/outdoor-kitchen/image-3.png',
     ],
   },
   {
-    id: 'flooring-installation-refinishing',
-    slug: 'flooring-installation-refinishing',
-    title: 'Flooring Installation & Refinishing',
+    id: 'landscaping',
+    slug: 'landscaping',
+    title: 'Landscaping',
     shortDescription:
-      'Beautiful floors set the tone for your entire home. Our installation and refinishing services bring out the best in hardwood, tile, laminate, and more — combining durability with timeless style.',
+      'Transform your outdoor space into a beautiful, functional landscape that enhances your home\'s curb appeal and creates the perfect environment for relaxation and entertainment.',
     fullDescription:
-      'Flooring is one of the most impactful elements of any home, shaping both its look and its feel. At MOR Remodelling, we provide expert installation and refinishing services that enhance comfort, durability, and design. Whether you\'re choosing hardwood for warmth, tile for elegance, or laminate for practicality, we help you find the perfect solution to match your lifestyle. Our refinishing services restore existing floors, removing years of wear and bringing back their natural beauty.',
+      'Professional landscaping brings your outdoor vision to life, creating stunning gardens, pathways, and outdoor living areas that complement your home\'s architecture. At MOR Remodelling, we design and install complete landscape solutions including plant selection, irrigation systems, hardscaping, and outdoor lighting. Whether you want a low-maintenance garden, a vibrant flower display, or a complete outdoor living space, we create landscapes that thrive in your climate and reflect your personal style.',
     images: [
-      '/images/services/flooring-installation-refinishing/image-1.png',
-      '/images/services/flooring-installation-refinishing/image-2.png',
-      '/images/services/flooring-installation-refinishing/image-3.png',
+      '/images/services/landscaping/image-1.png',
+      '/images/services/landscaping/image-2.png',
+      '/images/services/landscaping/image-3.png',
     ],
   },
   {
@@ -176,8 +176,8 @@ export default {
         'Bathroom Remodeling',
         'Room & Home Additions',
         'Roofing & Siding',
-        'Interior Design',
-        'Flooring Installation',
+        'Outdoor Kitchen',
+        'Landscaping',
         'Exterior Remodeling',
       ],
     },

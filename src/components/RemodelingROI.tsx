@@ -9,6 +9,7 @@ interface ROIItem {
 
 interface RemodelingROIProps {
   title: string
+  subtitle?: string
   backgroundVideo: string
   videoPoster: string
   items: ROIItem[]
@@ -16,12 +17,13 @@ interface RemodelingROIProps {
 
 export default function RemodelingROI({
   title,
+  subtitle,
   backgroundVideo,
   videoPoster,
   items,
 }: RemodelingROIProps) {
   return (
-    <section className="relative py-0 md:py-20 overflow-hidden mb-10 md:mb-0">
+    <section className="relative pt-14 md:py-20 overflow-hidden mb-10 md:mb-0">
       <video
         autoPlay
         loop
@@ -35,9 +37,16 @@ export default function RemodelingROI({
       <div className="absolute inset-0 bg-[#E5E3DF]/50" />
 
       <div className="relative z-10">
-        <h2 className="text-[32px] md:text-[48px] font-semibold leading-[1.4] text-[#2A2A2A] mb-[150px] md:mb-[200px] container-custom">
-          {title}
-        </h2>
+        <div className="container-custom mb-[50px] md:mb-[100px]">
+          <h2 className="text-[32px] md:text-[48px] font-semibold leading-[1.4] text-[#2A2A2A] md:mb-16 mb-12">
+            {title}
+          </h2>
+          {subtitle && (
+            <p className="text-[18px] md:text-[28px] font-medium leading-[1.4] text-[#2A2A2A]">
+              {subtitle}
+            </p>
+          )}
+        </div>
 
         {/* Mobile: Horizontal scroll carousel */}
         <div className="md:hidden overflow-x-auto scrollbar-hide">

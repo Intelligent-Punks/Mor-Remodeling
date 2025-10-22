@@ -37,10 +37,10 @@ export default function Footer() {
   }
 
   const navLinks = [
-    { id: '01', label: 'PROJECTS', path: '/projects' },
-    { id: '02', label: 'SERVICES', path: '/services' },
-    { id: '03', label: 'ABOUT US', path: '/about' },
-    { id: '04', label: 'CONTACT US', path: '/contact-us' },
+    { id: '01', label: 'Projects', path: '/projects' },
+    { id: '02', label: 'Services', path: '/services' },
+    { id: '03', label: 'About Us', path: '/about' },
+    { id: '04', label: 'Contact Us', path: '/contact-us' },
   ]
 
   const socialLinks = [
@@ -53,7 +53,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#F2F1EF] py-12 md:py-18">
       <div className="container-custom">
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_620px] gap-4 md:gap-34">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_400px] gap-4 md:gap-16">
           <div>
             {/* Mobile: Logo and Social Links in one row */}
             <div className="flex items-center justify-between md:mt-3 mb-10 md:mb-0">
@@ -135,18 +135,35 @@ export default function Footer() {
               ))}
             </div>
 
-            <div className="hidden md:grid grid-cols-2 gap-[40px]">
+            <div className="hidden md:grid grid-cols-3 gap-[40px]">
+              {/* Working Hours */}
+              <div>
+                <p className="text-base font-normal leading-[1.4] text-[#868686] capitalize mb-[8px]">
+                  Working Hours
+                </p>
+                <div className="text-base font-medium leading-[1.4] text-[#2A2A2A] space-y-1">
+                  <p>Monday - Friday: 9 AM - 5 PM</p>
+                  <p>Saturday: Day off</p>
+                  <p>Sunday: 9 AM - 5 PM</p>
+                </div>
+              </div>
               {/* General Inquiries */}
               <div>
                 <p className="text-base font-normal leading-[1.4] text-[#868686] capitalize mb-[8px]">
                   {contactPage.contactInfo.details[0].label}
                 </p>
-                <p className="text-base font-medium leading-[1.4] text-[#2A2A2A]">
+                <a 
+                  href={`mailto:${contactPage.contactInfo.details[0].email}`}
+                  className="text-base font-medium leading-[1.4] text-[#2A2A2A] hover:opacity-70 transition-opacity cursor-pointer inline-block"
+                >
                   {contactPage.contactInfo.details[0].email}
-                </p>
-                <p className="text-base font-medium leading-[1.4] text-[#2A2A2A]">
+                </a>
+                <a 
+                  href={`tel:${contactPage.contactInfo.details[0].phone}`}
+                  className="text-base font-medium leading-[1.4] text-[#2A2A2A] hover:opacity-70 transition-opacity cursor-pointer block"
+                >
                   {contactPage.contactInfo.details[0].phone}
-                </p>
+                </a>
               </div>
 
               {/* Address */}
@@ -154,9 +171,14 @@ export default function Footer() {
                 <p className="text-base font-normal leading-[1.4] text-[#868686] capitalize mb-[8px]">
                   {contactPage.contactInfo.details[3].label}
                 </p>
-                <p className="text-base font-medium leading-[1.4] text-[#2A2A2A] whitespace-pre-line">
+                <a 
+                  href={`https://maps.app.goo.gl/axZossPtkqRGN9HM7`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-base font-medium leading-[1.4] text-[#2A2A2A] whitespace-pre-line hover:opacity-70 transition-opacity cursor-pointer inline-block"
+                >
                   {contactPage.contactInfo.details[3].value}
-                </p>
+                </a>
               </div>
             </div>
           </div>
@@ -166,12 +188,12 @@ export default function Footer() {
               {navLinks.map((link) => (
                 <div key={link.id} className="border-b border-black/40 pb-2 md:pb-[20px]">
                   <div className="flex items-center gap-7 md:gap-[20px]">
-                    <span className="text-sm md:text-[20px] leading-[1.4] uppercase text-[#2A2A2A]">
+                    <span className="text-sm md:text-[20px] leading-[1.4] text-[#2A2A2A]">
                       {link.id}
                     </span>
                     <Link
                       to={link.path}
-                      className="text-[46px] md:text-[64px] font-normal leading-[1.2] md:leading-[1] uppercase text-[#2A2A2A] hover:opacity-70 transition-opacity"
+                      className="text-[36px] md:text-[46px] font-normal leading-[1.2] md:leading-[1] text-[#2A2A2A] hover:opacity-70 transition-opacity"
                     >
                       <AnimatedText text={link.label} staggered={false} />
                     </Link>
@@ -182,6 +204,18 @@ export default function Footer() {
 
             {/* Mobile Contact Info */}
             <div className="md:hidden mt-[14px] space-y-[10px]">
+              {/* Working Hours */}
+              <div className="flex gap-5">
+                <p className="text-sm font-normal leading-[1.4] text-[#868686] capitalize w-[111px]">
+                  Working Hours
+                </p>
+                <div className="flex-1">
+                  <p className="text-sm font-medium leading-[1.4] text-[#2A2A2A]">Monday - Friday: 9 AM - 5 PM</p>
+                  <p className="text-sm font-medium leading-[1.4] text-[#2A2A2A]">Saturday: Day off</p>
+                  <p className="text-sm font-medium leading-[1.4] text-[#2A2A2A]">Sunday: 9 AM - 5 PM</p>
+                </div>
+              </div>
+
               {/* General Inquiries */}
               <div className="flex gap-5">
                 <p className="text-sm font-normal leading-[1.4] text-[#868686] capitalize w-[111px]">

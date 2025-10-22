@@ -3,7 +3,7 @@ import { getServiceBySlug, generateServiceSEO } from '@/content/serviceDetails'
 import { getAssetUrl } from '@/utils/asset'
 import Breadcrumb from '@/components/Breadcrumb'
 import FAQ from '@/components/FAQ'
-import ContactForm from '@/components/ContactForm'
+import ContactFormSection from '@/components/ContactFormSection'
 import ReviewsCarousel from '@/components/ReviewsCarousel'
 import SEOHead from '@/components/SEOHead'
 import faq from '@/content/faq'
@@ -175,11 +175,7 @@ export default function ServiceDetailPage() {
       />
 
       {/* Contact Form Section */}
-      <ContactForm
-        title={contactForm.title}
-        subtitle={contactForm.subtitle}
-        backgroundImage={contactForm.backgroundImage}
-      />
+        <ContactFormSection />
     </div>
   )
 }

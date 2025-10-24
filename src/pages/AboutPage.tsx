@@ -102,48 +102,6 @@ export default function AboutPage() {
         }))}
       />
 
-      {/* Certifications Section */}
-      <section className="py-12 md:py-20">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-11 md:gap-[40px]">
-            <div>
-              <h2 className="text-[32px] md:text-[48px] font-semibold leading-[1.4] text-[#2A2A2A] whitespace-pre-line mb-8 md:mb-18">
-                {aboutPage.certifications.title}
-              </h2>
-              {/* Certification Logos Grid - 3x2 on mobile, 2x3 on desktop */}
-              <div className="grid grid-cols-3 gap-3 md:gap-x-[20px] md:gap-y-[20px] md:max-w-[475px]">
-                {aboutPage.certifications.logos.map((logo, idx) => (
-                  <div
-                    key={idx}
-                    className="w-full aspect-square md:w-[138px] md:h-[138px] rounded-[12px] md:rounded-[14px] border border-[#DCDCDA] md:border-2 bg-white flex items-center justify-center"
-                  >
-                    <img
-                      src={getAssetUrl(logo)}
-                      alt={`Certification ${idx + 1}`}
-                      className="max-w-[60%] md:max-w-[88px] max-h-[60%] md:max-h-[88px] object-contain"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Certifications List */}
-            <div className="space-y-5 md:space-y-[60px]">
-              {aboutPage.certifications.items.map((item) => (
-                <div key={item.id}>
-                  <h3 className="text-[20px] md:text-[22px] font-medium leading-[1.4] text-[#2A2A2A] mb-2 md:mb-[10px]">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs md:text-base leading-[1.5] text-[#868686]">
-                    {item.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Our History Section - Yellow background */}
       <section className="py-12 md:py-18 bg-[#F4C077]">
         <div className="container-custom">

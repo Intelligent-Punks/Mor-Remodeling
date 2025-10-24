@@ -187,13 +187,13 @@ export default function Footer() {
             <div className="space-y-2 md:space-y-[24px]">
               {navLinks.map((link) => (
                 <div key={link.id} className="border-b border-black/40 pb-2 md:pb-[20px]">
-                  <div className="flex items-center gap-7 md:gap-[20px]">
-                    <span className="text-sm md:text-[20px] leading-[1.4] text-[#2A2A2A]">
+                  <div className="flex items-center gap-4 md:gap-[14px]">
+                    <span className="text-xs md:text-sm leading-[1.4] text-[#2A2A2A] font-bold">
                       {link.id}
                     </span>
                     <Link
                       to={link.path}
-                      className="text-[36px] md:text-[46px] font-normal leading-[1.2] md:leading-[1] text-[#2A2A2A] hover:opacity-70 transition-opacity"
+                      className="text-[20px] md:text-[26px] font-thin leading-[1.4] md:leading-[1.4] text-[#2A2A2A] hover:opacity-70 transition-opacity tracking-wider"
                     >
                       <AnimatedText text={link.label} staggered={false} />
                     </Link>

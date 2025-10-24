@@ -260,7 +260,7 @@ export default function Header() {
                       01
                     </span>
                     <span className="ml-6 text-[28px] font-normal leading-[1.4] text-[#2A2A2A]">
-                      Home page
+                      Home
                     </span>
                   </NavLink>
                 </div>

@@ -38,11 +38,11 @@ export default function RemodelingROI({
 
       <div className="relative z-10">
         <div className="container-custom mb-[50px] md:mb-[100px]">
-          <h2 className="text-[32px] md:text-[48px] font-semibold leading-[1.4] text-[#2A2A2A] md:mb-16 mb-12">
+          <h2 className="text-[28px] md:text-[42px] font-semibold leading-[1.4] text-[#2A2A2A] md:mb-16 mb-12">
             {title}
           </h2>
           {subtitle && (
-            <p className="text-[18px] md:text-[28px] font-medium leading-[1.4] text-[#2A2A2A]">
+            <p className="text-[16px] md:text-[22px] font-medium leading-[1.1] text-[#2A2A2A] whitespace-pre-line">
               {subtitle}
             </p>
           )}

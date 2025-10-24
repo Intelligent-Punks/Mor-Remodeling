@@ -6,7 +6,6 @@ import services from '@/content/services'
 import FAQ from '@/components/FAQ'
 import ContactForm from '@/components/ContactForm'
 import Breadcrumb from '@/components/Breadcrumb'
-import ReviewsCarousel from '@/components/ReviewsCarousel'
 import AnimatedText from '@/components/AnimatedText'
 import SEOHead from '@/components/SEOHead'
 import { getAssetUrl } from '@/utils/asset'
@@ -242,8 +241,8 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Google Map Section - Desktop */}
-      <div className="hidden md:block w-full h-[620px] overflow-hidden pb-[80px]">
+      {/* Google Map Section */}
+      <div className="w-full h-[500px] md:h-[620px] overflow-hidden">
         <iframe
           src={contactPage.map.embedUrl}
           width="100%"
@@ -255,45 +254,6 @@ export default function ContactPage() {
           title="MOR Remodelling Office Location"
         />
       </div>
-
-      {/* Map Section - Mobile */}
-      <section className="md:hidden pb-[40px]">
-        <div className="w-full h-[500px] overflow-hidden">
-          <iframe
-            src={contactPage.map.embedUrl}
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen={false}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="MOR Remodelling Office Location"
-          />
-        </div>
-      </section>
-
-      {/* Reviews Section */}
-      <section className="pb-[60px] md:pb-[60px]">
-        <div className="container-custom mb-[30px] md:mb-[80px]">
-          <h2 className="text-[32px] md:text-[48px] font-semibold leading-[1.4] text-[#2A2A2A] mb-[20px]">
-            {contactPage.reviews.title}
-          </h2>
-          <p className="text-[14px] md:text-[20px] leading-[1.4] text-[#868686]">
-            {contactPage.reviews.subtitle}
-          </p>
-        </div>
-
-        <ReviewsCarousel reviews={contactPage.reviews.items} />
-      </section>
-
-      {/* FAQ */}
-      <FAQ
-        title={faq.title}
-        subtitle={faq.subtitle}
-        backgroundVideo={faq.backgroundVideo}
-        videoPoster={faq.videoPoster}
-        items={faq.items}
-      />
     </div>
   )
 }

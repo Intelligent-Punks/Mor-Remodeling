@@ -36,7 +36,7 @@ export default function ThankYouPage() {
                   className="w-5 h-5 rotate-180"
                 />
               </div>
-              <span>Home page</span>
+              <span>Home</span>
             </Link>
 
             {/* Title */}

@@ -5,8 +5,12 @@ export interface ROIItem {
 }
 
 const remodelingROI = {
-  title: 'Remodeling That Pays Off',
-  subtitle: 'Strategic renovations enhance your living experience while significantly increasing your property\'s market value. These improvements deliver measurable returns that make your home more valuable.',
+  title: 'Every renovation is an investment in the future of your house',
+  subtitle: `A well-planned remodel changes a home's market potential in addition to how it looks.
+
+Every improvement increases daily comfort and creates long-term equity by enhancing structure, flow, and materials.
+
+From updated bathrooms and redesigned kitchens to complete ADU additions, the correct design decisions can double the value of your home and draw in future purchasers who value skilful construction and strategic planning.`,
   backgroundVideo: '/images/media/bg-remodeling.mp4',
   videoPoster: '/images/3d-rendering-wood-classic-living-room-with-marble-tile-bookshelf-sofa.png',
   items: [

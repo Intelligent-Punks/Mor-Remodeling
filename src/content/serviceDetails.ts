@@ -100,297 +100,309 @@ export const serviceDetails: ServiceDetail[] = [
     slug: 'full-home-renovation',
     hero: {
       title: 'Full Home Renovation',
-      subtitle: 'Complete home transformations that exceed expectations.',
+      subtitle: 'Transforming every corner into a cohesive masterpiece.',
       image: 'hero.png',
     },
     features: [
       {
         icon: '/icons/Vector.svg',
-        title: 'Comprehensive Planning',
-        description: 'Complete project management from design to final walkthrough.',
+        title: 'Comprehensive Design Planning',
+        description:
+          'We create a unified concept that connects every room while reflecting personal style and functional needs.',
       },
       {
         icon: '/icons/Vector-1.svg',
-        title: 'Structural Expertise',
-        description: 'Safe, code-compliant structural modifications and improvements.',
+        title: 'Quality Craftsmanship',
+        description:
+          'Our skilled team ensures precision in every detail, from structural updates to final finishes.',
       },
       {
         icon: '/icons/Vector-2.svg',
-        title: 'Energy Efficiency',
-        description: 'Modern insulation, windows, and systems for optimal comfort.',
+        title: 'Seamless Project Coordination',
+        description:
+          "We manage the entire renovation process — design, permits, materials, and construction — so you don't have to.",
       },
       {
         icon: '/icons/Vector-3.svg',
-        title: 'Timeline Management',
-        description: 'Detailed scheduling to minimize disruption to your life.',
+        title: 'On-Time Delivery',
+        description: 'We value your time and guarantee efficient project execution without compromising quality.',
       },
     ],
     description: [
-      'A full home renovation is the ultimate way to transform your living space. At MOR Remodeling, we specialize in comprehensive home transformations that address every aspect of your property — from structural improvements to aesthetic updates.',
-      'Our full renovation services include kitchen and bathroom remodels, flooring and lighting updates, electrical and plumbing upgrades, and exterior improvements. We work with you to create a cohesive design that flows throughout your entire home.',
-      'Every project is managed with precision, ensuring quality craftsmanship and timely completion. We handle all permits, inspections, and coordination with subcontractors, so you can focus on the excitement of your new home.',
-      'MOR Remodeling — creating dream homes, one renovation at a time.',
+      "A full home renovation is more than just an upgrade — it's an opportunity to reimagine the way you live. At MOR Remodeling, we specialize in complete home transformations that balance aesthetics, comfort, and functionality. Whether you've just purchased a fixer-upper or want to modernize your existing home, our experts bring your vision to life with care and precision.",
+      'From reconfiguring layouts and upgrading infrastructure to crafting custom interiors, we handle every step with meticulous attention. Our integrated team of architects, designers, and builders works together to ensure harmony between structure, design, and everyday usability.',
+      'With MOR Remodeling, you get more than a renovation — you get a home that truly reflects who you are, designed for the way you live today and tomorrow.',
+      'MOR Remodeling — building better homes, one transformation at a time.',
     ],
-    gallery: ['gallery-1.png', 'gallery-2.png', 'gallery-3.png', 'gallery-4.png', 'gallery-5.png'],
+    gallery: ['gallery-1.png', 'gallery-2.png', 'gallery-3.png', 'gallery-4.png', 'gallery-5.png', 'gallery-6.png'],
   },
   {
     slug: 'bathroom-remodeling',
     hero: {
       title: 'Bathroom Remodeling',
-      subtitle: 'Creating spa-like retreats in your own home.',
+      subtitle: 'Where comfort meets modern sophistication.',
       image: 'hero.png',
     },
     features: [
       {
         icon: '/icons/Vector.svg',
-        title: 'Luxury Materials',
-        description: 'Premium fixtures, tiles, and finishes for lasting beauty.',
+        title: 'Tailored Design Concepts',
+        description:
+          'Each bathroom is designed to fit your lifestyle, aesthetic preferences, and space requirements.',
       },
       {
         icon: '/icons/Vector-1.svg',
-        title: 'Space Optimization',
-        description: 'Smart layouts that maximize functionality in any size space.',
+        title: 'Premium Fixtures & Materials',
+        description: 'We partner with trusted brands to deliver lasting quality, beauty, and performance.',
       },
       {
         icon: '/icons/Vector-2.svg',
-        title: 'Modern Fixtures',
-        description: 'Energy-efficient fixtures and smart home integration.',
+        title: 'Efficient Space Utilization',
+        description:
+          'Smart layouts and storage solutions that maximize functionality without sacrificing style.',
       },
       {
         icon: '/icons/Vector-3.svg',
-        title: 'Accessibility Options',
-        description: 'Universal design features for aging in place.',
+        title: 'Stress-Free Process',
+        description: 'From design to installation, we manage every detail for a seamless renovation experience.',
       },
     ],
     description: [
-      'Transform your bathroom into a personal sanctuary with our comprehensive remodeling services. Whether you want a modern master suite or a functional family bathroom, we create spaces that combine beauty with practicality.',
-      'Our bathroom renovations include custom vanities, premium tile work, luxury fixtures, and smart storage solutions. We focus on creating layouts that maximize space while maintaining the aesthetic you desire.',
-      'From concept to completion, we handle every detail including plumbing, electrical work, and finishing touches. Our team ensures every project meets the highest standards of quality and craftsmanship.',
-      'MOR Remodeling — where every bathroom becomes a retreat.',
+      "Your bathroom should be more than a utilitarian space — it should be a personal retreat. At MOR Remodeling, we specialize in transforming outdated or inefficient bathrooms into stylish, comfortable sanctuaries that combine beauty and practicality.",
+      'Whether you envision a spa-like atmosphere with elegant finishes or a minimalist modern design, our team creates spaces that elevate your daily routine. We handle everything — from plumbing upgrades and tile installation to lighting, cabinetry, and ventilation — ensuring both aesthetic harmony and long-term durability.',
+      'With careful attention to detail and craftsmanship, we bring a sense of calm and sophistication to one of the most essential rooms in your home.',
+      'MOR Remodeling — redefining relaxation, one bathroom at a time.',
     ],
-    gallery: ['gallery-1.png', 'gallery-2.png', 'gallery-3.png', 'gallery-4.png'],
+    gallery: ['gallery-1.png', 'gallery-2.png', 'gallery-3.png', 'gallery-4.png', 'gallery-5.png', 'gallery-6.png'],
   },
   {
     slug: 'decks-patios-outdoor-covers',
     hero: {
       title: 'Decks, Patios & Outdoor Covers',
-      subtitle: 'Extending your living space into the great outdoors.',
+      subtitle: 'Extending your living space into the outdoors.',
       image: 'hero.png',
     },
     features: [
       {
         icon: '/icons/Vector.svg',
-        title: 'Custom Design',
-        description: 'Tailored outdoor spaces that complement your home and lifestyle.',
+        title: 'Custom Outdoor Design',
+        description:
+          "We design decks and patios that perfectly complement your home's architecture and natural surroundings.",
       },
       {
         icon: '/icons/Vector-1.svg',
-        title: 'Durable Materials',
-        description: 'Weather-resistant materials built to last for years.',
+        title: 'Durable, Weather-Resistant Materials',
+        description: 'Built to withstand the elements while maintaining long-lasting beauty and comfort.',
       },
       {
         icon: '/icons/Vector-2.svg',
-        title: 'Integrated Lighting',
-        description: 'Ambient and task lighting for year-round enjoyment.',
+        title: 'Functional & Aesthetic Balance',
+        description:
+          "Every detail is considered — from layout and lighting to shade and seating — to create spaces you'll love year-round.",
       },
       {
         icon: '/icons/Vector-3.svg',
-        title: 'Maintenance-Free',
-        description: 'Low-maintenance materials that look great year after year.',
+        title: 'End-to-End Project Management',
+        description: 'From permits to construction, we handle it all with precision and care.',
       },
     ],
     description: [
-      'Create the perfect outdoor living space with our deck, patio, and outdoor cover services. We design and build beautiful, functional outdoor areas that extend your home\'s living space into nature.',
-      'Our outdoor construction services include custom decks, stone patios, pergolas, and covered outdoor kitchens. We use premium materials and construction techniques to ensure your outdoor space is both beautiful and durable.',
-      'Every project is designed to maximize your outdoor enjoyment while complementing your home\'s architecture. We consider factors like sun exposure, privacy, and maintenance to create the perfect outdoor retreat.',
-      'MOR Remodeling — bringing the indoors out, beautifully.',
+      "Your outdoor space is more than an extension of your home — it's where relaxation, connection, and memories come to life. At MOR Remodeling, we design and build custom decks, patios, and covers that enhance your property's value and lifestyle.",
+      'Whether you want a cozy covered patio for morning coffee, a spacious deck for entertaining, or a seamless indoor-outdoor transition, our team brings craftsmanship, creativity, and functionality together in every project.',
+      'We work with high-quality, low-maintenance materials and thoughtful design solutions to ensure your outdoor area remains beautiful and durable through every season.',
+      'MOR Remodeling — crafting outdoor spaces that invite you to live beyond the walls.',
     ],
-    gallery: ['gallery-1.png', 'gallery-2.png', 'gallery-3.png', 'gallery-4.png'],
+    gallery: ['gallery-1.png', 'gallery-2.png', 'gallery-3.png', 'gallery-4.png', 'gallery-5.png', 'gallery-6.png'],
   },
   {
     slug: 'room-home-additions',
     hero: {
       title: 'Room & Home Additions',
-      subtitle: 'Expanding your home\'s potential with thoughtful additions.',
+      subtitle: 'Expanding your space, enhancing your lifestyle.',
       image: 'hero.png',
     },
     features: [
       {
         icon: '/icons/Vector.svg',
         title: 'Seamless Integration',
-        description: 'Additions that look like they were always part of your home.',
+        description:
+          'We design additions that feel like a natural extension of your home, both structurally and stylistically.',
       },
       {
         icon: '/icons/Vector-1.svg',
-        title: 'ADU Expertise',
-        description: 'Accessory Dwelling Units for rental income or family use.',
+        title: 'Customized Design Solutions',
+        description: "Whether it's a new bedroom, office, or second story, every addition is tailored to your needs and vision.",
       },
       {
         icon: '/icons/Vector-2.svg',
-        title: 'Permit Management',
-        description: 'Full permit and inspection coordination for legal compliance.',
+        title: 'Full-Service Coordination',
+        description: 'From architectural plans and permits to construction and finishing, we manage the entire process.',
       },
       {
         icon: '/icons/Vector-3.svg',
-        title: 'Structural Engineering',
-        description: 'Safe, code-compliant structural modifications.',
+        title: 'Quality & Structural Integrity',
+        description: 'Built with precision and premium materials to ensure long-term safety, durability, and comfort.',
       },
     ],
     description: [
-      'Need more space? Our room and home addition services can transform your property with thoughtful, well-designed expansions. Whether you need an extra bedroom, home office, or complete ADU, we create additions that enhance your home\'s value and functionality.',
-      'Our addition services include single room additions, multi-room expansions, and complete Accessory Dwelling Units (ADUs). We work with you to design additions that seamlessly integrate with your existing home while meeting all local zoning requirements.',
-      'Every addition is built to the same high standards as new construction, with proper insulation, electrical, and plumbing systems. We handle all permits and inspections to ensure your addition is completely legal and safe.',
-      'MOR Remodeling — expanding possibilities, one addition at a time.',
+      "Adding space to your home is more than a construction project — it's an investment in your comfort, functionality, and future. At MOR Remodeling, we specialize in designing and building thoughtful home additions that expand your possibilities without compromising your home's original charm.",
+      'From open-plan living extensions and extra bedrooms to sunrooms, garages, and second stories, we blend architecture and craftsmanship to create seamless transitions between old and new. Our team ensures that every addition complements your existing design while meeting modern standards of efficiency and comfort.',
+      'Whether your family is growing or your lifestyle is evolving, MOR Remodeling helps you make room for what matters most.',
+      'MOR Remodeling — building beyond boundaries, one addition at a time.',
     ],
-    gallery: ['gallery-1.png', 'gallery-2.png', 'gallery-3.png', 'gallery-4.png'],
+    gallery: ['gallery-1.png', 'gallery-2.png', 'gallery-3.png', 'gallery-4.png', 'gallery-5.png', 'gallery-6.png'],
   },
   {
     slug: 'roofing-siding-foundations',
     hero: {
       title: 'Roofing, Siding & Foundations',
-      subtitle: 'Protecting your home with quality structural work.',
+      subtitle: 'Protecting your home from the ground up.',
       image: 'hero.png',
     },
     features: [
       {
         icon: '/icons/Vector.svg',
-        title: 'Weather Protection',
-        description: 'Durable materials that protect against all weather conditions.',
+        title: 'Comprehensive Structural Care',
+        description:
+          'From roof repairs to foundation reinforcement, we ensure every layer of your home stands strong.',
       },
       {
         icon: '/icons/Vector-1.svg',
-        title: 'Energy Efficiency',
-        description: 'Insulation and materials that reduce heating and cooling costs.',
+        title: 'High-Performance Materials',
+        description: 'We use only trusted, weather-resistant materials for lasting durability and minimal maintenance.',
       },
       {
         icon: '/icons/Vector-2.svg',
-        title: 'Structural Integrity',
-        description: 'Foundation work that ensures your home\'s long-term stability.',
+        title: 'Expert Installation',
+        description:
+          'Our skilled team delivers precise craftsmanship backed by modern techniques and safety standards.',
       },
       {
         icon: '/icons/Vector-3.svg',
-        title: 'Warranty Coverage',
-        description: 'Comprehensive warranties on all materials and workmanship.',
+        title: 'Long-Term Value',
+        description: "Quality work that enhances protection, efficiency, and your home's overall lifespan.",
       },
     ],
     description: [
-      'Protect your most valuable investment with our roofing, siding, and foundation services. These critical home components require expert installation and quality materials to ensure your home\'s long-term protection and value.',
-      'Our structural services include complete roof replacement, siding installation, and foundation repair work. We use only premium materials and proven installation techniques to ensure maximum durability and performance.',
-      'Every project includes proper insulation and ventilation to improve your home\'s energy efficiency. We work with you to select materials that enhance your home\'s curb appeal while providing maximum protection.',
-      'MOR Remodeling — protecting what matters most, your home.',
+      'A strong home begins with a solid structure. At MOR Remodeling, we provide complete exterior and structural renovation services — from roofing and siding replacement to foundation repair — ensuring your home is built to last.',
+      "Our experts evaluate every aspect of your home's envelope to identify issues before they become costly problems. Whether you need a full roof replacement, upgraded siding for better insulation, or foundation stabilization for long-term safety, we deliver reliable, efficient solutions tailored to your property.",
+      'With a focus on durability, performance, and design harmony, we protect your home while enhancing its beauty and value.',
+      'MOR Remodeling — strengthening homes, one structure at a time.',
     ],
-    gallery: ['gallery-1.png', 'gallery-2.png', 'gallery-3.png', 'gallery-4.png'],
-  },
-  {
-    slug: 'outdoor-kitchen',
-    hero: {
-      title: 'Outdoor Kitchen',
-      subtitle: 'Culinary excellence meets outdoor living.',
-      image: 'hero.png',
-    },
-    features: [
-      {
-        icon: '/icons/Vector.svg',
-        title: 'Premium Appliances',
-        description: 'High-end outdoor cooking equipment built to last.',
-      },
-      {
-        icon: '/icons/Vector-1.svg',
-        title: 'Weather Resistance',
-        description: 'Materials and finishes designed for outdoor conditions.',
-      },
-      {
-        icon: '/icons/Vector-2.svg',
-        title: 'Custom Design',
-        description: 'Tailored layouts that match your cooking style and space.',
-      },
-      {
-        icon: '/icons/Vector-3.svg',
-        title: 'Entertainment Ready',
-        description: 'Integrated seating and serving areas for hosting.',
-      },
-    ],
-    description: [
-      'Take your cooking outdoors with a custom outdoor kitchen that rivals any indoor setup. Our outdoor kitchen designs combine premium appliances, durable materials, and smart layouts to create the ultimate outdoor cooking experience.',
-      'Our outdoor kitchens include built-in grills, refrigerators, sinks, and storage solutions. We use weather-resistant materials and professional-grade appliances to ensure your outdoor kitchen performs year after year.',
-      'Every design is tailored to your cooking style and entertainment needs. Whether you\'re a casual griller or a serious chef, we create outdoor kitchens that enhance your outdoor living experience.',
-      'MOR Remodeling — where outdoor cooking becomes an art form.',
-    ],
-    gallery: ['gallery-1.png', 'gallery-2.png', 'gallery-3.png', 'gallery-4.png'],
-  },
-  {
-    slug: 'landscaping',
-    hero: {
-      title: 'Landscaping',
-      subtitle: 'Transforming outdoor spaces into natural masterpieces.',
-      image: 'hero.png',
-    },
-    features: [
-      {
-        icon: '/icons/Vector.svg',
-        title: 'Native Plants',
-        description: 'Drought-resistant, low-maintenance plant selections.',
-      },
-      {
-        icon: '/icons/Vector-1.svg',
-        title: 'Irrigation Systems',
-        description: 'Smart watering systems for healthy, beautiful landscapes.',
-      },
-      {
-        icon: '/icons/Vector-2.svg',
-        title: 'Hardscaping',
-        description: 'Patios, walkways, and retaining walls for structure.',
-      },
-      {
-        icon: '/icons/Vector-3.svg',
-        title: 'Seasonal Interest',
-        description: 'Year-round beauty with thoughtful plant combinations.',
-      },
-    ],
-    description: [
-      'Create a beautiful, sustainable landscape that enhances your home\'s curb appeal and provides year-round enjoyment. Our landscaping services combine artistic design with practical functionality to create outdoor spaces you\'ll love.',
-      'Our landscape design services include plant selection, irrigation systems, hardscaping, and outdoor lighting. We focus on creating low-maintenance landscapes that thrive in your local climate while providing maximum visual impact.',
-      'Every landscape design is tailored to your lifestyle and maintenance preferences. Whether you want a formal garden or a natural, low-maintenance landscape, we create designs that reflect your vision.',
-      'MOR Remodeling — where nature meets design, beautifully.',
-    ],
-    gallery: ['gallery-1.png', 'gallery-2.png', 'gallery-3.png', 'gallery-4.png'],
+    gallery: ['gallery-1.png', 'gallery-2.png', 'gallery-3.png', 'gallery-4.png', 'gallery-5.png', 'gallery-6.png'],
   },
   {
     slug: 'exterior-remodeling-siding',
     hero: {
       title: 'Exterior Remodeling & Siding',
-      subtitle: 'Enhancing curb appeal with beautiful, durable exteriors.',
+      subtitle: 'Enhancing curb appeal with strength and style.',
       image: 'hero.png',
     },
     features: [
       {
         icon: '/icons/Vector.svg',
-        title: 'Curb Appeal',
-        description: 'Transform your home\'s exterior with modern materials and design.',
+        title: 'Custom Exterior Design',
+        description: 'We create cohesive, modern exteriors that complement your home\'s architecture and surroundings.',
       },
       {
         icon: '/icons/Vector-1.svg',
-        title: 'Energy Efficiency',
-        description: 'Insulated siding and windows that reduce energy costs.',
+        title: 'Durable, Low-Maintenance Materials',
+        description: 'Our siding and exterior solutions are built to withstand the elements while retaining their beauty.',
       },
       {
         icon: '/icons/Vector-2.svg',
-        title: 'Low Maintenance',
-        description: 'Materials that look great with minimal upkeep.',
+        title: 'Energy Efficiency & Protection',
+        description: 'Improve insulation, reduce maintenance, and protect your home from weather and wear.',
       },
       {
         icon: '/icons/Vector-3.svg',
-        title: 'Weather Protection',
-        description: 'Durable materials that protect against the elements.',
+        title: 'Seamless Project Execution',
+        description: 'From design and planning to installation and finishing, we manage every detail with precision.',
       },
     ],
     description: [
-      'Give your home a fresh, modern look with our exterior remodeling and siding services. We transform outdated exteriors into beautiful, energy-efficient facades that enhance your home\'s value and curb appeal.',
-      'Our exterior services include siding replacement, window and door updates, and exterior lighting. We use premium materials and modern installation techniques to ensure your home\'s exterior is both beautiful and durable.',
-      'Every exterior project is designed to complement your home\'s architectural style while improving energy efficiency. We work with you to select materials and colors that enhance your home\'s character and value.',
-      'MOR Remodeling — where first impressions last a lifetime.',
+      'Your home\'s exterior is more than its first impression — it\'s the shield that protects everything within. At MOR Remodeling, we specialize in exterior transformations that combine architectural harmony, durability, and performance.',
+      'Whether you\'re updating outdated siding, refreshing your facade, or undertaking a full-scale exterior renovation, our team blends design expertise with high-quality craftsmanship to deliver lasting results.',
+      'We work with trusted materials — from fiber cement and natural wood to modern composites — to ensure a perfect balance between beauty, strength, and energy efficiency. Every project is tailored to your home\'s character and your personal vision.',
+      'MOR Remodeling — transforming exteriors that stand the test of time.',
     ],
-    gallery: ['gallery-1.png', 'gallery-2.png', 'gallery-3.png', 'gallery-4.png'],
+    gallery: ['gallery-1.png', 'gallery-2.png', 'gallery-3.png', 'gallery-4.png', 'gallery-5.png', 'gallery-6.png'],
+  },
+  {
+    slug: 'interior-design-custom-finishes',
+    hero: {
+      title: 'Interior Design & Custom Finishes',
+      subtitle: 'Crafting interiors that reflect your story.',
+      image: 'hero.png',
+    },
+    features: [
+      {
+        icon: '/icons/Vector.svg',
+        title: 'Personalized Design Concepts',
+        description:
+          'Every space begins with your lifestyle, taste, and vision — transformed into a cohesive design plan.',
+      },
+      {
+        icon: '/icons/Vector-1.svg',
+        title: 'Premium Materials & Finishes',
+        description: 'From custom millwork to luxury textures and lighting, we curate details that elevate your interior.',
+      },
+      {
+        icon: '/icons/Vector-2.svg',
+        title: 'Functional Aesthetics',
+        description: 'We balance beauty and practicality to create environments that inspire and endure.',
+      },
+      {
+        icon: '/icons/Vector-3.svg',
+        title: 'Turnkey Execution',
+        description: 'From design development to final styling, we manage every step to ensure a flawless result.',
+      },
+    ],
+    description: [
+      "True interior design goes beyond decoration — it's about creating spaces that feel authentic, balanced, and timeless. At MOR Remodeling, we bring together creativity, craftsmanship, and technical expertise to shape interiors that tell your story.",
+      "Whether it's a single room or an entire home, our designers work closely with you to understand your needs, refine your vision, and translate it into a space that feels both intentional and inviting.",
+      'From custom cabinetry and built-ins to wall treatments, lighting design, and finish selections, we focus on every detail that defines your home\'s atmosphere and character.',
+      'MOR Remodeling — elevating interiors through design, detail, and distinction.',
+    ],
+    gallery: ['gallery-1.png', 'gallery-2.png', 'gallery-3.png', 'gallery-4.png', 'gallery-5.png', 'gallery-6.png'],
+  },
+  {
+    slug: 'flooring-installation-refinishing',
+    hero: {
+      title: 'Flooring Installation & Refinishing',
+      subtitle: 'Laying the foundation for timeless interiors.',
+      image: 'hero.png',
+    },
+    features: [
+      {
+        icon: '/icons/Vector.svg',
+        title: 'Wide Range of Materials',
+        description:
+          'From hardwood and tile to vinyl and engineered options, we help you choose the perfect flooring for your home.',
+      },
+      {
+        icon: '/icons/Vector-1.svg',
+        title: 'Expert Installation',
+        description: 'Precision craftsmanship ensures a flawless fit, smooth finish, and long-lasting performance.',
+      },
+      {
+        icon: '/icons/Vector-2.svg',
+        title: 'Refinishing & Restoration',
+        description: 'We bring life back to worn or aged floors through sanding, staining, and protective finishing.',
+      },
+      {
+        icon: '/icons/Vector-3.svg',
+        title: 'Seamless Project Coordination',
+        description: 'From material selection to cleanup, we handle every step with care and efficiency.',
+      },
+    ],
+    description: [
+      'Your floors do more than support your home — they define its character, comfort, and flow. At MOR Remodeling, we specialize in professional flooring installation and refinishing services that combine technical excellence with refined aesthetics.',
+      "Whether you're updating a single room or renovating your entire home, our team ensures perfect alignment, durable finishes, and materials that stand the test of time. We work with top suppliers to offer a curated selection of styles and textures that complement your interior design.",
+      'From contemporary hardwood to classic stone, every project is guided by precision, quality, and attention to detail — so your floors feel as good as they look.',
+      'MOR Remodeling — redefining spaces from the ground up.',
+    ],
+    gallery: ['gallery-1.png', 'gallery-2.png', 'gallery-3.png', 'gallery-4.png', 'gallery-5.png', 'gallery-6.png'],
   },
 ]
 

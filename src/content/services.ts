@@ -14,8 +14,8 @@ const services = {
     { id: 's4', title: 'Decks, Patios & Outdoor Covers', image: '/images/services/Frame-12-4.png', slug: 'decks-patios-outdoor-covers' },
     { id: 's5', title: 'Room & Home Additions (including ADUs)', image: '/images/services/Frame-12-5.png', slug: 'room-home-additions' },
     { id: 's6', title: 'Roofing, Siding & Foundations', image: '/images/services/Frame-12-6.png', slug: 'roofing-siding-foundations' },
-    { id: 's7', title: 'Outdoor Kitchen', image: '/images/services/Frame-12-7.png', slug: 'outdoor-kitchen' },
-    { id: 's8', title: 'Landscaping', image: '/images/services/Frame-12-8.png', slug: 'landscaping' },
+    { id: 's7', title: 'Interior Design & Custom Finishes', image: '/images/services/Frame-12-7.png', slug: 'interior-design-custom-finishes' },
+    { id: 's8', title: 'Flooring Installation & Refinishing', image: '/images/services/Frame-12-8.png', slug: 'flooring-installation-refinishing' },
     { id: 's9', title: 'Exterior Remodeling & Siding', image: '/images/services/Frame-12-9.png', slug: 'exterior-remodeling-siding' },
   ] as ServiceItem[],
 }

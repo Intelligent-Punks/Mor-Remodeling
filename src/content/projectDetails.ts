@@ -60,26 +60,26 @@ export function generateProjectSEO(project: ProjectDetail): ProjectSEO {
 
 export const projectDetails: ProjectDetail[] = [
   {
-    slug: 'kitchen-remodel',
+    slug: 'living-room-renovation',
     hero: {
-      title: 'Modern Kitchen Renovation \n– Brooklyn, NY',
+      title: 'Living Room Renovation \n– Manhattan, NY',
       subtitle:
-        'This project transformed an outdated kitchen into a bright, open-concept space with custom cabinetry, quartz countertops, and energy-efficient appliances. The result is a modern design that blends functionality with timeless style.',
+        'This project reimagined a traditional living room into a serene, nature-inspired space featuring soft beige tones, muted greens, and organic textures. With custom-built shelving, ambient lighting, and minimalist decor, the room now feels open, balanced, and inviting — a perfect blend of elegance and comfort.',
       image: 'hero.png',
     },
     stats: [
-      { label: 'Concept', value: 'Modern Kitchen Renovation' },
-      { label: 'Project date', value: 'March 2024' },
-      { label: 'Location', value: 'Brooklyn, New York' },
+      { label: 'Concept', value: 'Living Room Renovation' },
+      { label: 'Project date', value: 'June 2024' },
+      { label: 'Location', value: 'Manhattan, New York' },
       { label: 'Architects', value: 'MOR Remodelling Design Team' },
     ],
     details: {
       title: 'Elegance in every corner, where modern comfort meets timeless design.',
       description: [
-        'This 250 m² private residence renovation features a spacious living area, a contemporary kitchen, two master suites, and a terrace with panoramic views.',
-        'The design blends natural stone and warm wood accents with soft lighting, creating an atmosphere of sophistication and comfort.',
-        'This project was completed by the MOR Remodelling team in collaboration with local craftsmen and suppliers, delivering a space that is both functional and inspiring.',
-        'Photos: MOR Remodelling Team',
+        'A refined palette of beige and green brings calm sophistication to the heart of the home.',
+        'This 180 m² apartment renovation focused on creating a warm, cohesive living environment that connects style with relaxation. The design highlights natural light, layered textures, and soft contrasts between wood, fabric, and stone.',
+        'Every detail — from the custom furniture to the subtle lighting scheme — was carefully curated by the MOR Remodeling team to achieve a timeless, tranquil atmosphere that enhances everyday living.',
+        'Photos: MOR Remodeling Team',
       ],
     },
     gallery: [
@@ -92,56 +92,26 @@ export const projectDetails: ProjectDetail[] = [
     ],
   },
   {
-    slug: 'p2',
+    slug: 'green-kitchen-renovation',
     hero: {
-      title: 'Luxury Bathroom Renovation \n– San Francisco, CA',
+      title: 'Classic Green Kitchen Renovation \n– Boston, MA',
       subtitle:
-        'A complete bathroom transformation featuring premium materials, custom vanities, and modern fixtures. This project showcases our attention to detail and commitment to creating beautiful, functional spaces.',
+        'This project turned a dated kitchen into an elegant, timeless centerpiece featuring deep green cabinetry, brushed gold hardware, and natural marble surfaces. The design blends traditional craftsmanship with modern functionality, creating a warm and sophisticated cooking space that feels both classic and contemporary.',
       image: 'hero.png',
     },
     stats: [
-      { label: 'Concept', value: 'Luxury Bathroom Renovation' },
-      { label: 'Project date', value: 'February 2024' },
-      { label: 'Location', value: 'San Francisco, California' },
+      { label: 'Concept', value: 'Kitchen renovation' },
+      { label: 'Project date', value: 'April 2024' },
+      { label: 'Location', value: 'Boston, Massachusetts' },
       { label: 'Architects', value: 'MOR Remodelling Design Team' },
     ],
     details: {
-      title: 'Where luxury meets functionality in every detail.',
+      title: 'Where timeless elegance meets everyday comfort.',
       description: [
-        'This bathroom renovation features premium materials including marble countertops, custom cabinetry, and high-end fixtures.',
-        'The design emphasizes both aesthetics and functionality, creating a spa-like atmosphere for daily relaxation.',
-        'Our team worked closely with the homeowners to ensure every detail met their vision and lifestyle needs.',
-        'Photos: MOR Remodelling Team',
-      ],
-    },
-    gallery: [
-      'gallery-1.png',
-      'gallery-2.png',
-      'gallery-3.png',
-      'gallery-4.png',
-    ],
-  },
-  {
-    slug: 'p3',
-    hero: {
-      title: 'Complete Home Renovation \n– Los Angeles, CA',
-      subtitle:
-        'A comprehensive home renovation that transformed an outdated property into a modern, energy-efficient residence. This project included structural updates, new finishes, and smart home integration.',
-      image: 'hero.png',
-    },
-    stats: [
-      { label: 'Concept', value: 'Complete Home Renovation' },
-      { label: 'Project date', value: 'January 2024' },
-      { label: 'Location', value: 'Los Angeles, California' },
-      { label: 'Architects', value: 'MOR Remodelling Design Team' },
-    ],
-    details: {
-      title: 'Transforming houses into dream homes, one project at a time.',
-      description: [
-        'This comprehensive renovation included structural updates, new electrical and plumbing systems, and modern finishes throughout.',
-        'The project focused on creating an open, flowing layout that maximizes natural light and outdoor connections.',
-        'Smart home technology was integrated throughout, providing modern convenience and energy efficiency.',
-        'Photos: MOR Remodelling Team',
+        'This 200 m² home renovation focused on redefining the kitchen as a statement of refined taste and functional luxury. The rich green tones evoke calm and depth, while golden details and soft lighting add a sense of warmth and grandeur.',
+        'Custom cabinetry, quartz countertops, and a balanced mix of traditional molding and modern appliances make this kitchen both inviting and enduring.',
+        'Completed by the MOR Remodeling team in collaboration with skilled artisans, the result is a kitchen that celebrates beauty, precision, and the art of fine living.',
+        'Photos: MOR Remodeling Team',
       ],
     },
     gallery: [
@@ -150,10 +120,43 @@ export const projectDetails: ProjectDetail[] = [
       'gallery-3.png',
       'gallery-4.png',
       'gallery-5.png',
+      'gallery-6.png',
     ],
   },
   {
-    slug: 'p4',
+    slug: 'green-beige-kitchen-renovation',
+    hero: {
+      title: 'Green-Beige Kitchen Renovation \n– Chicago, IL',
+      subtitle:
+        'This project transformed a compact kitchen into a calm, elegant space defined by soft green-beige cabinetry, light stone countertops, and subtle brass accents. The design merges natural warmth with modern simplicity, creating a refined atmosphere that feels both timeless and inviting.',
+      image: 'hero.png',
+    },
+    stats: [
+      { label: 'Concept', value: 'Kitchen renovation' },
+      { label: 'Project date', value: 'May 2024' },
+      { label: 'Location', value: 'Chicago, Illinois' },
+      { label: 'Architects', value: 'MOR Remodelling Design Team' },
+    ],
+    details: {
+      title: 'A soothing palette where nature meets modern living.',
+      description: [
+        'This 190 m² apartment renovation focused on creating a harmonious kitchen that blends organic tones and smooth textures. The muted green-beige combination brings serenity and balance, while golden details and warm lighting highlight the room\'s architectural rhythm.',
+        'Custom cabinetry, seamless storage solutions, and a spacious open layout make this kitchen ideal for both everyday comfort and stylish gatherings.',
+        'Completed by the MOR Remodeling team, this project reflects the brand\'s signature approach — timeless design, quality materials, and craftsmanship in every detail.',
+        'Photos: MOR Remodeling Team',
+      ],
+    },
+    gallery: [
+      'gallery-1.png',
+      'gallery-2.png',
+      'gallery-3.png',
+      'gallery-4.png',
+      'gallery-5.png',  
+      'gallery-6.png',
+    ],
+  },
+  {
+    slug: 'landscaping',
     hero: {
       title: 'Outdoor Kitchen & Entertainment Area \n– San Diego, CA',
       subtitle:
@@ -180,10 +183,12 @@ export const projectDetails: ProjectDetail[] = [
       'gallery-2.png',
       'gallery-3.png',
       'gallery-4.png',
+      'gallery-5.png',
+      'gallery-6.png',
     ],
   },
   {
-    slug: 'p5',
+    slug: 'room-home-additions',
     hero: {
       title: 'Room Addition & ADU \n– Oakland, CA',
       subtitle:
@@ -210,10 +215,12 @@ export const projectDetails: ProjectDetail[] = [
       'gallery-2.png',
       'gallery-3.png',
       'gallery-4.png',
+      'gallery-5.png',
+      'gallery-6.png',
     ],
   },
   {
-    slug: 'p6',
+    slug: 'outdoor-kitchen',
     hero: {
       title: 'Landscaping & Outdoor Living \n– Berkeley, CA',
       subtitle:
@@ -240,10 +247,12 @@ export const projectDetails: ProjectDetail[] = [
       'gallery-2.png',
       'gallery-3.png',
       'gallery-4.png',
+      'gallery-5.png',
+      'gallery-6.png',
     ],
   },
   {
-    slug: 'p7',
+    slug: 'decks-patios-outdoor-covers',
     hero: {
       title: 'Deck & Patio Construction \n– San Jose, CA',
       subtitle:
@@ -270,10 +279,12 @@ export const projectDetails: ProjectDetail[] = [
       'gallery-2.png',
       'gallery-3.png',
       'gallery-4.png',
+      'gallery-5.png',
+      'gallery-6.png',
     ],
   },
   {
-    slug: 'p8',
+    slug: 'exterior-remodeling-siding',
     hero: {
       title: 'Exterior Remodeling & Siding \n– Fremont, CA',
       subtitle:
@@ -300,10 +311,12 @@ export const projectDetails: ProjectDetail[] = [
       'gallery-2.png',
       'gallery-3.png',
       'gallery-4.png',
+      'gallery-5.png',
+      'gallery-6.png',
     ],
   },
   {
-    slug: 'p9',
+    slug: 'roofing-siding-foundations',
     hero: {
       title: 'Roofing & Foundation Work \n– Sacramento, CA',
       subtitle:
@@ -330,6 +343,8 @@ export const projectDetails: ProjectDetail[] = [
       'gallery-2.png',
       'gallery-3.png',
       'gallery-4.png',
+      'gallery-5.png',
+      'gallery-6.png',
     ],
   },
 ]

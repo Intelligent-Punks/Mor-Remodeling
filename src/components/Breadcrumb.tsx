@@ -9,7 +9,15 @@ const routeNames: Record<string, string> = {
   'contact-us': 'Contact Us',
   'thank-you': 'Thank You',
   'privacy-policy': 'Privacy Policy',
-  'kitchen-remodel': 'Kitchen Remodel',
+  'living-room-renovation': 'Living Room Renovation',
+  'green-kitchen-renovation': 'Classic Green Kitchen Renovation',
+  'green-beige-kitchen-renovation': 'Green-Beige Kitchen Renovation',
+  'landscaping': 'Landscaping',
+  'room-home-additions': 'Room & Home Additions',
+  'outdoor-kitchen': 'Outdoor Kitchen',
+  'decks-patios-outdoor-covers': 'Decks, Patios & Outdoor Covers',
+  'exterior-remodeling-siding': 'Exterior Remodeling & Siding',
+  'roofing-siding-foundations': 'Roofing, Siding & Foundations',
 }
 
 interface BreadcrumbProps {

@@ -2,7 +2,7 @@ const privacyPolicyPage = {
   hero: {
     title: 'Privacy Policy',
     subtitle: 'At MOR Remodeling, we respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your data when you visit our website or contact us for our services.',
-    backgroundImage: '/images/projects/kitchen-remodel/hero.png',
+    backgroundImage: '/images/projects/living-room-renovation/hero.png',
     homeButton: 'Home',
   },
   sections: [

@@ -15,94 +15,94 @@ const projects = {
     "We've grouped our cabinetmaking, joinery and fittings activities into four Espaces. These unique creations reflect our teams' passion for their craft.",
   items: [
     { 
-      id: 'kitchen-remodel', 
+      id: '1', 
       image: '/images/our-projects/Frame-3.png', 
       alt: 'The Maple Residence',
       title: 'The Maple Residence',
-      date: 'March 2024',
-      location: 'Brooklyn, New York',
-      serviceTag: 'Kitchen Remodeling',
-      slug: 'kitchen-remodel'
+      date: 'June 2024',
+      location: 'Manhattan, New York',
+      serviceTag: 'Living Room Renovation',
+      slug: 'living-room-renovation'
     },
     { 
-      id: 'p2', 
+      id: '2', 
       image: '/images/our-projects/Frame-4.png', 
       alt: 'Cedarwood Retreat',
       title: 'Cedarwood Retreat',
-      date: 'February 2024',
-      location: 'Manhattan, New York',
-      serviceTag: 'Bathroom Remodeling',
-      slug: 'p2'
+      date: 'April 2024',
+      location: 'Boston, Massachusetts',
+      serviceTag: 'Kitchen renovation',
+      slug: 'green-kitchen-renovation'
     },
     { 
-      id: 'p3', 
+      id: '3', 
       image: '/images/our-projects/Frame-5.png', 
       alt: 'Urban Harmony Loft',
       title: 'Urban Harmony Loft',
-      date: 'January 2024',
-      location: 'Queens, New York',
-      serviceTag: 'Full Home Renovation',
-      slug: 'p3'
+      date: 'May 2024',
+      location: 'Chicago, Illinois',
+      serviceTag: 'Kitchen renovation',
+      slug: 'green-beige-kitchen-renovation'
     },
     { 
-      id: 'p6', 
+      id: '4', 
       image: '/images/our-projects/Frame-8.png', 
       alt: 'The Horizon House',
       title: 'The Horizon House',
       date: 'December 2023',
       location: 'Staten Island, New York',
       serviceTag: 'Outdoor Kitchen',
-      slug: 'p6'
+      slug: 'outdoor-kitchen'
     },
     { 
-      id: 'p5', 
+      id: '5', 
       image: '/images/our-projects/Frame-7.png', 
       alt: 'Oakridge Remodel',
       title: 'Oakridge Remodel',
       date: 'November 2023',
       location: 'Bronx, New York',
       serviceTag: 'Room & Home Additions',
-      slug: 'p5'
+      slug: 'room-home-additions'
     },
     { 
-      id: 'p4', 
+      id: '6', 
       image: '/images/our-projects/Frame-6.png', 
       alt: 'Sunset Haven',
       title: 'Sunset Haven',
       date: 'October 2023',
       location: 'Long Island, New York',
       serviceTag: 'Landscaping',
-      slug: 'p4'
+      slug: 'landscaping'
     },
     { 
-      id: 'p7', 
+      id: '7', 
       image: '/images/our-projects/Frame-9.png', 
       alt: 'The Willow Extension',
       title: 'The Willow Extension',
       date: 'September 2023',
       location: 'Yonkers, New York',
       serviceTag: 'Decks, Patios & Outdoor Covers',
-      slug: 'p7'
+      slug: 'decks-patios-outdoor-covers'
     },
     { 
-      id: 'p8', 
+      id: '8', 
       image: '/images/our-projects/Frame-10.png', 
       alt: 'Riverside Contemporary',
       title: 'Riverside Contemporary',
       date: 'August 2023',
       location: 'White Plains, New York',
       serviceTag: 'Exterior Remodeling & Siding',
-      slug: 'p8'
+      slug: 'exterior-remodeling-siding'
     },
     { 
-      id: 'p9', 
+      id: '9', 
       image: '/images/our-projects/Frame-11.png', 
       alt: 'The Belmont Transformation',
       title: 'The Belmont Transformation',
       date: 'July 2023',
       location: 'New Rochelle, New York',
       serviceTag: 'Roofing, Siding & Foundations',
-      slug: 'p9'
+      slug: 'roofing-siding-foundations'
     },
   ] as ProjectItem[],
 }

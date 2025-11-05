@@ -1,6 +1,7 @@
 const common = {
   siteName: 'Mor Remodeling',
   nav: [
+    { path: '/', label: 'Home' },
     { path: '/projects', label: 'Projects' },
     { path: '/services', label: 'Services' },
     { path: '/about', label: 'About Us' },

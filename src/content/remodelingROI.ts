@@ -5,12 +5,12 @@ export interface ROIItem {
 }
 
 const remodelingROI = {
-  title: 'Every renovation is an investment in the future of your house',
-  subtitle: `A well-planned remodel changes a home's market potential in addition to how it looks.
+  title: 'Every renovation is an investment in the future of your home',
+  subtitle: `A carefully planned remodel is one of the most effective ways to enhance both the beauty and long-term value of your home. Beyond aesthetics, it improves comfort, functionality, and the overall living experience.
 
-Every improvement increases daily comfort and creates long-term equity by enhancing structure, flow, and materials.
+Each project, from a reimagined kitchen or bathroom to a complete ADU addition, contributes to lasting quality and increased property value. With thoughtful design, precise construction, and premium materials, every improvement becomes a strategic step toward building equity and timeless appeal.
 
-From updated bathrooms and redesigned kitchens to complete ADU additions, the correct design decisions can double the value of your home and draw in future purchasers who value skilful construction and strategic planning.`,
+At MOR Remodeling, every detail is guided by craftsmanship and care, ensuring that your home not only looks exceptional but performs beautifully for many years to come.`,
   backgroundVideo: '/images/media/bg-remodeling.mp4',
   videoPoster: '/images/3d-rendering-wood-classic-living-room-with-marble-tile-bookshelf-sofa.png',
   items: [

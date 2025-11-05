@@ -38,12 +38,12 @@ export default function AboutPage() {
           <Breadcrumb />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-[290px_1fr] gap-5 md:gap-[64px] items-start mb-6 md:mb-[64px]">
+        <div className="grid grid-cols-1 md:grid-cols-[660px_1fr] gap-5 md:gap-[64px] items-start mb-6 md:mb-[64px]">
           <h1 className="text-[32px] md:text-[48px] font-semibold leading-[1.2] text-[#2A2A2A]">
             {aboutPage.hero.title}
           </h1>
           <div className="md:max-w-[620px] md:ml-auto">
-            <p className="text-xs md:text-[20px] font-medium leading-[1.5] text-[#2A2A2A]">
+            <p className="text-xs md:text-[20px] font-medium leading-[1.5] text-[#2A2A2A] whitespace-pre-line">
               {aboutPage.hero.description}
             </p>
           </div>
@@ -69,8 +69,8 @@ export default function AboutPage() {
       {/* Who We Are Section */}
       <section className="pb-12 md:pb-20">
         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-[290px_1fr] gap-3 md:gap-[80px]">
-            <h2 className="text-[32px] md:text-[48px] font-semibold leading-[1.2] text-[#2A2A2A]">
+          <div className="grid grid-cols-1 md:grid-cols-[500px_1fr] gap-3 md:gap-[80px]">
+            <h2 className="text-[32px] md:text-[48px] font-semibold leading-[1.3] text-[#2A2A2A]">
               {aboutPage.whoWeAre.title}
             </h2>
             <div className="md:max-w-[620px] md:ml-auto">

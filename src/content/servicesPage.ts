@@ -137,7 +137,7 @@ export const servicesPageData: ServiceItem[] = [
 ]
 
 export default {
-  title: 'Services',
+  title: 'Our Core Services',
   seo: {
     title: 'Our Services - Mor Remodeling',
     description:

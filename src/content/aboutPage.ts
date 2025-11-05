@@ -42,20 +42,21 @@ export const aboutPageData = {
     },
   },
   hero: {
-    title: 'About Us',
+    title: 'Our Story of Craft and Care',
     description:
-      'At MOR Remodelling, we believe every home has the potential to be something truly special. With years of experience, our team transforms spaces with precision, creativity, and care — always focusing on quality craftsmanship and a customer-first approach.',
+    `At MOR Remodeling, we believe every home holds the potential to become something extraordinary. With years of experience and a passion for craftsmanship, our team transforms living spaces with precision, creativity, and heart. \n
+    We treat every client as part of our family, ensuring each project is handled with honesty, care, and open communication. Our goal is simple to create homes that reflect comfort, value, and lasting beauty while making the remodeling journey smooth and enjoyable.`,
     image: '/images/about/hero/hero.png',
     imageMobile: '/images/about/hero/hero-mobile.png',
   },
 
   whoWeAre: {
-    title: 'Who We Are',
-    text: `MOR Remodelling is more than just a remodeling company — we are a team of designers, builders, and craftsmen united by a passion for creating exceptional living spaces. With roots in architectural design and years of hands-on construction experience, we bring a unique balance of creativity and technical expertise to every project.
+    title: 'Driven by Design, Defined by Detail',
+    text: `MOR Remodeling is more than a construction company we are a family-driven team of designers, builders, and craftsmen dedicated to bringing your vision to life. Guided by integrity and fueled by passion, we specialize in creating spaces that blend design, function, and warmth.
 
-We believe that remodeling isn't just about changing walls or finishes — it's about improving the way people experience their homes. That's why we approach each project as a partnership, ensuring open communication, transparency, and trust throughout the entire process.
+With a foundation built on trust, creativity, and skill, we approach every project as a partnership. From concept to completion, we provide transparent communication, quality materials, and meticulous attention to detail.
 
-Our mission is simple: to create homes that feel personal, timeless, and built to last. With MOR Remodelling, you're not just renovating a space — you're investing in a place where memories are made, comfort is felt, and life unfolds.`,
+We believe that remodeling is not only about improving a property it is about enhancing the way people experience their homes. That is why every MOR project is completed with care, precision, and respect for the families we serve.`,
     gallery: [
       '/images/about/who-we-are/image-1.png',
       '/images/about/who-we-are/image-2.png',
@@ -137,7 +138,7 @@ Whether it's a single room or a full-scale renovation, we treat each project as 
   },
 
   history: {
-    title: 'Our history',
+    title: 'The Story Behind MOR Remodeling',
     subtitle:
       'MOR Remodeling was founded as a small team of craftsmen, focusing on essential home repairs and siding replacements.',
     timeline: [

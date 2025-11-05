@@ -22,7 +22,7 @@ export default function ProjectDetailPage() {
 
   const projectImagePath = (fileName: string) =>
     getAssetUrl(`/images/projects/${project.slug}/${fileName}`)
-  
+
   const seo = generateProjectSEO(project)
 
   return (
@@ -48,7 +48,7 @@ export default function ProjectDetailPage() {
           </div>
 
           {/* Content Grid */}
-          <div className="flex flex-col justify-end md:grid md:grid-cols-2 gap-6 md:gap-[40px] flex-1">
+          <div className="flex flex-col justify-end gap-6 flex-1">
             {/* Title - Left (centered vertically on desktop, bottom on mobile) */}
             <div className="flex items-end md:items-center">
               <h1 className="text-[32px] md:text-[40px] pb-0 md:pb-25 font-medium leading-[1.4] text-[#F2F1EF] whitespace-pre-line">
@@ -57,7 +57,7 @@ export default function ProjectDetailPage() {
             </div>
 
             {/* Subtitle - Right (bottom aligned) */}
-            <div className="flex items-end">
+            <div className="flex items-end max-w-[640px] md:self-end md:ml-auto">
               <p className="text-sm md:text-xl leading-[1.4] text-[#F2F1EF]">
                 {project.hero.subtitle}
               </p>
@@ -86,7 +86,10 @@ export default function ProjectDetailPage() {
         {project.stats && (
           <div className="md:hidden grid grid-cols-2 gap-x-5">
             {project.stats.map((stat, idx) => (
-              <div key={idx} className={`border-t border-[#868686] pt-5 pb-5 ${idx === 2 || idx === 3 ? 'border-b pb-5' : ''}`}>
+              <div
+                key={idx}
+                className={`border-t border-[#868686] pt-5 pb-5 ${idx === 2 || idx === 3 ? 'border-b pb-5' : ''}`}
+              >
                 <p className="text-sm font-medium text-[#2A2A2A] mb-1">{stat.label}</p>
                 <p className="text-sm font-normal text-[#868686]">{stat.value}</p>
               </div>
@@ -183,11 +186,11 @@ export default function ProjectDetailPage() {
         </div>
       </section>
 
-      {/* Discover Other Projects */}
+      {/* See What We’ve Built for Others */}
       <section>
         <div className="container-custom">
           <h2 className="text-[32px] md:text-5xl font-semibold text-[#2A2A2A]">
-            Discover other projects
+            See What We’ve Built for Others
           </h2>
         </div>
         <OurProjects projects={projects.items} showButton={false} />
@@ -198,7 +201,9 @@ export default function ProjectDetailPage() {
           <h2 className="md:text-[48px] text-[32px] font-semibold leading-[1.4] text-[#2A2A2A] mb-[20px]">
             {contactPage.reviews.title}
           </h2>
-          <p className="text-sm md:text-[20px] leading-[1.4] text-[#868686]">{contactPage.reviews.subtitle}</p>
+          <p className="text-sm md:text-[20px] leading-[1.4] text-[#868686]">
+            {contactPage.reviews.subtitle}
+          </p>
         </div>
 
         <ReviewsCarousel reviews={contactPage.reviews.items} />
@@ -214,7 +219,7 @@ export default function ProjectDetailPage() {
       />
 
       {/* Contact Form */}
-        <ContactFormSection />
+      <ContactFormSection />
     </div>
   )
 }

@@ -178,9 +178,9 @@ export default function ServicesPage() {
         ))}
       </div>
 
-      {/* Discover Other Projects */}
+      {/* See What We’ve Built for Others */}
       <OurProjects
-        title="Discover other projects"
+        title="See What We’ve Built for Others"
         projects={projects.items.slice(0, 9)}
         showButton={false}
       />

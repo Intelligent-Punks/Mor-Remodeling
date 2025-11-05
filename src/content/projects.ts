@@ -20,8 +20,8 @@ const projects = {
       alt: 'The Maple Residence',
       title: 'The Maple Residence',
       date: 'June 2024',
-      location: 'Manhattan, New York',
-      serviceTag: 'Living Room Renovation',
+      location: 'San Jose, CA',
+      serviceTag: 'Flooring Installation and Refinishing',
       slug: 'living-room-renovation'
     },
     { 
@@ -30,7 +30,7 @@ const projects = {
       alt: 'Cedarwood Retreat',
       title: 'Cedarwood Retreat',
       date: 'April 2024',
-      location: 'Boston, Massachusetts',
+      location: 'San Jose, California',
       serviceTag: 'Kitchen renovation',
       slug: 'green-kitchen-renovation'
     },
@@ -40,7 +40,7 @@ const projects = {
       alt: 'Urban Harmony Loft',
       title: 'Urban Harmony Loft',
       date: 'May 2024',
-      location: 'Chicago, Illinois',
+      location: 'San Jose, CA',
       serviceTag: 'Kitchen renovation',
       slug: 'green-beige-kitchen-renovation'
     },
@@ -50,8 +50,8 @@ const projects = {
       alt: 'The Horizon House',
       title: 'The Horizon House',
       date: 'December 2023',
-      location: 'Staten Island, New York',
-      serviceTag: 'Outdoor Kitchen',
+      location: 'San Jose, CA',
+      serviceTag: 'Kitchen and Dining Renovation',
       slug: 'outdoor-kitchen'
     },
     { 
@@ -60,8 +60,8 @@ const projects = {
       alt: 'Oakridge Remodel',
       title: 'Oakridge Remodel',
       date: 'November 2023',
-      location: 'Bronx, New York',
-      serviceTag: 'Room & Home Additions',
+      location: 'San Jose, CA',
+      serviceTag: 'Bathroom Remodeling',
       slug: 'room-home-additions'
     },
     { 
@@ -70,7 +70,7 @@ const projects = {
       alt: 'Sunset Haven',
       title: 'Sunset Haven',
       date: 'October 2023',
-      location: 'Long Island, New York',
+      location: 'San Jose, California',
       serviceTag: 'Landscaping',
       slug: 'landscaping'
     },
@@ -80,8 +80,8 @@ const projects = {
       alt: 'The Willow Extension',
       title: 'The Willow Extension',
       date: 'September 2023',
-      location: 'Yonkers, New York',
-      serviceTag: 'Decks, Patios & Outdoor Covers',
+      location: 'San Jose, CA',
+      serviceTag: 'Full Home Renovation & ADU',
       slug: 'decks-patios-outdoor-covers'
     },
     { 
@@ -90,8 +90,8 @@ const projects = {
       alt: 'Riverside Contemporary',
       title: 'Riverside Contemporary',
       date: 'August 2023',
-      location: 'White Plains, New York',
-      serviceTag: 'Exterior Remodeling & Siding',
+      location: 'San Jose, CA',
+      serviceTag: 'Interior Design and Custom Finishes',
       slug: 'exterior-remodeling-siding'
     },
     { 
@@ -100,8 +100,8 @@ const projects = {
       alt: 'The Belmont Transformation',
       title: 'The Belmont Transformation',
       date: 'July 2023',
-      location: 'New Rochelle, New York',
-      serviceTag: 'Roofing, Siding & Foundations',
+      location: 'San Jose, CA',
+      serviceTag: 'Roofing & Foundation Work',
       slug: 'roofing-siding-foundations'
     },
   ] as ProjectItem[],

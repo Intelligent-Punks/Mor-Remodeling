@@ -36,7 +36,7 @@ export default function FAQ({ title, subtitle, backgroundVideo, videoPoster, ite
           >
             <source src={getAssetUrl(backgroundVideo)} type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-[#F2F1EF]/30" />
+          <div className="absolute inset-0 bg-[#232323]/70" />
         </>
       ) : (
         <div className="absolute inset-0 bg-[#F2F1EF]" />
@@ -44,10 +44,10 @@ export default function FAQ({ title, subtitle, backgroundVideo, videoPoster, ite
 
       <div className="relative z-10 container-custom">
         <div className="text-left md:text-center mb-10 md:mb-[64px]">
-          <h2 className="text-[32px] md:text-[48px] font-semibold leading-[1.4] text-[#2A2A2A]">
+          <h2 className="text-[32px] md:text-[48px] font-semibold leading-[1.4] text-[#fff]">
             {title}
           </h2>
-          <p className="mt-4 md:mt-[20px] text-sm md:text-[20px] font-medium leading-[1.4] text-[#2A2A2A]">
+          <p className="mt-4 md:mt-[20px] text-sm md:text-[20px] font-medium leading-[1.4] text-[#fff]">
             {subtitle}
           </p>
         </div>

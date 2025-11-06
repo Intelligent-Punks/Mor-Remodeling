@@ -26,7 +26,7 @@ const stats = {
       id: 'st3', 
       value: '98% rating', 
       label: 'from happy \n homeowners',
-      bgImage: '/images/stats/img-3.png'
+      bgImage: '/images/stats/img-3.jpg'
     },
     { 
       id: 'st4', 

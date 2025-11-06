@@ -11,6 +11,7 @@ import ProjectDetailPage from '@/pages/ProjectDetailPage'
 import ContactPage from '@/pages/ContactPage'
 import ThankYouPage from '@/pages/ThankYouPage'
 import PrivacyPolicyPage from '@/pages/PrivacyPolicyPage'
+import TermsPage from '@/pages/TermsPage'
 
 export default function App() {
   useSmoothScroll()
@@ -28,6 +29,7 @@ export default function App() {
         <Route path="/contact-us" element={<ContactPage />} />
         <Route path="/thank-you" element={<ThankYouPage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+        <Route path="/terms-and-conditions" element={<TermsPage />} />
         <Route path="/contact" element={<Navigate to="/contact-us" replace />} />
         <Route path="/contacts" element={<Navigate to="/contact-us" replace />} />
         <Route path="*" element={<Navigate to="/" replace />} />

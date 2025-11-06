@@ -52,8 +52,8 @@ const contactPageData = {
   socialLinks: [
     { name: 'Instagram', url: '#', icon: '/icons/instagram.svg' },
     { name: 'Twitter', url: '#', icon: '/icons/x.svg' },
-    { name: 'Linkedin', url: '#', icon: '/icons/linkedin.svg' },
-    { name: 'Telegram', url: '#', icon: '/icons/telegram.svg' },
+    // { name: 'Linkedin', url: '#', icon: '/icons/linkedin.svg' },
+    { name: 'Facebook', url: '#', icon: '/icons/facebook.png' },
   ],
   contactInfo: {
     details: [

@@ -69,16 +69,16 @@ export default function HomePage() {
       </LazySection>
 
       <LazySection rootMargin="200px">
+        <Services title={services.title} services={services.list} />
+      </LazySection>
+
+      <LazySection rootMargin="200px">
         <Quote
           quoteSymbol={quote.quoteSymbol}
           text={quote.text}
           author={quote.author}
           backgroundImage={quote.backgroundImage}
         />
-      </LazySection>
-
-      <LazySection rootMargin="200px">
-        <Services title={services.title} services={services.list} />
       </LazySection>
 
       <LazySection rootMargin="200px">

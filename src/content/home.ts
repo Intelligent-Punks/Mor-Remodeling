@@ -1,9 +1,9 @@
 const home = {
   title: 'Home',
   seo: {
-    title: 'Mor Remodeling - Transforming Homes, Elevating Living',
+    title: 'Mor Remodeling - San Jose’s Trusted Home Remodeling Experts',
     description:
-      'From complete home renovations to individual room makeovers and roofing, MOR Remodeling delivers reliable, high-quality solutions tailored to your lifestyle. Expert remodeling services in the Bay Area.',
+      'From kitchen and bathroom remodels to ADU construction and full home renovations, MOR Remodeling helps San Jose homeowners transform their properties with lasting beauty, function, and value.',
     keywords: [
       'home remodeling',
       'home renovation',
@@ -44,9 +44,9 @@ const home = {
     },
   },
   hero: {
-    heading: 'Transforming Homes, Elevating Living',
+    heading: 'San Jose’s Trusted Home Remodeling Experts',
     subheading:
-      'From complete home renovations to individual room makeovers and roofing, MOR Remodeling delivers reliable, high-quality solutions tailored to your lifestyle',
+      'From kitchen and bathroom remodels to ADU construction and full home renovations, MOR Remodeling helps San Jose homeowners transform their properties with lasting beauty, function, and value.',
     backgroundImage: '/images/hero/Hero-home.png',
     backgroundVideo: '/images/media/hero-home.mp4',
     videoPoster: '/images/hero/Hero-home.png',

@@ -14,7 +14,7 @@ export default function AnimatedText({ text, className = '', externalHover, stag
   return (
     <span
       className={`inline-flex overflow-hidden ${className}`}
-      style={{ maxHeight: '1em', lineHeight: '1' }}
+      style={{ maxHeight: '1.05em', lineHeight: '1.05' }}
       onMouseEnter={() => setInternalHover(true)}
       onMouseLeave={() => setInternalHover(false)}
     >

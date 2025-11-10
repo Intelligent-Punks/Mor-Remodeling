@@ -19,7 +19,7 @@ export const aboutPageData = {
       'quality craftsmanship',
       'sustainable building',
     ],
-    ogImage: '/images/about/hero/hero.png',
+    ogImage: '/images/about/hero/hero.jpg',
     ogType: 'website',
     schema: {
       '@context': 'https://schema.org',
@@ -58,12 +58,13 @@ With a foundation built on trust, creativity, and skill, we approach every proje
 
 We believe that remodeling is not only about improving a property it is about enhancing the way people experience their homes. That is why every MOR project is completed with care, precision, and respect for the families we serve.`,
     gallery: [
-      '/images/about/who-we-are/image-1.png',
-      '/images/about/who-we-are/image-2.png',
-      '/images/about/who-we-are/image-3.png',
-      '/images/about/who-we-are/image-4.png',
-      '/images/about/who-we-are/image-5.png',
-      '/images/about/who-we-are/image-6.png',
+      '/images/about/who-we-are/image-1.jpg',
+      '/images/about/who-we-are/image-2.jpg',
+      '/images/about/who-we-are/image-3.jpg',
+      '/images/about/who-we-are/image-4.jpg',
+      '/images/about/who-we-are/image-5.jpg',
+      '/images/about/who-we-are/image-6.jpg',
+      '/images/about/who-we-are/image-7.jpg',
     ],
   },
 
@@ -80,28 +81,28 @@ Whether it's a single room or a full-scale renovation, we treat each project as 
       title: 'Integrity',
       description:
         'We build trust through honesty, transparency, and accountability in every project.',
-      bgImage: '/images/stats/about/img-1.png',
+      bgImage: '/images/stats/about/img-1.jpg',
     },
     {
       id: 'quality',
       title: 'Quality',
       description:
         'Every detail matters — we deliver craftsmanship that lasts for years to come.',
-      bgImage: '/images/stats/about/img-2.png',
+      bgImage: '/images/stats/about/img-2.jpg',
     },
     {
       id: 'innovation',
       title: 'Innovation',
       description:
         'We combine modern design solutions with smart functionality to create better living spaces.',
-      bgImage: '/images/stats/about/img-3.png',
+      bgImage: '/images/stats/about/img-3.jpg',
     },
     {
       id: 'collaboration',
       title: 'Collaboration',
       description:
         'Working closely with our clients, we turn their vision into a home that feels truly personal.',
-      bgImage: '/images/stats/about/img-4.png',
+      bgImage: '/images/stats/about/img-4.jpg',
     },
   ],
 
@@ -128,12 +129,12 @@ Whether it's a single room or a full-scale renovation, we treat each project as 
       },
     ],
     logos: [
-      '/images/about/certifications/cert-1.png',
-      '/images/about/certifications/cert-2.png',
-      '/images/about/certifications/cert-3.png',
-      '/images/about/certifications/cert-4.png',
-      '/images/about/certifications/cert-5.png',
-      '/images/about/certifications/cert-6.png',
+      '/images/about/certifications/cert-1.jpg',
+      '/images/about/certifications/cert-2.jpg',
+      '/images/about/certifications/cert-3.jpg',
+      '/images/about/certifications/cert-4.jpg',
+      '/images/about/certifications/cert-5.jpg',
+      '/images/about/certifications/cert-6.jpg',
     ],
   },
 

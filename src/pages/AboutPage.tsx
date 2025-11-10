@@ -52,7 +52,7 @@ export default function AboutPage() {
 
       {/* Hero Image - Full width */}
       <section className="mb-11 md:mb-18">
-        <div className="h-[320px] md:h-[500px] bg-[#762D2D]">
+        <div className="h-[320px] md:h-[500px]">
           <img
             src={getAssetUrl(aboutPage.hero.imageMobile)}
             alt="About MOR Remodelling"

@@ -124,7 +124,7 @@ export default function ServicesPage() {
         </div>
       </section>
       {/* Hero Section */}
-      <section className="container-custom pt-[54px] mt-10 md:mt-[80px] mb-10 md:mb-18">
+      <section className="container-custom pt-[34px] mt-4 md:mt-[50px] mb-10 md:mb-18">
         <h1 className="text-[32px] md:text-5xl font-semibold text-[#2A2A2A]">
           {servicesPage.title}
         </h1>

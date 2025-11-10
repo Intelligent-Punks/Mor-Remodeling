@@ -34,15 +34,15 @@ export default function RemodelingROI({
       >
         <source src={getAssetUrl(backgroundVideo)} type="video/mp4" />
       </video>
-      <div className="absolute inset-0 bg-[#E5E3DF]/50" />
+      <div className="absolute inset-0 bg-[#dbd8d3]/70" />
 
       <div className="relative z-10">
         <div className="container-custom mb-[50px] md:mb-[100px]">
-          <h2 className="text-[28px] md:text-[42px] font-semibold leading-[1.4] text-[#2A2A2A] md:mb-16 mb-12">
+          <h2 className="text-[28px] md:text-[44px] font-semibold leading-[1.4] text-[#2A2A2A] md:mb-16 mb-12">
             {title}
           </h2>
           {subtitle && (
-            <p className="text-[16px] md:text-[22px] font-medium leading-[1.1] text-[#2A2A2A] whitespace-pre-line">
+            <p className="text-[16px] md:text-[22px] font-semibold leading-[1.3] text-[#2A2A2A] whitespace-pre-line">
               {subtitle}
             </p>
           )}

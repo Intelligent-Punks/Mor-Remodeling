@@ -4,7 +4,6 @@ import servicesPage, { ServiceItem } from '@/content/servicesPage'
 import { serviceDetails } from '@/content/serviceDetails'
 import projects from '@/content/projects'
 import faq from '@/content/faq'
-import contactForm from '@/content/contactForm'
 import OurProjects from '@/components/OurProjects'
 import FAQ from '@/components/FAQ'
 import ContactFormSection from '@/components/ContactFormSection'
@@ -88,11 +87,44 @@ export default function ServicesPage() {
   return (
     <div className="bg-[#F2F1EF]">
       <SEOHead seo={servicesPage.seo} />
+      {/* Hero Sentinel for Header Transparency */}
+      <div id="hero-sentinel" className="absolute top-0 left-0 w-full h-px pointer-events-none" />
       {/* Hero Section */}
-      <section className="container-custom pt-[54px]">
-        <div className="mt-10 md:mt-[80px] mb-10 md:mb-18">
-          <Breadcrumb />
+      <section id="hero" className="relative h-[714px] md:h-[750px] overflow-hidden">
+        <img
+          src={getAssetUrl(servicesPage.backgroundImage)}
+          alt={servicesPage.hero.title}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/40 md:bg-transparent" />
+
+        {/* Content on Hero */}
+        <div className="container-custom relative h-full flex flex-col py-[54px]">
+          {/* Breadcrumb */}
+          <div className="[&_*]:!text-white mt-10 md:mt-20">
+            <Breadcrumb customLabel={servicesPage.hero.title} />
+          </div>
+
+          {/* Content Grid */}
+          <div className="flex flex-col justify-end gap-6 flex-1">
+            {/* Title - Left (centered vertically on desktop, bottom on mobile) */}
+            <div className="flex items-end md:items-center">
+              <h1 className="text-[32px] md:text-[40px] pb-0 md:pb-25 font-medium leading-[1.4] text-[#F2F1EF] whitespace-pre-line">
+                {servicesPage.hero.title}
+              </h1>
+            </div>
+
+            {/* Subtitle - Right (bottom aligned) */}
+            <div className="flex items-end max-w-[640px] md:self-end md:ml-auto">
+              <p className="text-sm md:text-xl leading-[1.4] text-[#F2F1EF]">
+                {servicesPage.hero.subtitle}
+              </p>
+            </div>
+          </div>
         </div>
+      </section>
+      {/* Hero Section */}
+      <section className="container-custom pt-[54px] mt-10 md:mt-[80px] mb-10 md:mb-18">
         <h1 className="text-[32px] md:text-5xl font-semibold text-[#2A2A2A]">
           {servicesPage.title}
         </h1>
@@ -104,20 +136,15 @@ export default function ServicesPage() {
       {/* Sticky Navigation */}
       <div
         ref={navRef}
-        className="sticky top-[71px] md:top-[79px] z-40 transition-all duration-300"
-        style={{
-          background: isNavSticky ? 'rgba(242, 241, 239, 0.8)' : '#F2F1EF',
-          backdropFilter: isNavSticky ? 'blur(10px)' : 'none',
-          boxShadow: isNavSticky ? '0 4px 20px rgba(42, 42, 42, 0.05)' : 'none',
-        }}
+        className={`sticky top-[71px] md:top-[79px] z-40 transition-[background,backdrop-filter,box-shadow] duration-500 ease-in-out ${
+          isNavSticky
+            ? 'bg-[rgba(242,241,239,0.8)] backdrop-blur-[10px] shadow-[0_4px_20px_rgba(42,42,42,0.05)]'
+            : 'bg-[#F2F1EF] backdrop-blur-0 shadow-none'
+        }`}
       >
-        <div className="container-custom transition-all duration-300">
+        <div className="container-custom transition-all duration-500 ease-in-out">
           <div
-            className="md:hidden"
-            style={{
-              paddingTop: isNavSticky ? '10px' : '10px',
-              paddingBottom: isNavSticky ? '10px' : '10px',
-            }}
+            className="md:hidden py-[10px]"
           >
             {/* Mobile: Horizontal scroll */}
             <div className="overflow-x-auto -mx-5 px-5 scrollbar-hide">
@@ -140,11 +167,9 @@ export default function ServicesPage() {
           </div>
 
           <div
-            className="hidden md:block"
-            style={{
-              paddingTop: isNavSticky ? '10px' : '30px',
-              paddingBottom: isNavSticky ? '10px' : '40px',
-            }}
+            className={`hidden md:block transition-all duration-500 ease-in-out ${
+              isNavSticky ? 'py-[10px]' : 'pt-[30px] pb-[40px]'
+            }`}
           >
             {/* Desktop: Wrap */}
             <div className="flex flex-wrap gap-[20px] items-center">
@@ -190,7 +215,9 @@ export default function ServicesPage() {
           <h2 className="md:text-[48px] text-[32px] font-semibold leading-[1.4] text-[#2A2A2A] mb-2 md:mb-[20px]">
             {contactPage.reviews.title}
           </h2>
-          <p className="text-sm md:text-[20px] leading-[1.4] text-[#868686]">{contactPage.reviews.subtitle}</p>
+          <p className="text-sm md:text-[20px] leading-[1.4] text-[#868686]">
+            {contactPage.reviews.subtitle}
+          </p>
         </div>
 
         <ReviewsCarousel reviews={contactPage.reviews.items} />
@@ -206,7 +233,7 @@ export default function ServicesPage() {
       />
 
       {/* Contact Form */}
-        <ContactFormSection />
+      <ContactFormSection />
     </div>
   )
 }
@@ -260,14 +287,11 @@ function ServiceSection({ service, isLast }: ServiceSectionProps) {
             ))}
           </div>
         </div>
-        
+
         {/* Desktop: grid */}
         <div className="hidden md:grid md:grid-cols-3 md:gap-[40px] md:mt-[72px]">
           {service.images.map((image, idx) => (
-            <div
-              key={idx}
-              className="rounded-[14px] overflow-hidden bg-white h-[320px]"
-            >
+            <div key={idx} className="rounded-[14px] overflow-hidden bg-white h-[320px]">
               <img
                 src={getAssetUrl(image)}
                 alt={`${service.title} ${idx + 1}`}

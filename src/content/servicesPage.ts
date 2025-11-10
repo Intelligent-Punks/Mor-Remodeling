@@ -182,6 +182,14 @@ export default {
       ],
     },
   },
+  backgroundImage: '/images/services/bg-hero.png',
+  hero: {
+    title: 'Comprehensive Remodeling and Construction Services',
+    subtitle:
+      `At MOR Remodeling, every project is a balance of design, craftsmanship, and trust. From kitchen and bathroom remodels to full home transformations, we provide complete design and build solutions that redefine comfort and beauty.
+      We approach every service with the same care and commitment as if we were working on our own family home.`,
+    image: 'hero.png',
+  },
   services: servicesPageData,
 }
 

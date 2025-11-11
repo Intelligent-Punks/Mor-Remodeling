@@ -21,7 +21,7 @@ const projects = {
       title: 'The Maple Residence',
       date: 'June 2024',
       location: 'San Jose, CA',
-      serviceTag: 'Flooring Installation and Refinishing',
+      serviceTag: 'Flooring Installation & Refinishing',
       slug: 'living-room-renovation'
     },
     { 
@@ -31,7 +31,7 @@ const projects = {
       title: 'Cedarwood Retreat',
       date: 'April 2024',
       location: 'San Jose, California',
-      serviceTag: 'Kitchen renovation',
+      serviceTag: 'Kitchen Remodeling',
       slug: 'green-kitchen-renovation'
     },
     { 
@@ -41,7 +41,7 @@ const projects = {
       title: 'Urban Harmony Loft',
       date: 'May 2024',
       location: 'San Jose, CA',
-      serviceTag: 'Kitchen renovation',
+      serviceTag: 'Kitchen Remodeling',
       slug: 'green-beige-kitchen-renovation'
     },
     { 
@@ -51,7 +51,7 @@ const projects = {
       title: 'The Horizon House',
       date: 'December 2023',
       location: 'San Jose, CA',
-      serviceTag: 'Kitchen and Dining Renovation',
+      serviceTag: 'Kitchen Remodeling',
       slug: 'outdoor-kitchen'
     },
     { 
@@ -71,7 +71,8 @@ const projects = {
       title: 'Sunset Haven',
       date: 'October 2023',
       location: 'San Jose, California',
-      serviceTag: 'Landscaping',
+      serviceTag: 'Kitchen Remodeling',
+      serviceTag2: 'Exterior Remodeling',
       slug: 'landscaping'
     },
     { 
@@ -91,7 +92,7 @@ const projects = {
       title: 'Riverside Contemporary',
       date: 'August 2023',
       location: 'San Jose, CA',
-      serviceTag: 'Interior Design and Custom Finishes',
+      serviceTag: 'Interior Design & Custom Finishes',
       slug: 'exterior-remodeling-siding'
     },
     { 

@@ -11,6 +11,7 @@ interface Project {
   date: string
   location: string
   serviceTag: string
+  serviceTag2?: string
   slug?: string
 }
 
@@ -110,6 +111,9 @@ export default function OurProjects({
                   <div className="absolute md:left-[30px] md:top-[30px] left-[5px] top-[15px] right-[5px] md:right-auto">
                     <span className="text-white text-[12px] md:text-[14px] font-medium bg-black/20 backdrop-blur-sm px-2 md:px-3 py-1 rounded-full whitespace-nowrap overflow-hidden text-ellipsis inline-block w-full md:w-auto">
                       {project.serviceTag}
+                    </span>
+                    <span className="text-white text-[12px] md:text-[14px] font-medium bg-black/20 backdrop-blur-sm px-2 md:px-3 py-1 rounded-full whitespace-nowrap overflow-hidden text-ellipsis inline-block w-full md:w-auto">
+                      {project.serviceTag2}
                     </span>
                   </div>
                   

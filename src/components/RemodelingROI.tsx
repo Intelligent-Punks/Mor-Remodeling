@@ -34,15 +34,15 @@ export default function RemodelingROI({
       >
         <source src={getAssetUrl(backgroundVideo)} type="video/mp4" />
       </video>
-      <div className="absolute inset-0 bg-[#dbd8d3]/70" />
+      <div className="absolute inset-0 bg-[#2A2A2A]/70" />
 
       <div className="relative z-10">
         <div className="container-custom mb-[50px] md:mb-[100px]">
-          <h2 className="text-[28px] md:text-[44px] font-semibold leading-[1.4] text-[#2A2A2A] md:mb-16 mb-12">
+          <h2 className="text-[28px] md:text-[44px] font-semibold leading-[1.4] text-[#fff] md:mb-16 mb-12">
             {title}
           </h2>
           {subtitle && (
-            <p className="text-[16px] md:text-[22px] font-semibold leading-[1.3] text-[#2A2A2A] whitespace-pre-line">
+            <p className="text-[16px] md:text-[22px] font-medium leading-[1.] text-[#fff] whitespace-pre-line">
               {subtitle}
             </p>
           )}
@@ -67,7 +67,7 @@ export default function RemodelingROI({
                   }`}
                 >
                   <div>
-                    <h3 className="text-[20px] font-medium leading-[1.4] text-[#2A2A2A]">
+                    <h3 className="text-[20px] font-medium leading-[1.4] text-[#fff]">
                       {item.title}
                     </h3>
                   </div>
@@ -76,27 +76,27 @@ export default function RemodelingROI({
                     {/* Price labels */}
                     <div className="flex items-end justify-between gap-[5px] mb-[10px]">
                       <div className="flex flex-col gap-[8px]">
-                        <span className="text-[10px] font-medium leading-[1.5] text-[#2A2A2A]">
+                        <span className="text-[10px] font-medium leading-[1.5] text-[#fff]">
                           price before
                         </span>
-                        <span className="text-[14px] font-medium leading-[1.5] text-[#2A2A2A]">
+                        <span className="text-[14px] font-medium leading-[1.5] text-[#fff]">
                           {fromValue}
                         </span>
                       </div>
                       <svg width="18" height="18" viewBox="0 0 32 32" fill="none" className="mb-[2px]">
                         <path
                           d="M4.67 15.91L27.33 15.91M27.33 15.91L19.24 7.82M27.33 15.91L19.24 24"
-                          stroke="#2A2A2A"
+                          stroke="#fff"
                           strokeWidth="2"
                           strokeLinecap="round"
                           strokeLinejoin="round"
                         />
                       </svg>
                       <div className="flex flex-col gap-[8px]">
-                        <span className="text-[10px] font-medium leading-[1.5] text-[#2A2A2A]">
+                        <span className="text-[10px] font-medium leading-[1.5] text-[#fff]">
                           price after
                         </span>
-                        <span className="text-[14px] font-medium leading-[1.5] text-[#2A2A2A]">
+                        <span className="text-[14px] font-medium leading-[1.5] text-[#fff]">
                           {toValue}
                         </span>
                       </div>
@@ -111,7 +111,7 @@ export default function RemodelingROI({
                         className={`w-3 h-3.5 ${!isThird ? 'invert' : ''}`}
                       />
                       <span className={`text-base font-medium leading-[1.5] ${
-                        isThird ? 'text-white' : 'text-[#2A2A2A]'
+                        isThird ? 'text-white' : 'text-[#fff]'
                       }`}>
                         {percentage}
                       </span>
@@ -142,7 +142,7 @@ export default function RemodelingROI({
                 <div>
                   <AnimatedParagraph
                     text={item.title}
-                    className="text-[28px] font-medium leading-[1.4] text-[#2A2A2A]"
+                    className="text-[28px] font-medium leading-[1.4] text-[#fff]"
                     lineDelay={60}
                     charDelay={8}
                   />
@@ -152,27 +152,27 @@ export default function RemodelingROI({
                   {/* Price labels */}
                   <div className="flex items-start gap-[9px] mb-[10px]">
                     <div className="flex flex-col gap-[2px]">
-                      <span className="text-base font-medium leading-[1.5] text-[#2A2A2A]">
+                      <span className="text-base font-medium leading-[1.5] text-[#fff]">
                         price before
                       </span>
-                      <span className="text-[28px] font-medium leading-[1.5] text-[#2A2A2A]">
+                      <span className="text-[28px] font-medium leading-[1.5] text-[#fff]">
                         {fromValue}
                       </span>
                     </div>
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className="mt-[31px]">
                       <path
                         d="M4.67 15.91L27.33 15.91M27.33 15.91L19.24 7.82M27.33 15.91L19.24 24"
-                        stroke="#2A2A2A"
+                        stroke="#fff"
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       />
                     </svg>
                     <div className="flex flex-col gap-[2px]">
-                      <span className="text-base font-medium leading-[1.5] text-[#2A2A2A]">
+                      <span className="text-base font-medium leading-[1.5] text-[#fff]">
                         price after
                       </span>
-                      <span className="text-[28px] font-medium leading-[1.5] text-[#2A2A2A]">
+                      <span className="text-[28px] font-medium leading-[1.5] text-[#fff]">
                         {toValue}
                       </span>
                     </div>

@@ -105,7 +105,7 @@ export default function AboutPage() {
       {/* Our History Section - Yellow background */}
       <section className="py-12 md:py-18 bg-[#F4C077]">
         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-[290px_1fr] gap-6 md:gap-[64px] items-start mb-10 md:mb-[64px]">
+          <div className="grid grid-cols-1 md:grid-cols-[450px_1fr] gap-6 md:gap-[64px] items-start mb-10 md:mb-[64px]">
             <h2 className="text-[32px] md:text-[48px] font-semibold leading-[1.4] text-[#2A2A2A]">
               {aboutPage.history.title}
             </h2>
@@ -178,19 +178,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="pt-11 pb-[80px] bg-[#F2F1EF]">
-          <div className="container-custom mb-4 md:mb-[64px]">
-            <h2 className="md:text-[48px] text-[32px] font-semibold leading-[1.4] text-[#2A2A2A] mb-[20px]">
-              {contactPage.reviews.title}
-            </h2>
-            <p className="text-sm md:text-[20px] leading-[1.4] text-[#868686]">
-              {contactPage.reviews.subtitle}
-            </p>
-          </div>
-
-          <ReviewsCarousel reviews={contactPage.reviews.items} />
-        </section>
-
       {/* FAQ */}
       <FAQ
         title={faq.title}
@@ -200,8 +187,21 @@ export default function AboutPage() {
         items={faq.items}
       />
 
+      <section className="pt-11 pb-[80px] bg-[#F2F1EF]">
+        <div className="container-custom mb-4 md:mb-[64px]">
+          <h2 className="md:text-[48px] text-[32px] font-semibold leading-[1.4] text-[#2A2A2A] mb-[20px]">
+            {contactPage.reviews.title}
+          </h2>
+          <p className="text-sm md:text-[20px] leading-[1.4] text-[#868686]">
+            {contactPage.reviews.subtitle}
+          </p>
+        </div>
+
+        <ReviewsCarousel reviews={contactPage.reviews.items} />
+      </section>
+
       {/* Contact Form */}
-        <ContactFormSection />
+      <ContactFormSection />
     </div>
   )
 }

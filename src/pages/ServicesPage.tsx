@@ -96,7 +96,7 @@ export default function ServicesPage() {
           alt={servicesPage.hero.title}
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/40 md:bg-transparent" />
+        <div className="absolute inset-0 bg-black/50" />
 
         {/* Content on Hero */}
         <div className="container-custom relative h-full flex flex-col py-[54px]">
@@ -124,7 +124,7 @@ export default function ServicesPage() {
         </div>
       </section>
       {/* Hero Section */}
-      <section className="container-custom pt-[34px] mt-4 md:mt-[50px] mb-10 md:mb-18">
+      <section className="container-custom pt-[54px] mt-10 md:mt-[80px] mb-10 md:mb-18">
         <h1 className="text-[32px] md:text-5xl font-semibold text-[#2A2A2A]">
           {servicesPage.title}
         </h1>
@@ -143,9 +143,7 @@ export default function ServicesPage() {
         }`}
       >
         <div className="container-custom transition-all duration-500 ease-in-out">
-          <div
-            className="md:hidden py-[10px]"
-          >
+          <div className="md:hidden py-[10px]">
             {/* Mobile: Horizontal scroll */}
             <div className="overflow-x-auto -mx-5 px-5 scrollbar-hide">
               <div className="flex gap-3 items-center min-w-max">
@@ -209,6 +207,16 @@ export default function ServicesPage() {
         projects={projects.items.slice(0, 9)}
         showButton={false}
       />
+
+      {/* FAQ */}
+      <FAQ
+        title={faq.title}
+        subtitle={faq.subtitle}
+        backgroundVideo={faq.backgroundVideo}
+        videoPoster={faq.videoPoster}
+        items={faq.items}
+      />
+
       {/* Reviews Carousel */}
       <section className="pt-20 pb-12 md:pb-[80px] bg-[#F2F1EF]">
         <div className="container-custom mb-6 md:mb-[64px]">
@@ -222,15 +230,6 @@ export default function ServicesPage() {
 
         <ReviewsCarousel reviews={contactPage.reviews.items} />
       </section>
-
-      {/* FAQ */}
-      <FAQ
-        title={faq.title}
-        subtitle={faq.subtitle}
-        backgroundVideo={faq.backgroundVideo}
-        videoPoster={faq.videoPoster}
-        items={faq.items}
-      />
 
       {/* Contact Form */}
       <ContactFormSection />

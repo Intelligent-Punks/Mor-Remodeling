@@ -46,8 +46,8 @@ export const aboutPageData = {
     description:
     `At MOR Remodeling, we believe every home holds the potential to become something extraordinary. With years of experience and a passion for craftsmanship, our team transforms living spaces with precision, creativity, and heart. \n
     We treat every client as part of our family, ensuring each project is handled with honesty, care, and open communication. Our goal is simple to create homes that reflect comfort, value, and lasting beauty while making the remodeling journey smooth and enjoyable.`,
-    image: '/images/about/hero/hero.png',
-    imageMobile: '/images/about/hero/hero-mobile.png',
+    image: '/images/about/hero/hero.jpg',
+    imageMobile: '/images/about/hero/hero-mobile.jpg',
   },
 
   whoWeAre: {

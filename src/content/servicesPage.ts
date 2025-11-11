@@ -17,9 +17,9 @@ export const servicesPageData: ServiceItem[] = [
     fullDescription:
       'A full home renovation is more than just updating a few rooms — it\'s about transforming your entire living space into a home that matches your lifestyle and vision. At MOR Remodelling, we handle every aspect of the process, from initial design and planning to the final finishes.',
     images: [
-      '/images/services/full-home-renovation/image-1.png',
-      '/images/services/full-home-renovation/image-2.png',
-      '/images/services/full-home-renovation/image-3.png',
+      '/images/services/full-home-renovation/image-1.jpg',
+      '/images/services/full-home-renovation/image-2.jpg',
+      '/images/services/full-home-renovation/image-3.jpg',
     ],
   },
   {
@@ -182,7 +182,7 @@ export default {
       ],
     },
   },
-  backgroundImage: '/images/services/bg-hero.png',
+  backgroundImage: '/images/services/bg-hero.jpg',
   hero: {
     title: 'Comprehensive Remodeling and Construction Services',
     subtitle:

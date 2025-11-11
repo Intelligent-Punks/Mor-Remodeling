@@ -27,7 +27,7 @@ export default {
       },
     },
   },
-  backgroundImage: '/images/projects/bg-hero.png',
+  backgroundImage: '/images/projects/bg-hero.jpg',
   infoBlocks: [
     {
       id: 'craftsmanship',

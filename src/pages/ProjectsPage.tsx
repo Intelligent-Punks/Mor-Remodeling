@@ -18,7 +18,7 @@ export default function ProjectsPage() {
       <SEOHead seo={projectsPage.seo} />
       {/* Hero Sentinel for Header Transparency */}
       <div id="hero-sentinel" className="absolute top-0 left-0 w-full h-px pointer-events-none" />
-      
+
       {/* Hero Section */}
       <section className="relative min-h-[750px] pt-[54px] pb-10 md:pb-[80px]">
         {/* Background Image */}
@@ -40,7 +40,9 @@ export default function ProjectsPage() {
           </div>
 
           {/* Page Title */}
-          <h1 className="text-[32px] md:text-5xl font-semibold text-white mb-16 md:mb-[66px] md:max-w-[460px] leading-[1.4]">{projectsPage.title}</h1>
+          <h1 className="text-[32px] md:text-5xl font-semibold text-white mb-16 md:mb-[66px] md:max-w-[460px] leading-[1.4]">
+            {projectsPage.title}
+          </h1>
 
           {/* Info Blocks */}
           <div className="max-w-full md:max-w-[950px] md:ml-auto space-y-8 md:space-y-[40px]">
@@ -48,7 +50,9 @@ export default function ProjectsPage() {
               <div key={block.id} className="border-t border-white/40 pt-6 md:pt-[40px]">
                 <div className="grid grid-cols-1 md:grid-cols-[290px_1fr] gap-4 md:gap-[40px]">
                   <h2 className="text-[20px] md:text-xl font-medium text-white">{block.title}</h2>
-                  <p className="text-sm md:text-base font-medium leading-[1.5] text-white">{block.description}</p>
+                  <p className="text-sm md:text-base font-medium leading-[1.5] text-white">
+                    {block.description}
+                  </p>
                 </div>
               </div>
             ))}
@@ -58,6 +62,17 @@ export default function ProjectsPage() {
 
       {/* Projects Gallery */}
       <OurProjects projects={projects.items} showButton={false} />
+
+      {/* FAQ */}
+      <LazySection rootMargin="200px">
+        <FAQ
+          title={faq.title}
+          subtitle={faq.subtitle}
+          backgroundVideo={faq.backgroundVideo}
+          videoPoster={faq.videoPoster}
+          items={faq.items}
+        />
+      </LazySection>
 
       {/* Reviews Carousel */}
       <LazySection rootMargin="200px">
@@ -73,17 +88,6 @@ export default function ProjectsPage() {
 
           <ReviewsCarousel reviews={contactPage.reviews.items} />
         </section>
-      </LazySection>
-
-      {/* FAQ */}
-      <LazySection rootMargin="200px">
-        <FAQ 
-          title={faq.title} 
-          subtitle={faq.subtitle} 
-          backgroundVideo={faq.backgroundVideo}
-          videoPoster={faq.videoPoster}
-          items={faq.items} 
-        />
       </LazySection>
 
       {/* Contact Form */}

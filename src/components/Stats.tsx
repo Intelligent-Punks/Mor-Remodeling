@@ -11,7 +11,7 @@ interface Stat {
 interface StatsProps {
   title: string
   description: string
-  subTitle: string
+  subTitle?: string
   stats: Stat[]
   valueFontSize?: number
 }

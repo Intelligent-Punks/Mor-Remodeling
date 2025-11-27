@@ -207,7 +207,7 @@ export default function ReviewsCarousel({ reviews }: ReviewsCarouselProps) {
                     </span>
                   </div>
                 )}
-                <p className="text-[18px] font-semibold text-[#2A2A2A]">{review.name}</p>
+                <p className="text-[18px] font-semibold text-[#2A2A2A]">{review.name} | {review.services}</p>
               </div>
 
               {/* Review Text */}

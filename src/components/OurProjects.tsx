@@ -45,7 +45,7 @@ export default function OurProjects({
               )}
               {description && (
                 <div className="md:flex-1">
-                  <p className="max-w-[620px] text-sm md:text-base leading-[1.5] text-[#2A2A2A]">
+                  <p className="max-w-[800px] text-sm md:text-base leading-[1.5] text-[#2A2A2A]">
                     {description}
                   </p>
                 </div>

@@ -29,7 +29,7 @@ export default function ProjectDetailPage() {
     <div className="bg-[#F2F1EF]">
       <SEOHead seo={seo} />
       {/* Hero Sentinel for header tracking */}
-      <div id="hero-sentinel" className="absolute top-[5vh] pointer-events-none" />
+      <div className="absolute top-[5vh] pointer-events-none" />
 
       {/* Hero Section */}
       <section id="hero" className="relative h-[714px] md:h-[750px] overflow-hidden">
@@ -196,6 +196,15 @@ export default function ProjectDetailPage() {
         <OurProjects projects={projects.items} showButton={false} />
       </section>
 
+      {/* FAQ */}
+      <FAQ
+        title={faq.title}
+        subtitle={faq.subtitle}
+        backgroundVideo={faq.backgroundVideo}
+        videoPoster={faq.videoPoster}
+        items={faq.items}
+      />
+
       <section className="pt-20 pb-[160px] bg-[#F2F1EF]">
         <div className="container-custom mb-4 md:mb-[64px]">
           <h2 className="md:text-[48px] text-[32px] font-semibold leading-[1.4] text-[#2A2A2A] mb-[20px]">
@@ -208,15 +217,6 @@ export default function ProjectDetailPage() {
 
         <ReviewsCarousel reviews={contactPage.reviews.items} />
       </section>
-
-      {/* FAQ */}
-      <FAQ
-        title={faq.title}
-        subtitle={faq.subtitle}
-        backgroundVideo={faq.backgroundVideo}
-        videoPoster={faq.videoPoster}
-        items={faq.items}
-      />
 
       {/* Contact Form */}
       <ContactFormSection />

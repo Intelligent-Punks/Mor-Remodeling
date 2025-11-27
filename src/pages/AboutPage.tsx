@@ -201,7 +201,7 @@ export default function AboutPage() {
       </section>
 
       {/* Contact Form */}
-      <ContactFormSection />
+      <ContactFormSection backgroundImage={aboutPage.bgImgContactForm}/>
     </div>
   )
 }

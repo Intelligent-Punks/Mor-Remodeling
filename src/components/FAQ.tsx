@@ -47,7 +47,7 @@ export default function FAQ({ title, subtitle, backgroundVideo, videoPoster, ite
           <h2 className="text-[32px] md:text-[48px] font-semibold leading-[1.4] text-[#fff]">
             {title}
           </h2>
-          <p className="mt-4 md:mt-[20px] text-sm md:text-[20px] font-medium leading-[1.4] text-[#fff]">
+          <p className="mt-4 md:mt-[20px] text-sm md:text-[20px] font-medium leading-[1.4] text-[#fff] max-w-[900px] mx-auto">
             {subtitle}
           </p>
         </div>

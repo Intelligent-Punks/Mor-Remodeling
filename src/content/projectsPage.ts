@@ -42,5 +42,6 @@ export default {
         'No two homes are the same, and neither are our projects. We listen closely to your vision and bring it to life with tailored designs that reflect your lifestyle, needs, and personality.',
     },
   ],
+  bgImgContactForm: '/images/projects/bg-contact-form.jpg',
 }
 

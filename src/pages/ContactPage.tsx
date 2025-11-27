@@ -154,6 +154,7 @@ export default function ContactPage() {
                   key={link.name}
                   href={link.url}
                   className="flex items-center gap-[10px] text-[20px] font-medium text-[#2A2A2A]"
+                  target='_blank'
                   onMouseEnter={() => setHoveredLink(link.name)}
                   onMouseLeave={() => setHoveredLink(null)}
                 >
@@ -234,7 +235,7 @@ export default function ContactPage() {
       <section className="md:hidden container-custom pb-[50px]">
         <div className="flex gap-[50px]">
           {contactPage.socialLinks.map((link) => (
-            <a key={link.name} href={link.url} className="flex items-center">
+            <a key={link.name} href={link.url} className="flex items-center" target='_blank'>
               <img src={link.icon} alt={link.name} className="w-[33px] h-[33px]" />
             </a>
           ))}

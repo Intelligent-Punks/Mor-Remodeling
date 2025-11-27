@@ -101,23 +101,23 @@ export const projectDetails: ProjectDetail[] = [
       image: 'hero.png',
     },
     stats: [
-      { label: 'Concept', value: 'Kitchen renovation' },
+      { label: 'Concept', value: 'Kitchen Renovation' },
       { label: 'Project date', value: 'April 2024' },
       { label: 'Location', value: 'San Jose, California' },
-      { label: 'Architects', value: 'MOR Remodelling Design Team' },
+      { label: 'Architects', value: 'MOR Remodeling Team' },
     ],
     details: {
       title: 'Where California comfort meets timeless craftsmanship.',
       description: [
-        'This San Jose kitchen renovation reflects MOR Remodeling\’s signature blend of functionality, craftsmanship, and refined minimalism. Designed for a busy California family that values both style and practicality, the project focuses on creating an open, welcoming atmosphere where cooking, conversation, and daily living flow naturally together.',
+        'This San Jose kitchen renovation transformed a dated space into a bright, elegant, and highly functional gathering area.', 
 
-        'The all white cabinetry brings a sense of clarity and spaciousness, while subtle metallic accents add modern sophistication. Wide plank flooring in warm oak tones grounds the space, balancing cool surfaces with natural warmth. A large central island serves as both a social hub and a culinary workstation, perfect for casual breakfasts, evening gatherings, or hosting friends.',
+        'Working closely with the family, our team focused on understanding their lifestyle and needs creating a layout that encourages cooking, conversation, and everyday living.',
 
-        'Every detail was considered: energy efficient LED lighting, soft close cabinetry, built in organizational features, and high end stainless steel appliances. The backsplash\’s geometric tile pattern introduces gentle texture without overwhelming the clean lines, reinforcing the kitchen\’s refined simplicity.',
+        'The design features custom white cabinetry, quartz countertops, brushed nickel hardware, and wide plank oak flooring, balancing modern sophistication with natural warmth.', 
 
-        'Completed by the MOR Remodeling Team in collaboration with local artisans, this transformation demonstrates the power of thoughtful design, turning an ordinary kitchen into a space that elevates everyday living while enhancing the home\’s long term value.',
+        'A central island serves as both a culinary workspace and social hub, while built-in organization, energy-efficient lighting, and high-end appliances ensure practicality meets style.',
 
-        'Photos: MOR Remodeling Team'
+        'Every detail was considered in collaboration with the clients, resulting in a timeless kitchen that reflects their vision and enhances the home’s functionality and long-term value.',
       ],
     },
     gallery: [
@@ -129,29 +129,29 @@ export const projectDetails: ProjectDetail[] = [
   {
     slug: 'green-beige-kitchen-renovation',
     hero: {
-      title: 'Neutral Gray Kitchen and Dining Remodel – San Jose, CA',
+      title: 'Neutral Gray Kitchen and Dining Remodel – Palo Alto, CA',
       subtitle:
-        'This project redefined a San Jose home with a modern kitchen and dining renovation that blends soft gray tones, warm light wood flooring, and refined minimalism. The goal was to create a seamless transition between the kitchen, dining, and living spaces while maintaining a calm, elegant atmosphere filled with natural light and functional design.',
+        'This project redefined a Palo Alto home with a modern kitchen and dining renovation that blends soft gray tones, warm light wood flooring, and refined minimalism. The goal was to create a seamless transition between the kitchen, dining, and living spaces while maintaining a calm, elegant atmosphere filled with natural light and functional design.',
       image: 'hero.png',
     },
     stats: [
-      { label: 'Concept', value: 'Kitchen renovation' },
+      { label: 'Concept', value: 'Kitchen & Dining Renovation' },
       { label: 'Project date', value: 'May 2024' },
-      { label: 'Location', value: 'San Jose, California' },
-      { label: 'Architects', value: 'MOR Remodelling Design Team' },
+      { label: 'Location', value: 'California' },
+      { label: 'Architects', value: 'MOR Remodeling Team' },
     ],
     details: {
       title: 'A modern neutral retreat with timeless balance.',
       description: [
-        'This San Jose kitchen and dining remodel by MOR Remodeling was designed for homeowners who wanted to bring warmth, simplicity, and sophistication into their everyday living. The open layout connects the cooking, dining, and lounge areas, creating a sense of continuity and comfort throughout the main floor.',
+        'This Palo Alto kitchen and dining renovation transformed the home into a calm, modern retreat.', 
 
-        'The kitchen showcases custom soft gray cabinetry, white quartz countertops, and sleek stainless steel appliances that combine performance with style. The island serves as both a workspace and a casual dining spot, complemented by contemporary lighting and subtle brass hardware that adds a hint of luxury without overpowering the space.',
+'Working closely with the homeowners, our team focused on understanding their lifestyle and how they wanted to use the space, creating an open layout that seamlessly connects cooking, dining, and living areas.',
 
-        'Natural light flows through large windows, highlighting the wood grain flooring and neutral palette that define the home\’s inviting tone. In the dining area, a glass table framed with gold metallic accents and plush white chairs anchors the space, creating a perfect setting for entertaining or family gatherings.',
+'The design features soft gray cabinetry, white quartz countertops, and stainless steel appliances, with a central island serving as both workspace and casual dining spot.',
 
-        'Every detail, from the seamless cabinetry lines to the layered textures, reflects MOR Remodeling\’s commitment to quality craftsmanship and balanced design. The result is a kitchen and dining space that feels sophisticated yet approachable, perfectly attuned to the relaxed elegance of San Jose living.',
+'Warm light wood flooring, contemporary lighting, and subtle metallic accents add sophistication while keeping the space approachable and inviting.',
 
-        'Photos: MOR Remodeling Team'
+'Every choice from layout to finishes was made in collaboration with the clients, resulting in a balanced, functional, and elegant space that reflects their vision and enhances daily living.',
       ],
     },
     gallery: [
@@ -202,7 +202,7 @@ export const projectDetails: ProjectDetail[] = [
       title: 'Two Bathroom Remodels – San Jose, CA',
       subtitle:
         'This San Jose home underwent a dual bathroom renovation designed to bring modern comfort and timeless character into both private spaces. MOR Remodeling focused on craftsmanship, texture, and light, transforming each bathroom into a distinctive retreat that reflects the homeowner’s lifestyle while maintaining design harmony across the entire property.',
-      image: 'hero.png',
+      image: 'hero.jpg',
     },
     stats: [
       { label: 'Concept', value: 'Bathroom Remodeling' },
@@ -225,40 +225,39 @@ export const projectDetails: ProjectDetail[] = [
       ],
     },
     gallery: [
-      'gallery-1.png',
-      'gallery-2.png',
-      'gallery-3.png',
-      'gallery-4.png',
-      'gallery-5.png',
-      'gallery-6.png',
+      'gallery-1.jpg',
+      'gallery-2.jpg',
+      'gallery-3.jpg',
+      'gallery-4.jpg',
+      'gallery-5.jpg',
+      'gallery-6.jpg',
     ],
   },
   {
     slug: 'outdoor-kitchen',
     hero: {
-      title: 'Kitchen and Dining Area Renovation – San Jose, CA',
+      title: 'Kitchen and Dining Area Renovation – Mountain view, CA',
       subtitle:
-        'This project in San Jose transformed a dated kitchen and dining space into a bright, open, and contemporary interior that celebrates natural light and California living. The renovation introduced a sense of warmth and flow by connecting the kitchen and dining area seamlessly, creating a refined space perfect for both everyday comfort and entertaining.',
+        'This project in Mountain View transformed a dated kitchen and dining space into a bright, open, and contemporary interior that celebrates natural light and California living. The renovation introduced a sense of warmth and flow by connecting the kitchen and dining area seamlessly, creating a refined space perfect for both everyday comfort and entertaining.',
       image: 'hero.png',
     },
     stats: [
       { label: 'Concept', value: 'Kitchen and Dining Renovation' },
       { label: 'Project date', value: 'October 2023' },
-      { label: 'Location', value: 'San Jose, California' },
-      { label: 'Architects', value: 'MOR Remodelling Design Team' },
+      { label: 'Location', value: 'California' },
+      { label: 'Architects', value: 'MOR Remodeling Team' },
     ],
     details: {
       title: 'A refined balance of warmth, light, and modern elegance.',
       description: [
-        'MOR Remodeling completely reimagined the heart of this home with a focus on timeless materials, inviting tones, and open flow. The design pairs natural finishes with clean lines and subtle sophistication, turning the kitchen and dining area into a showcase of craftsmanship and thoughtful functionality.',
+        'This Mountain view project transformed a dated kitchen and dining area into a bright, open space designed for everyday living and entertaining.', 
 
-        'The kitchen features rich wood cabinetry that brings depth and texture to the space, paired with light quartz countertops and stainless steel appliances that deliver both style and performance. A custom ceiling recess enhances the sense of height, while recessed lighting ensures an even glow throughout the cooking and dining zones. Every element, from cabinet hardware to flooring alignment, was selected to complement the home\’s bright aesthetic and bring out the natural beauty of the materials.',
+        'Working closely with the homeowners, our team focused on their lifestyle needs, creating a layout that seamlessly connects the kitchen and dining areas while maximizing natural light and flow.',
 
-        'The dining area opens directly to the poolside patio through wide glass sliding doors, blending indoor comfort with outdoor living. A sleek glass dining table supported by sculpted wood bases becomes a central design statement, harmonizing perfectly with the surrounding greenery and daylight. Plush white dining chairs and minimal décor maintain an atmosphere of calm luxury.',
+        'The design features rich wood cabinetry, light quartz countertops, and stainless steel appliances, paired with thoughtful details like recessed lighting and custom ceiling accents. Wide glass doors connect the dining area to the patio, blending indoor and outdoor living.', 
 
-        'This renovation is a true reflection of MOR Remodeling\’s design philosophy — merging craftsmanship, comfort, and modern sensibility into spaces that feel effortlessly elegant and built to last.',
+        'Every choice was made in collaboration with the clients, ensuring the result is both functional and elegant.',
 
-        'Photos: MOR Remodeling Team',
       ],
     },
     gallery: [
@@ -271,28 +270,26 @@ export const projectDetails: ProjectDetail[] = [
   {
     slug: 'decks-patios-outdoor-covers',
     hero: {
-      title: 'Full Home Renovation & ADU – San Jose, CA',
+      title: 'Full Home Renovation – Redwood city, CA',
       subtitle:
         'A complete transformation that reimagines an existing home while adding a new Accessory Dwelling Unit for expanded living and rental potential. This project highlights the seamless integration of modern design, functionality, and comfort across every space.',
       image: 'hero.png',
     },
     stats: [
-      { label: 'Concept', value: 'Full Home Renovation & ADU' },
+      { label: 'Concept', value: 'Full Home Renovation' },
       { label: 'Project date', value: 'September 2023' },
-      { label: 'Location', value: 'San Jose, California' },
-      { label: 'Architects', value: 'MOR Remodelling Design Team' },
+      { label: 'Location', value: 'Redwood city, California' },
+      { label: 'Design', value: 'MOR Remodeling Team' },
     ],
     details: {
       title: 'Creating spaces that redefine modern living.',
       description: [
-        'This project represents a complete home renovation combined with a new Accessory Dwelling Unit built to expand functionality and elevate property value. The work involved full interior remodeling, including kitchen and bathroom upgrades, new flooring, custom finishes, and optimized lighting that enhances the natural flow of the space. Every detail was designed to improve daily comfort while maintaining architectural integrity and aesthetic continuity throughout the property.',
+        'This Redwood city home underwent a complete transformation, reimagining every space to enhance comfort, functionality, and modern living. From the initial design discussions, our team focused on understanding the family’s lifestyle and how they wanted to use their home, ensuring each room supports daily life while reflecting their personal style.',
 
-        'The addition of the ADU brought a self-contained living space featuring a private entrance, kitchen, and bathroom—perfect for guests, extended family, or rental income. The layout was carefully planned to ensure privacy without compromising the overall harmony of the property. Sustainable materials and energy-efficient systems were integrated to minimize long-term maintenance and reduce utility costs.',
+        'The renovation included a full interior remodel with kitchen and bathroom upgrades, new flooring, custom finishes, and optimized lighting that improves flow and highlights architectural features. Neutral tones, natural textures, and thoughtful layouts create an open, airy environment that feels both inviting and timeless.',
 
-        'Our design approach focused on creating an open, airy environment that seamlessly connects indoor and outdoor living. Large windows, light neutral tones, and natural textures come together to bring warmth and timeless appeal. From structural upgrades to finishing touches, every stage of the project was executed with precision, craftsmanship, and a clear vision of modern comfort.',
+        'Every stage of the project from structural improvements to finishing touches was executed with care, precision, and high-quality craftsmanship. By selecting durable materials and energy-efficient systems, the result is a home that looks beautiful today and will perform for years to come.',
 
-        'All materials were selected for durability, quality, and long-lasting performance. This renovation reflects how thoughtful design and expert construction can turn a traditional home into a space that truly adapts to modern lifestyles.',
-        'Photos: MOR Remodeling Team',
       ],
     },
     gallery: [
@@ -344,29 +341,30 @@ export const projectDetails: ProjectDetail[] = [
   {
     slug: 'roofing-siding-foundations',
     hero: {
-      title: 'Roofing and Foundation Work - San Jose, CA',
+      title: 'Roof Replacement & Plywood Redeck – Los gatos, CA',
       subtitle:
         'A comprehensive roofing and structural project that resolved critical issues while improving the home\’s insulation and durability. This project included full roof replacement, foundation reinforcement, and long-term weather protection upgrades.',
       image: 'hero.png',
     },
     stats: [
-      { label: 'Concept', value: 'Roofing & Foundation Work' },
+      { label: 'Concept', value: 'Roof Replacement & Redeck' },
       { label: 'Project date', value: 'July 2023' },
-      { label: 'Location', value: 'San Jose, California' },
-      { label: 'Architects', value: 'MOR Remodelling Design Team' },
+      { label: 'Location', value: 'Los Gatos, California' },
+      { label: 'Architects', value: 'MOR Remodeling Team' },
     ],
     details: {
       title: 'Protecting your investment with quality structural work.',
       description: [
-        'This project focused on replacing the home\’s roofing system with high-performance, weather-resistant materials designed to maximize longevity and minimize maintenance. The new roof installation improved energy efficiency and provided superior protection against heat, wind, and moisture.',
+        'This Los Gatos home received a full roof upgrade, including new shingles and a plywood redeck to improve durability and long-term performance.', 
 
-        'Foundation reinforcement work was performed to correct structural settling and ensure long-term stability. Every repair was carried out with precision to meet modern safety and building standards.',
+        'Our team worked with the homeowners to understand their priorities—protection from the elements, energy efficiency, and aesthetic appeal before creating a plan tailored to their needs.',
 
-        'Additional insulation and sealing upgrades enhanced the home\’s energy performance, reducing heating and cooling costs year-round. The overall renovation not only restored structural integrity but also increased the property\’s market value and curb appeal.',
+        'The project involved removing the old roof, installing a new plywood deck, and carefully laying high-quality shingles for a clean, weather-resistant finish.', 
 
-        'All work was completed to exceed current building codes and standards, ensuring durability and peace of mind for years to come.',
+        'Every step was executed with precision to ensure longevity, structural integrity, and a polished look.',
 
-        'Photos: MOR Remodeling Design Team',
+        'By keeping the homeowners informed throughout the process and addressing questions promptly, our team made the project smooth and stress-free. The result is a stronger, more resilient roof that enhances both the home’s function and curb appeal.',
+
       ],
     },
     gallery: [

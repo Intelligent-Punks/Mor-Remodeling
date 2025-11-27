@@ -5,6 +5,7 @@ import contacts from '@/content/contacts'
 import services from '@/content/services'
 import AnimatedText from '@/components/AnimatedText'
 import { getAssetUrl } from '@/utils/asset'
+import contactPage from '@/content/contactPage'
 
 function PhoneButton({ isPastHero, isMobile = false }: { isPastHero: boolean; isMobile?: boolean }) {
   const [isHovered, setIsHovered] = useState(false)
@@ -19,7 +20,7 @@ function PhoneButton({ isPastHero, isMobile = false }: { isPastHero: boolean; is
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <span className={`${isMobile ? 'text-[26px]' : 'text-base'} font-medium leading-[1.4] pl-5 ${isPastHero ? 'text-[#2A2A2A]' : 'text-[#2A2A2A]'}`}>
+      <span className={`${isMobile ? 'text-[26px]' : 'text-base'} font-medium leading-[1.4] pl-3 ${isPastHero ? 'text-[#2A2A2A]' : 'text-[#2A2A2A]'}`}>
         <AnimatedText text={contacts.phone} externalHover={isHovered} />
       </span>
             <span className={`ml-auto mr-1 inline-grid place-items-center rounded-full bg-[#2A2A2A] ${
@@ -306,18 +307,17 @@ export default function Header() {
 
               {/* Social Icons at Bottom */}
               <div className="mt-auto pb-10 flex gap-[50px]">
-                <a href={contacts.instagram} aria-label="Instagram">
-                  <img src={getAssetUrl('/icons/instagram.svg')} alt="" className="w-6 h-6" />
+              {contactPage.socialLinks.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.url}
+                  className="w-8 h-8 flex items-center justify-center hover:opacity-70 transition-opacity"
+                  target='_blank'
+                  aria-label={social.name}
+                >
+                  <img src={getAssetUrl(social.icon)} alt={social.name} className="w-full h-full" />
                 </a>
-                <a href={contacts.twitter} aria-label="Twitter">
-                  <img src={getAssetUrl('/icons/x.svg')} alt="" className="w-6 h-6" />
-                </a>
-                <a href={contacts.linkedin} aria-label="LinkedIn">
-                  <img src={getAssetUrl('/icons/linkedin.svg')} alt="" className="w-6 h-6" />
-                </a>
-                <a href={contacts.telegram} aria-label="Telegram">
-                  <img src={getAssetUrl('/icons/telegram.svg')} alt="" className="w-6 h-6" />
-                </a>
+              ))}
               </div>
             </>
           ) : (

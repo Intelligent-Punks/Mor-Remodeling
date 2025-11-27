@@ -113,7 +113,7 @@ export default function ContactFormSection({
   }, [])
 
   return (
-    <section ref={sectionRef} className={`relative h-[700px] overflow-hidden ${className}`}>
+    <section ref={sectionRef} className={`relative h-[800px] overflow-hidden ${className}`}>
       <div
         className="absolute -top-[-5%] left-0 right-0 w-full h-[160%]"
         style={{
@@ -126,6 +126,7 @@ export default function ContactFormSection({
           alt=""
           className="w-full h-full object-cover"
         />
+        <div className="absolute inset-0 bg-[#232323]/45" />
       </div>
 
       {showSuccess && (

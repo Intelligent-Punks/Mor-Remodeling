@@ -12,18 +12,18 @@ export interface ProjectItem {
 const projects = {
   title: 'Our Projects',
   description:
-    "We've grouped our cabinetmaking, joinery and fittings activities into four Espaces. These unique creations reflect our teams' passion for their craft.",
+    "We’ve joined together a few of our projects, each one reflecting our team’s passion, precision, and commitment to creating beautiful, functional spaces tailored to our clients’ needs—for you to understand the high-end quality you can expect and spark some inspiration for your own projects.",
   items: [
-    { 
-      id: '1', 
-      image: '/images/our-projects/Frame-3.png', 
-      alt: 'The Maple Residence',
-      title: 'The Maple Residence',
-      date: 'June 2024',
-      location: 'San Jose, CA',
-      serviceTag: 'Flooring Installation & Refinishing',
-      slug: 'living-room-renovation'
-    },
+    // { 
+    //   id: '1', 
+    //   image: '/images/our-projects/Frame-3.png', 
+    //   alt: 'The Maple Residence',
+    //   title: 'The Maple Residence',
+    //   date: 'June 2024',
+    //   location: 'San Jose, CA',
+    //   serviceTag: 'Flooring Installation & Refinishing',
+    //   slug: 'living-room-renovation'
+    // },
     { 
       id: '2', 
       image: '/images/our-projects/Frame-4.png', 
@@ -31,7 +31,7 @@ const projects = {
       title: 'Cedarwood Retreat',
       date: 'April 2024',
       location: 'San Jose, California',
-      serviceTag: 'Kitchen Remodeling',
+      serviceTag: 'Kitchen Renovation',
       slug: 'green-kitchen-renovation'
     },
     { 
@@ -40,8 +40,8 @@ const projects = {
       alt: 'Urban Harmony Loft',
       title: 'Urban Harmony Loft',
       date: 'May 2024',
-      location: 'San Jose, CA',
-      serviceTag: 'Kitchen Remodeling',
+      location: 'Palo Alto, CA',
+      serviceTag: 'Kitchen & Dining Renovation',
       slug: 'green-beige-kitchen-renovation'
     },
     { 
@@ -51,7 +51,7 @@ const projects = {
       title: 'The Horizon House',
       date: 'December 2023',
       location: 'San Jose, CA',
-      serviceTag: 'Kitchen Remodeling',
+      serviceTag: 'Kitchen & Dining Renovation',
       slug: 'outdoor-kitchen'
     },
     { 
@@ -71,8 +71,8 @@ const projects = {
       title: 'Sunset Haven',
       date: 'October 2023',
       location: 'San Jose, California',
-      serviceTag: 'Kitchen Remodeling',
-      serviceTag2: 'Exterior Remodeling',
+      serviceTag: 'Outdoor Kitchen & Entertainment',
+      // serviceTag2: 'Exterior Remodeling',
       slug: 'landscaping'
     },
     { 
@@ -82,19 +82,19 @@ const projects = {
       title: 'The Willow Extension',
       date: 'September 2023',
       location: 'San Jose, CA',
-      serviceTag: 'Full Home Renovation & ADU',
+      serviceTag: 'Full Home Renovation',
       slug: 'decks-patios-outdoor-covers'
     },
-    { 
-      id: '8', 
-      image: '/images/our-projects/Frame-10.png', 
-      alt: 'Riverside Contemporary',
-      title: 'Riverside Contemporary',
-      date: 'August 2023',
-      location: 'San Jose, CA',
-      serviceTag: 'Interior Design & Custom Finishes',
-      slug: 'exterior-remodeling-siding'
-    },
+    // { 
+    //   id: '8', 
+    //   image: '/images/our-projects/Frame-10.png', 
+    //   alt: 'Riverside Contemporary',
+    //   title: 'Riverside Contemporary',
+    //   date: 'August 2023',
+    //   location: 'San Jose, CA',
+    //   serviceTag: 'Interior Design & Custom Finishes',
+    //   slug: 'exterior-remodeling-siding'
+    // },
     { 
       id: '9', 
       image: '/images/our-projects/Frame-11.png', 
@@ -102,7 +102,7 @@ const projects = {
       title: 'The Belmont Transformation',
       date: 'July 2023',
       location: 'San Jose, CA',
-      serviceTag: 'Roofing & Foundation Work',
+      serviceTag: 'Roof Replacement & Redeck',
       slug: 'roofing-siding-foundations'
     },
   ] as ProjectItem[],

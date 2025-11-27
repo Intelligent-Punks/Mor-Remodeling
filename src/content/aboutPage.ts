@@ -187,6 +187,7 @@ Whether it's a single room or a full-scale renovation, we treat each project as 
       },
     ] as TimelineItem[],
   },
+  bgImgContactForm: '/images/about/bg-contact-form.jpg',
 }
 
 export default aboutPageData

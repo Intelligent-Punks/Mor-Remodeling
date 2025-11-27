@@ -6,7 +6,7 @@ export default function PrivacyPolicyPage() {
   return (
     <div className="bg-[#F2F1EF]">
       {/* Sentinel for header style switching */}
-      <div id="hero-sentinel" className="absolute top-0 h-px w-px" />
+      <div className="absolute top-0 h-px w-px" />
 
       {/* Hero Section */}
       <section className="relative h-[714px] md:min-h-[750px] flex items-center justify-center">

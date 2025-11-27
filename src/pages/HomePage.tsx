@@ -129,7 +129,7 @@ export default function HomePage() {
     <div>
       <SEOHead seo={home.seo} />
       {/* Sentinel is used by Header to switch style when hero leaves viewport */}
-      <div id="hero-sentinel" className="absolute top-0 h-px w-px" />
+      <div className="absolute top-0 h-px w-px" />
       <section className="relative min-h-[750px]">
         <video
           autoPlay
@@ -143,16 +143,16 @@ export default function HomePage() {
         </video>
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/50 to-transparent" />
 
-        <div className="relative z-10 container-custom pb-16 pt-28 md:pt-40 flex flex-col md:grid md:grid-cols-2 gap-8 min-h-[750px] text-white">
+        <div className="relative z-10 container-custom pb-16 pt-28 md:pt-48 flex flex-col md:grid md:grid-cols-1 gap-8 min-h-[750px] text-white">
           <h1 className="sr-only">{home.title}</h1>
           <div>
-            <h2 className="max-w-[600px] font-medium leading-[1.4] text-[32px] md:text-[48px] text-[#F2F1EF] mt-6">{home.hero.heading}</h2>
-            <p className="max-w-[620px] mt-8 md:mt-16 text-[16px] md:text-[20px] leading-[1.4] text-[#F2F1EF]/95">{home.hero.subheading}</p>
+            <h2 className="font-medium leading-[1.4] text-[32px] md:text-[48px] text-[#F2F1EF] mt-6">{home.hero.heading}</h2>
+            <p className="mt-8 md:mt-18 text-[16px] md:text-[20px] leading-[1.4] text-[#F2F1EF]/95">{home.hero.subheading}</p>
           </div>
-          <div className="bg-[#F2F1EF] rounded-[14px] p-8 md:p-10">
+          {/* <div className="bg-[#F2F1EF] rounded-[14px] p-8 md:p-10">
           <p className="text-[24px] md:text-[36px] font-semibold leading-[1.1] text-[#2A2A2A] mb-[8px] md:mb-[20px]">Contact Us</p>
           <ContactFormWrapper />
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -192,6 +192,7 @@ export default function HomePage() {
         <Stats
           title={stats.title}
           description={stats.description}
+          subTitle={stats.subTitle}
           stats={stats.items}
           valueFontSize={32}
         />

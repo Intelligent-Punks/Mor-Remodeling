@@ -52,11 +52,6 @@ export default function RemodelingROI({
         <div className="md:hidden overflow-x-auto scrollbar-hide">
           <div className="flex gap-[10px] pl-4">
             {items.map((item, index) => {
-              // Parse value like "$27,500 --> $53,900 (+96%)"
-              const match = item.value.match(/(.+?)\s*-->\s*(.+?)\s*\((.+?)\)/)
-              const fromValue = match ? match[1].trim() : ''
-              const toValue = match ? match[2].trim() : ''
-              const percentage = match ? match[3].trim() : ''
               const isThird = index === 2
 
               return (
@@ -77,32 +72,15 @@ export default function RemodelingROI({
                     <div className="flex items-end justify-between gap-[5px] mb-[10px]">
                       <div className="flex flex-col gap-[8px]">
                         <span className="text-[10px] font-medium leading-[1.5] text-[#fff]">
-                          price before
+                        Addition to house equity
                         </span>
                         <span className="text-[14px] font-medium leading-[1.5] text-[#fff]">
-                          {fromValue}
-                        </span>
-                      </div>
-                      <svg width="18" height="18" viewBox="0 0 32 32" fill="none" className="mb-[2px]">
-                        <path
-                          d="M4.67 15.91L27.33 15.91M27.33 15.91L19.24 7.82M27.33 15.91L19.24 24"
-                          stroke="#fff"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                      <div className="flex flex-col gap-[8px]">
-                        <span className="text-[10px] font-medium leading-[1.5] text-[#fff]">
-                          price after
-                        </span>
-                        <span className="text-[14px] font-medium leading-[1.5] text-[#fff]">
-                          {toValue}
+                          {item.value}
                         </span>
                       </div>
                     </div>
 
-                    <div className={`inline-flex items-center gap-1 px-2 py-2 rounded-full ${
+                    {/* <div className={`inline-flex items-center gap-1 px-2 py-2 rounded-full ${
                       isThird ? 'bg-[#FCCA84]' : 'bg-[#F2F1EF]'
                     }`}>
                       <img
@@ -115,7 +93,7 @@ export default function RemodelingROI({
                       }`}>
                         {percentage}
                       </span>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               )
@@ -126,23 +104,17 @@ export default function RemodelingROI({
         </div>
 
         {/* Desktop: Grid layout */}
-        <div className="hidden md:grid md:grid-cols-3 gap-10 container-custom">
+        <div className="hidden md:grid md:grid-cols-4 gap-10 container-custom">
           {items.map((item) => {
-            // Parse value like "$27,500 --> $53,900 (+96%)"
-            const match = item.value.match(/(.+?)\s*-->\s*(.+?)\s*\((.+?)\)/)
-            const fromValue = match ? match[1].trim() : ''
-            const toValue = match ? match[2].trim() : ''
-            const percentage = match ? match[3].trim() : ''
-
             return (
               <div
                 key={item.id}
-                className="group w-[400px] h-[248px] p-[30px] flex flex-col justify-between rounded-[20px] transition-colors duration-300 bg-white/20 hover:bg-[#F4C077]/20 backdrop-blur-[5px]"
+                className="group w-[320px] h-[248px] p-[30px] flex flex-col justify-between rounded-[20px] transition-colors duration-300 bg-white/20 hover:bg-[#F4C077]/20 backdrop-blur-[5px]"
               >
                 <div>
                   <AnimatedParagraph
                     text={item.title}
-                    className="text-[28px] font-medium leading-[1.4] text-[#fff]"
+                    className="text-[26px] font-medium leading-[1.4] text-[#fff]"
                     lineDelay={60}
                     charDelay={8}
                   />
@@ -153,32 +125,15 @@ export default function RemodelingROI({
                   <div className="flex items-start gap-[9px] mb-[10px]">
                     <div className="flex flex-col gap-[2px]">
                       <span className="text-base font-medium leading-[1.5] text-[#fff]">
-                        price before
+                      Addition to house equity
                       </span>
-                      <span className="text-[28px] font-medium leading-[1.5] text-[#fff]">
-                        {fromValue}
-                      </span>
-                    </div>
-                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className="mt-[31px]">
-                      <path
-                        d="M4.67 15.91L27.33 15.91M27.33 15.91L19.24 7.82M27.33 15.91L19.24 24"
-                        stroke="#fff"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                    <div className="flex flex-col gap-[2px]">
-                      <span className="text-base font-medium leading-[1.5] text-[#fff]">
-                        price after
-                      </span>
-                      <span className="text-[28px] font-medium leading-[1.5] text-[#fff]">
-                        {toValue}
+                      <span className="text-[24px] font-medium leading-[1.5] text-[#fff]">
+                        {item.value}
                       </span>
                     </div>
                   </div>
 
-                  <div className="inline-flex items-center gap-[10px] px-[21px] py-2 rounded-full transition-colors duration-300 bg-[#2A2A2A] group-hover:bg-[#FCCA84]">
+                  {/* <div className="inline-flex items-center gap-[10px] px-[21px] py-2 rounded-full transition-colors duration-300 bg-[#2A2A2A] group-hover:bg-[#FCCA84]">
                     <img
                       src={getAssetUrl('/icons/price-up.svg')}
                       alt=""
@@ -187,7 +142,7 @@ export default function RemodelingROI({
                     <span className="text-xl font-medium leading-[1.5] text-white group-hover:text-white transition-colors duration-300">
                       {percentage}
                     </span>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             )

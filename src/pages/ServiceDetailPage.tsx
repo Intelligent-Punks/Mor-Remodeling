@@ -27,7 +27,7 @@ export default function ServiceDetailPage() {
     <div className="bg-[#F2F1EF]">
       <SEOHead seo={seo} />
       {/* Hero Sentinel for header tracking */}
-      <div id="hero-sentinel" className="absolute top-[5vh] pointer-events-none" />
+      <div className="absolute top-[5vh] pointer-events-none" />
 
       {/* Hero Section */}
       <section id="hero" className="relative h-[714px] md:h-[750px] overflow-hidden">

@@ -44,14 +44,6 @@ export default function Footer() {
     { id: '04', label: 'Contact Us', path: '/contact-us' },
   ]
 
-  const socialLinks = [
-    { name: 'X (Twitter)', icon: '/icons/x.svg', url: '#' },
-    { name: 'Instagram', icon: '/icons/instagram.svg', url: '#' },
-    // { name: 'LinkedIn', icon: '/icons/linkedin.svg', url: '#' },
-    // { name: 'WhatsApp', icon: '/icons/whatsapp.svg', url: '#' },
-    { name: 'Facebook', url: '#', icon: '/icons/facebook.png' },
-  ]
-
   const builtWith = (
     <div>
       <div
@@ -108,7 +100,7 @@ export default function Footer() {
 
               {/* Mobile Social Links */}
               <div className="flex md:hidden items-center gap-7">
-                {socialLinks.map((social) => (
+                {contactPage.socialLinks.map((social) => (
                   <a
                     key={social.name}
                     href={social.url}
@@ -177,11 +169,12 @@ export default function Footer() {
 
             {/* Desktop Social Links */}
             <div className="hidden md:flex mb-[50px] items-center gap-[14px]">
-              {socialLinks.map((social) => (
+              {contactPage.socialLinks.map((social) => (
                 <a
                   key={social.name}
                   href={social.url}
-                  className="w-3 h-3 flex items-center justify-center hover:opacity-70 transition-opacity"
+                  className="w-5 h-5 flex items-center justify-center hover:opacity-70 transition-opacity"
+                  target='_blank'
                   aria-label={social.name}
                 >
                   <img src={getAssetUrl(social.icon)} alt={social.name} className="w-full h-full" />

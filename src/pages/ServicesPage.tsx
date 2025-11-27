@@ -88,7 +88,7 @@ export default function ServicesPage() {
     <div className="bg-[#F2F1EF]">
       <SEOHead seo={servicesPage.seo} />
       {/* Hero Sentinel for Header Transparency */}
-      <div id="hero-sentinel" className="absolute top-0 left-0 w-full h-px pointer-events-none" />
+      <div className="absolute top-0 left-0 w-full h-px pointer-events-none" />
       {/* Hero Section */}
       <section id="hero" className="relative h-[714px] md:h-[750px] overflow-hidden">
         <img
@@ -232,7 +232,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Contact Form */}
-      <ContactFormSection />
+      <ContactFormSection backgroundImage={servicesPage.bgImgContactForm} />
     </div>
   )
 }

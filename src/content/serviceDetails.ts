@@ -175,45 +175,45 @@ export const serviceDetails: ServiceDetail[] = [
     ],
     gallery: ['gallery-1.png', 'gallery-2.png', 'gallery-3.png', 'gallery-4.png', 'gallery-5.png', 'gallery-6.png'],
   },
-  {
-    slug: 'decks-patios-outdoor-covers',
-    hero: {
-      title: 'Decks, Patios & Outdoor Covers',
-      subtitle: 'Extending your living space into the outdoors.',
-      image: 'hero.png',
-    },
-    features: [
-      {
-        icon: '/icons/Vector.svg',
-        title: 'Custom Outdoor Design',
-        description:
-          "We design decks and patios that perfectly complement your home's architecture and natural surroundings.",
-      },
-      {
-        icon: '/icons/Vector-1.svg',
-        title: 'Durable, Weather-Resistant Materials',
-        description: 'Built to withstand the elements while maintaining long-lasting beauty and comfort.',
-      },
-      {
-        icon: '/icons/Vector-2.svg',
-        title: 'Functional & Aesthetic Balance',
-        description:
-          "Every detail is considered — from layout and lighting to shade and seating — to create spaces you'll love year-round.",
-      },
-      {
-        icon: '/icons/Vector-3.svg',
-        title: 'End-to-End Project Management',
-        description: 'From permits to construction, we handle it all with precision and care.',
-      },
-    ],
-    description: [
-      "Your outdoor space is more than an extension of your home — it's where relaxation, connection, and memories come to life. At MOR Remodeling, we design and build custom decks, patios, and covers that enhance your property's value and lifestyle.",
-      'Whether you want a cozy covered patio for morning coffee, a spacious deck for entertaining, or a seamless indoor-outdoor transition, our team brings craftsmanship, creativity, and functionality together in every project.',
-      'We work with high-quality, low-maintenance materials and thoughtful design solutions to ensure your outdoor area remains beautiful and durable through every season.',
-      'MOR Remodeling — crafting outdoor spaces that invite you to live beyond the walls.',
-    ],
-    gallery: ['gallery-1.png', 'gallery-2.png', 'gallery-3.png', 'gallery-4.png', 'gallery-5.png', 'gallery-6.png'],
-  },
+  // {
+  //   slug: 'decks-patios-outdoor-covers',
+  //   hero: {
+  //     title: 'Decks, Patios & Outdoor Covers',
+  //     subtitle: 'Extending your living space into the outdoors.',
+  //     image: 'hero.png',
+  //   },
+  //   features: [
+  //     {
+  //       icon: '/icons/Vector.svg',
+  //       title: 'Custom Outdoor Design',
+  //       description:
+  //         "We design decks and patios that perfectly complement your home's architecture and natural surroundings.",
+  //     },
+  //     {
+  //       icon: '/icons/Vector-1.svg',
+  //       title: 'Durable, Weather-Resistant Materials',
+  //       description: 'Built to withstand the elements while maintaining long-lasting beauty and comfort.',
+  //     },
+  //     {
+  //       icon: '/icons/Vector-2.svg',
+  //       title: 'Functional & Aesthetic Balance',
+  //       description:
+  //         "Every detail is considered — from layout and lighting to shade and seating — to create spaces you'll love year-round.",
+  //     },
+  //     {
+  //       icon: '/icons/Vector-3.svg',
+  //       title: 'End-to-End Project Management',
+  //       description: 'From permits to construction, we handle it all with precision and care.',
+  //     },
+  //   ],
+  //   description: [
+  //     "Your outdoor space is more than an extension of your home — it's where relaxation, connection, and memories come to life. At MOR Remodeling, we design and build custom decks, patios, and covers that enhance your property's value and lifestyle.",
+  //     'Whether you want a cozy covered patio for morning coffee, a spacious deck for entertaining, or a seamless indoor-outdoor transition, our team brings craftsmanship, creativity, and functionality together in every project.',
+  //     'We work with high-quality, low-maintenance materials and thoughtful design solutions to ensure your outdoor area remains beautiful and durable through every season.',
+  //     'MOR Remodeling — crafting outdoor spaces that invite you to live beyond the walls.',
+  //   ],
+  //   gallery: ['gallery-1.png', 'gallery-2.png', 'gallery-3.png', 'gallery-4.png', 'gallery-5.png', 'gallery-6.png'],
+  // },
   {
     slug: 'room-home-additions',
     hero: {
@@ -255,7 +255,7 @@ export const serviceDetails: ServiceDetail[] = [
   {
     slug: 'roofing-siding-foundations',
     hero: {
-      title: 'Roofing, Siding & Foundations',
+      title: 'Roofing',
       subtitle: 'Protecting your home from the ground up.',
       image: 'hero.png',
     },

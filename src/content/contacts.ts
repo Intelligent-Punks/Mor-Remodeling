@@ -1,7 +1,7 @@
 const contacts = {
   title: 'Contacts',
-  phone: '(747) 279 8262',
-  email: 'info@mor-remodeling.com',
+  phone: '(408) 583-8365',
+  email: 'office@morremodeling.com',
   address: '123 Main St, City',
   instagram: '#',
   twitter: '#',

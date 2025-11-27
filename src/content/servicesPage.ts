@@ -50,20 +50,20 @@ export const servicesPageData: ServiceItem[] = [
       '/images/services/bathroom-remodeling/image-3.png',
     ],
   },
-  {
-    id: 'decks-patios-outdoor-covers',
-    slug: 'decks-patios-outdoor-covers',
-    title: 'Decks, Patios & Outdoor Covers',
-    shortDescription:
-      'Your outdoor space should be an extension of your home. With custom decks, patios, and covers, we create inviting areas perfect for relaxing, entertaining, and enjoying the outdoors in comfort and style.',
-    fullDescription:
-      'Decks, patios, and outdoor covers add both beauty and functionality to your home\'s exterior. At MOR Remodelling, we specialize in designing and building outdoor spaces that feel like natural extensions of your living area. Whether you envision a spacious deck for family gatherings, a cozy patio for quiet evenings, or a stylish cover to protect you from the sun and rain, we tailor each project to your lifestyle.',
-    images: [
-      '/images/services/decks-patios-outdoor-covers/image-1.png',
-      '/images/services/decks-patios-outdoor-covers/image-2.png',
-      '/images/services/decks-patios-outdoor-covers/image-3.png',
-    ],
-  },
+  // {
+  //   id: 'decks-patios-outdoor-covers',
+  //   slug: 'decks-patios-outdoor-covers',
+  //   title: 'Decks, Patios & Outdoor Covers',
+  //   shortDescription:
+  //     'Your outdoor space should be an extension of your home. With custom decks, patios, and covers, we create inviting areas perfect for relaxing, entertaining, and enjoying the outdoors in comfort and style.',
+  //   fullDescription:
+  //     'Decks, patios, and outdoor covers add both beauty and functionality to your home\'s exterior. At MOR Remodelling, we specialize in designing and building outdoor spaces that feel like natural extensions of your living area. Whether you envision a spacious deck for family gatherings, a cozy patio for quiet evenings, or a stylish cover to protect you from the sun and rain, we tailor each project to your lifestyle.',
+  //   images: [
+  //     '/images/services/decks-patios-outdoor-covers/image-1.png',
+  //     '/images/services/decks-patios-outdoor-covers/image-2.png',
+  //     '/images/services/decks-patios-outdoor-covers/image-3.png',
+  //   ],
+  // },
   {
     id: 'room-home-additions',
     slug: 'room-home-additions',
@@ -81,7 +81,7 @@ export const servicesPageData: ServiceItem[] = [
   {
     id: 'roofing-siding-foundations',
     slug: 'roofing-siding-foundations',
-    title: 'Roofing, Siding & Foundations',
+    title: 'Roofing',
     shortDescription:
       'Strong roofs, durable siding, and reliable foundations are the backbone of every home. Our expert services protect your property, improve curb appeal, and ensure lasting safety and comfort.',
     fullDescription:
@@ -191,5 +191,6 @@ export default {
     image: 'hero.png',
   },
   services: servicesPageData,
+  bgImgContactForm: '/images/services/bg-contact-form.jpg',
 }
 

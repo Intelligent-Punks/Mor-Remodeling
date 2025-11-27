@@ -11,11 +11,12 @@ interface Stat {
 interface StatsProps {
   title: string
   description: string
+  subTitle: string
   stats: Stat[]
   valueFontSize?: number
 }
 
-export default function Stats({ title, description, stats, valueFontSize }: StatsProps) {
+export default function Stats({ title, description, subTitle, stats, valueFontSize }: StatsProps) {
   return (
     <section className="py-11 md:pt-16 pb-20 bg-white">
       <div className="container-custom">
@@ -27,6 +28,7 @@ export default function Stats({ title, description, stats, valueFontSize }: Stat
           </div>
           <div className="md:flex md:justify-end">
             <p className="max-w-[620px] text-sm md:text-base leading-[1.5] text-[#2A2A2A]">
+              <b>{subTitle} </b>
               {description}
             </p>
           </div>

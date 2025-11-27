@@ -15,9 +15,9 @@ const routeNames: Record<string, string> = {
   'landscaping': 'Landscaping',
   'room-home-additions': 'Room & Home Additions',
   'outdoor-kitchen': 'Outdoor Kitchen',
-  'decks-patios-outdoor-covers': 'Decks, Patios & Outdoor Covers',
+  // 'decks-patios-outdoor-covers': 'Decks, Patios & Outdoor Covers',
   'exterior-remodeling-siding': 'Exterior Remodeling & Siding',
-  'roofing-siding-foundations': 'Roofing, Siding & Foundations',
+  'roofing-siding-foundations': 'Roofing',
 }
 
 interface BreadcrumbProps {

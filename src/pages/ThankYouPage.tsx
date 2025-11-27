@@ -6,7 +6,7 @@ export default function ThankYouPage() {
   return (
     <div className="bg-[#F2F1EF]">
       {/* Sentinel is used by Header to switch style when hero leaves viewport */}
-      <div id="hero-sentinel" className="absolute top-0 h-px w-px" />
+      <div className="absolute top-0 h-px w-px" />
       
       {/* Hero Section with Background */}
       <section className="relative h-[714px] md:min-h-[750px] flex items-center justify-center">

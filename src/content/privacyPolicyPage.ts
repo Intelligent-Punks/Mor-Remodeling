@@ -56,7 +56,7 @@ Withdraw consent for marketing communications at any time.
 
 Request details about how your data is stored and used.
 
-To exercise your rights, contact us at info@morremodeling.com .`,
+To exercise your rights, contact us at office@morremodeling.com.`,
     },
     {
       id: 6,

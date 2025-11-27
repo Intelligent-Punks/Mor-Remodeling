@@ -17,7 +17,7 @@ export default function ProjectsPage() {
     <div className="bg-[#F2F1EF]">
       <SEOHead seo={projectsPage.seo} />
       {/* Hero Sentinel for Header Transparency */}
-      <div id="hero-sentinel" className="absolute top-0 left-0 w-full h-px pointer-events-none" />
+      <div className="absolute top-0 left-0 w-full h-px pointer-events-none" />
 
       {/* Hero Section */}
       <section className="relative min-h-[750px] pt-[54px] pb-10 md:pb-[80px]">
@@ -29,7 +29,7 @@ export default function ProjectsPage() {
               alt=""
               className="absolute inset-0 w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-black/30" />
+            <div className="absolute inset-0 bg-black/55" />
           </>
         )}
 
@@ -92,7 +92,7 @@ export default function ProjectsPage() {
 
       {/* Contact Form */}
       <LazySection rootMargin="200px">
-        <ContactFormSection />
+        <ContactFormSection backgroundImage={projectsPage.bgImgContactForm} />
       </LazySection>
     </div>
   )

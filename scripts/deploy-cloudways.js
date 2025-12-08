@@ -106,9 +106,15 @@ const htaccessContent = `# Enable Rewrite Engine
 writeFileSync('.htaccess', htaccessContent)
 console.log('  ✓ Created .htaccess')
 
-// Stage all files
+// Stage only the files we need
 console.log('\n📤 Staging files...')
-execSync('git add -A')
+const filesToStage = ['index.html', 'assets', 'images', 'icons', 'fonts', '.htaccess']
+filesToStage.forEach(file => {
+  if (existsSync(file)) {
+    execSync(`git add ${file}`)
+    console.log(`  ✓ Staged ${file}`)
+  }
+})
 
 // Check if there are changes
 const status = execSync('git status --porcelain', { encoding: 'utf-8' })

@@ -1,5 +1,5 @@
 import { execSync } from 'child_process'
-import { existsSync, cpSync, rmSync, writeFileSync } from 'fs'
+import { existsSync, cpSync, rmSync, writeFileSync, readdirSync, statSync } from 'fs'
 import { join } from 'path'
 
 const DEPLOY_BRANCH = 'production'
@@ -21,7 +21,7 @@ if (!existsSync(DIST_DIR)) {
 // Check if deploy branch exists
 let branchExists = false
 try {
-  execSync(`git rev-parse --verify ${DEPLOY_BRANCH} 2>/dev/null`, { stdio: 'ignore' })
+  execSync(`git rev-parse --verify ${DEPLOY_BRANCH}`, { stdio: 'ignore', encoding: 'utf-8' })
   branchExists = true
 } catch (e) {
   branchExists = false
@@ -29,7 +29,12 @@ try {
 
 if (branchExists) {
   console.log(`\n📂 Switching to ${DEPLOY_BRANCH} branch...`)
-  execSync(`git checkout ${DEPLOY_BRANCH}`)
+  try {
+    execSync(`git checkout ${DEPLOY_BRANCH}`, { stdio: 'inherit' })
+  } catch (e) {
+    console.error(`❌ Failed to checkout ${DEPLOY_BRANCH} branch. Please commit or stash your changes first.`)
+    process.exit(1)
+  }
   
   // Remove all files from git index and working directory
   console.log('\n🧹 Cleaning old files...')
@@ -46,7 +51,12 @@ if (branchExists) {
   }
 } else {
   console.log(`\n📂 Creating ${DEPLOY_BRANCH} branch...`)
-  execSync(`git checkout --orphan ${DEPLOY_BRANCH}`)
+  try {
+    execSync(`git checkout --orphan ${DEPLOY_BRANCH}`, { stdio: 'inherit' })
+  } catch (e) {
+    console.error(`❌ Failed to create ${DEPLOY_BRANCH} branch. Please commit or stash your changes first.`)
+    process.exit(1)
+  }
   try {
     execSync('git rm -rf . --quiet', { stdio: 'ignore' })
   } catch (e) {
@@ -56,15 +66,29 @@ if (branchExists) {
 
 // Copy dist contents to root
 console.log('\n📋 Copying build files...')
-const filesToCopy = ['index.html', 'assets', 'images', 'icons', 'fonts']
-filesToCopy.forEach(item => {
-  const src = join(DIST_DIR, item)
-  const dest = item
-  if (existsSync(src)) {
-    cpSync(src, dest, { recursive: true })
-    console.log(`  ✓ Copied ${item}`)
+function copyDistContents(srcDir, destDir) {
+  if (!existsSync(srcDir)) {
+    return
   }
-})
+  const items = readdirSync(srcDir)
+  items.forEach(item => {
+    // Skip .git directory
+    if (item === '.git') {
+      return
+    }
+    const src = join(srcDir, item)
+    const dest = join(destDir, item)
+    const stat = statSync(src)
+    if (stat.isDirectory()) {
+      cpSync(src, dest, { recursive: true })
+      console.log(`  ✓ Copied directory: ${item}`)
+    } else {
+      cpSync(src, dest)
+      console.log(`  ✓ Copied file: ${item}`)
+    }
+  })
+}
+copyDistContents(DIST_DIR, '.')
 
 // Create .htaccess for SPA routing
 console.log('\n📝 Creating .htaccess...')
@@ -113,21 +137,20 @@ const htaccessContent = `# Enable Rewrite Engine
 writeFileSync('.htaccess', htaccessContent)
 console.log('  ✓ Created .htaccess')
 
-// Stage only the files we need
+// Stage all files (except .git)
 console.log('\n📤 Staging files...')
-// Use git add with force to ensure we only add what we copied
-execSync('git add -f index.html .htaccess', { stdio: 'inherit' })
-execSync('git add -f assets/', { stdio: 'inherit' })
-execSync('git add -f images/', { stdio: 'inherit' })
-execSync('git add -f icons/', { stdio: 'inherit' })
-execSync('git add -f fonts/', { stdio: 'inherit' })
+execSync('git add -f .', { stdio: 'inherit' })
 console.log('  ✓ Staged all files')
 
 // Check if there are changes
 const status = execSync('git status --porcelain', { encoding: 'utf-8' })
 if (!status.trim()) {
   console.log('\n⚠️  No changes to commit')
-  execSync(`git checkout ${CURRENT_BRANCH}`)
+  try {
+    execSync(`git checkout ${CURRENT_BRANCH}`, { stdio: 'inherit' })
+  } catch (e) {
+    console.error(`❌ Failed to return to ${CURRENT_BRANCH} branch. Please switch manually.`)
+  }
   process.exit(0)
 }
 
@@ -142,7 +165,12 @@ execSync(`git push origin ${DEPLOY_BRANCH} --force`)
 
 // Return to original branch
 console.log(`\n↩️  Returning to ${CURRENT_BRANCH} branch...`)
-execSync(`git checkout ${CURRENT_BRANCH}`)
+try {
+  execSync(`git checkout ${CURRENT_BRANCH}`, { stdio: 'inherit' })
+} catch (e) {
+  console.error(`❌ Failed to return to ${CURRENT_BRANCH} branch. Please switch manually.`)
+  process.exit(1)
+}
 
 console.log('\n✅ Deployment complete!')
 console.log(`\nNext steps:`)

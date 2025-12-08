@@ -26,7 +26,15 @@ try {
 
 if ($branchExists) {
     Write-Host "`n📂 Switching to $DEPLOY_BRANCH branch..." -ForegroundColor Yellow
-    git checkout $DEPLOY_BRANCH
+    try {
+        git checkout $DEPLOY_BRANCH
+        if ($LASTEXITCODE -ne 0) {
+            throw "Git checkout failed"
+        }
+    } catch {
+        Write-Host "❌ Failed to checkout $DEPLOY_BRANCH branch. Please commit or stash your changes first." -ForegroundColor Red
+        exit 1
+    }
     
     # Remove all files from git index and working directory
     Write-Host "`n🧹 Cleaning old files..." -ForegroundColor Yellow
@@ -35,19 +43,34 @@ if ($branchExists) {
     git clean -fd --quiet 2>$null
 } else {
     Write-Host "`n📂 Creating $DEPLOY_BRANCH branch..." -ForegroundColor Yellow
-    git checkout --orphan $DEPLOY_BRANCH
+    try {
+        git checkout --orphan $DEPLOY_BRANCH
+        if ($LASTEXITCODE -ne 0) {
+            throw "Git checkout failed"
+        }
+    } catch {
+        Write-Host "❌ Failed to create $DEPLOY_BRANCH branch. Please commit or stash your changes first." -ForegroundColor Red
+        exit 1
+    }
     git rm -rf . --quiet 2>$null
 }
 
 # Copy dist contents to root
 Write-Host "`n📋 Copying build files..." -ForegroundColor Yellow
-$filesToCopy = @("index.html", "assets", "images", "icons", "fonts")
-foreach ($item in $filesToCopy) {
-    $src = Join-Path $DIST_DIR $item
-    $dest = $item
-    if (Test-Path $src) {
+$items = Get-ChildItem -Path $DIST_DIR -Force
+foreach ($item in $items) {
+    # Skip .git directory
+    if ($item.Name -eq ".git") {
+        continue
+    }
+    $src = $item.FullName
+    $dest = $item.Name
+    if ($item.PSIsContainer) {
         Copy-Item -Path $src -Destination $dest -Recurse -Force
-        Write-Host "  ✓ Copied $item" -ForegroundColor Green
+        Write-Host "  ✓ Copied directory: $dest" -ForegroundColor Green
+    } else {
+        Copy-Item -Path $src -Destination $dest -Force
+        Write-Host "  ✓ Copied file: $dest" -ForegroundColor Green
     }
 }
 
@@ -99,27 +122,30 @@ $htaccessContent = @"
 Set-Content -Path ".htaccess" -Value $htaccessContent
 Write-Host "  ✓ Created .htaccess" -ForegroundColor Green
 
-# Stage only the files we need
+# Stage all files (except .git)
 Write-Host "`n📤 Staging files..." -ForegroundColor Yellow
-git add -f index.html .htaccess
-git add -f assets/
-git add -f images/
-git add -f icons/
-git add -f fonts/
+git add -f .
 Write-Host "  ✓ Staged all files" -ForegroundColor Green
 
 # Check if there are changes
 $status = git status --porcelain
 if (-not $status) {
     Write-Host "`n⚠️  No changes to commit" -ForegroundColor Yellow
-    git checkout $CURRENT_BRANCH
+    try {
+        git checkout $CURRENT_BRANCH
+        if ($LASTEXITCODE -ne 0) {
+            throw "Git checkout failed"
+        }
+    } catch {
+        Write-Host "❌ Failed to return to $CURRENT_BRANCH branch. Please switch manually." -ForegroundColor Red
+    }
     exit 0
 }
 
 # Commit
 $commitMessage = "Deploy: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
 Write-Host "`n💾 Committing changes..." -ForegroundColor Yellow
-git commit -m $commitMessage
+git commit -m "$commitMessage"
 
 # Push
 Write-Host "`n🚀 Pushing to $DEPLOY_BRANCH branch..." -ForegroundColor Yellow
@@ -127,7 +153,15 @@ git push origin $DEPLOY_BRANCH --force
 
 # Return to original branch
 Write-Host "`n↩️  Returning to $CURRENT_BRANCH branch..." -ForegroundColor Yellow
-git checkout $CURRENT_BRANCH
+try {
+    git checkout $CURRENT_BRANCH
+    if ($LASTEXITCODE -ne 0) {
+        throw "Git checkout failed"
+    }
+} catch {
+    Write-Host "❌ Failed to return to $CURRENT_BRANCH branch. Please switch manually." -ForegroundColor Red
+    exit 1
+}
 
 Write-Host "`n✅ Deployment complete!" -ForegroundColor Green
 Write-Host "`nNext steps:" -ForegroundColor Cyan

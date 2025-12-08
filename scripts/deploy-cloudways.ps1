@@ -95,9 +95,15 @@ $htaccessContent = @"
 Set-Content -Path ".htaccess" -Value $htaccessContent
 Write-Host "  ✓ Created .htaccess" -ForegroundColor Green
 
-# Stage all files
+# Stage only the files we need
 Write-Host "`n📤 Staging files..." -ForegroundColor Yellow
-git add -A
+$filesToStage = @("index.html", "assets", "images", "icons", "fonts", ".htaccess")
+foreach ($file in $filesToStage) {
+    if (Test-Path $file) {
+        git add $file
+        Write-Host "  ✓ Staged $file" -ForegroundColor Green
+    }
+}
 
 # Check if there are changes
 $status = git status --porcelain

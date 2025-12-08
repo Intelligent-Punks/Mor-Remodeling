@@ -16,7 +16,13 @@ if (-not (Test-Path $DIST_DIR)) {
 }
 
 # Check if deploy branch exists
-$branchExists = git branch --list $DEPLOY_BRANCH
+$branchExists = $false
+try {
+    git rev-parse --verify $DEPLOY_BRANCH 2>$null | Out-Null
+    $branchExists = $true
+} catch {
+    $branchExists = $false
+}
 
 if ($branchExists) {
     Write-Host "`n📂 Switching to $DEPLOY_BRANCH branch..." -ForegroundColor Yellow

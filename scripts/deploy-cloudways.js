@@ -19,8 +19,13 @@ if (!existsSync(DIST_DIR)) {
 }
 
 // Check if deploy branch exists
-const branchList = execSync(`git branch --list ${DEPLOY_BRANCH}`, { encoding: 'utf-8' }).trim()
-const branchExists = branchList.length > 0
+let branchExists = false
+try {
+  execSync(`git rev-parse --verify ${DEPLOY_BRANCH} 2>/dev/null`, { stdio: 'ignore' })
+  branchExists = true
+} catch (e) {
+  branchExists = false
+}
 
 if (branchExists) {
   console.log(`\n📂 Switching to ${DEPLOY_BRANCH} branch...`)

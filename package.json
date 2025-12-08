@@ -10,7 +10,9 @@
     "lint": "eslint . --ext .ts,.tsx",
     "format": "prettier --write .",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "deploy:cloudways": "node scripts/deploy-cloudways.js",
+    "deploy:cloudways:ps1": "powershell -ExecutionPolicy Bypass -File scripts/deploy-cloudways.ps1"
   },
   "repository": {
     "type": "git",

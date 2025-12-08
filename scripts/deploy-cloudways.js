@@ -19,7 +19,8 @@ if (!existsSync(DIST_DIR)) {
 }
 
 // Check if deploy branch exists
-const branchExists = execSync('git branch --list ' + DEPLOY_BRANCH, { encoding: 'utf-8' }).trim()
+const branchList = execSync(`git branch --list ${DEPLOY_BRANCH}`, { encoding: 'utf-8' }).trim()
+const branchExists = branchList.length > 0
 
 if (branchExists) {
   console.log(`\n📂 Switching to ${DEPLOY_BRANCH} branch...`)
@@ -44,7 +45,11 @@ if (branchExists) {
 } else {
   console.log(`\n📂 Creating ${DEPLOY_BRANCH} branch...`)
   execSync(`git checkout --orphan ${DEPLOY_BRANCH}`)
-  execSync('git rm -rf . --quiet || true')
+  try {
+    execSync('git rm -rf . --quiet', { stdio: 'ignore' })
+  } catch (e) {
+    // Ignore if no files to remove
+  }
 }
 
 // Copy dist contents to root
@@ -111,7 +116,7 @@ console.log('\n📤 Staging files...')
 const filesToStage = ['index.html', 'assets', 'images', 'icons', 'fonts', '.htaccess']
 filesToStage.forEach(file => {
   if (existsSync(file)) {
-    execSync(`git add ${file}`)
+    execSync(`git add "${file}"`)
     console.log(`  ✓ Staged ${file}`)
   }
 })

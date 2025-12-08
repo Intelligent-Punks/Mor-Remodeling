@@ -25,7 +25,7 @@ if ($branchExists) {
     # Remove all files except .git
     Write-Host "`n🧹 Cleaning old files..." -ForegroundColor Yellow
     git ls-files | ForEach-Object {
-        if ($_ -ne ".git") {
+        if ($_ -and -not $_.StartsWith(".git")) {
             Remove-Item $_ -Recurse -Force -ErrorAction SilentlyContinue
         }
     }

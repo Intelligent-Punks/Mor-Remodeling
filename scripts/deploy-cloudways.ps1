@@ -22,13 +22,11 @@ if ($branchExists) {
     Write-Host "`n📂 Switching to $DEPLOY_BRANCH branch..." -ForegroundColor Yellow
     git checkout $DEPLOY_BRANCH
     
-    # Remove all files except .git
+    # Remove all files from git index and working directory
     Write-Host "`n🧹 Cleaning old files..." -ForegroundColor Yellow
-    git ls-files | ForEach-Object {
-        if ($_ -ne ".git") {
-            Remove-Item $_ -Recurse -Force -ErrorAction SilentlyContinue
-        }
-    }
+    git rm -rf . --quiet 2>$null
+    # Also remove untracked files
+    git clean -fd --quiet 2>$null
 } else {
     Write-Host "`n📂 Creating $DEPLOY_BRANCH branch..." -ForegroundColor Yellow
     git checkout --orphan $DEPLOY_BRANCH
@@ -97,13 +95,12 @@ Write-Host "  ✓ Created .htaccess" -ForegroundColor Green
 
 # Stage only the files we need
 Write-Host "`n📤 Staging files..." -ForegroundColor Yellow
-$filesToStage = @("index.html", "assets", "images", "icons", "fonts", ".htaccess")
-foreach ($file in $filesToStage) {
-    if (Test-Path $file) {
-        git add $file
-        Write-Host "  ✓ Staged $file" -ForegroundColor Green
-    }
-}
+git add -f index.html .htaccess
+git add -f assets/
+git add -f images/
+git add -f icons/
+git add -f fonts/
+Write-Host "  ✓ Staged all files" -ForegroundColor Green
 
 # Check if there are changes
 $status = git status --porcelain

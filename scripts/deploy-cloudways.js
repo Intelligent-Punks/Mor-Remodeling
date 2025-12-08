@@ -19,32 +19,34 @@ if (!existsSync(DIST_DIR)) {
 }
 
 // Check if deploy branch exists
-const branchExists = execSync('git branch --list ' + DEPLOY_BRANCH, { encoding: 'utf-8' }).trim()
+const branchList = execSync(`git branch --list ${DEPLOY_BRANCH}`, { encoding: 'utf-8' }).trim()
+const branchExists = branchList.length > 0
 
 if (branchExists) {
   console.log(`\n📂 Switching to ${DEPLOY_BRANCH} branch...`)
   execSync(`git checkout ${DEPLOY_BRANCH}`)
   
-  // Remove all files except .git
+  // Remove all files from git index and working directory
   console.log('\n🧹 Cleaning old files...')
   try {
-    const files = execSync('git ls-files', { encoding: 'utf-8' }).trim().split('\n')
-    files.forEach(file => {
-      if (file && !file.startsWith('.git')) {
-        try {
-          rmSync(file, { recursive: true, force: true })
-        } catch (e) {
-          // Ignore errors
-        }
-      }
-    })
+    execSync('git rm -rf . --quiet', { stdio: 'ignore' })
   } catch (e) {
-    // Ignore if no files
+    // Ignore if no files to remove
+  }
+  // Also remove untracked files
+  try {
+    execSync('git clean -fd --quiet', { stdio: 'ignore' })
+  } catch (e) {
+    // Ignore errors
   }
 } else {
   console.log(`\n📂 Creating ${DEPLOY_BRANCH} branch...`)
   execSync(`git checkout --orphan ${DEPLOY_BRANCH}`)
-  execSync('git rm -rf . --quiet || true')
+  try {
+    execSync('git rm -rf . --quiet', { stdio: 'ignore' })
+  } catch (e) {
+    // Ignore if no files to remove
+  }
 }
 
 // Copy dist contents to root
@@ -108,13 +110,13 @@ console.log('  ✓ Created .htaccess')
 
 // Stage only the files we need
 console.log('\n📤 Staging files...')
-const filesToStage = ['index.html', 'assets', 'images', 'icons', 'fonts', '.htaccess']
-filesToStage.forEach(file => {
-  if (existsSync(file)) {
-    execSync(`git add ${file}`)
-    console.log(`  ✓ Staged ${file}`)
-  }
-})
+// Use git add with force to ensure we only add what we copied
+execSync('git add -f index.html .htaccess', { stdio: 'inherit' })
+execSync('git add -f assets/', { stdio: 'inherit' })
+execSync('git add -f images/', { stdio: 'inherit' })
+execSync('git add -f icons/', { stdio: 'inherit' })
+execSync('git add -f fonts/', { stdio: 'inherit' })
+console.log('  ✓ Staged all files')
 
 // Check if there are changes
 const status = execSync('git status --porcelain', { encoding: 'utf-8' })
